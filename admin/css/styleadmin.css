@@ -1,0 +1,38 @@
+ul.admin_list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    
+}
+.admin_list li a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    padding:30px;
+}
+.admin_list li a:hover {
+    background-color: #111111;
+  }
+.body{
+    display: flex;
+}
+.content{
+    display: flex;
+}
+.content_right
+{
+    border: 2px solid black;
+    margin-right: 50px;
+    width: 70%;
+
+}
+.content_left
+{    
+    border: 2px solid black;
+    padding-bottom:  200px;
+    margin-right:100px ;
+    background-color: #333333;
+}
+
