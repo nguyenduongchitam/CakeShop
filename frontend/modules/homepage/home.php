@@ -11,7 +11,7 @@
         type="text/css"
         href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
       />
-    <link rel="stylesheet" href="home.css"> 
+    <link rel="stylesheet" href="../../css/home.css"> 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
@@ -62,7 +62,7 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
-    <script src="./roll.js"></script>
+    <script src="../js/roll.js"></script>
 
     <hr border="2">
     
@@ -109,7 +109,7 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
-    <script src="./roll.js"></script>
+    <script src="../js/roll.js"></script>
 
     <table>
         <tr>
