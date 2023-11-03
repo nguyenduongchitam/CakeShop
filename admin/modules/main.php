@@ -22,6 +22,8 @@
         include("../modules/QuanLySanPham/list.php");
     }
     else if( $action=='quanlysanpham' && $query=='update') include("../modules/QuanLySanPham/update.php");
+
+    
     else include("dashboard.php");
 ?>
 </div>

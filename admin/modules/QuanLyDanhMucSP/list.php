@@ -3,6 +3,7 @@ include("config.php");
 $sql="select * from category";
 $resut= mysqli_query($mysqli,$sql);
 ?>
+
 <div class="container">
         <h2 class="text-center">Danh sách các danh mục</h2>
         <div class="table-responsive">
