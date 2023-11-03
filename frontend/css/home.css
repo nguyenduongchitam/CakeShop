@@ -1,0 +1,77 @@
+body{
+    background-color: rgb(215, 231, 248);
+    font-family: 'Segoe UI';
+    color: rgb(61, 35, 22);
+}
+.main {
+    display: flex;
+    align-items: center;   
+}
+.mainname{
+    flex-grow: 1;
+    text-align:center;
+    font-size: 250%;
+    font-family:cursive;
+    color: rgb(118, 66, 39);
+
+}
+
+.item1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+.col{
+    flex-direction: column;
+    align-items: center;
+    display: inline-flex;
+    padding: 20px;
+    font-size:large;
+ 
+}
+.slick-arrow
+{
+    font-size: 24px;
+    color: rgb(61, 35, 22);
+}
+.slick-prev{
+    background-color: rgb(215, 231, 248);
+    border: none;
+    padding: 10px 10px;
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+}
+
+.slick-next{
+    background-color: rgb(215, 231, 248);
+    border: none;
+    padding: 10px 10px;
+    opacity: 0.7;
+}
+table{   
+    width: 100%;
+    border: 10px dashed rgb(234, 220, 155);
+    font-family: 'Segoe UI';
+   
+}
+td {
+    vertical-align: middle;  
+}
+.border {
+    width:23%;
+    background-color: rgb(234, 220, 155);
+    margin-top: 50px;
+}
+.text{ 
+    text-align: center;
+    width:50%;
+}
+.image{
+    text-align: right;
+}
+.intext{
+    font-size: 300%;
+    font-family:cursive;
+    color: rgb(118, 66, 39);
+}

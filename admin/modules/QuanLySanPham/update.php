@@ -62,7 +62,7 @@ if (isset($_POST['update']))
     $title= $_POST['title'];
     $price= $_POST['price'];
     $discount_price= $_POST['discount_price'];
-
+    
     if ($_FILES['thumbnail']['error'] === 0) {
         $thumbnail = $_FILES['thumbnail']['name'];
         $thumbnail_temp = $_FILES['thumbnail']['tmp_name'];
@@ -71,7 +71,9 @@ if (isset($_POST['update']))
     } else $thumbnail= $thumbnailold;
 
     $description= $_POST['description'];
-$sql_update = " UPDATE `product` SET `category_id`='$category_id',`title`='$title',`price`='$price',`discount_price`='$discount_price',`thumbnail`='$thumbnail',`description`='$description' WHERE product_id=$product_id ";
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
+    $update_at = date("Y-m-d H:i:s");
+$sql_update = " UPDATE `product` SET `category_id`='$category_id',`title`='$title',`price`='$price',`discount_price`='$discount_price',`thumbnail`='$thumbnail',`description`='$description' ,update_at='$update_at' WHERE product_id=$product_id ";
 mysqli_query($mysqli,$sql_update);
 echo '<script>location.replace("../modules/index.php?action=quanlysanpham&query=none");</script>';
 }

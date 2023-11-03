@@ -16,6 +16,8 @@ $resut = mysqli_query($mysqli,$sql);
           <th>Giá sản phẩm</th>
           <th>Giá khuyến mãi</th>
           <th>Mô tả sản phẩm</th>
+          <th>Ngày tạo </th>
+          <th>Ngày cập nhật gần nhất </th>
           <th>Xóa</th>
           <th>Sửa</th>
         </tr>
@@ -34,8 +36,10 @@ $resut = mysqli_query($mysqli,$sql);
             <td><?php echo $row['price'] ?></td>
             <td><?php echo $row['discount_price'] ?></td>
             <td><?php echo $row['description'] ?></td>
-            <td><a onclick="return del('<?php echo $row['title'] ?>')" href="QuanLySanPham/delete.php?query=delete&product_id=<?php echo $row['product_id'] ?>">Xóa</a></td>
-            <td><a href="?action=quanlysanpham&query=update&product_id=<?php echo $row['product_id'] ?>&category_id=<?php echo $row['category_id'] ?>">Sửa</a></td>
+            <td><?php echo $row['created_at'] ?></td>
+            <td><?php echo $row['update_at'] ?></td>
+            <td><a onclick="return del('<?php echo $row['title'] ?>')" href="QuanLySanPham/delete.php?query=delete&product_id=<?php echo $row['product_id'] ?>"class="btn btn-danger">Xóa</a></td>
+            <td><a href="?action=quanlysanpham&query=update&product_id=<?php echo $row['product_id'] ?>&category_id=<?php echo $row['category_id'] ?>"class="btn btn-primary">Sửa</a></td>
           </tr>
         <?php
         }
