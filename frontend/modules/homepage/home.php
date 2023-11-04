@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +14,7 @@
         href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
       />
     <link rel="stylesheet" href="../../css/home.css"> 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+   
 </head>
 <body>
  
