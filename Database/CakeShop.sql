@@ -76,3 +76,5 @@ ALTER TABLE `Order_Detail` ADD FOREIGN KEY (`product_id`) REFERENCES `Product` (
 ALTER TABLE `Galery` ADD FOREIGN KEY (`product_id`) REFERENCES `Product` (`product_id`);
 
 ALTER TABLE `Order` ADD FOREIGN KEY (`user_id`) REFERENCES `User` (`user_id`);
+
+
