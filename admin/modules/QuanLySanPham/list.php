@@ -32,7 +32,7 @@ $resut = mysqli_query($mysqli,$sql);
             <td><?php echo $i ?></td>
             <td><?php echo $row['title'] ?></td>
             <td><?php echo $row['name'] ?></td>
-            <td><img style="width: 100px" src="images/<?php echo $row['thumbnail'] ?>" alt=""></td>
+            <td><img style="width: 100px" src="images/  <?php echo $row['thumbnail'] ?> " alt=""></td>
             <td><?php echo $row['price'] ?></td>
             <td><?php echo $row['discount_price'] ?></td>
             <td><?php echo $row['description'] ?></td>

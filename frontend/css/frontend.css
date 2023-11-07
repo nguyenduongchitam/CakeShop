@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    border: 1px solid black;
+    height: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#main{
+    border: 1px solid blanchedalmond;
+    height: 400px;
+    width: 100%;
+}
+
+.chose{
+    border: 1px solid blue;
+    height: 390px;
+    width: 20%;
+    margin-top: 5px;
+    margin-left: 5px;
+    float: left;
+}
+ul.danhmuc {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+ul.danhmuc li {
+    margin: 5px;
+    padding: 5px;
+}
+ul.danhmuc li a {
+    text-decoration: none;
+    color: #663300;
+    font-weight: 700;
+}
+
+.maincontent{
+    border: 1px solid blue;
+    height: 390px;
+    width: 79%;
+    margin-top: 5px;
+    margin-left: 5px;
+    float: right;
+}
+
+.clear{
+    clear: both;
+}
