@@ -1,23 +1,63 @@
 body{
     padding: 0;
     margin: 0;
+    background-color: #fff7e6;
+}
+
+.wrapper{
+    height: auto;
+    width: auto;
+    margin: 0 auto;
+    float: left;
+}
+
+.infor{
+    float: left;
+    margin-top: 30px;
+    margin-left: 150px;
+}
+.one{
+    color: #4d2600;
+    font-size: 40px;
+    margin-left: 60px;
+}
+.two{
+    color: red;
+    font-size: 70px;
+    font-family:"Kaushina";
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.feel{
+    float: right;
+    margin-left: 600px;
+    font-size: 20px;
+    float: right;
+    margin-right: 40px;
 }
 
 hr {
-    border: none;
-    height: 1px;
-    background-color: #999;
-    margin: 20px 0;
-  }
-  
-  hr::before {
-    content: "\f3cc";
-    font-family: "Font Awesome 5 Free";
-    display: inline-block;
-    position: relative;
-    top: -0.5em;
-    padding-right: 0.5em;
-    color: #999;
-    font-size: 1.5em;
+    width: 100%;
+    border: 4px solid transparent;
+    border-image: repeating-linear-gradient(-45deg, rgb(248, 118, 179), rgb(248, 118, 179) 10px, transparent 10px, transparent 20px) 10;
+    animation: wave-animation 2s linear infinite;
+    margin-top: 50px;
   }
 
+  .map{
+    float: left;
+    margin-top: 30px;
+    margin-left: 150px;
+  }
+.mp{
+    color: #4d2600;
+    font-size: 40px;
+    margin-left: 60px;
+}
+.maps{
+    float: right;
+    margin-left: 350px;
+    height: 400px;
+    width: 900px;
+    margin-bottom: 40px;
+}
