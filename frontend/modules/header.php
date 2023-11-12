@@ -1,11 +1,12 @@
 <h1> đây là trang header </h1>
-<table class="table">
-  <tr>
-    <td>Nhập</td>
-  </tr>
-  <tr>
-    <td>
-      <input type="text" class="form-control">
-    </td>
-  </tr>
-</table>
+
+<div class="content_left">
+<ul class="admin_list">
+<li><a href="index.php?action=quanlytaikhoan&query=none">Quản lý tài khoản</a></li>
+<li><a href="index.php?action=quanlydanhmucsanpham&query=none">Quản lý danh mục sản phẩm</a></li>
+<li><a href="index.php?action=quanlysanpham&query=none">Quản lý sản phẩm</a></li>
+<li><a href="index.php?action=quanlyhoadon&query=none">Quản lý hóa đơn</a></li>
+<li><a href="index.php?action=quanlykhachhang&query=none">Quản lý khách hàng</a></li>
+<li><a href="index.php?action=quanlybaocao&query=none" >Quản lý báo cáo và thống kê</a></li>
+</ul>   
+</div>

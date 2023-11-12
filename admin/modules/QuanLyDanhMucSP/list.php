@@ -45,7 +45,7 @@ $resut= mysqli_query($mysqli,$sql);
             return confirm("Bạn có chắc chắn là muốn xóa danh mục: " + name + " không?");
         }
     </script>
-
+</div>
 
 
 
