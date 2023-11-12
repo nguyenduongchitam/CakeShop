@@ -7,6 +7,7 @@ $discount_price= $_POST['discount_price'];
     $thumbnail = $_FILES['thumbnail']['name'];
     $thumbnail_temp = $_FILES['thumbnail']['tmp_name'];
 $description= $_POST['description'];
+
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 $created_at = date("Y-m-d H:i:s");
 $update_at = date("Y-m-d H:i:s");  
