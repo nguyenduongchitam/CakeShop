@@ -15,9 +15,11 @@ $resut= mysqli_query($mysqli,$sql);
                          while ($row = mysqli_fetch_array($resut)) {
                        ?>
                         <li><a href="#"><?php echo $row['name'] ?></a></li>
+                        <br>
                         <?php
                          }
                    ?> 
+                   
               </ul>
             </ul>
         </div>

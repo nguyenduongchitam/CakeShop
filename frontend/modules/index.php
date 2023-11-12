@@ -68,7 +68,7 @@ $resut= mysqli_query($mysqli,$sql);
                       <?php
                          while ($row = mysqli_fetch_array($resut)) {
                        ?>
-                        <li><a class="dropdown-item" href="#"><?php echo $row['name'] ?></a></li>
+                        <li><a class="dropdown-item" href="#"> <?php echo $row['name'] ?></a></li>
                         <?php
                          }
                          ?>
@@ -92,9 +92,11 @@ $resut= mysqli_query($mysqli,$sql);
       </section>
     </div>
   </section>
+
  <?php
  include("main.php");
  ?>
+ 
   </body>
 
   <section class="myfooter" style="background: bisque;">

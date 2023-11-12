@@ -16,8 +16,6 @@
     else if( $action=='aboutuspage' && $query=='none')
     {
         include("aboutuspage.php");
-
-
     }
     else if( $action=='contractpage' && $query=='none')
     {
