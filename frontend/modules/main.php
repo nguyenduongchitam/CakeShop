@@ -17,6 +17,15 @@
     {
         include("aboutuspage.php");
 
+
+    }
+    else if( $action=='contractpage' && $query=='none')
+    {
+        include("contractpage.php");
+    }
+    else if( $action=='menupage' && $query=='none')
+    {
+        include("menupage.php");
     }
     else include("homepage.php");
 

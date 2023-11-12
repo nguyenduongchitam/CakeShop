@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 include("config.php");
 $sql="select * from category";
@@ -51,5 +50,3 @@ $resut= mysqli_query($mysqli,$sql);
 
 
 
-=======
->>>>>>> 15364020b434b9c70895eff453d6a4208f3a344a

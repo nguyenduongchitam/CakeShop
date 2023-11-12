@@ -8,12 +8,19 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/home.css"> 
     <link rel="stylesheet" href="../css/aboutuspage.css">
+    <link rel="stylesheet" href="../css/contract.css">
+    <link rel="stylesheet" href="../css/menupage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushina">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
-    <head>
+    <?php
+    include("/xampp/htdocs/CakeShop/Database/Config/config.php");
+    $sql="select * from category";
+$resut= mysqli_query($mysqli,$sql);
+    ?>
+     <head>
   <body>
   <section class="myheader">
     <div class="container fs-4 py-3 text-center">
@@ -58,16 +65,23 @@
                         Sản phẩm
                       </a>
                       <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Bánh Sinh Nhật A</a></li>
-                        <li><a class="dropdown-item" href="#">Bánh Sinh Nhật B</a></li>
-                        <li><a class="dropdown-item" href="#">Bánh Sinh Nhật C</a></li>
+                      <?php
+                         while ($row = mysqli_fetch_array($resut)) {
+                       ?>
+                        <li><a class="dropdown-item" href="#"><?php echo $row['name'] ?></a></li>
+                        <?php
+                         }
+                         ?>
                       </ul>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="nav-link active" aria-current="page" href="index.php?action=menupage&query=none">Menu page</a>
                     </li>
                     <li class="nav-item ">
                       <a class="nav-link active" aria-current="page" href="index.php?action=aboutuspage&query=none">Abouts us</a>
                     </li>
                     <li class="nav-item ">
-                      <a class="nav-link active" aria-current="page" href="#">Liên Hệ</a>
+                      <a class="nav-link active" aria-current="page" href="index.php?action=contractpage&query=none">Liên Hệ</a>
                     </li>
                   </ul>
                 </div>
@@ -78,9 +92,9 @@
       </section>
     </div>
   </section>
-  <?php 
-  include("main.php");
-  ?>
+ <?php
+ include("main.php");
+ ?>
   </body>
 
   <section class="myfooter" style="background: bisque;">

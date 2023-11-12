@@ -1,21 +1,21 @@
-body {
+.menubody {
     margin: 0;
     padding: 0;
     background: #fff7e6;
 }
 
-.wrapper{
+.menubody .wrapper{
     height: 1000px;
     width: 100%;
     margin: 0 auto;
 }
 
-h1 {
+.menubody h1 {
     text-align: center;
     font-weight: 700;
 }
 
-.chose {
+.menubody  .chose {
     border: 1px solid #ffffff;
     height: auto;
     width: 20%;
@@ -25,7 +25,7 @@ h1 {
     background: white;
     border-radius: 10px;
 }
-p.menu {
+.menubody  p.menu {
     text-align: center;
     color: white;
     background: #4d2600;
@@ -33,27 +33,27 @@ p.menu {
     height: 50px;
     border-radius: 10px 10px 0 0;
 }
-ul.danhmuc {
+.menubody  ul.danhmuc {
     padding: 0;
     margin: 0;
     list-style: none;
 }
-ul.danhmuc li {
+.menubody  ul.danhmuc li {
     margin: 5px;
     padding: 5px;
 }
-ul.danhmuc li a {
+.menubody  ul.danhmuc li a {
     text-decoration: none;
     color: #663300;
     font-weight: 700;
 }
-.underline-list li {
+.menubody .underline-list li {
     position: relative;
     display: inline-block;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
   }
   
-  .underline-list li::after {
+  .menubody  .underline-list li::after {
     content: "";
     position: absolute;
     left: 0;
@@ -66,24 +66,24 @@ ul.danhmuc li a {
     transition: transform 0.3s ease-in-out;
   }
   
-  .underline-list li:hover::after {
+  .menubody .underline-list li:hover::after {
     transform: scaleX(1);
   }
 
-.maincontent {
+  .menubody .maincontent {
     height: auto;
     width: 79%;
     margin-top: 5px;
     margin-left: 5px;
     float: right;
 }
-ul.product {
+.menubody  ul.product {
     padding: 0;
     margin: 0;
     list-style: none;
     width: 100%;
 }
-ul.product li {
+.menubody ul.product li {
     width: 20%;
     margin: 10px;
     float: left;
@@ -91,24 +91,24 @@ ul.product li {
     height: 350px;
     border-radius: 10px;
 }
-ul.product li a {
+.menubody ul.product li a {
     text-decoration: none;
 }
-ul.product li img {
+.menubody ul.product li img {
     width: 100%;
     border-radius: 10px;
 }
-p.product_list {
+.menubody p.product_list {
     text-align: center;
     color: #663300;
     font-weight: 1000;
 }
-p.price {
+.menubody p.price {
     text-align: center;
     color: #663300;
     font-weight: 1000;
 }
-.fas.fa-underline:before {
+.menubody .fas.fa-underline:before {
     content: "\0111";
     text-decoration: underline;
     font-size: 0.8em;
@@ -116,6 +116,6 @@ p.price {
     top: -0.2em;
 }
 
-.clear{
+.menubody .clear{
     clear: both;
 }

@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../../css/contract.css">
-</head>
-<body>
-    <hr border="2">
-    <img src="1.png" alt="pic" style="padding-left:50px">
+<div class="contractbody">
+<hr border="2">
+    <img src="/frontend/modules/images/Contract-1.png" alt="pic" style="padding-left:50px">
     <div class="title">
        <p style="opacity: 0.66">Tiệm bánh</p>
        <h1 class="title1">IU LÀ ĐÂY </h1>
@@ -27,7 +15,6 @@
     </div>
     
     <div class="wave-border"></div>
-
     <div class="container">
         <div class="form-container">
            <h1 style="text-align:center">Liên hệ <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></h1>
@@ -63,10 +50,8 @@
         </form>
         </div>
     </div>
-    </body>
-
     <?php
-    include("../../../Database/Config/config.php");
+    include("../../Database/Config/config.php");
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $firstname= $_POST['firstname'];
     $lastname = $_POST['lastname'];
@@ -82,5 +67,4 @@
     mysqli_close($mysqli);
   }
 ?>
-
-</html>
+</div >

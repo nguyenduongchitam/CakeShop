@@ -15,7 +15,7 @@ if(isset($_POST['insert']))
 {   
     $sql_add = "INSERT INTO `product`(`category_id`, `title`, `price`, `discount_price`, `thumbnail`, `description`,created_at,update_at) VALUES (".$category_id.",'".$title."',".$price.",".$discount_price.",'".$thumbnail."','".$description."','$created_at','$update_at')";
    mysqli_query($mysqli,$sql_add);
-   move_uploaded_file($thumbnail_temp,'images/'.$thumbnail);
+   move_uploaded_file($thumbnail_temp,'/frontend/modules/images/'.$thumbnail);
    header('Location:../index.php?action=quanlysanpham&query=none');
 }   
 mysqli_close($mysqli);

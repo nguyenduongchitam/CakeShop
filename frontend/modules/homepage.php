@@ -1,3 +1,4 @@
+<div class="homebody">
 <img src="/frontend/modules/images/1.png" alt="Homepic" width="100%" height="250">
 
 <div class="main">
@@ -74,3 +75,4 @@
     </tr>
   
 </table>
+</div>

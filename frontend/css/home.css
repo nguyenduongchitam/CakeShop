@@ -1,13 +1,13 @@
-body{
+.homebody{
     background-color: rgb(215, 231, 248);
     font-family: 'Segoe UI';
     color: rgb(61, 35, 22);
 }
-.main {
+.homebody .main {
     display: flex;
     align-items: center;   
 }
-.mainname{
+.homebody .mainname{
     flex-grow: 1;
     text-align:center;
     font-size: 250%;
@@ -16,13 +16,13 @@ body{
 
 }
 
-.item1{
+.homebody .item1{
     display: flex;
     justify-content: center;
     align-items: center;
     transition: transform 0.3s ease-in-out;
 }
-.col{
+.homebody .col{
     flex-direction: column;
     align-items: center;
     display: inline-flex;
@@ -30,12 +30,12 @@ body{
     font-size:large;
  
 }
-.slick-arrow
+.homebody .slick-arrow
 {
     font-size: 24px;
     color: rgb(61, 35, 22);
 }
-.slick-prev{
+.homebody .slick-prev{
     background-color: rgb(215, 231, 248);
     border: none;
     padding: 10px 10px;
@@ -43,34 +43,34 @@ body{
     transition: opacity 0.5s ease;
 }
 
-.slick-next{
+.homebody .slick-next{
     background-color: rgb(215, 231, 248);
     border: none;
     padding: 10px 10px;
     opacity: 0.7;
 }
-table{   
+.homebody table{   
     width: 100%;
     border: 10px dashed rgb(234, 220, 155);
     font-family: 'Segoe UI';
    
 }
-td {
+.homebody td {
     vertical-align: middle;  
 }
-.border {
+.homebody .border {
     width:23%;
     background-color: rgb(234, 220, 155);
     margin-top: 50px;
 }
-.text{ 
+.homebody .text{ 
     text-align: center;
     width:50%;
 }
-.image{
+.homebody .image{
     text-align: right;
 }
-.intext{
+.homebody .intext{
     font-size: 300%;
     font-family:cursive;
     color: rgb(118, 66, 39);

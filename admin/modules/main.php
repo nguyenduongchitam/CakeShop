@@ -22,7 +22,11 @@
         include("../modules/QuanLySanPham/list.php");
     }
     else if( $action=='quanlysanpham' && $query=='update') include("../modules/QuanLySanPham/update.php");
-
+    else if ( $action=='quanlytaikhoan' && $query=='none')
+    {
+        include("../modules/QuanLyUser/quanlyuser.php");
+        include("../modules/QuanLySanPham/list.php");
+    }
     
     else include("dashboard.php");
 ?>
