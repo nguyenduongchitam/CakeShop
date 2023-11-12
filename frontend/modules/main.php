@@ -13,6 +13,11 @@
         include("homepage.php");
 
     }
+    else if( $action=='aboutuspage' && $query=='none')
+    {
+        include("aboutuspage.php");
+
+    }
     else include("homepage.php");
 
 ?>
