@@ -6,27 +6,27 @@
 </div>
 <div class="item1">
    <div class="col">
-     <img src="/frontend/modules/images/2a.png" alt="pic" width="250" height="250" style="margin-bottom:10px">
+     <img src="../modules/images/2a.png" alt="pic" width="250" height="250" style="margin-bottom:10px">
      <i>Coconut Mousse <br> 590.000</i>
    </div>
    
    <div class="col">
-     <img src="/frontend/modules/images/2b.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
+     <img src="../modules/images/2b.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
      <i>Classic Tiramisu <br> 510.000</i>
    </div>
 
    <div class="col">
-     <img src="/frontend/modules/images/2c.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
+     <img src="../modules/images/2c.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
      <i>Raspberry Tiramisu <br> 395.000</i>
    </div>
 
    <div class="col">
-     <img src="/frontend/modules/images/2d.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
+     <img src="../modules/images/2d.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
      <i>Orange Tart <br>95.000</i>
    </div> 
 
    <div class="col">
-     <img src="/frontend/modules/images/2e.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
+     <img src="../modules/images/2e.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
      <i>Chiffon Cake <br>550.000</i>
    </div> 
 </div>
@@ -51,27 +51,27 @@
 
 <div class="item1" style = "padding-bottom: 40px">
    <div class="col">
-     <img src="/frontend/modules/images/3a.png" alt="pic" width="250" height="250" style="margin-bottom:10px">
+     <img src="../modules/images/3a.png" alt="pic" width="250" height="250" style="margin-bottom:10px">
      <i>Chocolate Kiss <br> 120.000</i>
    </div>
    
    <div class="col">
-     <img src="/frontend/modules/images/3b.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
+     <img src="../modules/images/3b.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
      <i>Matcha Tiramisu <br> 510.000</i>
    </div>
 
    <div class="col">
-     <img src="/frontend/modules/images/3c.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
+     <img src="../modules/images/3c.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
      <i>Popcorn Cake <br> 98.000</i>
    </div>
 
    <div class="col">
-     <img src="/frontend/modules/images/3d.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
+     <img src="../modules/images/3d.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
      <i>Almond Croissant <br>60.000</i>
    </div> 
 
    <div class="col">
-     <img src="/frontend/modules/images/3e.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
+     <img src="../modules/images/3e.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
      <i>Egg Tart <br> 49.000</i>
    </div>
 </div>
@@ -96,7 +96,7 @@
           <i style="font-size: 120%"> Mỗi chiếc bánh là một câu chuyện riêng<br>với hơi thở và tinh thần chẳng thể<br>lẫn vào đâu được.</i>
         </td>
         <td class="image">
-           <img src="/frontend/modules/images/aboutus.png" alt="pic" width="520" height="300">
+           <img src="../modules/images/aboutus.png" alt="pic" width="520" height="300">
         </td>
     </tr>
   
