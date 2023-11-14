@@ -1,6 +1,11 @@
 
 <table style="width: 400px;" border="2px soild black">    
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<?php
+include("config.php");
+$sql="select * from role";
+$result= mysqli_query($mysqli,$sql);
+?>
 <form method="POST" action="../modules/QuanLyUser/insert.php">
     <tr>
         <td>Nhập email</td>
@@ -24,7 +29,13 @@
     </tr>
     <tr>
         <td>Quyền</td>
-        <td><input type="text" name="role"> </td>
+        <td>
+        <select name="user">
+          <?php while($row= mysqli_fetch_array($result)) { ?>
+            <option value="<?php echo $row['role_id'] ?>"> <?php echo $row['name'] ?></option>
+          <?php } ?>
+        </select>
+      </td>
     </tr>
     <tr>
         <td colspan="2">

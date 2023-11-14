@@ -1,8 +1,7 @@
-
 <?php
 include("config.php");
-$email = $_GET ['email'];
-$sql_select = "SELECT * from user where email=$email limit 1";
+$user_id = $_GET['user_id'];
+$sql_select = " SELECT * from `role`,user where user.role_id=role.role_id and user.user_id=$user_id";
 $sql = mysqli_query($mysqli,$sql_select);
 ?> 
 <!-- nạp dữ liệu vào ô -->
@@ -22,7 +21,7 @@ while($row= mysqli_fetch_array($sql))
     </tr>
     <tr>
         <td>Họ tên</td>
-        <td><input type="text" name="fullname"value="<?php echo $row['fullname'] ?>"></input> </td>
+        <td><input type="text" name="fullname"value="<?php echo $row['full_name'] ?>"></input> </td>
     </tr>
     <tr>
         <td><label for="phone">Số điện thoại</label></td>

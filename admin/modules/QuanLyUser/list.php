@@ -23,8 +23,8 @@ $i++;
 <td><?php echo $i?></td>
 <td><?php echo $row['email'] ?></td>
 <td><?php echo $row['phone_number']?></td>
-<td><a onclick="return del('<?php echo $row['email']?>')" href="QuanLyUser/delete.php?query=delete&email=<?php echo $row['email'] ?>" >Xóa </a></td>
-<td><a href="?action=quanlytaikhoan&query=update&email=<?php echo $row['email'] ?>"> Sửa </a></td>
+<td><a onclick="return del('<?php echo $row['email']?>')" href="QuanLyUser/delete.php?query=delete&user_id=<?php echo $row['user_id'] ?>" >Xóa </a></td>
+<td><a href="?action=quanlytaikhoan&query=update&user_id=<?php echo $row['user_id'] ?>"> Sửa </a></td>
 </tr>
 <?php
 }
