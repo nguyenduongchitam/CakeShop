@@ -1,11 +1,11 @@
 <?php
     include("/xampp/htdocs/CakeShop/Database/Config/config.php");
     $sql1="select * from category";
-$resut1= mysqli_query($mysqli,$sql1);
+$result1= mysqli_query($mysqli,$sql1);
 if(isset($_GET['id'])){ 
   $id=$_GET['id'];
   $sql2="SELECT * FROM product ,category where product.category_id=category.category_id and category.category_id=$id" ;
-  $resut2 = mysqli_query($mysqli,$sql2);
+  $result2 = mysqli_query($mysqli,$sql2);
  }
     ?>
 <div class="menubody">
@@ -17,7 +17,7 @@ if(isset($_GET['id'])){
             <ul class="danhmuc">
               <ul class="underline-list">
               <?php
-                         while ($row = mysqli_fetch_array($resut1)) {
+                         while ($row = mysqli_fetch_array($result1)) {
                        ?>
                         <li><a href="index.php?action=menupage&query=none&id=<?php echo $row['category_id'] ?>"><?php echo $row['name'] ?></a></li>
                         <br>
@@ -30,11 +30,11 @@ if(isset($_GET['id'])){
         <div class="maincontent">
             <ul class="product">
             <?php
-                          while ($row = mysqli_fetch_array($resut2)) {
+                          while ($row = mysqli_fetch_array($result2)) {
               ?>
             <li>
-                <a href="index.php?action=product&query=none&&id="<?php echo $row['product_id']?>"">
-                <img src="../../../Database/Images/<?php echo $row['thumbnail'] ?> " alt="image">
+                <a href="index.php?action=product&query=none&&id=<?php echo $row['product_id']?>">
+                <img src="../../../Database/images/<?php echo $row['thumbnail'] ?> " alt="image">
                 <p class="product_list"><?php echo $row['title'] ?> </p>
                 <P class="price"><?php echo $row['price'] ?>  <i class="fas fa-underline"></i> <i class="fas fa-shopping-cart"></i></P>
                 </a>

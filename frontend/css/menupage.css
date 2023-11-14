@@ -2,12 +2,14 @@
     margin: 0;
     padding: 0;
     background: #fff7e6;
+    font-family: 'Segoe UI';
 }
 
 .menubody .wrapper{
     height: 1000px;
     width: 100%;
     margin: 0 auto;
+    font-family: 'Segoe UI';
 }
 
 .menubody h1 {

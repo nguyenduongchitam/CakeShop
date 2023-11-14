@@ -4,6 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>trang khách hàng</title>
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+      />
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/home.css"> 
@@ -14,6 +19,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushina">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
     <?php
@@ -26,7 +33,7 @@ $resut= mysqli_query($mysqli,$sql);
   <section class="myheader">
     <div class="container fs-4 py-3 text-center">
       <div class="row">
-        <div class="col-md-3"><img src="/frontend/modules/images/Header-Logo.png" class="img-fluid logo" alt="Logo" style="max-width: 140px;"></div>
+        <div class="col-md-3"><img src="../modules/images/Header-Logo.png" class="img-fluid logo" alt="Logo" style="max-width: 140px;"></div>
         <div class="col-md-4">
           <div class="input-group mb-3">
             <input type="text" class="form-control" style="color: black;" placeholder="Tìm kiếm..." aria-label="Recipient's username" aria-describedby="button-addon2">
@@ -75,9 +82,7 @@ $resut= mysqli_query($mysqli,$sql);
                          ?>
                       </ul>
                     </li>
-                    <li class="nav-item ">
-                      <a class="nav-link active" aria-current="page" href="index.php?action=menupage&query=none">Menu page</a>
-                    </li>
+                    
                     <li class="nav-item ">
                       <a class="nav-link active" aria-current="page" href="index.php?action=aboutuspage&query=none">Abouts us</a>
                     </li>
@@ -102,10 +107,10 @@ $resut= mysqli_query($mysqli,$sql);
         <div class="container fs-4 py-3 text-center">
             <div class="row">
                 <div class="col-md-3">
-                    <img src="/frontend/modules/images/Header-Logo.png" class="img-fluid logo" alt="Logo" style="max-width: 140px;">
-                    <div><i class="bi bi-house-heart"></i><span style="font-size: 16px;"> Số 09 Trần Thái Tông, P. Dịch Vọng, Q. Cầu Giấy, TP. Hà Nội</span></div>
-                    <div><i class="bi bi-telephone"></i><span style="font-size: 16px;"> 0353780187</span></div>
-                    <div class="mailfooter"><a href="#" style="text-decoration: none; color:black;"><i class="bi bi-envelope"></i><span style="font-size: 16px;"> tiembanhhoangtube@gmail.com</span></div></a>
+                    <img src="../modules/images/Header-Logo.png" class="img-fluid logo" alt="Logo" style="max-width: 140px;">
+                    <div><i class="bi bi-house-heart"></i><span style="font-size: 16px;"> 220 Điện Biên Phủ - P.ĐaKao - Quận 1 - TP.HCM</span></div>
+                    <div><i class="bi bi-telephone"></i><span style="font-size: 16px;"> 1900 1234</span></div>
+                    <div class="mailfooter"><a href="#" style="text-decoration: none; color:black;"><i class="bi bi-envelope"></i><span style="font-size: 16px;"> iuladay@bake.com</span></div></a>
                 </div>
                 <div class="col-md-3">
                     <h2>CHÍNH SÁCH</h2>
@@ -118,7 +123,7 @@ $resut= mysqli_query($mysqli,$sql);
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <h2>CÔNG TY CỔ PHẦN BÁNH NGỌT XXX</h2>
+                    <h2>IU LÀ ĐÂY</h2>
                     <div style="font-size: 16px;">Địa chỉ tên miền: anhhoabakery.vn</div>
                     <div style="font-size: 16px;">Tên Doanh nghiệp: Công ty Cổ phần Bánh ngọt XXX</div>
                     <div style="font-size: 16px;">Trụ sở Doanh Nghiệp: Số 09 Trần Thái Tông, P. Dịch Vọng, Q. Cầu Giấy, TP. Hà Nội</div>
