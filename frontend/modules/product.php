@@ -33,8 +33,6 @@ while ($row = mysqli_fetch_array($result)) {
 </table>
 </form>
 <?php
-
-
 }
 ?>
 </div>
