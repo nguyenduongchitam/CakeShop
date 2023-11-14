@@ -4,5 +4,4 @@ $mysqli = new mysqli("localhost","root","","cakeshop");
 if ($mysqli -> connect_errno) {
   die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully";
 ?>

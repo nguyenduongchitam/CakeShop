@@ -24,15 +24,15 @@ ul.admin_list {
 .content_right
 {
     border: 2px solid black;
-    margin-right: 50px;
-    width: 70%;
+    margin-right: 10px;
+    width: 100%;
 
 }
 .content_left
 {    
     border: 2px solid black;
     padding-bottom:  200px;
-    margin-right:100px ;
+    margin-right:20px ;
     background-color: #333333;
 }
 
