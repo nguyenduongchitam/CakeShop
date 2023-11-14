@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushina">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
     <?php
@@ -25,19 +26,19 @@ $resut= mysqli_query($mysqli,$sql);
   <section class="myheader">
     <div class="container fs-4 py-3 text-center">
       <div class="row">
-        <a href="#" class="col-md-2 account"><i class="bi bi-person-circle"></i><strong> Tài Khoản</strong></a>
-        <div class="col-md-3">
+        <div class="col-md-3"><img src="/frontend/modules/images/Header-Logo.png" class="img-fluid logo" alt="Logo" style="max-width: 140px;"></div>
+        <div class="col-md-4">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Tìm kiếm..." aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="bi bi-search-heart"></i></button>
+            <input type="text" class="form-control" style="color: black;" placeholder="Tìm kiếm..." aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" style="color: black;" type="button" id="button-addon2"><i class="bi bi-search-heart"></i></button>
           </div>
         </div>
-        <div class="col-md-2"><img src="/frontend/modules/images/Header-Logo.png" class="img-fluid logo" alt="Logo" style="max-width: 140px;"></div>
         <div class="col-md-3">
           <i class="bi bi-telephone">
           </i><strong> 0353780187</strong>
         </div>
-        <div class="col-md-2">
+        <a href="#" class="col-md-1 account bigger-icon"><i class="bi bi-person-circle"></i></a>
+        <div class="col-md-1">
           <button type="button" class="btn position-relative" style="padding-top: 0;">
             <i class="bi bi-bag-heart bigger-icon"></i>
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="margin-bottom: 0;">
@@ -68,7 +69,7 @@ $resut= mysqli_query($mysqli,$sql);
                       <?php
                          while ($row = mysqli_fetch_array($resut)) {
                        ?>
-                        <li><a class="dropdown-item" href="#"> <?php echo $row['name'] ?></a></li>
+                        <li><a class="dropdown-item" href="index.php?action=menupage&query=none&id=<?php echo $row['category_id'] ?>"> <?php echo $row['name'] ?></a></li>
                         <?php
                          }
                          ?>

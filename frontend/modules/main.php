@@ -8,6 +8,7 @@
         $action='';
         $query='';
     }
+
     if( $action=='homepage' && $query=='none')
     {
         include("homepage.php");
@@ -21,9 +22,9 @@
     {
         include("contractpage.php");
     }
-    else if( $action=='menupage' && $query=='none')
-    {
-        include("menupage.php");
+    else if( $action=='menupage')
+    {   
+        if( $query=='none') include("menupage.php");
     }
     else include("homepage.php");
 

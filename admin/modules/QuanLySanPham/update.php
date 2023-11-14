@@ -30,7 +30,7 @@ $resut=mysqli_query($mysqli,$sql_category);
                     <tr>
                         <td>Nhập link hình ảnh</td>
                         <td>
-                        <img src="images/<?php echo $row['thumbnail'] ?>"  style="width: 100px">
+                        <img src="../../../Database/Images/<?php echo $row['thumbnail'] ?>"  style="width: 100px">
                         <br>
                         <input type="file" name="thumbnail" class="form-control" ></td>
                         <?php $thumbnailold=$row['thumbnail'] ?>
@@ -66,7 +66,7 @@ if (isset($_POST['update']))
     if ($_FILES['thumbnail']['error'] === 0) {
         $thumbnail = $_FILES['thumbnail']['name'];
         $thumbnail_temp = $_FILES['thumbnail']['tmp_name'];
-        move_uploaded_file($thumbnail_temp,'images/'.$thumbnail);
+        move_uploaded_file($thumbnail_temp,'../../../Database/Images/'.$thumbnail);
     
     } else $thumbnail= $thumbnailold;
 
