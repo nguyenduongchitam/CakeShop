@@ -33,7 +33,7 @@ if(isset($_GET['id'])){
                           while ($row = mysqli_fetch_array($resut2)) {
               ?>
             <li>
-                <a href="">
+                <a href="index.php?action=product&query=none&&id="<?php echo $row['product_id']?>"">
                 <img src="../../../Database/Images/<?php echo $row['thumbnail'] ?> " alt="image">
                 <p class="product_list"><?php echo $row['title'] ?> </p>
                 <P class="price"><?php echo $row['price'] ?>  <i class="fas fa-underline"></i> <i class="fas fa-shopping-cart"></i></P>

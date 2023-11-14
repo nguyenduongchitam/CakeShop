@@ -93,11 +93,9 @@ $resut= mysqli_query($mysqli,$sql);
       </section>
     </div>
   </section>
-
  <?php
  include("main.php");
- ?>
- 
+ ?> 
   </body>
 
   <section class="myfooter" style="background: bisque;">

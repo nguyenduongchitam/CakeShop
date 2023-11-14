@@ -26,6 +26,10 @@
     {   
         if( $query=='none') include("menupage.php");
     }
-    else include("homepage.php");
+    else if( $action=='product')
+    {   
+        if( $query=='none') include("product.php");
+    }
+    else include("homepage.php");   
 
 ?>
