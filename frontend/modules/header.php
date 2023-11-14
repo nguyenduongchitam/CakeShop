@@ -11,13 +11,13 @@
 </head>
 
 <body>
-  <section class="myheader" style="background-color: #fff7e6;">
-    <div class="container fs-4 py-3 text-center">
+  <section class="myheader" style="background-color: #ffbdc4;">
+    <div class=" container fs-4 py-3 text-center headerig">
       <div class="row">
         <div class="col-md-3"><img src="../modules/homepage/2e.png" class="img-fluid logo" alt="Logo" style="max-width: 140px; height:120px"></div>
         <div class="col-md-4">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" style="color: #4d2600; font-family: cursive;" placeholder="Tìm kiếm..." aria-label="Recipient's username" aria-describedby="button-addon2">
+            <input type="text" class="form-control" style="color: #4d2600; font-family: Segoe UI;" placeholder="Tìm kiếm..." aria-label="Recipient's username" aria-describedby="button-addon2">
             <button class="btn btn-outline-secondary" style="color: #4d2600;" type="button" id="button-addon2"><i class="bi bi-search-heart"></i></button>
           </div>
         </div>
@@ -38,9 +38,9 @@
         </div> -->
       </div>
       <section class="menu">
-        <div class="container pt-3">
+        <div class="container pt-3 navbarne">
           <div class="row">
-            <nav class="navbar navbar-expand-lg">
+            <nav class="navbar navbar-expand-lg" style="padding-top: 0; padding-bottom: 0">
               <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -48,10 +48,10 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                   <ul class="navbar-nav ps-3 navbarr">
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Trang Chủ</a>
+                      <a class="nav-link active" aria-current="page" href="#" style="padding-top: 0;">Trang Chủ</a>
                     </li>
                     <li class="nav-item dropdown">
-                      <a class="nav-link" href="#" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
+                      <a class="nav-link" href="#" data-bs-toggle="dropdown" aria-expanded="false" style="color: #4d2600; padding-top: 0;">
                         Sản Phẩm
                       </a>
                       <ul class="dropdown-menu">
@@ -61,13 +61,13 @@
                       </ul>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Menu Page</a>
+                      <a class="nav-link active" aria-current="page" href="#" style="padding-top: 0;">Menu Page</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">About Us</a>
+                      <a class="nav-link active" aria-current="page" href="#" style="padding-top: 0;">About Us</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Liên Hệ</a>
+                      <a class="nav-link active" aria-current="page" href="#" style="padding-top: 0;">Liên Hệ</a>
                     </li>
                   </ul>
                 </div>
