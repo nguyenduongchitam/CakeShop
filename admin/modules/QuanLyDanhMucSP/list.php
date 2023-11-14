@@ -1,7 +1,7 @@
 <?php
 include("config.php");
 $sql="select * from category";
-$resut= mysqli_query($mysqli,$sql);
+$result= mysqli_query($mysqli,$sql);
 ?>
 
 <div class="container">
@@ -22,7 +22,7 @@ $resut= mysqli_query($mysqli,$sql);
     width: 100%;">
                 <?php
                 $i = 0;
-                while ($row = mysqli_fetch_array($resut)) {
+                while ($row = mysqli_fetch_array($result)) {
                     $i++;
                 ?>
                     <tr>

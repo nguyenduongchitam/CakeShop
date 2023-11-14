@@ -1,6 +1,6 @@
 <div class="contractbody">
 <hr border="2">
-    <img src="/frontend/modules/images/Contract-1.png" alt="pic" style="padding-left:50px">
+    <img src="../modules/images/Contract-1.png" alt="pic" style="padding-left:50px">
     <div class="title">
        <p style="opacity: 0.66">Tiệm bánh</p>
        <h1 class="title1">IU LÀ ĐÂY </h1>

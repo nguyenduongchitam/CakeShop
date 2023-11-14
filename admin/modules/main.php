@@ -15,19 +15,36 @@
         include("../modules/QuanLyDanhMucSP/quanlydanhmucSP.php");
         include("../modules/QuanLyDanhMucSP/list.php");
     }
-    else if( $action=='quanlydanhmucsanpham' && $query=='update') include("../modules/QuanLyDanhMucSP/update.php");
-    else if ( $action=='quanlysanpham' && $query=='none')
+    else if( $action=='quanlydanhmucsanpham' && $query=='update') 
+    include("../modules/QuanLyDanhMucSP/update.php");
+     else 
+     if( $action=='quanlysanpham' && $query=='none')
     {
         include("../modules/QuanLySanPham/quanlysanpham.php");
         include("../modules/QuanLySanPham/list.php");
     }
-    else if( $action=='quanlysanpham' && $query=='update') include("../modules/QuanLySanPham/update.php");
-    else if ( $action=='quanlytaikhoan' && $query=='none')
+    else if( $action=='quanlysanpham' && $query=='update') 
+    include("../modules/QuanLySanPham/update.php");
+    else 
+     if( $action=='quanlytaikhoan' && $query=='none')
     {
         include("../modules/QuanLyUser/quanlyuser.php");
-        include("../modules/QuanLySanPham/list.php");
+        include("../modules/QuanLyUser/list.php");
     }
-    
+    else if( $action=='quanlytaikhoan' && $query=='update') 
+    include("../modules/QuanLyUser/update.php");
+    else if( $action=='quanlytaikhoan' && $query=='add') 
+    include("../modules/QuanLyUser/add.php");
+    else 
+    if( $action=='quanlykhachhang' && $query=='none')
+    {
+        include("../modules/QuanLyKhachHang/XemDSKhachHang.php");
+        
+    }
+    else if( $action=='quanlyphanhoi' && $query=='none')
+    {
+        include("../modules/QuanLyPhanHoi/XemDSFeedBack.php");   
+    }
     else include("dashboard.php");
 ?>
 </div>

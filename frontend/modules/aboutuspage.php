@@ -1,19 +1,16 @@
 <div class="aboutuspage">
-  <img src="/frontend/modules/images/AboutUs.jpg" alt="image" width="100%" height="auto">
+  <img src="../modules/images/AboutUs.jpg" alt="image" width="100%" height="auto">
     <hr>
     <hr>
     <hr>
     <div class="wrapper">
     <div class="infor">
         <p class="one">About Us</p>
-        <p class="two"><i>Iu Là Đây</i></p>
+        <p class="two">IU LÀ ĐÂY</p>
     </div>
     <div class="feel">
         <p><i>Chúng mình - những thợ làm bánh thủ công luôn cố gắng tôn trọng tính nguyên bản, tự nhiên và chân thật nhất của từng nguyên liệu. Để dù có những bất toàn trong mỗi thứ riêng rẽ nhưng sau cùng vẫn tạo nên một ổ bánh hài hòa và ngon nhất.</i></p>
         <p><i>Vậy nên, bất cứ khi nào bạn cần những hương vị mộc mạc, tinh tế nhưng chẳng kém phần hấp dẫn, hãy đến với chúng mình. Luôn có rất nhiều điều đặc biệt đợi bạn khám phá đó nhé!</i></p>
-        <p></p>
-        <p></p>
-        <p></p>
     </div>
     <hr>
     <div class="map">

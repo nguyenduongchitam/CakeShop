@@ -1,18 +1,19 @@
 .homebody{
-    background-color: rgb(215, 231, 248);
+    background-color: #fff7e6;
     font-family: 'Segoe UI';
-    color: rgb(61, 35, 22);
+    color: #4d2600;
 }
 .homebody .main {
     display: flex;
     align-items: center;   
+    padding-top: 40px;
 }
 .homebody .mainname{
     flex-grow: 1;
     text-align:center;
     font-size: 250%;
     font-family:cursive;
-    color: rgb(118, 66, 39);
+    color: #4d2600;
 
 }
 
@@ -33,18 +34,18 @@
 .homebody .slick-arrow
 {
     font-size: 24px;
-    color: rgb(61, 35, 22);
+    color: #4d2600;
 }
-.homebody .slick-prev{
-    background-color: rgb(215, 231, 248);
+.slick-prev{
+    background-color: #fff7e6;
     border: none;
     padding: 10px 10px;
     opacity: 0.7;
     transition: opacity 0.5s ease;
 }
 
-.homebody .slick-next{
-    background-color: rgb(215, 231, 248);
+.slick-next{
+    background-color: #fff7e6;
     border: none;
     padding: 10px 10px;
     opacity: 0.7;
@@ -73,5 +74,5 @@
 .homebody .intext{
     font-size: 300%;
     font-family:cursive;
-    color: rgb(118, 66, 39);
+    color: #4d2600;
 }
