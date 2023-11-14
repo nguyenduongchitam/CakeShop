@@ -8,13 +8,18 @@
 
 .account {
     text-decoration: none;
-    color: black;
+    color: #4d2600;
+}
+
+.account:hover {
+    color: #4d2600;
 }
 
 .navbarr li:hover .dropdown-menu {
     display: block;
     max-height: 200px;
     background-color: pink;
+    top: 55px;
 }
 
 .dropdown-menu a:hover {
@@ -24,16 +29,46 @@
 .dropdown-menu {
     overflow: hidden;
     max-height: 0;
-    -webkit-transition: all 0.5s ease-out;
+    /* -webkit-transition: all 0.5s ease-out; */
 }
 
 .nav-item {
-    padding-left: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
+.navbarr {
+    font-family: cursive;
+    color: #4d2600;
+}
 
+/* .navbarr li:hover {
+    background-color: palevioletred;
+    border-radius: 16px;
+}
+ */
 
+ .nav-link::after{
+    content:'';
+    height: 2.5px;
+    border-radius: 2px;
+    width: 100%;
+    background-color: #4d2600;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    opacity: 0;
+    transition: 0.8s;
+    pointer-events: none;
+ }
 
+.nav-link {
+    position: relative;
+}
+
+.nav-link:hover::after{
+    opacity: 1;
+}
 
 
 

@@ -11,35 +11,36 @@
 </head>
 
 <body>
-  <section class="myheader">
+  <section class="myheader" style="background-color: #fff7e6;">
     <div class="container fs-4 py-3 text-center">
       <div class="row">
-        <div class="col-md-3"><img src="../modules/homepage/2e.png" class="img-fluid logo" alt="Logo" style="max-width: 140px;"></div>
+        <div class="col-md-3"><img src="../modules/homepage/2e.png" class="img-fluid logo" alt="Logo" style="max-width: 140px; height:120px"></div>
         <div class="col-md-4">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" style="color: black;" placeholder="Tìm kiếm..." aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" style="color: black;" type="button" id="button-addon2"><i class="bi bi-search-heart"></i></button>
+            <input type="text" class="form-control" style="color: #4d2600; font-family: cursive;" placeholder="Tìm kiếm..." aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" style="color: #4d2600;" type="button" id="button-addon2"><i class="bi bi-search-heart"></i></button>
           </div>
         </div>
         <div class="col-md-3">
-          <i class="bi bi-telephone">
-          </i><strong> 0353780187</strong>
+          <i class="bi bi-telephone" style="color: #4d2600;"></i>
+          <strong style="color: #4d2600;"> 0353780187</strong>
         </div>
         <a href="#" class="col-md-1 account bigger-icon"><i class="bi bi-person-circle"></i></a>
-        <div class="col-md-1">
-          <button type="button" class="btn position-relative" style="padding-top: 0;">
+        <a href="#" class="col-md-1 account bigger-icon"><i class="bi bi-bag-heart bigger-icon"></i></a>
+        <!-- <div class="col-md-1">
+          <button type="button" class="btn position-relative" style="padding-top: 0; color: #4d2600;">
             <i class="bi bi-bag-heart bigger-icon"></i>
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="margin-bottom: 0;">
               99+
               <span class="visually-hidden">items</span>
             </span>
           </button>
-        </div>
+        </div> -->
       </div>
       <section class="menu">
         <div class="container pt-3">
           <div class="row">
-            <nav class="navbar navbar-expand-lg" style="background-color: bisque;">
+            <nav class="navbar navbar-expand-lg">
               <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -51,7 +52,7 @@
                     </li>
                     <li class="nav-item dropdown">
                       <a class="nav-link" href="#" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
-                        Bánh
+                        Sản Phẩm
                       </a>
                       <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Bánh Sinh Nhật A</a></li>
@@ -60,31 +61,14 @@
                       </ul>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Bla Bla Blaaaaaaa</a>
+                      <a class="nav-link active" aria-current="page" href="#">Menu Page</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link active" aria-current="page" href="#">About Us</a>
                     </li>
-                    <!-- <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Bánh Mì & Bánh Mặn
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Bánh Mì Vip</a></li>
-                        <li><a class="dropdown-item" href="#">Bánh Mì F2P</a></li>
-                        <li><a class="dropdown-item" href="#">Bánh Thịt Bò</a></li>
-                      </ul>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Liên Hệ</a>
                     </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Bánh Ngọt
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Bánh Mousse</a></li>
-                        <li><a class="dropdown-item" href="#">Bánh Donut</a></li>
-                        <li><a class="dropdown-item" href="#">Bánh Quy</a></li>
-                      </ul>
-                    </li> -->
                   </ul>
                 </div>
               </div>
@@ -97,3 +81,13 @@
 </body>
 
 </html>
+
+<ul class="dropdown-menu">
+  <?php
+  while ($row = mysqli_fetch_assoc($$result)) {
+  ?>
+    <li><?php echo $row['name']; ?></li>
+</ul>
+<?php
+  }
+?>

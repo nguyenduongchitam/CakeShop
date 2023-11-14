@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <section class="myfooter" style="background: bisque;">
+    <section class="myfooter" style="background: bisque; color: #4d2600; font-family: cursive;">
         <div class="container fs-4 py-3 text-center">
             <div class="row">
                 <div class="col-md-3">
@@ -23,11 +23,11 @@
                 <div class="col-md-3">
                     <h2>CHÍNH SÁCH</h2>
                     <ul>
-                        <li><a href="#" style="font-size: 18px;">Chính sách và quy định chung</a></li>
-                        <li><a href="#" style="font-size: 18px;">Chính sách giao dịch, thanh toán</a></li>
-                        <li><a href="#" style="font-size: 18px;">Chính sách đổi trả</a></li>
-                        <li><a href="#" style="font-size: 18px;">Chính sách bảo mật</a></li>
-                        <li><a href="#" style="font-size: 18px;">Chính sách vận chuyển</a></li>
+                        <li><a href="#" style="font-size: 18px;" class="chinhsach">Chính sách và quy định chung</a></li>
+                        <li><a href="#" style="font-size: 18px;" class="chinhsach">Chính sách giao dịch, thanh toán</a></li>
+                        <li><a href="#" style="font-size: 18px;" class="chinhsach">Chính sách đổi trả</a></li>
+                        <li><a href="#" style="font-size: 18px;" class="chinhsach">Chính sách bảo mật</a></li>
+                        <li><a href="#" style="font-size: 18px;" class="chinhsach">Chính sách vận chuyển</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
@@ -42,10 +42,10 @@
                 <div class="col-md-2">
                     <h2>FOLLOW US</h2>
                     <ul>
-                        <li><a href="#" style="font-size: 18px;"><i class="bi bi-facebook"></i> Facebook</a></li>
-                        <li><a href="#" style="font-size: 18px;"><i class="bi bi-instagram"></i> Instagram</a></li>
-                        <li><a href="#" style="font-size: 18px;"><i class="bi bi-twitter-x"></i> Twitter</a></li>
-                        <li><a href="#" style="font-size: 18px;"><i class="bi bi-youtube"></i> Youtube</a></li>
+                        <li><a href="#" style="font-size: 18px; color: #4d2600; font-family: cursive;"><i class="bi bi-facebook"></i> Facebook</a></li>
+                        <li><a href="#" style="font-size: 18px; color: #4d2600; font-family: cursive;"><i class="bi bi-instagram"></i> Instagram</a></li>
+                        <li><a href="#" style="font-size: 18px; color: #4d2600; font-family: cursive;"><i class="bi bi-twitter-x"></i> Twitter</a></li>
+                        <li><a href="#" style="font-size: 18px; color: #4d2600; font-family: cursive;"><i class="bi bi-youtube"></i> Youtube</a></li>
                     </ul>
                 </div>
             </div>
