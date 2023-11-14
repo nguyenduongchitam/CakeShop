@@ -43,7 +43,7 @@
                 </div>
             </div>
             <input type="submit" class="form-submit" value="Đăng nhập" name="dangnhap">
-            <input type="submit" class="form-register" value="Đăng ký">
+            <input type="submit" class="form-submit" value="Đăng ký">
             <div class="support">Trở về</div>
             <div class="support">Quên mật khẩu</div>
         </form>
