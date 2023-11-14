@@ -1,7 +1,7 @@
 body{
-    background-color: rgb(215, 231, 248);
+    background-color: #fff7e6;
     font-family: 'Segoe UI';
-    color: rgb(61, 35, 22);
+    color: #4d2600;
 }
 .main {
     display: flex;
@@ -12,7 +12,7 @@ body{
     text-align:center;
     font-size: 250%;
     font-family:cursive;
-    color: rgb(118, 66, 39);
+    color: #4d2600;
 
 }
 
@@ -33,10 +33,10 @@ body{
 .slick-arrow
 {
     font-size: 24px;
-    color: rgb(61, 35, 22);
+    color: #4d2600;
 }
 .slick-prev{
-    background-color: rgb(215, 231, 248);
+    background-color: #fff7e6;
     border: none;
     padding: 10px 10px;
     opacity: 0.7;
@@ -44,7 +44,7 @@ body{
 }
 
 .slick-next{
-    background-color: rgb(215, 231, 248);
+    background-color: #fff7e6;
     border: none;
     padding: 10px 10px;
     opacity: 0.7;
@@ -73,5 +73,9 @@ td {
 .intext{
     font-size: 300%;
     font-family:cursive;
-    color: rgb(118, 66, 39);
+    color: #4d2600;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 4cf4d172d90eaa900fab31ca5fdcad32ced3ca46
