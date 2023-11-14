@@ -41,7 +41,8 @@
                     <th style="border-bottom: solid thin;" class="support"><h4 style="font-weight: bolder;">TẠO TÀI KHOẢN</h4></th>
                     <tr><td><input type="text" class="acount" placeholder="Họ Tên" name="hovaten"></td></tr>
                     <tr><td><input type="text" class="acount" placeholder="Email" name="email"></td></tr>
-                    <tr><td><input type="text" class="acount" placeholder="Mật khẩu" name="matkhau"></td></tr>
+                    <tr><td><input type="password" class="acount" placeholder="Mật khẩu" name="matkhau"></td></tr>
+                    <tr><td><input type="password" class="acount" placeholder="Mật khẩu" name="matkhau"></td></tr>
                     <tr><td><input type="text" class="acount" placeholder="Số điện thoại" name="phone_number"></td></tr>
                     <tr><td><input type="text" class="acount" placeholder="Địa chỉ" name="address"></td></tr>
                     <tr><td><button type="submit" class="acount" id="submit" name="dangky">Đăng ký</button></td></tr>

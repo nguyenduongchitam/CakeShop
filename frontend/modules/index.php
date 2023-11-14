@@ -26,7 +26,7 @@
     <?php
     include("/xampp/htdocs/CakeShop/Database/Config/config.php");
     $sql="select * from category";
-$resut= mysqli_query($mysqli,$sql);
+$result= mysqli_query($mysqli,$sql);
     ?>
      <head>
   <body>
@@ -66,7 +66,7 @@ $resut= mysqli_query($mysqli,$sql);
                       </a>
                       <ul class="dropdown-menu">
                       <?php
-                         while ($row = mysqli_fetch_array($resut)) {
+                         while ($row = mysqli_fetch_array($result)) {
                        ?>
                         <li><a class="dropdown-item" href="index.php?action=menupage&query=none&id=<?php echo $row['category_id'] ?>"> <?php echo $row['name'] ?></a></li>
                         <?php

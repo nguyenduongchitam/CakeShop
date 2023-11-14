@@ -35,6 +35,16 @@
     include("../modules/QuanLyUser/update.php");
     else if( $action=='quanlytaikhoan' && $query=='add') 
     include("../modules/QuanLyUser/add.php");
+    else 
+    if( $action=='quanlykhachhang' && $query=='none')
+    {
+        include("../modules/QuanLyKhachHang/XemDSKhachHang.php");
+        
+    }
+    else if( $action=='quanlyphanhoi' && $query=='none')
+    {
+        include("../modules/QuanLyPhanHoi/XemDSFeedBack.php");   
+    }
     else include("dashboard.php");
 ?>
 </div>
