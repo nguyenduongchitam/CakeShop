@@ -15,19 +15,8 @@
         include("../modules/QuanLyDanhMucSP/quanlydanhmucSP.php");
         include("../modules/QuanLyDanhMucSP/list.php");
     }
-    else if( $action=='quanlydanhmucsanpham' && $query=='update') include("../modules/QuanLyDanhMucSP/update.php");
-    else if ( $action=='quanlysanpham' && $query=='none')
-    {
-        include("../modules/QuanLySanPham/quanlysanpham.php");
-        include("../modules/QuanLySanPham/list.php");
-    }
-    else if( $action=='quanlysanpham' && $query=='update') include("../modules/QuanLySanPham/update.php");
-    else if ( $action=='quanlytaikhoan' && $query=='none')
-    {
-        include("../modules/QuanLyUser/quanlyuser.php");
-        include("../modules/QuanLySanPham/list.php");
-    }
-    
+    else if( $action=='quanlydanhmucsanpham' && $query=='update') 
+    include("../modules/QuanLyDanhMucSP/update.php");
     else include("dashboard.php");
 ?>
 </div>
