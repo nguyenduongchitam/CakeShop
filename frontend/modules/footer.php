@@ -11,14 +11,13 @@
 </head>
 
 <body>
-    <section class="myfooter" style="background: bisque; color: #4d2600; font-family: cursive;">
+    <section class="myfooter" style="background-color: #b8e3ff; color: #4d2600; font-family: Segoe UI;">
         <div class="container fs-4 py-3 text-center">
             <div class="row">
                 <div class="col-md-3">
                     <img src="../../frontend/modules/homepage/2e.png" class="img-fluid logo" alt="Logo" style="max-width: 140px;">
                     <div><i class="bi bi-house-heart"></i><span style="font-size: 16px;"> Số 09 Trần Thái Tông, P. Dịch Vọng, Q. Cầu Giấy, TP. Hà Nội</span></div>
                     <div><i class="bi bi-telephone"></i><span style="font-size: 16px;"> 0353780187</span></div>
-                    <div class="mailfooter"><a href="#" style="text-decoration: none; color:black;"><i class="bi bi-envelope"></i><span style="font-size: 16px;"> tiembanhhoangtube@gmail.com</span></div></a>
                 </div>
                 <div class="col-md-3">
                     <h2>CHÍNH SÁCH</h2>
@@ -42,10 +41,8 @@
                 <div class="col-md-2">
                     <h2>FOLLOW US</h2>
                     <ul>
-                        <li><a href="#" style="font-size: 18px; color: #4d2600; font-family: cursive;"><i class="bi bi-facebook"></i> Facebook</a></li>
-                        <li><a href="#" style="font-size: 18px; color: #4d2600; font-family: cursive;"><i class="bi bi-instagram"></i> Instagram</a></li>
-                        <li><a href="#" style="font-size: 18px; color: #4d2600; font-family: cursive;"><i class="bi bi-twitter-x"></i> Twitter</a></li>
-                        <li><a href="#" style="font-size: 18px; color: #4d2600; font-family: cursive;"><i class="bi bi-youtube"></i> Youtube</a></li>
+                        <li><a href="#" style="font-size: 18px; color: #4d2600; font-family: Segoe UI;"><i class="bi bi-facebook"></i> iuladay</a></li>
+                        <li class="mailfooter"><a href="#" style="font-size: 18px; color: #4d2600; font-family: Segoe UI;"><i class="bi bi-envelope"></i><span style="font-size: 16px;"> iuladay@bake.com</span></li></a>
                     </ul>
                 </div>
             </div>
