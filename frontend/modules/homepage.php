@@ -113,7 +113,7 @@
           <i style="font-size: 120%"> Mỗi chiếc bánh là một câu chuyện riêng<br>với hơi thở và tinh thần chẳng thể<br>lẫn vào đâu được.</i>
         </td>
         <td class="image">
-           <img src="/frontend/modules/images/aboutus.png" alt="pic" width="520" height="300">
+           <img src="../modules/images/aboutus.png" alt="pic" width="520" height="300">
         </td>
     </tr>
   

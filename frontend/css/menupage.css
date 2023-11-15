@@ -25,7 +25,7 @@
     margin-left: 5px;
     float: left;
     background: white;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 .menubody  p.menu {
     text-align: center;
@@ -33,7 +33,7 @@
     background: #4d2600;
     font-weight: 1000;
     height: 50px;
-    border-radius: 10px 10px 0 0;
+    border-radius: 20px 20px 0 0;
 }
 .menubody  ul.danhmuc {
     padding: 0;
@@ -91,14 +91,14 @@
     float: left;
     background: #ffffe6;
     height: 350px;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 .menubody ul.product li a {
     text-decoration: none;
 }
 .menubody ul.product li img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 .menubody p.product_list {
     text-align: center;

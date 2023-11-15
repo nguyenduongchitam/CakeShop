@@ -1,8 +1,5 @@
 <div class="aboutuspage">
-  <img src="../modules/images/AboutUs.jpg" alt="image" width="100%" height="auto">
-    <hr>
-    <hr>
-    <hr>
+  <img class="image" src="../modules/images/aboutus.jpg!d" alt="img" width="90%" height="auto">
     <div class="wrapper">
     <div class="infor">
         <p class="one">About Us</p>
