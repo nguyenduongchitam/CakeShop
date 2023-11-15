@@ -6,9 +6,14 @@ $fullname=$_POST['fullname'];
 $phone=$_POST['phone'];
 $address=$_POST['address'];
 $role=$_POST['role'];
-if(isset($_POST['insert']))
-{   
-    $sql_add = "INSERT INTO user(email,password,full_name, phone_number, address) VALUES ('".$email."','".$password."','".$fullname."','".$phone."','".$address."')";
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+$create_at = date("Y-m-d H:i:s");
+$update_time = date("Y-m-d H:i:s"); 
+if(isset($_POST['insert'])){  
+if (isset($_POST['selectOption'])) {
+    $selectedOption = $_POST['selectOption'];
+} 
+    $sql_add = "INSERT INTO user(email,password,full_name, phone_number, address,role_id , create_at, update_time) VALUES ('".$email."','".$password."','".$fullname."','".$phone."','".$address."','".$selectedOption."','".$create_at."', '".$update_time."')";  
    mysqli_query($mysqli,$sql_add);
    header('Location:../index.php?action=quanlytaikhoan&query=none');
 }   
