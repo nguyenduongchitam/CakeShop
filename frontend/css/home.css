@@ -6,7 +6,7 @@
 .homebody .main {
     display: flex;
     align-items: center;   
-    padding-top: 20px;
+    padding-top: 40px;
 }
 .homebody .mainname{
     flex-grow: 1;
