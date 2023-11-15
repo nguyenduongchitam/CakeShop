@@ -30,13 +30,13 @@ $result= mysqli_query($mysqli,$sql);
     ?>
      <head>
   <body>
-  <section class="myheader" style="background-color: #fff7e6;">
-    <div class="container fs-4 py-3 text-center">
+  <section class="myheader" style="background-color: #BCA37F;">
+    <div class=" container fs-4 py-3 text-center headerig">
       <div class="row">
-        <div class="col-md-3"><img src="../modules/images/Header-logo.png" class="img-fluid logo" alt="Logo" style="max-width: 140px; height:120px"></div>
+        <div class="col-md-3"><img src="../modules/images/Header-logo.png" class="img-fluid logo" alt="Logo" style="max-width: 100px; height:80px"></div>
         <div class="col-md-4">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" style="color: #4d2600; font-family: cursive;" placeholder="Tìm kiếm..." aria-label="Recipient's username" aria-describedby="button-addon2">
+            <input type="text" class="form-control" style="color: #4d2600; font-family: Segoe UI;" placeholder="Tìm kiếm..." aria-label="Recipient's username" aria-describedby="button-addon2">
             <button class="btn btn-outline-secondary" style="color: #4d2600;" type="button" id="button-addon2"><i class="bi bi-search-heart"></i></button>
           </div>
         </div>
@@ -44,8 +44,8 @@ $result= mysqli_query($mysqli,$sql);
           <i class="bi bi-telephone" style="color: #4d2600;"></i>
           <strong style="color: #4d2600;"> 0353780187</strong>
         </div>
-        <a href="#" class="col-md-1 account bigger-icon"><i class="bi bi-person-circle"></i></a>
-        <a href="#" class="col-md-1 account bigger-icon"><i class="bi bi-bag-heart bigger-icon"></i></a>
+        <a href="index.php?action=sign-in&query=none" class="col-md-1 account bigger-icon"><i class="bi bi-person-circle"></i></a>
+        <a href="cart.php" class="col-md-1 account bigger-icon"><i class="bi bi-bag-heart bigger-icon"></i></a>
       </div>
       <section class="menu">
         <div class="container pt-3">
