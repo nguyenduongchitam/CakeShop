@@ -14,7 +14,6 @@ CREATE TABLE `User` (
   `create_at` datetime,
   `update_at` datetime
 );  
-
 CREATE TABLE `Category` (
   `category_id` int PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(30)
@@ -81,7 +80,7 @@ ALTER TABLE `Order` ADD FOREIGN KEY (`user_id`) REFERENCES `User` (`user_id`);
 INSERT INTO `role`(`role_id`, `name`) VALUES (1,'Admin');
 INSERT INTO `role`(`role_id`, `name`) VALUES (2,'Khách hàng');
 
-INSERT INTO `user`(`full_name`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('admin','admin',1,now(),now());
+INSERT INTO `user`(`full_name`, `email`,`password`, `role_id`, `create_at`,`update_at`) VALUES ('admin','admin','admin',1,now(),now());
 INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Văn A','A@gmail.com','1234567','HCM','123456',2,now(),now());
 INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Anh B','B@gmail.com','1234567','HCM','123456',2,now(),now());
 INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Thị C','C@gmail.com','1234567','HCM','123456',2,now(),now());

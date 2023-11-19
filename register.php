@@ -41,6 +41,7 @@
             $matkhau = $_POST['matkhau'];
             $sodienthoai = $_POST['phone_number'];
             $diachi = $_POST['address'];
+            
             $sql_user = mysqli_query($mysqli,"INSERT INTO user(full_name,email,password,phone_number,address,role_id,create_at,update_time) VALUE('".$tenkhachhang."',
             '".$email."','".$matkhau."','".$sodienthoai."','".$diachi."',1,'".$created_at."','".$update_at."')");
             if($sql_user){
