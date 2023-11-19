@@ -1,3 +1,10 @@
+<?php
+    include("../../Database/Config/config.php");
+    $sql1="select * from product where category_id=1";
+    $result1= mysqli_query($mysqli,$sql1);
+    $sql2="select * from product where category_id=2";
+    $result2= mysqli_query($mysqli,$sql2);
+    ?>
 <div class="homebody">
   <div class = "homepagepic">
 <img src="../modules/images/headerhomepage1.png" alt="Homepic" width="100%" height="250">
@@ -19,33 +26,21 @@
 <script src="../modules/js/roll.js"></script>
 
 <div class="main">
-    <h1 class="mainname">New-in <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></h1>
+    <h1 class="mainname">Bánh ngọt <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></h1>
 </div>
 <div class="item1">
-   <div class="col">
-     <img src="../modules/images/2a.png" alt="pic" width="250" height="250" style="margin-bottom:10px">
-     <i>Coconut Mousse <br> 590.000</i>
-   </div>
-   
-   <div class="col">
-     <img src="../modules/images/2b.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
-     <i>Classic Tiramisu <br> 510.000</i>
-   </div>
-
-   <div class="col">
-     <img src="../modules/images/2c.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
-     <i>Raspberry Tiramisu <br> 395.000</i>
-   </div>
-
-   <div class="col">
-     <img src="../modules/images/2d.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
-     <i>Orange Tart <br>95.000</i>
-   </div> 
-
-   <div class="col">
-     <img src="../modules/images/2e.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
-     <i>Chiffon Cake <br>550.000</i>
-   </div> 
+   <?php
+      while ($row = mysqli_fetch_array($result1)) {
+      ?>
+      <div class="col">
+        <a href="index.php?action=product&query=none&id=<?php echo $row['product_id']?>&category_id=<?php echo $row['category_id']?>">
+        <img src="../../../Database/images/<?php echo $row['thumbnail'] ?> " alt="pic" width="250" height="250" style="margin-bottom:10px">
+          <i><?php echo $row['title'] ?> <br> <?php echo $row['price'] ?> </i>
+         </a>
+        </div>
+          <?php
+         }
+        ?> 
 </div>
 <script
       type="text/javascript"
@@ -67,30 +62,18 @@
 </div>
 
 <div class="item1" style = "padding-bottom: 40px">
-   <div class="col">
-     <img src="../modules/images/3a.png" alt="pic" width="250" height="250" style="margin-bottom:10px">
-     <i>Chocolate Kiss <br> 120.000</i>
-   </div>
-   
-   <div class="col">
-     <img src="../modules/images/3b.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
-     <i>Matcha Tiramisu <br> 510.000</i>
-   </div>
-
-   <div class="col">
-     <img src="../modules/images/3c.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
-     <i>Popcorn Cake <br> 98.000</i>
-   </div>
-
-   <div class="col">
-     <img src="../modules/images/3d.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
-     <i>Almond Croissant <br>60.000</i>
-   </div> 
-
-   <div class="col">
-     <img src="../modules/images/3e.png" alt="pic" width="250" height="250" style="margin-bottom:10px" >
-     <i>Egg Tart <br> 49.000</i>
-   </div>
+     <?php
+      while ($row = mysqli_fetch_array($result2)) {
+      ?>
+      <div class="col">
+        <a href="index.php?action=product&query=none&id=<?php echo $row['product_id']?>&category_id=<?php echo $row['category_id']?>">
+        <img src="../../../Database/images/<?php echo $row['thumbnail'] ?> " alt="pic" width="250" height="250" style="margin-bottom:10px">
+          <i><?php echo $row['title'] ?> <br> <?php echo $row['price'] ?> </i>
+         </a>
+        </div>
+          <?php
+         }
+        ?> 
 </div>
 <script
       type="text/javascript"

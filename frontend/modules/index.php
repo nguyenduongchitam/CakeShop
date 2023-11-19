@@ -4,17 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>trang khách hàng</title>
-    <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-      />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/home.css"> 
     <link rel="stylesheet" href="../css/aboutuspage.css">
     <link rel="stylesheet" href="../css/contract.css">
     <link rel="stylesheet" href="../css/menupage.css">  
+    <link rel="stylesheet" href="../css/sign-in.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushina">
@@ -24,9 +21,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
     <?php
-    include("/xampp/htdocs/CakeShop/Database/Config/config.php");
+   include("../../Database/Config/config.php");
     $sql="select * from category";
 $result= mysqli_query($mysqli,$sql);
+  session_start();
     ?>
      <head>
   <body>
@@ -42,10 +40,17 @@ $result= mysqli_query($mysqli,$sql);
         </div>
         <div class="col-md-3">
           <i class="bi bi-telephone" style="color: #4d2600;"></i>
-          <strong style="color: #4d2600;"> 0353780187</strong>
-        </div>
-        <a href="index.php?action=sign-in&query=none" class="col-md-1 account bigger-icon"><i class="bi bi-person-circle"></i></a>
-        <a href="cart.php" class="col-md-1 account bigger-icon"><i class="bi bi-bag-heart bigger-icon"></i></a>
+          <strong style="color: #4d2600;"> 039XXXXX</strong>
+        </div>  
+      <!--  chuyển hướng sang trang profile  -->
+        <?php if (!isset($_SESSION['dangnhap']))
+        {
+          echo ' <a href="sign-in.php"  class="col-md-1 account bigger-icon"><i class="bi bi-person-circle"></i></a>';
+        }
+        else echo '<a href="profilepage.php" class="col-md-1 account bigger-icon"><i class="bi bi-person-circle"></i></a>';
+        ?>
+        <a href="cart.php" class="col-md-1 account bigger-icon"><i class="bi bi-basket2"></i></a>
+        <a href="index.php?action=dangxuat"> Đăng xuất: <?php if(isset($_SESSION['dangnhap'])) echo $_SESSION['dangnhap']; ?></a>
       </div>
       <section class="menu">
         <div class="container pt-3">
@@ -65,6 +70,7 @@ $result= mysqli_query($mysqli,$sql);
                         Sản phẩm
                       </a>
                       <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="index.php?action=menupage&query=none">Tất cả sản phẩm</a> </li>
                       <?php
                          while ($row = mysqli_fetch_array($result)) {
                        ?>
@@ -76,7 +82,7 @@ $result= mysqli_query($mysqli,$sql);
                     </li>
                     
                     <li class="nav-item ">
-                      <a class="nav-link active" aria-current="page" href="index.php?action=aboutuspage&query=none">Abouts us</a>
+                      <a class="nav-link active" aria-current="page" href="index.php?action=aboutuspage&query=none">About us</a>
                     </li>
                     <li class="nav-item ">
                       <a class="nav-link active" aria-current="page" href="index.php?action=contractpage&query=none">Liên Hệ</a>
@@ -94,7 +100,6 @@ $result= mysqli_query($mysqli,$sql);
  include("main.php");
  ?> 
   </body>
-
   <section class="myfooter" style="background: bisque; color: #4d2600; font-family: cursive;">
         <div class="container fs-4 py-3 text-center">
             <div class="row">

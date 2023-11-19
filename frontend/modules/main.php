@@ -1,4 +1,8 @@
 <?php
+  if(isset($_GET['action'])=='dangxuat')
+  {
+    unset($_SESSION['dangnhap']);
+  }
     if(isset($_GET['action'])&&isset($_GET['query'])){
         $action=$_GET['action'];
         $query=$_GET['query'];
@@ -33,10 +37,6 @@
     else if( $action=='cart')
     {
         if($query=='none') include("cart.php");
-    }
-    else if($action=='sign-in')
-    {
-        if($query=='none') include("sign-in.php");
     }
     else include("homepage.php");   
 

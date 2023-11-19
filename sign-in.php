@@ -10,7 +10,7 @@
         if($count>0)
         {
             $_SESSION['dangnhap'] = $taikhoan;
-            header("Location:homepage.php");
+            header("Location:index.php?action=homepage&query=none");
         }
         else{
             echo '<script>alert("Tài khoản hoặc mật khẩu không đúng, vui lòng nhập lại.")<script>';

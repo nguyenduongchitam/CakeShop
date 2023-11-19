@@ -8,7 +8,7 @@ $address=$_POST['address'];
 $role=$_POST['role'];
 if(isset($_POST['insert']))
 {   
-    $sql_add = "INSERT INTO user(email,password,full_name, phone_number, address) VALUES ('".$email."','".$password."','".$fullname."','".$phone."','".$address."')";
+    $sql_add = "INSERT INTO user(email,password,full_name, phone_number, address,role_id) VALUES ('".$email."','".$password."','".$fullname."','".$phone."','".$address."',$role_id)";
    mysqli_query($mysqli,$sql_add);
    header('Location:../index.php?action=quanlytaikhoan&query=none');
 }   

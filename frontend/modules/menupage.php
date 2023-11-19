@@ -1,5 +1,5 @@
 <?php
-    include("/xampp/htdocs/CakeShop/Database/Config/config.php");
+    include("../../Database/Config/config.php");
     $sql1="select * from category";
 $result1= mysqli_query($mysqli,$sql1);
 if(isset($_GET['id'])){ 
@@ -7,6 +7,11 @@ if(isset($_GET['id'])){
   $sql2="SELECT * FROM product ,category where product.category_id=category.category_id and category.category_id=$id " ;
   $result2 = mysqli_query($mysqli,$sql2);
  }
+else 
+{
+  $sql2="SELECT * FROM product ,category where product.category_id=category.category_id " ;
+  $result2 = mysqli_query($mysqli,$sql2);
+}
     ?>
 <div class="menubody">
    <div class="wrapper">
