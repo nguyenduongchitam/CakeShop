@@ -1,13 +1,15 @@
 <?php session_start();
 
+if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
 
    if(!isset($_SESSION['cart'])) $_SESSION['cart']=  [];
    // làm rỗng giỏ hàng
    if(isset($_GET['decart'])&& $_GET['decart']==1) unset($_SESSION['cart']);
 
-   if(isset($_GET['delid'])&& $_GET['delid']>=0) 
-   {
+   if(isset($_GET['delid'])&& $_GET['delid']>=0&&isset($_GET['quantity'])) 
+   { 
     array_splice($_SESSION['cart'],$_GET['delid'],1);
+    $_SESSION['quantity_in_cart']= $_SESSION['quantity_in_cart']-$_GET['quantity'];
    }
    if(isset($_POST['add_to_cart'])&&($_POST['add_to_cart']))
    {
@@ -18,7 +20,7 @@
    $thumbnail = $_POST['thumbnail'];
     /* $description= $_POST['description']; */
     $quantity=$_POST['quantity'];
-    
+    $_SESSION['quantity_in_cart']= $_SESSION['quantity_in_cart']+$quantity;
     $ok=false;
     for ($i=0; $i <sizeof($_SESSION['cart']); $i++)
     {  
@@ -60,7 +62,7 @@
                 
                 <td>'.$tt.'</td>
                 <td>
-                <a href="cart.php?delid='.$i.'"> Xóa </a>
+                <a href="cart.php?delid='.$i.'&quantity='.$_SESSION['cart'][$i][4].'"> Xóa </a>
                 </td>
           </tr>';
        }

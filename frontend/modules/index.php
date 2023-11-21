@@ -1,3 +1,10 @@
+<?php
+   include("../../Database/Config/config.php");
+    $sql="select * from category";
+$result= mysqli_query($mysqli,$sql);
+  session_start();
+ 
+    ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -20,12 +27,6 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
-    <?php
-   include("../../Database/Config/config.php");
-    $sql="select * from category";
-$result= mysqli_query($mysqli,$sql);
-  session_start();
-    ?>
      <head>
   <body>
   <section class="myheader" style="background-color: #BCA37F;">
@@ -43,14 +44,15 @@ $result= mysqli_query($mysqli,$sql);
           <strong style="color: #4d2600;"> 039XXXXX</strong>
         </div>  
       <!--  chuyển hướng sang trang profile  -->
-        <?php if (!isset($_SESSION['dangnhap']))
-        {
-          echo ' <a href="sign-in.php"  class="col-md-1 account bigger-icon"><i class="bi bi-person-circle"></i></a>';
-        }
-        else echo '<a href="profilepage.php" class="col-md-1 account bigger-icon"><i class="bi bi-person-circle"></i></a>';
-        ?>
-        <a href="cart.php" class="col-md-1 account bigger-icon"><i class="bi bi-basket2"></i></a>
-        <a href="index.php?action=dangxuat"> Đăng xuất: <?php if(isset($_SESSION['dangnhap'])) echo $_SESSION['dangnhap']; ?></a>
+      <?php 
+ if(isset($_SESSION['dangnhap'])&&($_SESSION['dangnhap']!=""))
+     {
+      echo '<a href="profilepage.php" class="col-md-1 account bigger-icon"><i class="bi bi-person-circle"></i>'.$_SESSION['dangnhap'].'</a>';
+ }
+ else echo '<a href="sign-in.php" class="col-md-1 account bigger-icon"><i class="bi bi-person-circle"></i>Login</a>';
+      ?>
+        <a href="cart.php" class="col-md-1 account small-icon"><i class="bi bi-basket2"></i><?php if(isset($_SESSION['quantity_in_cart'])) echo $_SESSION['quantity_in_cart'];else echo 0; ?></a>
+        <a href="logout.php">Thoát</a>
       </div>
       <section class="menu">
         <div class="container pt-3">

@@ -1,4 +1,22 @@
-
+<?php
+session_start();
+    include("../../Database/Config/config.php");
+    if(isset($_POST['dangnhap'])){
+        $taikhoan = $_POST['username'];
+        $matkhau = $_POST['password'];
+        $sql = "SELECT * FROM user where email='".$taikhoan."'AND password='".$matkhau."' LIMIT 1 ";
+        $row = mysqli_query($mysqli,$sql);
+        $count = mysqli_num_rows($row);
+     if($count>0)
+        { 
+            $_SESSION['dangnhap'] = $taikhoan;
+            header("Location:index.php?action=homepage&query=none");
+        }
+        else{   
+            echo '<script> alert("Tài khoản hoặc mật khẩu không đúng, vui lòng nhập lại.") </script>';
+        }
+     } 
+?>  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,25 +64,6 @@
     });
 });
 </script> 
-<?php
-session_start();
-    include("../../Database/Config/config.php");
-    if(isset($_POST['dangnhap'])){
-        $taikhoan = $_POST['username'];
-        $matkhau = $_POST['password'];
-        $sql = "SELECT * FROM user where email='".$taikhoan."'AND password='".$matkhau."' LIMIT 1 ";
-        $row = mysqli_query($mysqli,$sql);
-        $count = mysqli_num_rows($row);
-     if($count>0)
-        { 
-            $_SESSION['dangnhap'] = $taikhoan;
-            header("Location:index.php?action=homepage&query=none");
-        }
-        else{   
-            echo '<script>alert("Tài khoản hoặc mật khẩu không đúng, vui lòng nhập lại.")<script>';
-        }
-     } 
-?>  
 </html>
 
 
