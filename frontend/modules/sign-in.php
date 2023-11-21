@@ -1,35 +1,16 @@
-<?php
-    session_start();
-    include("config.php");
-    if(isset($_POST['dangnhap'])){
-        $taikhoan = $_POST['username'];
-        $matkhau = md5($_POST['password']);
-        $sql = "SELECT * FROM user where email='".$taikhoan."'AND password='".$matkhau."' LIMIT 1 ";
-        $row = mysqli_query($mysqli,$sql);
-        $count = mysqli_num_rows($row);
-        if($count>0)
-        {
-            $_SESSION['dangnhap'] = $taikhoan;
-            header("Location:index.php?action=homepage&query=none");
-        }
-        else{
-            echo '<script>alert("Tài khoản hoặc mật khẩu không đúng, vui lòng nhập lại.")<script>';
-            header("Location:sign-in.php");
-        }
-    }
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="app.css">
+    <link rel="stylesheet" href="../css/sign-in.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>sign in</title>
 </head>
 <body>
     <div id="wrapper">
-        <form action="" id="form-login">
+        <form action="" id="form-login" method="POST">
             <h1 class="form-heading">Đăng nhập</h1>
             <div class="form-group">
                 <i class="fa-regular fa-user"></i>
@@ -50,7 +31,7 @@
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script>
+ <script>
     $(document).ready(function(){
     $('#eye').click(function(){
         $(this).toggleClass('open');
@@ -64,5 +45,26 @@
         }
     });
 });
-</script>
+</script> 
+<?php
+session_start();
+    include("../../Database/Config/config.php");
+    if(isset($_POST['dangnhap'])){
+        $taikhoan = $_POST['username'];
+        $matkhau = $_POST['password'];
+        $sql = "SELECT * FROM user where email='".$taikhoan."'AND password='".$matkhau."' LIMIT 1 ";
+        $row = mysqli_query($mysqli,$sql);
+        $count = mysqli_num_rows($row);
+     if($count>0)
+        { 
+            $_SESSION['dangnhap'] = $taikhoan;
+            header("Location:index.php?action=homepage&query=none");
+        }
+        else{   
+            echo '<script>alert("Tài khoản hoặc mật khẩu không đúng, vui lòng nhập lại.")<script>';
+        }
+     } 
+?>  
 </html>
+
+

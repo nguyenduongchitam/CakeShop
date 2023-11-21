@@ -12,27 +12,6 @@
 </head>
 <body>
     <div>
-        <div class="header">
-            <div class="taskbar">
-                <div id="square"><img src="image\bakery.avif" id="logo"></div>
-                <div id="items">
-                    <div class="box">
-                        <input id ="search" type="text" placeholder="Search here">
-                        <a><i class="fa-solid fa-magnifying-glass"></i></a>
-                    </div>
-                    <div id="user"><i class="fa-solid fa-user"></i></div>
-                    <div id="shopping-cart"><i class="fa-solid fa-cart-shopping"></i></div>
-                </div>
-                <div class="clear"></div>
-            </div>
-            <div class="category">
-                <div>Trang chủ</div>
-                <div>Menu</div>
-                <div>Sự kiện</div>
-                <div>About us</div>
-                <div>Liên hệ</div>
-            </div>
-        </div>
         <div class="main">
             <div class="ban"><img src="image\banner.png" id="banner"></div>
             <form class="sign-in" action="" method="POST">
@@ -51,9 +30,6 @@
             </div>
             </form>
         </div>
-        <div class="footer">
-            <div id="detail"><img src="image\footer.png" id="footer-pic"></div>
-        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
@@ -65,6 +41,7 @@
             $matkhau = $_POST['matkhau'];
             $sodienthoai = $_POST['phone_number'];
             $diachi = $_POST['address'];
+            
             $sql_user = mysqli_query($mysqli,"INSERT INTO user(full_name,email,password,phone_number,address,role_id,create_at,update_time) VALUE('".$tenkhachhang."',
             '".$email."','".$matkhau."','".$sodienthoai."','".$diachi."',1,'".$created_at."','".$update_at."')");
             if($sql_user){

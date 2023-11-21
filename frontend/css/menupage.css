@@ -3,6 +3,8 @@
     padding: 0;
     background: #fff7e6;
     font-family: 'Segoe UI';
+    display:flow-root;
+    
 }
 
 .menubody .wrapper{
@@ -10,11 +12,7 @@
     width: 100%;
     margin: 0 auto;
     font-family: 'Segoe UI';
-}
-
-.menubody h1 {
-    text-align: center;
-    font-weight: 700;
+    padding-top: 50px;
 }
 
 .menubody  .chose {
@@ -25,7 +23,7 @@
     margin-left: 5px;
     float: left;
     background: white;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 .menubody  p.menu {
     text-align: center;
@@ -33,7 +31,7 @@
     background: #4d2600;
     font-weight: 1000;
     height: 50px;
-    border-radius: 10px 10px 0 0;
+    border-radius: 20px 15px 0 0;
 }
 .menubody  ul.danhmuc {
     padding: 0;
@@ -78,6 +76,9 @@
     margin-top: 5px;
     margin-left: 5px;
     float: right;
+    padding-left: 40px;
+    font-size: large;
+    
 }
 .menubody  ul.product {
     padding: 0;
@@ -85,38 +86,41 @@
     list-style: none;
     width: 100%;
 }
+.menubody .namecake {
+    color: #4d2600;
+    text-decoration: none;
+    text-align: center;
+}
+
 .menubody ul.product li {
     width: 20%;
     margin: 10px;
     float: left;
     background: #ffffe6;
     height: 350px;
-    border-radius: 10px;
+    border-radius: 20px;
+    text-align: center;
+    
 }
 .menubody ul.product li a {
     text-decoration: none;
 }
 .menubody ul.product li img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 .menubody p.product_list {
     text-align: center;
     color: #663300;
     font-weight: 1000;
+    
 }
 .menubody p.price {
     text-align: center;
     color: #663300;
     font-weight: 1000;
 }
-.menubody .fas.fa-underline:before {
-    content: "\0111";
-    text-decoration: underline;
-    font-size: 0.8em;
-    position: relative;
-    top: -0.2em;
-}
+
 
 .menubody .clear{
     clear: both;

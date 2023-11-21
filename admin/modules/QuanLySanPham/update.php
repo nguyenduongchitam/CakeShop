@@ -67,8 +67,8 @@ if (isset($_POST['update']))
         $thumbnail = $_FILES['thumbnail']['name'];
         $thumbnail_temp = $_FILES['thumbnail']['tmp_name'];
         move_uploaded_file($thumbnail_temp,'../../../Database/Images/'.$thumbnail);
-    
-    } else $thumbnail= $thumbnailold;
+    } 
+    else $thumbnail= $thumbnailold;
 
     $description= $_POST['description'];
     date_default_timezone_set('Asia/Ho_Chi_Minh');
