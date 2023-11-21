@@ -1,10 +1,25 @@
 <?php
+
     include("../../Database/Config/config.php");
     $sql1="select * from category";
 $result1= mysqli_query($mysqli,$sql1);
+
+if(isset($_GET['trang'])){
+  $page = $_GET['trang'];
+}
+else{
+  $page = '';
+}
+if($page == '' || $page = 1){
+  $begin = 0;
+}
+else{
+  $begin = ($page*8)-8;
+}
+
 if(isset($_GET['id'])){ 
   $id=$_GET['id'];
-  $sql2="SELECT * FROM product ,category where product.category_id=category.category_id and category.category_id=$id " ;
+  $sql2="SELECT * FROM product ,category where product.category_id=category.category_id and category.category_id=$id ORDER BY product.category_id DESC LIMIT $begin,8"  ;
   $result2 = mysqli_query($mysqli,$sql2);
  }
 else 
@@ -12,6 +27,7 @@ else
   $sql2="SELECT * FROM product ,category where product.category_id=category.category_id " ;
   $result2 = mysqli_query($mysqli,$sql2);
 }
+
     ?>
 <div class="menubody">
    <div class="wrapper">
@@ -49,7 +65,24 @@ else
               
           </ul>
         </div>
-        <div class="clear"></div>
-    </div>
+
+      </div>
+      
+
    </div>
+   <div style="clear:both;"></div>
+   <?php
+   $sql_trang = mysqli_query($mysqli, "SELECT * FROM product");
+   $count = mysqli_num_rows($sql_trang);
+   $trang = ceil($count/8);
+   ?>
+          <ul class="list">
+            <?php
+            for($i=1;$i<=$trang;$i++){
+            ?>
+            <li <?php if($i == $page){echo 'style = "background: #ffcce6;"';} else{ echo '';} ?>><a href="menupage.php?trang=<?php echo $i ?>"><?php echo $i ?></a></li>
+            <?php
+            }
+            ?>
+          </ul>
 </div>

@@ -4,7 +4,7 @@
     background: #fff7e6;
     font-family: 'Segoe UI';
     display:flow-root;
-    
+    height: auto;
 }
 
 .menubody .wrapper{
@@ -94,13 +94,16 @@
 
 .menubody ul.product li {
     width: 20%;
-    margin: 10px;
+    margin: 15px;
     float: left;
-    background: #ffffe6;
+    background: #ffffcc;
     height: 350px;
     border-radius: 20px;
     text-align: center;
-    
+    transition: transform 0.3s ease-in-out;  
+}
+.menubody ul.product li:hover{
+    transform: scale(1.1);
 }
 .menubody ul.product li a {
     text-decoration: none;
@@ -121,7 +124,25 @@
     font-weight: 1000;
 }
 
+.menubody ul.list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-left: 780px;
+    margin-bottom: 200px;
+}
 
-.menubody .clear{
-    clear: both;
+.menubody ul.list li {
+    float: left;
+    background: white;
+    padding: 10px 15px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.menubody ul.list li a {
+    color: #663300;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
 }
