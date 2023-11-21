@@ -19,12 +19,12 @@
 .navbarr li:hover .dropdown-menu {
     display: block;
     max-height: 200px;
-    background-color: pink;
+    background-color: #C7DCA7;
     top: 55px;
 }
 
 .dropdown-menu a:hover {
-    background-color: #b8e3ff;
+    background-color: #89B9AD;
 }
 
 .dropdown-menu {

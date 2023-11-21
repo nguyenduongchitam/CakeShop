@@ -12,7 +12,7 @@
 
 <body>
 
-  <section class="myheader" style="background-color: #ffbdc4;">
+  <section class="myheader" style="background-color: #C7DCA7;">
     <div class=" container-fluid fs-4 text-center headerig" style="padding: 0;">
       <div class="row align-items-center">
         <div class="col-md-2"><img src="../modules/homepage/2e.png" class="img-fluid logo" alt="Logo" style="max-width: 140px; height:90px"></div>
