@@ -52,7 +52,7 @@ CREATE TABLE `Order` (
   `user_id` int,
   `note` varchar(255),
   `order_date` datetime,
-  `status` bool,
+  `status` boolean,
   `total_money` int
 );
 

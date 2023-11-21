@@ -11,22 +11,28 @@
 </head>
 
 <body>
-  <section class="myheader" style="background-color: #ffbdc4;">
+  <section class="myheader" style="background-color: #ffbdc4">
     <div class=" container fs-4 py-3 text-center headerig">
       <div class="row">
         <div class="col-md-3"><img src="../modules/homepage/2e.png" class="img-fluid logo" alt="Logo" style="max-width: 140px; height:120px"></div>
         <div class="col-md-4">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" style="color: #4d2600; font-family: Segoe UI;" placeholder="Tìm kiếm..." aria-label="Recipient's username" aria-describedby="button-addon2">
+            <input type="text" class="form-control" style="color: #4d2600" placeholder="Tìm kiếm..." aria-label="Recipient's username" aria-describedby="button-addon2">
             <button class="btn btn-outline-secondary" style="color: #4d2600;" type="button" id="button-addon2"><i class="bi bi-search-heart"></i></button>
           </div>
         </div>
-        <div class="col-md-3">
-          <i class="bi bi-telephone" style="color: #4d2600;"></i>
-          <strong style="color: #4d2600;"> 0353780187</strong>
-        </div>
+       
         <a href="#" class="col-md-1 account bigger-icon"><i class="bi bi-person-circle"></i></a>
         <a href="#" class="col-md-1 account bigger-icon"><i class="bi bi-bag-heart bigger-icon"></i></a>
+        <!-- <div class="col-md-1">
+          <button type="button" class="btn position-relative" style="padding-top: 0; color: #4d2600;">
+            <i class="bi bi-bag-heart bigger-icon"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="margin-bottom: 0;">
+              99+
+              <span class="visually-hidden">items</span>
+            </span>
+          </button>
+        </div> -->
       </div>
       <section class="menu">
         <div class="container pt-3 navbarne">
