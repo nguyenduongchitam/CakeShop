@@ -27,6 +27,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>sign in</title>
 </head>
+<script type="text/javascript">
+        function Redirect() {
+            window.location="homepage.php";
+        }
+</script>
 <body>
     <div id="wrapper">
         <form action="" id="form-login">
@@ -44,7 +49,7 @@
             </div>
             <input type="submit" class="form-submit" value="Đăng nhập" name="dangnhap">
             <input type="submit" class="form-submit" value="Đăng ký">
-            <div class="support">Trở về</div>
+            <div class="support" onclick="Redirect">Trở về</div>
             <div class="support">Quên mật khẩu</div>
         </form>
     </div>
