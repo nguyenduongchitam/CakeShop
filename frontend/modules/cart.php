@@ -11,6 +11,7 @@ if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
     array_splice($_SESSION['cart'],$_GET['delid'],1);
     $_SESSION['quantity_in_cart']= $_SESSION['quantity_in_cart']-$_GET['quantity'];
    }
+
    if(isset($_POST['add_to_cart'])&&($_POST['add_to_cart']))
    {
     $product_id= $_POST['product_id'];
@@ -59,8 +60,7 @@ if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
                 <button>-</button>
                 <input type="text" value="'.$_SESSION['cart'][$i][4].'" style=" width:40px; text-align:center ;" ></input>
                 <button>+</button>
-                </td>
-                
+                </td>  
                 <td>'.$tt.'</td>
                 <td>
                 <a href="cart.php?delid='.$i.'&quantity='.$_SESSION['cart'][$i][4].'"> Xóa </a>
