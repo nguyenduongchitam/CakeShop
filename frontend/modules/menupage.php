@@ -41,7 +41,7 @@ else
                 <a href="index.php?action=product&query=none&id=<?php echo $row['product_id']?>&category_id=<?php echo $row['category_id']?>">
                 <img src="../../../Database/images/<?php echo $row['thumbnail'] ?> " alt="image">
                 <p class="product_list"><?php echo $row['title'] ?> </p>
-                <P class="price"><?php echo $row['price'] ?> <i class="fas fa-underline"></i> <i class="fas fa-shopping-cart"></i></P>
+                <P class="price"><?php echo $row['discount_price'] ?> <i class="fas fa-underline"></i> <i class="fas fa-shopping-cart"></i></P>
                 </a>
               </li> 
     <?php

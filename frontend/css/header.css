@@ -1,5 +1,6 @@
 .logo {
     border-radius: 100px;
+    top: 0;
 }
 
 .bigger-icon {
@@ -9,7 +10,6 @@
 .account {
     text-decoration: none;
     color: #4d2600;
-    
 }
 
 .account:hover {
@@ -24,13 +24,13 @@
 }
 
 .dropdown-menu a:hover {
-    background-color: turquoise;
+    background-color: #b8e3ff;
 }
 
 .dropdown-menu {
     overflow: hidden;
     max-height: 0;
-    -webkit-transition: all 0.5s ease-out;
+    /* -webkit-transition: all 0.5s ease-out; */
 }
 
 .nav-item {
@@ -52,7 +52,7 @@
 
  .nav-link::after{
     content:'';
-    height: 2.5px;
+    height: 3px;
     border-radius: 2px;
     width: 100%;
     background-color: #4d2600;
@@ -73,11 +73,14 @@
 }
 
 .myheader {
-    box-sizing: border-box;
-    max-width: 100%;
-    height: 200px;
+    box-sizing: border-box; 
     padding: 0px;
 }
+
+.nav-item {
+    position: relative;
+}
+
 
 /* .navbarne {
     box-sizing: border-box;
@@ -86,79 +89,3 @@
     width: 1092;
     padding: 0;
 } */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* body {
-    height: 3000vh;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-} */
-
-/* .container {
-    font-size: larger;
-} */
-
-/* .bigger-icon {
-    font-size: 3rem;
-} */
-
-/* .nav-item {
-    margin-left: 20px;
-    margin-right: 20px;
-} */
-
