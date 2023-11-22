@@ -80,7 +80,7 @@ else
             <?php
             for($i=1;$i<=$trang;$i++){
             ?>
-            <li <?php if($i == $page){echo 'style = "background: #ffcce6;"';} else{ echo '';} ?>><a href="menupage.php?trang=<?php echo $i ?>"><?php echo $i ?></a></li>
+            <li <?php if($i == $page){echo 'style = "background: #ffcce6;"';} else{ echo '';} ?>><a href="index.php?action=menupage&query=product trang=<?php echo $i ?>"><?php echo $i ?></a></li>
             <?php
             }
             ?>
