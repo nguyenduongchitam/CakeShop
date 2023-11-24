@@ -11,12 +11,13 @@ if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
     array_splice($_SESSION['cart'],$_GET['delid'],1);
     $_SESSION['quantity_in_cart']= $_SESSION['quantity_in_cart']-$_GET['quantity'];
    }
+
    if(isset($_POST['add_to_cart'])&&($_POST['add_to_cart']))
    {
     $product_id= $_POST['product_id'];
     $title= $_POST['title'];
-    $price= $_POST['price'];
-    /* $discount_price= $_POST['discount_price']; */
+   /*  $price= $_POST['price']; */
+   $discount_price= $_POST['discount_price']; 
    $thumbnail = $_POST['thumbnail'];
     /* $description= $_POST['description']; */
     $quantity=$_POST['quantity'];
@@ -33,10 +34,11 @@ if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
     }
     if($ok==false)
     {
-        $product=[$product_id,$thumbnail,$title,$price,$quantity];
+        $product=[$product_id,$thumbnail,$title,$discount_price,$quantity];
         $_SESSION['cart'][]=$product;
     }
    } 
+
    $tong=0;
    
    function showcart(&$tong,&$sl)
@@ -58,8 +60,7 @@ if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
                 <button>-</button>
                 <input type="text" value="'.$_SESSION['cart'][$i][4].'" style=" width:40px; text-align:center ;" ></input>
                 <button>+</button>
-                </td>
-                
+                </td>  
                 <td>'.$tt.'</td>
                 <td>
                 <a href="cart.php?delid='.$i.'&quantity='.$_SESSION['cart'][$i][4].'"> Xóa </a>
@@ -138,7 +139,7 @@ if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
                         <div class="cart-summary">
                             <p>Tổng tiền: <span id="totalAmount"><?php echo $tong ?> </span></p>
                         </div>
-                        <button class="btn btn-primary btn-block" id="thanhtoan">Thanh toán</button>
+                        <a href="cartcheckout.php?tong=<?php echo $tong ?>" class="btn btn-primary">Thanh toán</a>
                     </div>
                 </div>
             </div>

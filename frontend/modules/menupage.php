@@ -53,10 +53,17 @@ else
                     while ($row = mysqli_fetch_array($result2)) {
               ?>
             <li>
+<<<<<<< HEAD
                 <a class="namecake" href="index.php?action=product&query=none&id=<?php echo $row['product_id']?>&category_id=<?php echo $row['category_id']?>">
                 <img src="../../Database/Images/<?php echo $row['thumbnail'] ?> " alt="image">
                 <i class="product_list"><?php echo $row['title'] ?> </i><br>
                 <i class="price"><?php echo $row['price'] ?> đ </i>
+=======
+                <a href="index.php?action=product&query=none&id=<?php echo $row['product_id']?>&category_id=<?php echo $row['category_id']?>">
+                <img src="../../../Database/images/<?php echo $row['thumbnail'] ?> " alt="image">
+                <p class="product_list"><?php echo $row['title'] ?> </p>
+                <P class="price"><?php echo $row['discount_price'] ?> <i class="fas fa-underline"></i> <i class="fas fa-shopping-cart"></i></P>
+>>>>>>> 65bbb58e0fc54296b89dbfff9bab4b74570a5805
                 </a>
               </li> 
     <?php

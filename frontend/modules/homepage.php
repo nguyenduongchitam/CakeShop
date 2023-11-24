@@ -35,7 +35,11 @@
       <div class="col">
         <a class="namecake" href="index.php?action=product&query=none&id=<?php echo $row['product_id']?>&category_id=<?php echo $row['category_id']?>">
         <img src="../../Database/Images/<?php echo $row['thumbnail'] ?> " alt="pic" width="250" height="250" style="margin-bottom:10px">
+<<<<<<< HEAD
           <i><?php echo $row['title'] ?> <br> <?php echo $row['price'] ?> đ </i>
+=======
+          <i><?php echo $row['title'] ?> <br> <?php echo $row['discount_price'] ?> đ </i>
+>>>>>>> 65bbb58e0fc54296b89dbfff9bab4b74570a5805
          </a>
         </div>
           <?php
@@ -86,7 +90,11 @@
       <div class="col">
         <a class="namecake" href="index.php?action=product&query=none&id=<?php echo $row['product_id']?>&category_id=<?php echo $row['category_id']?>">
         <img src="../../Database/Images/<?php echo $row['thumbnail'] ?> " alt="pic" width="250" height="250" style="margin-bottom:10px">
+<<<<<<< HEAD
           <i><?php echo $row['title'] ?> <br> <?php echo $row['price'] ?> đ </i>
+=======
+          <i><?php echo $row['title'] ?> <br> <?php echo $row['discount_price'] ?> đ </i>
+>>>>>>> 65bbb58e0fc54296b89dbfff9bab4b74570a5805
          </a>
         </div>
           <?php
@@ -134,5 +142,9 @@
   }
 }
   window.addEventListener('scroll', showOnScroll);
+<<<<<<< HEAD
   </script>
 
+=======
+  </script>
+>>>>>>> 65bbb58e0fc54296b89dbfff9bab4b74570a5805

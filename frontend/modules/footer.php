@@ -11,32 +11,26 @@
 </head>
 
 <body>
-    <section class="myfooter" style="background-color: #b8e3ff; color: #4d2600; font-family: Segoe UI;">
+    <section class="myfooter" style="background-color: #B4BDFF; color: #4d2600; font-family: Segoe UI;">
         <div class="container fs-4 py-3 text-center">
             <div class="row">
                 <div class="col-md-3">
-                    <img src="../../frontend/modules/homepage/2e.png" class="img-fluid logo" alt="Logo" style="max-width: 140px;">
+                    <img src="../../frontend/modules/homepage/2e.png" class="img-fluid logo" alt="Logo" style="max-width: 240px;">
+                </div>
+                <div class="col-md-3">
+                    <h2>ĐỊA CHỈ</h2>
                     <div><i class="bi bi-house-heart"></i><span style="font-size: 16px;"> Số 09 Trần Thái Tông, P. Dịch Vọng, Q. Cầu Giấy, TP. Hà Nội</span></div>
                     <div><i class="bi bi-telephone"></i><span style="font-size: 16px;"> 0353780187</span></div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <h2>CHÍNH SÁCH</h2>
                     <ul>
-                        <li><a href="#" style="font-size: 18px;" class="chinhsach">Chính sách và quy định chung</a></li>
-                        <li><a href="#" style="font-size: 18px;" class="chinhsach">Chính sách giao dịch, thanh toán</a></li>
-                        <li><a href="#" style="font-size: 18px;" class="chinhsach">Chính sách đổi trả</a></li>
-                        <li><a href="#" style="font-size: 18px;" class="chinhsach">Chính sách bảo mật</a></li>
-                        <li><a href="#" style="font-size: 18px;" class="chinhsach">Chính sách vận chuyển</a></li>
+                        <li><a href="#" style="font-size: 18px; color: #4d2600;" class="chinhsach">Chính sách và quy định chung</a></li>
+                        <li><a href="#" style="font-size: 18px; color: #4d2600;" class="chinhsach">Chính sách giao dịch, thanh toán</a></li>
+                        <li><a href="#" style="font-size: 18px; color: #4d2600;" class="chinhsach">Chính sách đổi trả</a></li>
+                        <li><a href="#" style="font-size: 18px; color: #4d2600;" class="chinhsach">Chính sách bảo mật</a></li>
+                        <li><a href="#" style="font-size: 18px; color: #4d2600;" class="chinhsach">Chính sách vận chuyển</a></li>
                     </ul>
-                </div>
-                <div class="col-md-4">
-                    <h2>CÔNG TY CỔ PHẦN BÁNH NGỌT XXX</h2>
-                    <div style="font-size: 16px;">Địa chỉ tên miền: anhhoabakery.vn</div>
-                    <div style="font-size: 16px;">Tên Doanh nghiệp: Công ty Cổ phần Bánh ngọt XXX</div>
-                    <div style="font-size: 16px;">Trụ sở Doanh Nghiệp: Số 09 Trần Thái Tông, P. Dịch Vọng, Q. Cầu Giấy, TP. Hà Nội</div>
-                    <div style="font-size: 16px;">MST/ĐKKD/QLTL: 0104802706</div>
-                    <div style="font-size: 16px;">Ngày cấp: 21/07/2010</div>
-                    <div style="font-size: 16px;">Nơi cấp: Sở Kế hoạch và Đầu tư Tp. Hà Nội</div>
                 </div>
                 <div class="col-md-2">
                     <h2>FOLLOW US</h2>
@@ -46,4 +40,5 @@
                     </ul>
                 </div>
             </div>
+    </section>
 </body>
