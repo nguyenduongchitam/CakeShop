@@ -1,5 +1,6 @@
 .logo {
     border-radius: 100px;
+    top: 0;
 }
 
 .bigger-icon {
@@ -9,7 +10,6 @@
 .account {
     text-decoration: none;
     color: #4d2600;
-    
 }
 
 .account:hover {
@@ -24,7 +24,7 @@
 }
 
 .dropdown-menu a:hover {
-    background-color: turquoise;
+    background-color: #b8e3ff;
 }
 
 .dropdown-menu {
@@ -52,7 +52,7 @@
 
  .nav-link::after{
     content:'';
-    height: 2.5px;
+    height: 3px;
     border-radius: 2px;
     width: 100%;
     background-color: #4d2600;
@@ -73,12 +73,15 @@
 }
 
 .myheader {
-    box-sizing: border-box;
-    max-width: 100%;
-    height: 200px;
+    box-sizing: border-box; 
     padding: 0px;
     font-family:'Segoe UI';
 }
+
+.nav-item {
+    position: relative;
+}
+
 
 /* .navbarne {
     box-sizing: border-box;
