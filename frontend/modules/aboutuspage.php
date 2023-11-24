@@ -8,8 +8,8 @@
       <p><i>Chúng mình - những thợ làm bánh thủ công luôn cố gắng tôn trọng tính nguyên bản, tự nhiên và chân thật nhất của từng nguyên liệu. Để dù có những bất toàn trong mỗi thứ riêng rẽ nhưng sau cùng vẫn tạo nên một ổ bánh hài hòa và ngon nhất.</i></p>
       <p><i>Vậy nên, bất cứ khi nào bạn cần những hương vị mộc mạc, tinh tế nhưng chẳng kém phần hấp dẫn, hãy đến với chúng mình. Luôn có rất nhiều điều đặc biệt đợi bạn khám phá đó nhé!</i></p>
     </div>
-    <div class="image">
-      <img src="../modules/images/aboutus.webp" alt="img">
+    <div>
+      <img class="image" src="../modules/images/aboutus.webp" alt="img">
     </div>
   </div>
     <hr>
