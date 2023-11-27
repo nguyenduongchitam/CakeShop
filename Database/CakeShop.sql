@@ -9,7 +9,7 @@ CREATE TABLE `User` (
   `email` varchar(30),
   `phone_number` varchar(30),
   `address` varchar(50),
-  `password` varchar(60),
+  `password` varchar(255),
   `role_id` int,
   `create_at` datetime,
   `update_at` datetime
