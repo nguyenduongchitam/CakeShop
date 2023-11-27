@@ -1,25 +1,59 @@
 <?php
-    session_start();
-    include("config.php");
-    if(isset($_POST['dangnhap'])){
-        $taikhoan = $_POST['username'];
-        $matkhau = md5($_POST['password']);
-        $sql = "SELECT * FROM user where email='".$taikhoan."'AND password='".$matkhau."' LIMIT 1 ";
-        $row = mysqli_query($mysqli,$sql);
-        $count = mysqli_num_rows($row);
-        if($count>0)
+    if($_SERVER['REQUEST_METHOD']=='POST')
+    {
+        $error=[];
+        if(empty(trim($_POST['password'])))
         {
-            $_SESSION['dangnhap'] = $taikhoan;
-            header("Location:homepage.php");
+            $error['password']['required'] = 'mật khẩu không được để trống';
         }
-        else{
-            echo '<script>alert("Tài khoản hoặc mật khẩu không đúng, vui lòng nhập lại.")<script>';
-            header("Location:sign-in.php");
+
+        if(empty(trim($_POST['email'])))
+        {
+            $error['email']['required'] = 'email không được để trống';
+        }
+        else
+        {
+            if(!filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL)){
+                $error['email']['invalid'] = 'email không hợp lệ';
+            }
+        }
+
+        if(empty($error)){
+        session_start();
+        include("config.php");
+        if(isset($_POST['dangnhap'])){
+            $taikhoan = $_POST['email'];
+            $matkhau = $_POST['password'];
+            $sql = "SELECT * FROM user where email='".$taikhoan."' LIMIT 1 ";
+            $row = mysqli_query($mysqli,$sql);
+            $result = mysqli_fetch_array($row);
+            if(empty($result)){
+                $error['email']['exist'] = 'email không tồn tại';
+            }
+            else{
+                $passwordHashData = $result['password'];
+                if(password_verify($matkhau,$passwordHashData)== false)
+                {
+                    $error['password']['un-verify'] = 'sai mât khẩu';
+                    //header("Location:sign-in.php");
+                }
+                else{
+                    $_SESSION['dangnhap'] = $taikhoan;
+                    $error['log-in']['verify'] = 'đăng nhập thành công';
+                    //header("Location:homepage.php");
+                }
+            }
         }
     }
+    }   
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<script type="text/javascript">
+            function Redirect() {
+               window.location="homepage.php";
+            }
+</script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,12 +63,19 @@
 </head>
 <body>
     <div id="wrapper">
-        <form action="" id="form-login">
+        <form action="" id="form-login" method="POST">
             <h1 class="form-heading">Đăng nhập</h1>
             <div class="form-group">
                 <i class="fa-regular fa-user"></i>
-                <input type="text" class="form-input" placeholder="Email" name="username">
+                <input type="text" class="form-input" placeholder="Email" name="email">
             </div>
+            <?php
+                    echo (!empty($error['email']['required']))?'<span class="error" style="color: red">'.$error['email']['required'].'</span>':false;
+
+                    echo (!empty($error['email']['invalid']))?'<span class="error" style="color: red">'.$error['email']['invalid'].'</span>':false;
+
+                    echo (!empty($error['email']['exist']))?'<span class="error" style="color: red">'.$error['email']['exist'].'</span>':false;
+                ?>
             <div class="form-group">
                 <i class="fa-solid fa-key"></i>
                 <input type="password" class="form-input" placeholder="Mật khẩu" name="password">
@@ -42,10 +83,18 @@
                     <i class="fa-solid fa-eye"></i>
                 </div>
             </div>
+            <?php
+                echo (!empty($error['password']['required']))?'<span class="error" style="color: red">'.$error['password']['required'].'</span>':false;
+
+                echo (!empty($error['password']['un-verify']))?'<span class="error" style="color: red">'.$error['password']['un-verify'].'</span>':false;
+            ?>
             <input type="submit" class="form-submit" value="Đăng nhập" name="dangnhap">
             <input type="submit" class="form-submit" value="Đăng ký">
-            <div class="support">Trở về</div>
+            <div class="support" onclick="Redirect()">Trở về</div>
             <div class="support">Quên mật khẩu</div>
+            <?php
+                echo (!empty($error['log-in']['verify']))?'<span class="error" style="color: red">'.$error['log-in']['verify'].'</span>':false;
+            ?>
         </form>
     </div>
 </body>
