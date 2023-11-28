@@ -79,3 +79,7 @@
     color: #4d2600;
     border: dashed;
 }
+
+.contractbody .form-control{
+     opacity: 70%;
+}

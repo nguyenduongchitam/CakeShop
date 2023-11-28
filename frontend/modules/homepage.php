@@ -34,10 +34,25 @@
       ?>
       <div class="col">
         <a class="namecake" href="index.php?action=product&query=none&id=<?php echo $row['product_id']?>&category_id=<?php echo $row['category_id']?>">
+        <div class="image-container">
         <img src="../../Database/Images/<?php echo $row['thumbnail'] ?> " alt="pic" width="250" height="250" style="margin-bottom:10px">
-          <i><?php echo $row['title'] ?> <br> <?php echo $row['price'] ?> đ </i>
+        <div>
+        <form method="POST" action="index.php?action=cart&query=none" >
+    <input type="hidden" name="product_id" value="<?php echo $row['product_id']?>">
+    <input type="hidden" name="title" value="<?php echo $row['title'] ?>"> 
+    <input type="hidden" name="price" value="<?php echo $row['price'] ?>"> 
+    <input type="hidden" name="discount_price" value="<?php echo $row['discount_price'] ?>"> 
+    <input type="hidden" name="thumbnail" value="<?php echo $row['thumbnail'] ?>"> 
+    <input type="hidden" name="description" value="<?php echo $row['description'] ?>"> 
+    <input type="hidden" name="quantity" value="1" min="1" >
+    <input type="submit" name="add_to_cart" value="ADD TO CART" class="add-to-cart"> </input>  
+       </div>
+        </div>
+        <i><?php echo $row['title'] ?> <br> <?php echo $row['price'] ?> đ </i>
          </a>
         </div>
+
+</form>
           <?php
          }
         ?> 
@@ -85,10 +100,25 @@
       ?>
       <div class="col">
         <a class="namecake" href="index.php?action=product&query=none&id=<?php echo $row['product_id']?>&category_id=<?php echo $row['category_id']?>">
+        <div class="image-container">
         <img src="../../Database/Images/<?php echo $row['thumbnail'] ?> " alt="pic" width="250" height="250" style="margin-bottom:10px">
-          <i><?php echo $row['title'] ?> <br> <?php echo $row['price'] ?> đ </i>
+        <div>
+        <form method="POST" action="index.php?action=cart&query=none" >
+    <input type="hidden" name="product_id" value="<?php echo $row['product_id']?>">
+    <input type="hidden" name="title" value="<?php echo $row['title'] ?>"> 
+    <input type="hidden" name="price" value="<?php echo $row['price'] ?>"> 
+    <input type="hidden" name="discount_price" value="<?php echo $row['discount_price'] ?>"> 
+    <input type="hidden" name="thumbnail" value="<?php echo $row['thumbnail'] ?>"> 
+    <input type="hidden" name="description" value="<?php echo $row['description'] ?>"> 
+    <input type="hidden" name="quantity" value="1" min="1" >
+    <input type="submit" name="add_to_cart" value="ADD TO CART" class="add-to-cart"> </input>  
+       </div>
+        </div>
+        <i><?php echo $row['title'] ?> <br> <?php echo $row['price'] ?> đ </i>
          </a>
         </div>
+
+</form>
           <?php
          }
         ?> 
@@ -106,6 +136,8 @@
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
     <script src="../modules/js/roll.js"></script>
+
+
 <table>
     <tr>
         <td class="border"></td>
