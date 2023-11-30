@@ -6,7 +6,7 @@ $sql_select = "SELECT * FROM product,category WHERE product.category_id=category
 $sql = mysqli_query($mysqli,$sql_select);
 
 $sql_category="SELECT * FROM category";
-$resut=mysqli_query($mysqli,$sql_category);
+$result=mysqli_query($mysqli,$sql_category);
 ?>  
 
  <div class="container">
@@ -21,7 +21,7 @@ $resut=mysqli_query($mysqli,$sql_category);
                     <tr>
                         <td>Nhập loại sản phẩm</td>
                         <td> <select name="name" class="form-select" aria-label="Default select example"> 
-                            <?php while($row_2= mysqli_fetch_array($resut)) { ?> 
+                            <?php while($row_2= mysqli_fetch_array($result)) { ?> 
                     <option value="<?php echo $row_2['category_id'] ?>" name="name" <?php if ($row_2['category_id']==$category_id) echo "selected" ?> > <?php echo $row_2['name'] ?></option> 
                     <?php } ?>
                  </select>
@@ -30,7 +30,7 @@ $resut=mysqli_query($mysqli,$sql_category);
                     <tr>
                         <td>Nhập link hình ảnh</td>
                         <td>
-                        <img src="images/<?php echo $row['thumbnail'] ?>"  style="width: 100px">
+                        <img src="../../../Database/Images/<?php echo $row['thumbnail'] ?>"  style="width: 100px">
                         <br>
                         <input type="file" name="thumbnail" class="form-control" ></td>
                         <?php $thumbnailold=$row['thumbnail'] ?>
@@ -66,9 +66,9 @@ if (isset($_POST['update']))
     if ($_FILES['thumbnail']['error'] === 0) {
         $thumbnail = $_FILES['thumbnail']['name'];
         $thumbnail_temp = $_FILES['thumbnail']['tmp_name'];
-        move_uploaded_file($thumbnail_temp,'images/'.$thumbnail);
-    
-    } else $thumbnail= $thumbnailold;
+        move_uploaded_file($thumbnail_temp,'../../../Database/Images/'.$thumbnail);
+    } 
+    else $thumbnail= $thumbnailold;
 
     $description= $_POST['description'];
     date_default_timezone_set('Asia/Ho_Chi_Minh');

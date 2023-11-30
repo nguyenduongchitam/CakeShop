@@ -1,20 +1,137 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>trang khách hàng</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
-    <head>
-  <body>
-<<<<<<< HEAD
-        
-  </body>
-=======
-    
-  
-</body>
+<?php
+    include("../../Database/Config/config.php");
+    $sql1="select * from product where category_id=1";
+    $result1= mysqli_query($mysqli,$sql1);
+    $sql2="select * from product where category_id=2";
+    $result2= mysqli_query($mysqli,$sql2);
+    ?>
+<div class="homebody">
+  <div class = "homepagepic">
+<img src="../modules/images/headerhomepage1.png" alt="Homepic" width="100%" height="250">
+<img src="../modules/images/headerhomepage2.png" alt="Homepic" width="100%" height="250">
+<img src="../modules/images/headerhomepage3.png" alt="Homepic" width="100%" height="250">
+  </div>
+<script
+  type="text/javascript"
+  src="https://code.jquery.com/jquery-1.11.0.min.js"
+></script>
+<script
+  type="text/javascript"
+  src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+></script>
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+></script>
+<script src="../modules/js/roll.js"></script>
 
->>>>>>> c66601d6be4ce1feffb0f7eb1f9acea3e4af15b4
-</html>
+<div class="main">
+    <h1 class="mainname">New-in <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></h1>
+</div>
+<div class="item1">
+   <?php
+      while ($row = mysqli_fetch_array($result1)) {
+      ?>
+      <div class="col">
+        <a class="namecake" href="index.php?action=product&query=none&id=<?php echo $row['product_id']?>&category_id=<?php echo $row['category_id']?>">
+        <img src="../../Database/Images/<?php echo $row['thumbnail'] ?> " alt="pic" width="250" height="250" style="margin-bottom:10px">
+          <i><?php echo $row['title'] ?> <br> <?php echo $row['discount_price'] ?> đ </i>
+         </a>
+        </div>
+          <?php
+         }
+        ?> 
+</div>
+<script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script src="../modules/js/roll.js"></script>
+  
+  <script>
+    function showOnScroll() {
+    var popUps = document.querySelectorAll('.mainname');
+  
+  for (var i = 0; i < popUps.length; i++) {
+    var windowHeight = window.innerHeight;
+    var popUpTop = popUps[i].getBoundingClientRect().top;
+    var revealPoint = 200;
+
+    if (popUpTop < windowHeight - revealPoint) {
+      popUps[i].classList.add('show');
+    }
+  }
+}
+  window.addEventListener('scroll', showOnScroll);
+  </script>
+
+<hr border="2">
+
+<div class="main">
+    <h1 class="mainname">Best-seller <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></h1>
+</div>
+
+<div class="item1" style = "padding-bottom: 40px">
+     <?php
+      while ($row = mysqli_fetch_array($result2)) {
+      ?>
+      <div class="col">
+        <a class="namecake" href="index.php?action=product&query=none&id=<?php echo $row['product_id']?>&category_id=<?php echo $row['category_id']?>">
+        <img src="../../Database/Images/<?php echo $row['thumbnail'] ?> " alt="pic" width="250" height="250" style="margin-bottom:10px">
+          <i><?php echo $row['title'] ?> <br> <?php echo $row['discount_price'] ?> đ </i>
+         </a>
+        </div>
+          <?php
+         }
+        ?> 
+</div>
+<script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script src="../modules/js/roll.js"></script>
+<table>
+    <tr>
+        <td class="border"></td>
+        <td class="text">
+          <h1 class="intext">About us</h1>
+          <i style="font-size: 120%"> Mỗi chiếc bánh là một câu chuyện riêng<br>với hơi thở và tinh thần chẳng thể<br>lẫn vào đâu được.</i>
+        </td>
+        <td class="image">
+           <img src="../modules/images/aboutus.png" alt="pic" width="520" height="300">
+        </td>
+    </tr> 
+</table>
+
+<script>
+    function showOnScroll() {
+    var popUps = document.querySelectorAll('.image');
+  
+  for (var i = 0; i < popUps.length; i++) {
+    var windowHeight = window.innerHeight;
+    var popUpTop = popUps[i].getBoundingClientRect().top;
+    var revealPoint = 200;
+
+    if (popUpTop < windowHeight - revealPoint) {
+      popUps[i].classList.add('show');
+    }
+  }
+}
+  window.addEventListener('scroll', showOnScroll);
+  </script>

@@ -1,60 +1,70 @@
-body{
+.aboutuspage{
     padding: 0;
     margin: 0;
     background-color: #fff7e6;
 }
 
-.wrapper{
+.aboutuspage .image{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.aboutuspage .wrapper{
     height: auto;
     width: auto;
     margin: 0 auto;
     float: left;
 }
 
-.infor{
+.aboutuspage .infor{
     float: left;
     margin-top: 30px;
     margin-left: 150px;
 }
-.one{
+.aboutuspage .one{
     color: #4d2600;
     font-size: 40px;
-    margin-left: 60px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 70px;
 }
-.two{
-    color: red;
-    font-size: 70px;
-    font-family:"Kaushina";
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+.aboutuspage .two{
+    color: rgb(153, 2, 2);
+    font-size: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 7px;
+    margin-left: 20px;
 }
 
-.feel{
-    float: right;
+.aboutuspage .feel{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-left: 600px;
-    font-size: 20px;
-    float: right;
     margin-right: 40px;
+    margin-top: 40px;
+    font-size: larger;
 }
 
-hr {
+
+.aboutuspage hr {
     width: 100%;
     border: 4px solid transparent;
-    border-image: repeating-linear-gradient(-45deg, rgb(248, 118, 179), rgb(248, 118, 179) 10px, transparent 10px, transparent 20px) 10;
+    border-image: repeating-linear-gradient(-45deg, rgb(248, 110, 124), rgb(247, 73, 99) 10px, transparent 10px, transparent 20px) 10;
     animation: wave-animation 2s linear infinite;
     margin-top: 50px;
   }
 
-  .map{
+  .aboutuspage  .map{
     float: left;
     margin-top: 30px;
     margin-left: 150px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
-.mp{
+  .aboutuspage .mp{
     color: #4d2600;
     font-size: 40px;
     margin-left: 60px;
 }
-.maps{
+.aboutuspage .maps{
     float: right;
     margin-left: 350px;
     height: 400px;

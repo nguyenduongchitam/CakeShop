@@ -1,28 +1,37 @@
-body{
+.homebody{
     background-color: #fff7e6;
     font-family: 'Segoe UI';
     color: #4d2600;
 }
-.main {
+.homebody .main {
     display: flex;
     align-items: center;   
+    padding-top: 40px;
 }
-.mainname{
+.homebody .mainname{
     flex-grow: 1;
     text-align:center;
     font-size: 250%;
     font-family:cursive;
     color: #4d2600;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.4s ease-out, transform 0.3s ease-out;
 
 }
+.homebody .mainname.show{
+    opacity: 1;
+    transform: scale(1);
+}
 
-.item1{
+.homebody .item1{
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out; 
 }
-.col{
+
+.homebody .col{
     flex-direction: column;
     align-items: center;
     display: inline-flex;
@@ -30,7 +39,12 @@ body{
     font-size:large;
  
 }
-.slick-arrow
+.homebody .namecake {
+    color: #4d2600;
+    text-decoration: none;
+    text-align: center;
+}
+.homebody .slick-arrow
 {
     font-size: 24px;
     color: #4d2600;
@@ -49,33 +63,37 @@ body{
     padding: 10px 10px;
     opacity: 0.7;
 }
-table{   
+.homebody table{   
     width: 100%;
     border: 10px dashed rgb(234, 220, 155);
     font-family: 'Segoe UI';
    
 }
-td {
+.homebody td {
     vertical-align: middle;  
 }
-.border {
+.homebody .border {
     width:23%;
     background-color: rgb(234, 220, 155);
     margin-top: 50px;
 }
-.text{ 
+.homebody .text{ 
     text-align: center;
     width:50%;
 }
-.image{
+.homebody .image{
     text-align: right;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.4s ease-out, transform 0.3s ease-out;
 }
-.intext{
+
+.homebody .image.show {
+    opacity: 1;
+    transform: scale(1);
+}
+.homebody .intext{
     font-size: 300%;
     font-family:cursive;
     color: #4d2600;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 4cf4d172d90eaa900fab31ca5fdcad32ced3ca46

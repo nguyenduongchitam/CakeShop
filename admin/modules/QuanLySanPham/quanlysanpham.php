@@ -1,7 +1,7 @@
 <?php
 include("config.php");
 $sql="select * from category";
-$resut= mysqli_query($mysqli,$sql);
+$result= mysqli_query($mysqli,$sql);
 
 ?>
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Thêm sản phẩm</button> 
@@ -18,7 +18,7 @@ $resut= mysqli_query($mysqli,$sql);
       <td>Nhập loại sản phẩm</td>
       <td>
         <select name="name" class="form-control">
-          <?php while($row= mysqli_fetch_array($resut)) { ?>
+          <?php while($row= mysqli_fetch_array($result)) { ?>
             <option value="<?php echo $row['category_id'] ?>" name="name"><?php echo $row['name'] ?></option>
           <?php } ?>
         </select>
