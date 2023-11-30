@@ -93,3 +93,7 @@
         padding-left: 10px;
         padding-top: 10px;
     }
+
+    .cartbody .indiscount{
+        padding-top: 0.1px;
+    }

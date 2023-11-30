@@ -54,21 +54,21 @@ if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
                <td>'.($i+1).'</td>
                <td><img src="../../Database/Images/'.$_SESSION['cart'][$i][1].'" alt="" height="100" weight="80" ></td>
                 <td>'.$_SESSION['cart'][$i][2].'</td>
-                <td>'.$_SESSION['cart'][$i][3].' đ</td>
-
+                <td>'.$_SESSION['cart'][$i][3].'</td>
+                
                 <td>
                 <a href="#" class="quantity"><ion-icon name="remove-circle-outline"></ion-icon></a>
                 <input type="text" value="'.$_SESSION['cart'][$i][4].'" style=" width:40px; text-align:center ;" ></input>
                 <a href="#" class="quantity"><ion-icon name="add-circle-outline"></ion-icon></a>
                 </td>  
-                <td>'.$tt.' đ</td>
+                <td>'.$tt.'</td>
                 <td>
-                <a href="index.php?action=cart&query=none&delid='.$i.'&quantity='.$_SESSION['cart'][$i][4].'"> <ion-icon name="trash-outline" class="trash"></ion-icon> </a>
+                <a href="cart.php?delid='.$i.'&quantity='.$_SESSION['cart'][$i][4].'"> <ion-icon name="trash-outline" class="trash"></ion-icon> </a>
                 </td>
           </tr>';
        }
       
-    } else echo '<script>location.replace("index.php?action=cartnone&query=none");</script>';
+    } else echo 'emty';
     }
     }
    
@@ -107,13 +107,16 @@ if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card">
+                <div class="card"> 
                     <div class="card-body">
+                    <p style="font-size:x-large"><b>ĐƠN HÀNG</b></p>
                         <!-- <h5 class="card-title">Tổng cộng</h5> -->
+                        <p style="font-size:large"><b>Nhập mã khuyến mãi </p></b>
+                        <div class="indiscount"><input type><input type="submit" value="Áp dụng"></div>
                         <div class="cart-summary">
-                            <p style="font-size:large"><b>Tổng tiền: </p> <span id="totalAmount" class="total" style="color:rgb(214, 0, 0)"><?php echo $tong ?>đ </span></b>
+                         <p style="font-size:large"><b>Tổng tiền: </p> <span id="totalAmount" class="total" style="color:rgb(214, 0, 0)"><?php echo $tong ?>đ </span></b>
                         </div>
-                        <a href="cartcheckout.php?tong=<?php echo $tong ?>" onclick="check()" ><button class="button"><b>Thanh toán</b></button></a>
+                        <a href="cartcheckout.php?tong=<?php echo $tong ?>"  ><button class="button"><b>Thanh toán</b></button></a>
                     </div>
                 </div>
                 <div class="intext">
@@ -122,14 +125,5 @@ if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
             </div>
         </div>
     </div>
-     <script>
-        function check()
-        {
-            window.location.href = "index.php?action=menupage&query=none";
-        }
-        </script>
+    <!-- <a href="index.php" class="back"> Quay về trang chủ</a> -->
 </div>
-
-
-
-
