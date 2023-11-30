@@ -1,8 +1,11 @@
 <?php
 include("config.php");
 $user_id = $_GET['user_id'];
-$sql_select = " SELECT * from user where user_id=$user_id";
+$role_id = $_GET['role_id'];
+$sql_select = " SELECT * from user,role where user.role_id=role.role_id and user.user_id=$user_id limit 1 ";
 $sql = mysqli_query($mysqli,$sql_select);
+$sql_role="SELECT * FROM role EXCEPT SELECT * FROM role WHERE role_id=$role_id";
+$result=mysqli_query($mysqli, $sql_role);
 ?> 
 <div class="container">
         <h2 class="text-center">Chỉnh sửa thông tin tài khoản</h2>
@@ -34,7 +37,14 @@ while($row= mysqli_fetch_array($sql))
     </tr>
     <tr>
         <td>Quyền</td>
-        <td><input type="text" name="role" value="<?php echo $row['role'] ?>" class="form-control"></input></td>
+                    <td>
+                        <select name="selectOption" id="selectOption">
+                            <option value=""><?php echo $row['name']?></option>
+                            <?php while($row_1=mysqli_fetch_array($result)):; ?>
+                            <option value="<?php echo $row_1['role_id']; ?>"><?php echo $row_1['name'];?></option>
+                            <?php endwhile;?>
+                        </select>
+                    </td>
     </tr>
     <tr>
                         <td><input type="submit" name="update" value="Lưu" class="btn btn-primary"></td>
@@ -47,13 +57,16 @@ while($row= mysqli_fetch_array($sql))
 <?php
 if (isset($_POST['update']))
 {
+    if(isset($_POST['selectOption'])){
+        $selectedOption=$_POST['selectOption'];
+    }
 $full_name= $_POST['full_name'];
+$email=$_POST['email'];
 $phone_number=$_POST['phone_number'];
 $address=$_POST['address'];
-$password=$_POST['password'];
 date_default_timezone_set('Asia/Ho_Chi_Minh');
-$update_time = date("Y-m-d H:i:s");
-$sql_update = " UPDATE `user` SET `full_name`='$full_name',`phone_number`='$phone_number',`address`='$address',update_time='$update_time' WHERE user_id=$user_id ";
+$update_at = date("Y-m-d H:i:s");
+$sql_update = " UPDATE `user` SET `email`='$email',`full_name`='$full_name',`phone_number`='$phone_number',`address`='$address',update_at='$update_at', `role_id`='$selectedOption' WHERE user_id=$user_id ";
 mysqli_query($mysqli,$sql_update);
 header('Location:../modules/index.php?action=quanlytaikhoan&query=none');
 }

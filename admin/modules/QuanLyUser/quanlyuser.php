@@ -5,10 +5,13 @@
 ?>
 <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
 <div class="container">
-    <form action="search_result.php" method="post" style="float: right;">
-    <input type="email" placeholder="Nhập email tài khoản cần tìm" style="width: 300px;" name="email" required>
-    <button name="search" name="submit">Tìm <i class="fas fa-search"></i></button>
-    </form>
+<form style="float: right;">
+    <input type="email" placeholder="Nhập email tài khoản cần tìm" style="width: 300px;" name="typed_email" id="typed_email" required>
+    <?php
+        
+    ?>
+    <input type="submit" name="search" value="Tìm tài khoản">
+</form>
 </div>
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Thêm tài khoản</button> 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

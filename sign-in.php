@@ -11,10 +11,12 @@
         {
             $_SESSION['dangnhap'] = $taikhoan;
             header("Location:homepage.php");
+            exit();
         }
         else{
-            echo '<script>alert("Tài khoản hoặc mật khẩu không đúng, vui lòng nhập lại.")<script>';
+            echo '<script>alert("Tài khoản hoặc mật khẩu không đúng, vui lòng nhập lại.")</script>';
             header("Location:sign-in.php");
+            exit();
         }
     }
 ?>

@@ -1,9 +1,13 @@
 <?php
 include("config.php");
-$sql="SELECT user.*, role.name
-FROM user
-INNER JOIN role ON user.role_id = role.role_id";
-$result = mysqli_query($mysqli,$sql);
+if (isset($_GET['search'])) {
+  $typed_email = isset($_GET['typed_email']) ? $_GET['typed_email'] : '';
+  $email = mysqli_real_escape_string($mysqli, $typed_email);
+  $sql="SELECT * FROM user 
+        INNER JOIN role ON user.role_id=role.role_id
+        WHERE user.email=$email";
+  $result=mysqli_query($mysqli,$sql);
+}
 ?>
   <div class="container" >
     <h1 class="text-center">Danh sách tài khoản</h1>
@@ -39,7 +43,7 @@ $result = mysqli_query($mysqli,$sql);
             <td><?php echo $row['create_at'] ?></td>
             <td><?php echo $row['update_at'] ?></td>
             <td><a onclick="return del('<?php echo $row['full_name'] ?>')" href="QuanLyUser/delete.php?query=delete&user_id=<?php echo $row['user_id'] ?>"class="btn btn-danger">Xóa</a></td>
-            <td><a href="?action=quanlytaikhoan&query=update&user_id=<?php echo $row['user_id'] ?>&role_id=<?php echo $row['role_id']?>"class="btn btn-primary">Sửa</a></td>
+            <td><a href="?action=quanlytaikhoan&query=update&user_id=<?php echo $row['user_id'] ?>"class="btn btn-primary">Sửa</a></td>
           </tr>
         <?php
         }
