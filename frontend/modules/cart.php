@@ -107,11 +107,14 @@ if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card">
+                <div class="card"> 
                     <div class="card-body">
+                    <p style="font-size:x-large"><b>ĐƠN HÀNG</b></p>
                         <!-- <h5 class="card-title">Tổng cộng</h5> -->
+                        <p style="font-size:large"><b>Nhập mã khuyến mãi </p></b>
+                        <div class="indiscount"><input type><input type="submit" value="Áp dụng"></div>
                         <div class="cart-summary">
-                            <p style="font-size:large"><b>Tổng tiền: </p> <span id="totalAmount" class="total" style="color:rgb(214, 0, 0)"><?php echo $tong ?>đ </span></b>
+                         <p style="font-size:large"><b>Tổng tiền: </p> <span id="totalAmount" class="total" style="color:rgb(214, 0, 0)"><?php echo $tong ?>đ </span></b>
                         </div>
                         <a href="cartcheckout.php?tong=<?php echo $tong ?>"  ><button class="button"><b>Thanh toán</b></button></a>
                     </div>

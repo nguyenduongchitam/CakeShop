@@ -36,9 +36,10 @@
     if( $action=='quanlykhachhang' && $query=='none')
     {
         include("../modules/QuanLyKhachHang/XemDSKhachHang.php");
-        
-    }
-    else if( $action=='quanlyphanhoi' && $query=='none')
+    }else if  ($action=='quanlykhachhang' && $query=='select')
+    {
+        include("../modules/QuanLyKhachHang/XemLichSuMuaHang.php");
+    }else if( $action=='quanlyphanhoi' && $query=='none')
     {
         include("../modules/QuanLyPhanHoi/XemDSFeedBack.php");   
     }

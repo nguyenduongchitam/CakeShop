@@ -46,6 +46,7 @@
     <input type="hidden" name="description" value="<?php echo $row['description'] ?>"> 
     <input type="hidden" name="quantity" value="1" min="1" >
     <input type="submit" name="add_to_cart" value="ADD TO CART" class="add-to-cart"> </input>  
+    
        </div>
         </div>
         <i><?php echo $row['title'] ?> <br> <?php echo $row['price'] ?> đ </i>
@@ -57,6 +58,7 @@
          }
         ?> 
 </div>
+
 <script
       type="text/javascript"
       src="https://code.jquery.com/jquery-1.11.0.min.js"
@@ -86,7 +88,7 @@
   }
 }
   window.addEventListener('scroll', showOnScroll);
-  </script>
+
 
 <hr border="2">
 
