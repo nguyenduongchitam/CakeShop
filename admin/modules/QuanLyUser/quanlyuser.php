@@ -41,11 +41,11 @@
                 <tr>
                     <td>Quyền</td>
                     <td>
-                        <select name="selectOption" id="selectOption">
-                            <?php while($row=mysqli_fetch_array($result)):; ?>
-                            <option value="<?php echo $row[0]; ?>"><?php echo $row[1];?></option>
-                            <?php endwhile;?>
-                        </select>
+                        <select name="role_id" class="form-control">
+                  <?php while($row= mysqli_fetch_array($result)) { ?>
+                  <option value="<?php echo $row['role_id'] ?>" name="role_id" ><?php echo $row['name'] ?></option>
+                   <?php } ?>
+                  </select>
                     </td>
                 </tr>
                 <tr>

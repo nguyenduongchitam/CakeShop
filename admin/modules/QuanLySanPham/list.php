@@ -20,6 +20,7 @@ $result = mysqli_query($mysqli,$sql);
           <th>Ngày cập nhật gần nhất </th>
           <th>Xóa</th>
           <th>Sửa</th>
+          <td>Thêm ảnh</td>
         </tr>
       </thead>
       <tbody>
@@ -32,7 +33,7 @@ $result = mysqli_query($mysqli,$sql);
             <td><?php echo $i ?></td>
             <td><?php echo $row['title'] ?></td>
             <td><?php echo $row['name'] ?></td>
-            <td><img style="width: 100px" src="../../../Database/Images/<?php echo $row['thumbnail'] ?> " alt=""></td>
+            <td><img style="width: 100px" src="../../Database/Images/<?php echo $row['thumbnail'] ?> " alt=""></td>
             <td><?php echo $row['price'] ?></td>
             <td><?php echo $row['discount_price'] ?></td>
             <td><?php echo $row['description'] ?></td>
@@ -40,6 +41,7 @@ $result = mysqli_query($mysqli,$sql);
             <td><?php echo $row['update_at'] ?></td>
             <td><a onclick="return del('<?php echo $row['title'] ?>')" href="QuanLySanPham/delete.php?query=delete&product_id=<?php echo $row['product_id'] ?>"class="btn btn-danger">Xóa</a></td>
             <td><a href="?action=quanlysanpham&query=update&product_id=<?php echo $row['product_id'] ?>&category_id=<?php echo $row['category_id'] ?>"class="btn btn-primary">Sửa</a></td>
+            <td><a href="?action=quanlyanh&query=none&product_id=<?php echo $row['product_id'] ?>"class="btn btn-primary">View</a></td>
           </tr>
         <?php
         }

@@ -34,7 +34,7 @@ $result = mysqli_query($mysqli,$sql);
             <td><?php echo $row['address'] ?></td>
             <td><?php 
                     echo $row['name']
-                ?>
+              ?>
             </td>
             <td><?php echo $row['create_at'] ?></td>
             <td><?php echo $row['update_at'] ?></td>

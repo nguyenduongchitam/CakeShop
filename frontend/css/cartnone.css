@@ -1,0 +1,40 @@
+.cartnone{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI';
+    background-color: #fff7e6;
+}
+
+.cartnone .container{
+    background-color: #fff7e6;
+    text-align: center;
+}
+
+.cartnone .imagee{
+    
+    height: auto;
+}
+
+.cartnone .ifmt{
+    font-family: 'Segoe UI';
+    font-size: 25px;
+}
+.cartnone .ifmt1{
+    font-family: 'Segoe UI';
+    font-size: larger;
+    color: gray;
+}
+
+.cartnone .but{
+    background: orange;
+    border-radius: 10px;
+    width: 200px; 
+    height: 50px; 
+    font-size: 16px; 
+    margin-top: 20px;
+    font-family: 'Segoe UI';
+}
