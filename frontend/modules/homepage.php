@@ -88,6 +88,7 @@
   }
 }
   window.addEventListener('scroll', showOnScroll);
+  </script>
 
 
 <hr border="2">
