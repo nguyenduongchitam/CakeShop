@@ -66,7 +66,7 @@ if (isset($_POST['update']))
     if ($_FILES['thumbnail']['error'] === 0) {
         $thumbnail = $_FILES['thumbnail']['name'];
         $thumbnail_temp = $_FILES['thumbnail']['tmp_name'];
-        move_uploaded_file($thumbnail_temp,'../../../Database/Images/'.$thumbnail);
+        move_uploaded_file($thumbnail_temp,'../../Database/Images/'.$thumbnail);
     } 
     else $thumbnail= $thumbnailold;
 

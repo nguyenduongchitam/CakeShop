@@ -1,4 +1,4 @@
-<?php session_start();
+<?php 
 
 if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
 
@@ -52,18 +52,18 @@ if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
         $tong+=$tt;
     echo '<tr>
                <td>'.($i+1).'</td>
-               <td><img src="../../../Database/images/'.$_SESSION['cart'][$i][1].'" alt="" height="100" weight="100" ></td>
+               <td><img src="../../Database/Images/'.$_SESSION['cart'][$i][1].'" alt="" height="100" weight="80" ></td>
                 <td>'.$_SESSION['cart'][$i][2].'</td>
                 <td>'.$_SESSION['cart'][$i][3].'</td>
                 
                 <td>
-                <button>-</button>
+                <a href="#" class="quantity"><ion-icon name="remove-circle-outline"></ion-icon></a>
                 <input type="text" value="'.$_SESSION['cart'][$i][4].'" style=" width:40px; text-align:center ;" ></input>
-                <button>+</button>
+                <a href="#" class="quantity"><ion-icon name="add-circle-outline"></ion-icon></a>
                 </td>  
                 <td>'.$tt.'</td>
                 <td>
-                <a href="cart.php?delid='.$i.'&quantity='.$_SESSION['cart'][$i][4].'"> Xóa </a>
+                <a href="cart.php?delid='.$i.'&quantity='.$_SESSION['cart'][$i][4].'"> <ion-icon name="trash-outline" class="trash"></ion-icon> </a>
                 </td>
           </tr>';
        }
@@ -73,36 +73,10 @@ if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
     }
    
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giỏ hàng</title>
-    <!-- Link CSS của Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style>
-        .product-row {
-            border-bottom: 1px solid #dee2e6;
-            padding: 10px 0;
-        }
 
-        .product-row:last-child {
-            border-bottom: none;
-        }
-
-        .product-name {
-            font-weight: bold;
-            
-        }
-        
-    </style>
-</head>
-
-<body>
-    <a href="index.php"> Quay về trang chủ</a>
-    <div class="container mt-5  ">
-        <h1 class="text-center">Giỏ hàng</h1>
+<div class="cartbody">
+    <div class="container-mt-5">
+        <h1 class="text-center">Giỏ hàng của bạn</h1>
         <div class="row">
             <div class="col-md-9">
                 <div class="card">
@@ -133,21 +107,23 @@ if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card">
+                <div class="card"> 
                     <div class="card-body">
-                        <h5 class="card-title">Tổng cộng</h5>
+                    <p style="font-size:x-large"><b>ĐƠN HÀNG</b></p>
+                        <!-- <h5 class="card-title">Tổng cộng</h5> -->
+                        <p style="font-size:large"><b>Nhập mã khuyến mãi </p></b>
+                        <div class="indiscount"><input type><input type="submit" value="Áp dụng"></div>
                         <div class="cart-summary">
-                            <p>Tổng tiền: <span id="totalAmount"><?php echo $tong ?> </span></p>
+                         <p style="font-size:large"><b>Tổng tiền: </p> <span id="totalAmount" class="total" style="color:rgb(214, 0, 0)"><?php echo $tong ?>đ </span></b>
                         </div>
-                        <a href="cartcheckout.php?tong=<?php echo $tong ?>" class="btn btn-primary">Thanh toán</a>
+                        <a href="cartcheckout.php?tong=<?php echo $tong ?>"  ><button class="button"><b>Thanh toán</b></button></a>
                     </div>
+                </div>
+                <div class="intext">
+                <p><i> <b>Chính sách mua hàng:</b><br> Hiện chúng tôi chỉ áp dụng giao hàng ở khu vực miền Nam</i></p>
                 </div>
             </div>
         </div>
     </div>
-</body>
-
-</html>
-
-
-
+    <!-- <a href="index.php" class="back"> Quay về trang chủ</a> -->
+</div>
