@@ -52,6 +52,11 @@
     include("../modules/QuanLyTinTuc/update.php");
     else if( $action=='quanlytintuc' && $query=='content') 
     include("../modules/QuanLyTinTuc/noidung.php");
+    else  if( $action=='quanlyanh' && $query=='none')
+    {
+        include("../modules/QuanLyAnh/quanlyanh.php");
+        include("../modules/QuanLyAnh/list.php");
+    }
     else include("dashboard.php");
 ?>
 </div>

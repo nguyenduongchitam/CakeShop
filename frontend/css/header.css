@@ -75,12 +75,30 @@
 .myheader {
     box-sizing: border-box; 
     padding: 0px;
+    font-family:'Segoe UI';
 }
 
 .nav-item {
     position: relative;
 }
+.noti{
+    position: relative;
+    color: white;
+    text-decoration: none;
+   
+    display: inline-block;
+    border-radius: 2px;
+}
 
+.noti .badge {
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    padding: 5px 10px;
+    border-radius: 90%;
+    background-color: rgba(255, 238, 238, 0.7);
+    color: rgb(117, 117, 117);
+}
 
 /* .navbarne {
     box-sizing: border-box;

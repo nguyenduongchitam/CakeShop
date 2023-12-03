@@ -10,7 +10,7 @@ session_start();
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>trang khách hàng</title>
+    <title>IU LÀ ĐÂY</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
@@ -18,7 +18,12 @@ session_start();
     <link rel="stylesheet" href="../css/aboutuspage.css">
     <link rel="stylesheet" href="../css/contract.css">
     <link rel="stylesheet" href="../css/menupage.css">  
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/cartnone.css">
     <link rel="stylesheet" href="../css/sign-in.css"> 
+    <link rel="stylesheet" href="../css/tintucpage.css">
+     <link rel="stylesheet" href="../css/content.css">
+     <link rel="stylesheet" href="../css/product.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushina">
@@ -29,10 +34,10 @@ session_start();
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
      <head>
   <body>
-  <section class="myheader" style="background-color: #DE8F5F;">
+  <section class="myheader sticky-top" style="background-color: #F1DBBF;">
     <div class=" container-fluid fs-4 text-center headerig" style="padding: 0;">
       <div class="row align-items-center">
-        <div class="col-md-2"><img src="../modules/images/Header-logo.png" class="img-fluid logo" alt="Logo" style="max-width: 140px; height:90px"></div>
+        <div class="col-md-2"><a href="index.php?action=homepage&query=none"><img src="../modules/images/Header-logo.png" class="img-fluid logo" alt="Logo" style="max-width: 140px; height:90px"></a></div>
         <div class="col-md-6">
           <section class="menu">
             <div class="container-fluid pt-3 navbarne">
@@ -68,6 +73,9 @@ session_start();
                         <li class="nav-item">
                           <a class="nav-link active" aria-current="page" href="index.php?action=contractpage&query=none" style="padding-top: 0; color:#4d2600;">Liên Hệ</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.php?action=tintucpage&query=none" style="padding-top: 0; color:#4d2600;">Tin Tức</a>
+                          </li>
                       </ul>
                     </div>
                   </div>
@@ -111,7 +119,9 @@ session_start();
                         ?> 
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="index.php?action=cart&query=none" style="padding-top: 0; color:#4d2600;"><i class="bi bi-basket2 account bigger-icon"></i> <?php if(isset($_SESSION['quantity_in_cart'])) echo $_SESSION['quantity_in_cart'];else echo 0; ?> </a>
+                          <div class="noti">
+                          <a class="nav-link active" aria-current="page" href="index.php?action=cart&query=none" style="padding-top: 0; color:#4d2600;"><i class="bi bi-basket2 account bigger-icon"></i> 
+                          <span class="badge"><?php if(isset($_SESSION['quantity_in_cart'])) echo $_SESSION['quantity_in_cart'];else echo 0; ?></span> </a> </div>
                         </li>
                       </ul>
                     </div>
@@ -128,7 +138,7 @@ session_start();
  include("main.php");
  ?> 
   </body>
-  <section class="myfooter" style="background-color: #B4BDFF; color: #4d2600; font-family: Segoe UI;">
+  <section class="myfooter" style="background-color: #F1DBBF; color: #4d2600; font-family: Segoe UI;">
         <div class="container fs-4 py-3 text-center">
             <div class="row">
                 <div class="col-md-3">

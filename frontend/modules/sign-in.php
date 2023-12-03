@@ -52,7 +52,7 @@ session_start();
 <html lang="en">
 <script type="text/javascript">
             function Redirect() {
-               window.location="homepage.php";
+               window.location="index.php";
             }
 </script>
 <head>

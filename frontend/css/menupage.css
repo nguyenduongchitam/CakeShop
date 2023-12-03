@@ -3,6 +3,8 @@
     padding: 0;
     background: #fff7e6;
     font-family: 'Segoe UI';
+    display:flow-root;
+    height: auto;
 }
 
 .menubody .wrapper{
@@ -10,11 +12,7 @@
     width: 100%;
     margin: 0 auto;
     font-family: 'Segoe UI';
-}
-
-.menubody h1 {
-    text-align: center;
-    font-weight: 700;
+    padding-top: 50px;
 }
 
 .menubody  .chose {
@@ -33,7 +31,7 @@
     background: #4d2600;
     font-weight: 1000;
     height: 50px;
-    border-radius: 20px 20px 0 0;
+    border-radius: 20px 15px 0 0;
 }
 .menubody  ul.danhmuc {
     padding: 0;
@@ -78,6 +76,9 @@
     margin-top: 5px;
     margin-left: 5px;
     float: right;
+    padding-left: 40px;
+    font-size: large;
+    
 }
 .menubody  ul.product {
     padding: 0;
@@ -85,13 +86,24 @@
     list-style: none;
     width: 100%;
 }
+.menubody .namecake {
+    color: #4d2600;
+    text-decoration: none;
+    text-align: center;
+}
+
 .menubody ul.product li {
     width: 20%;
-    margin: 10px;
+    margin: 15px;
     float: left;
-    background: #ffffe6;
+    background: #ffffcc;
     height: 350px;
     border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;  
+}
+.menubody ul.product li:hover{
+    transform: scale(1.1);
 }
 .menubody ul.product li a {
     text-decoration: none;
@@ -104,20 +116,33 @@
     text-align: center;
     color: #663300;
     font-weight: 1000;
+    
 }
 .menubody p.price {
     text-align: center;
     color: #663300;
     font-weight: 1000;
 }
-.menubody .fas.fa-underline:before {
-    content: "\0111";
-    text-decoration: underline;
-    font-size: 0.8em;
-    position: relative;
-    top: -0.2em;
+
+.menubody ul.list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-left: 780px;
+    margin-bottom: 200px;
 }
 
-.menubody .clear{
-    clear: both;
+.menubody ul.list li {
+    float: left;
+    background: white;
+    padding: 10px 15px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.menubody ul.list li a {
+    color: #663300;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
 }

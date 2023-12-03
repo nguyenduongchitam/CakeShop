@@ -1,10 +1,12 @@
-
 <?php
 session_start();
 
 $tong=0;
 include("../../Database/Config/config.php");
-
+if(!isset($_SESSION['dangnhap'])&&($_SESSION['dangnhap']==""))
+          {
+           header("location:sign-in.php");
+          }
 function showcart(&$tong)
 {
     if(isset($_SESSION['cart'])&&(is_array($_SESSION['cart'])))
@@ -16,7 +18,6 @@ function showcart(&$tong)
      $tong+=$tt;
  echo '<tr>
             <td>'.($i+1).'</td>
-            <td><img src="../../../Database/images/'.$_SESSION['cart'][$i][1].'" alt="" height="100" weight="100" ></td>
              <td>'.$_SESSION['cart'][$i][2].'</td>
              <td>'.$_SESSION['cart'][$i][3].'</td>
              <td>'.$_SESSION['cart'][$i][4].'</td>
@@ -30,13 +31,11 @@ function showcart(&$tong)
  }
 
  if(isset($_POST['dathang']))
-{  // lấy thông tin khách hàng từ form
-    $full_name=$_POST['full_name'];
-    $email=$_POST['email'];
-    $phone_number=$_POST['phone_number'];
+{  
     /* $address=$_POST['address']; */
     $city=$_POST['city'];
     $district=$_POST['district'];
+    $delivery=$_POST['delivery'];
     $ward=$_POST['ward'];
     $note=$_POST['note'];
     // tạo dữ liệu oder
@@ -50,7 +49,7 @@ function showcart(&$tong)
         $user_id=$row['user_id'];
         }
         $tong=$_GET['tong'];
-        $sql_add_order= "INSERT INTO `order`(`user_id`, `city`, `district`, `ward`, `note`, `delivery_money`, `order_date`, `status`, `total_money`) VALUES ($user_id,'$city','$district','$ward','$note',now(),1,$tong)";
+        $sql_add_order= "INSERT INTO `order`(`user_id`, `city`, `district`, `ward`, `note`, `delivery_money`, `order_date`, `status`, `total_money`) VALUES ($user_id,'$city','$district','$ward','$note',$delivery,now(),1,$tong)";
         //lay id order vua moi them vao 
         if ( mysqli_query($mysqli,$sql_add_order)) {
             $last_order_id = mysqli_insert_id($mysqli);
@@ -66,7 +65,7 @@ function showcart(&$tong)
         }
         unset($_SESSION['cart']);
         unset($_SESSION['quantity_in_cart']);
-       // header("Location: index.php?action=thanhyou&query=none");
+       header("Location: index.php?action=thanhyou&query=none");
     }
 }
 ?>
@@ -82,6 +81,8 @@ function showcart(&$tong)
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
+            background-color:#fff7e6;
+            color: #4d2600;
         }
 
         h1 {
@@ -103,7 +104,9 @@ function showcart(&$tong)
             border: 1px solid #ccc;
             border-radius: 4px;
             padding: 5px;
-            width: 500px;
+            width: 60%;
+            text-align:center;
+            
             
         }
 
@@ -161,15 +164,17 @@ function showcart(&$tong)
     </style>
 </head>
 <body>
-<a href="cart.php" >Quay ve</a>
+<img src="../modules/images/Header-logo.png" class="img-fluid logo" alt="Logo" style="max-width: 140px; height:90px; border-radius:20px">
+
+ 
+<a href="index.php?action=cart&query=none" >Giỏ hàng</a>
+
     <div class="container">
         <div class="checkout-form">
             <h1>Thanh toán</h1>
             <form id="checkoutForm" method="post" action="">
                 
           <?php 
-          if(isset($_SESSION['dangnhap'])&&($_SESSION['dangnhap']!=""))
-          {
             $sql1 = "SELECT * FROM user where email='".$_SESSION['dangnhap']."'";
         $result1= mysqli_query($mysqli,$sql1);
 
@@ -179,62 +184,33 @@ function showcart(&$tong)
             $phone_number=$row['phone_number'];
             $address=$row['address'];
             echo '
-            <h2>Thanh toán giỏ hàng</h2>
             <label for="full_name">Họ và tên </label>
-            <input type="text" name="full_name"  value="'.$full_name.'" required>
-          
+            <input type="text" name="full_name"  value="'.$full_name.'" disabled >
             <label for="email">Email</label>
-            <input type="email" name="email" value="'.$email.'"  required>
-          
+            <input type="email" name="email" value="'.$email.'" disabled>
             <label>Số điện thoại</label>
-            <input type="text" name="phone_number" value="'.$phone_number.'"  required>
-          
-            <div>
-            <select class="form-select form-select-sm mb-3" id="city" aria-label=".form-select-sm">
-             <option name="city" value="" selected> Chọn tỉnh thành</option>           
-              </select>
-               
-              <select class="form-select form-select-sm mb-3" id="district" aria-label=".form-select-sm">
-              <option name="district" value="" selected>Chọn quận huyện</option>
-             </select>
-     
-               <select class="form-select form-select-sm" id="ward" aria-label=".form-select-sm">
-                 <option  name="wrad" value="" selected>Chọn phường xã</option>
-               </select>
-                  </div>    
-             <button type="submit" name="dathang">Đặt hàng</button>
-             <label for="note">Vui lòng nhập địa chỉ nhận hàng</label>
-             <textarea placeholder="Nội dung" type="areatext" name="note" class="form-control" required> </textarea>
-             ';
-        }
-    }
-        else echo '
-        <h2>Thanh toán giỏ hàng</h2>
-        <label for="full_name">Họ và tên </label>
-        <input type="text" name="full_name" required>
-        
-        <label for="email">Email</label>
-        <input type="email"  name="email" required>
-        
-        <label>Số điện thoại</label>
-        <input type="text" name="phone_number" required>
-        <div>
-       <select class="form-select form-select-sm mb-3" id="city" aria-label=".form-select-sm">
-        <option name="city" value="" selected> Chọn tỉnh thành</option>           
-         </select>
-         <select class="form-select form-select-sm mb-3" id="district" aria-label=".form-select-sm">
-         <option name="district" value="" selected>Chọn quận huyện</option>
-        </select>
-
-          <select class="form-select form-select-sm" id="ward" aria-label=".form-select-sm">
-            <option name="wrad" value="" selected>Chọn phường xã</option>
-          </select>
-             </div>    
-        <button type="submit" name="dathang">Đặt hàng</button>
-        <label for="note">Vui lòng nhập địa chỉ nhận hàng</label>
-        <textarea placeholder="Nội dung" type="areatext" name="note" class="form-control" required> </textarea>
+            <input type="text" name="phone_number" value="'.$phone_number.'" disabled >
+            <label>Chọn tỉnh</label>
+            <select name="city" class="form-select form-select-sm mb-3" id="city" aria-label=".form-select-sm">
+              <option  value="" selected> Chọn tỉnh thành</option>           
+            </select>
+            <label>Chọn huyện</label>
+             <select name="district" class="form-select form-select-sm mb-3" id="district" aria-label=".form-select-sm">
+             <option  value="" selected>Chọn quận huyện</option>
+            </select>
+            <label>Chọn phường xã</label>
+           <select name="ward" class="form-select form-select-sm" id="ward" aria-label=".form-select-sm">
+          <option  value="" selected>Chọn phường xã</option>
+          </select>  
+          <label>Ghi chú cho cửa hàng</label>
+          <textarea placeholder="Nội dung" type="areatext" name="note" class="form-control"> </textarea> 
+          <label>Phương thức giao hàng</label>
+           <input type="radio" name="delivery" value="0">Nhận tại cửa hàng</input>
+           <br>
+         <input type="radio" name="delivery" value="40000"> Giao hàng (phí ship 40k)</input>
+          <button type="submit" name="dathang">Đặt hàng</button>
         ';
-
+        }
           ?>
     </form>
         </div>
@@ -243,11 +219,10 @@ function showcart(&$tong)
             <table>
             <tr>
                 <th>STT</th>
-                <th>ảnh</th>
-                <th>tên sản phẩm</th>
-                <th>giá </th>
-                <th>số lượng</th>
-                <th>tổng tiền</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá </th>
+                <th>Số lượng</th>
+                <th>Tổng tiền</th>
             </tr>
            <?php showcart($tong)?>
            </table>
@@ -256,47 +231,53 @@ function showcart(&$tong)
         </div>
     </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-    <script>
-	var citis = document.getElementById("city");
-var districts = document.getElementById("district");
-var wards = document.getElementById("ward");    
-var Parameter = {
-  url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json", 
-  method: "GET", 
-  responseType: "application/json", 
-};
-var promise = axios(Parameter);
-promise.then(function (result) {
-  renderCity(result.data);
-});
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+  var cities = document.getElementById("city");
+  var districts = document.getElementById("district");
+  var wards = document.getElementById("ward");
 
-function renderCity(data) {
-  for (const x of data) {
-    citis.options[citis.options.length] = new Option(x.Name, x.Id);
+  var Parameter = {
+    url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json", 
+    method: "GET", 
+    responseType: "application/json", 
+  };
+
+  var promise = axios(Parameter);
+  promise.then(function (result) {
+    renderCity(result.data);
+  });
+
+  function renderCity(data) {
+    for (const city of data) {
+      cities.options[cities.options.length] = new Option(city.Name, city.Name);
+    }
+
+    cities.onchange = function () {
+      districts.length = 1;
+      wards.length = 1;
+
+      if (this.value !== "") {
+        const selectedCity = data.find(city => city.Name === this.value);
+
+        for (const district of selectedCity.Districts) {
+          districts.options[districts.options.length] = new Option(district.Name, district.Name);
+        }
+      }
+    };
+
+    districts.onchange = function () {
+      wards.length = 1;
+
+      if (this.value !== "") {
+        const selectedCity = data.find(city => city.Name === cities.value);
+        const selectedDistrict = selectedCity.Districts.find(district => district.Name === this.value);
+
+        for (const ward of selectedDistrict.Wards) {
+          wards.options[wards.options.length] = new Option(ward.Name, ward.Name);
+        }
+      }
+    };
   }
-  citis.onchange = function () {
-    district.length = 1;
-    ward.length = 1;
-    if(this.value != ""){
-      const result = data.filter(n => n.Id === this.value);
-
-      for (const k of result[0].Districts) {
-        district.options[district.options.length] = new Option(k.Name, k.Id);
-      }
-    }
-  };
-  district.onchange = function () {
-    ward.length = 1;
-    const dataCity = data.filter((n) => n.Id === citis.value);
-    if (this.value != "") {
-      const dataWards = dataCity[0].Districts.filter(n => n.Id === this.value)[0].Wards;
-
-      for (const w of dataWards) {
-        wards.options[wards.options.length] = new Option(w.Name, w.Id);
-      }
-    }
-  };
-}
-	</script>
+</script>
 </body>

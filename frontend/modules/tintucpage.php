@@ -3,16 +3,8 @@ include("../../Database/Config/config.php");
 $sql1 = "select * from tintuc";
 $result1 = mysqli_query($mysqli, $sql1);
 ?>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-</head>
-
 <body>
-    <div class="menubody">
+    <div class="newbody">
         <div class="wrapper">
             <h1>Tin tức</h1>
             <div class="main">
@@ -34,5 +26,3 @@ $result1 = mysqli_query($mysqli, $sql1);
         </div>
     </div>
 </body>
-
-</html>

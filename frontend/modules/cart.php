@@ -63,12 +63,12 @@ if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
                 </td>  
                 <td>'.$tt.'</td>
                 <td>
-                <a href="cart.php?delid='.$i.'&quantity='.$_SESSION['cart'][$i][4].'"> <ion-icon name="trash-outline" class="trash"></ion-icon> </a>
+                <a href="index.php?action=cart&query=none&delid='.$i.'&quantity='.$_SESSION['cart'][$i][4].'"> <ion-icon name="trash-outline" class="trash"></ion-icon> </a>
                 </td>
           </tr>';
        }
       
-    } else echo 'emty';
+    } else echo'<script>location.replace("index.php?action=cartnone&query=none");</script>';
     }
     }
    
@@ -127,3 +127,10 @@ if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
     </div>
     <!-- <a href="index.php" class="back"> Quay về trang chủ</a> -->
 </div>
+    <!-- <a href="index.php" class="back"> Quay về trang chủ</a> -->
+</div>
+
+
+
+
+
