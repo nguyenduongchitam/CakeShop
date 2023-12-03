@@ -8,7 +8,7 @@ $result= mysqli_query($mysqli,$sql);
 while ($row = mysqli_fetch_array($result)) {
 ?>
 <div class="product">
-    <form method="POST" action="cart.php">
+    <form method="POST" action="index.php?action=cart&query=none">
     
 <table>
 <tr>

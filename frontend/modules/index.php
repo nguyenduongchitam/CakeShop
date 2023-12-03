@@ -1,10 +1,10 @@
 <?php
-   include("../../Database/Config/config.php");
-    $sql="select * from category";
-$result= mysqli_query($mysqli,$sql);
-  session_start();
- 
-    ?>
+include("../../Database/Config/config.php");
+$sql = "select * from category";
+$result = mysqli_query($mysqli, $sql);
+session_start();
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -104,15 +104,14 @@ $result= mysqli_query($mysqli,$sql);
                         <li><a class="dropdown-item" href="profilepage.php">'.$_SESSION['dangnhap'].'</a></li>
                            <li><a class="dropdown-item" href="logout.php">Đăng xuất</a></li>
                      </ul>';
-                             }
-                     else echo '<ul class="dropdown-menu">
+                            } else echo '<ul class="dropdown-menu">
                      <li><a class="dropdown-item" href="sign-up.php">Đăng Ký</a></li>
                      <li><a class="dropdown-item" href="sign-in.php">Đăng Nhập</a></li>
                    </ul>';
                         ?> 
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="cart.php" style="padding-top: 0; color:#4d2600;"><i class="bi bi-basket2 account bigger-icon"></i> <?php if(isset($_SESSION['quantity_in_cart'])) echo $_SESSION['quantity_in_cart'];else echo 0; ?> </a>
+                          <a class="nav-link active" aria-current="page" href="index.php?action=cart&query=none" style="padding-top: 0; color:#4d2600;"><i class="bi bi-basket2 account bigger-icon"></i> <?php if(isset($_SESSION['quantity_in_cart'])) echo $_SESSION['quantity_in_cart'];else echo 0; ?> </a>
                         </li>
                       </ul>
                     </div>

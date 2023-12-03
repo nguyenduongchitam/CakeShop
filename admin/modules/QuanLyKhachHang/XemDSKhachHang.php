@@ -1,34 +1,40 @@
 <?php
 include("config.php");
-
-$sql = "SELECT user_id, full_name FROM user";
-$result= mysqli_query($mysqli,$sql);
-if ($result->num_rows > 0) {
-    echo "Danh sách khách hàng:<br>";
-    while ($row = $result->fetch_assoc()) {
-        echo '<a href="?user_id=' . $row['user_id'] . '">' . $row['full_name'] . '</a><br>';
-    }
-} else {
-    echo "Không có khách hàng.";
-}
-
-if (isset($_GET['user_id'])) {
-    $customerId = $_GET['user_id'];
-
-    $sql = "SELECT * FROM user WHERE user_id = $customerId";
-    $result = $con->query($sql);
-    if ($result->num_rows > 0) {
-        $customer = $result->fetch_assoc();
-        echo "Thông tin chi tiết khách hàng:<br>";
-        echo "ID: " . $customer['user_id'] . "<br>";
-        echo "Tên: " . $customer['full_name'] . "<br>";
-        echo "Email: " . $customer['email'] . "<br>";
-        echo "Điện thoại: " . $customer['phone_number'] . "<br>";
-        echo "Dia chi: " . $customer['address'] . "<br>";
-        echo "Mat khau: " . $customer['password'] . "<br>";
-    } else {
-        echo "Khách hàng không tồn tại.";
-    }
-}
-
+$sql = "SELECT * FROM user";
+$result = mysqli_query($mysqli,$sql);
 ?>
+  <div class="container" >
+    <h1 class="text-center">Danh sách khách hàng</h1>
+    <table class="table table-bordered table-striped mt-3">
+      <thead>
+        <tr>
+          <th>Mã khách hàng</th>
+          <th>Tên khách hàng</th>
+          <th>Email</th>
+          <th>Điện thoại</th>
+          <th>Địa chỉ</th>
+          <th>Mật khẩu</th>
+          <th>Lịch sử mua hàng</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        $i = 0;
+        while ($row = mysqli_fetch_array($result)) {
+          $i++;
+        ?>
+          <tr>
+            <td><?php echo $row['user_id'] ?></td>
+            <td><?php echo $row['full_name'] ?></td>
+            <td><?php echo $row['email'] ?></td>
+            <td><?php echo $row['phone_number'] ?></td>
+            <td><?php echo $row['address'] ?></td>
+            <td><?php echo $row['password'] ?></td>
+            <td><a href="?action=quanlykhachhang&query=select&user_id=<?php echo $row['user_id'] ?>"class="btn btn-primary">Xem</a></td>
+          </tr>
+        <?php
+        }
+        ?>
+      </tbody>
+    </table>
+  </div>

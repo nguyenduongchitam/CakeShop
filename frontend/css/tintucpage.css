@@ -1,0 +1,35 @@
+.menubody {
+    margin: 0;
+    padding: 0;
+    background: #fff7e6;
+    font-family: 'Segoe UI';
+}
+
+.menubody .wrapper{
+    height: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Segoe UI';
+}
+
+.menubody h1 {
+    text-align: center;
+    font-weight: 700;
+}
+
+.menubody .main ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menubody .main ul li{
+    padding: 50px;
+}
+
+.menubody .main ul li a p{
+    width: 300px;
+}
+
+.menubody a {
+    text-decoration: none;
+}

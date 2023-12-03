@@ -36,12 +36,22 @@
     if( $action=='quanlykhachhang' && $query=='none')
     {
         include("../modules/QuanLyKhachHang/XemDSKhachHang.php");
-        
-    }
-    else if( $action=='quanlyphanhoi' && $query=='none')
+    }else if  ($action=='quanlykhachhang' && $query=='select')
+    {
+        include("../modules/QuanLyKhachHang/XemLichSuMuaHang.php");
+    }else if( $action=='quanlyphanhoi' && $query=='none')
     {
         include("../modules/QuanLyPhanHoi/XemDSFeedBack.php");   
     }
+    else  if( $action=='quanlytintuc' && $query=='none')
+    {
+        include("../modules/QuanLyTinTuc/quanlytintuc.php");
+        include("../modules/QuanLyTinTuc/list.php");
+    }
+    else if( $action=='quanlytintuc' && $query=='update') 
+    include("../modules/QuanLyTinTuc/update.php");
+    else if( $action=='quanlytintuc' && $query=='content') 
+    include("../modules/QuanLyTinTuc/noidung.php");
     else include("dashboard.php");
 ?>
 </div>

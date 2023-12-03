@@ -1,0 +1,24 @@
+.menubody {
+    margin: 0;
+    padding: 0;
+    background: #fff7e6;
+    font-family: 'Segoe UI';
+}
+
+.menubody .wrapper{
+    height: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Segoe UI';
+}
+
+.menubody h1 {
+    text-align: center;
+    font-weight: 700;
+}
+
+.menubody .content{
+    padding-left: 200px;
+    padding-right: 200px;
+    font-size: 19px;
+}

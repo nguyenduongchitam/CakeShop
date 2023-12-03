@@ -34,6 +34,14 @@
     {
         if($query=='none') include("cart.php");
     }
+    else if( $action=='tintucpage')
+    {
+        if($query=='none') include("tintucpage.php");
+    }
+    else if( $action=='content')
+    {
+        if($query=='none') include("content.php");
+    }
     else include("homepage.php");   
 
 ?>
