@@ -51,6 +51,17 @@
     include("../modules/QuanLyTinTuc/update.php");
     else if( $action=='quanlytintuc' && $query=='content') 
     include("../modules/QuanLyTinTuc/noidung.php");
+    else  if( $action=='quanlyhoadon' && $query=='none')
+    {
+        include("../modules/QuanLyHoaDon/quanlyhoadon.php");
+        include("../modules/QuanLyHoaDon/list.php");
+    }
+    else if( $action=='quanlyhoadon' && $query=='update') 
+    include("../modules/QuanLyHoaDon/update.php");
+    else  if( $action=='quanlyCTHD' && $query=='none')
+    {
+        include("../modules/QuanLyCTHD/list.php");
+    }
     else include("dashboard.php");
 ?>
 </div>

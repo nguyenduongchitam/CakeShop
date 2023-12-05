@@ -20,16 +20,26 @@
 .menubody .main ul{
     display: flex;
     flex-wrap: wrap;
-}
-
-.menubody .main ul li{
-    padding: 50px;
+    
 }
 
 .menubody .main ul li a p{
-    width: 300px;
+    width: 350px;
 }
 
 .menubody a {
     text-decoration: none;
+}
+
+.menubody .main ul li a img{
+    border-radius: 20px;
+}
+
+.menubody .main ul li {
+    margin: 10px;
+    float: left;
+    background: white;
+    height: 450px;
+    border-radius: 20px;
+    border: 1px solid;
 }

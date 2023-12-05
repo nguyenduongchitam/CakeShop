@@ -22,7 +22,7 @@ $result1 = mysqli_query($mysqli, $sql1);
                     ?>
                         <li>
                             <a href="index.php?action=content&query=none&id=<?php echo $row['tintuc_id'] ?>">
-                                <img src="../../Database/images/<?php echo $row['anh'] ?>" height="300px" width="300px" alt="image">
+                                <img src="../../Database/images/<?php echo $row['anh'] ?>" height="350px" width="350px" alt="image">
                                 <p class="product_list"><?php echo $row['title'] ?> </p>
                             </a>
                         </li>
