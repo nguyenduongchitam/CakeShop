@@ -109,7 +109,7 @@ if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
             <div class="col-md-3">
                 <div class="card"> 
                     <div class="card-body">
-                    <p style="font-size:x-large"><b>ĐƠN HÀNG</b></p>
+                    <p style="font-size:x-large; text-align: center;"><b>ĐƠN HÀNG</b></p>
                         <!-- <h5 class="card-title">Tổng cộng</h5> -->
                         <p style="font-size:large"><b>Nhập mã khuyến mãi </p></b>
                         <div class="indiscount"><input type><input type="submit" value="Áp dụng"></div>
