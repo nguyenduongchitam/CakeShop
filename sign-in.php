@@ -17,11 +17,10 @@
                 $error['email']['invalid'] = 'email không hợp lệ';
             }
         }
-
         if(empty($error)){
-        session_start();
-        include("config.php");
+            include("config.php");
         if(isset($_POST['dangnhap'])){
+            $_SESSION['login'] = $_POST['email'];
             $taikhoan = $_POST['email'];
             $matkhau = $_POST['password'];
             $sql = "SELECT * FROM user where email='".$taikhoan."' LIMIT 1 ";
@@ -32,26 +31,31 @@
             }
             else{
                 $passwordHashData = $result['password'];
-                if(password_verify($matkhau,$passwordHashData)== false)
+                if(password_verify($matkhau,$passwordHashData))
                 {
-                    $error['password']['un-verify'] = 'sai mât khẩu';
-                    //header("Location:sign-in.php");
+                    $_SESSION['dangnhap'] = $taikhoan;
+                    header("Location:index.php?action=homepage&query=none");
                 }
                 else{
-                    $_SESSION['dangnhap'] = $taikhoan;
-                    $error['log-in']['verify'] = 'đăng nhập thành công';
-                    //header("Location:homepage.php");
+                    $error['password']['un-verify'] = 'sai mât khẩu';
+                    $error['email']['save'] = $taikhoan;
                 }
             }
         }
     }
-    }   
+    }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <script type="text/javascript">
             function Redirect() {
                window.location="homepage.php";
+            }
+</script>
+<script>
+    function ForgetPassword(){
+                window.location = "PHPMailer-gmail-source-code/forget-password.php";
             }
 </script>
 <head>
@@ -67,7 +71,7 @@
             <h1 class="form-heading">Đăng nhập</h1>
             <div class="form-group">
                 <i class="fa-regular fa-user"></i>
-                <input type="text" class="form-input" placeholder="Email" name="email">
+                <input type="text" class="form-input" placeholder="Email" name="email" value="<?php echo (!empty($error['email']['save']))?$error['email']['save']:false; ?>">
             </div>
             <?php
                     echo (!empty($error['email']['required']))?'<span class="error" style="color: red">'.$error['email']['required'].'</span>':false;
@@ -90,11 +94,8 @@
             ?>
             <input type="submit" class="form-submit" value="Đăng nhập" name="dangnhap">
             <input type="submit" class="form-submit" value="Đăng ký">
-            <div class="support" onclick="Redirect()">Trở về</div>
-            <div class="support">Quên mật khẩu</div>
-            <?php
-                echo (!empty($error['log-in']['verify']))?'<span class="error" style="color: red">'.$error['log-in']['verify'].'</span>':false;
-            ?>
+            <div class="support" onclick="Redirect()" style="cursor: pointer;">Trở về</div>
+            <div class="support" onclick="ForgetPassword()" style="cursor: pointer;"><u>Quên mật khẩu?</u></div>
         </form>
     </div>
 </body>
