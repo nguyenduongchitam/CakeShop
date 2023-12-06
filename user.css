@@ -93,7 +93,7 @@ button#update-profile:hover, button#update-account:hover{
     margin: 0;
 }
  #btn-close-profile, #btn-close-account{
-    border: solid 1px;
+    border: solid 1px white;
     border-radius: 30px;
     background: white;
     font-size: 19px;
