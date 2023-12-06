@@ -162,7 +162,7 @@
                             <input type="text" placeholder="Địa chỉ" name="address" class="form-input">
                         </div>
                         <div>
-                            <button type="submit" class="btn btn-primary"  name="save-profile"><b>CẬP NHẬT TÀI KHOẢN</b></button>
+                            <button type="submit" class="btn btn-secondary"  name="save-profile" id="update-pro"><b>CẬP NHẬT TÀI KHOẢN</b></button>
                         </div>
                     </form>
                 </div>
@@ -201,7 +201,7 @@
                             echo (!empty($error['repeat_password']['compare']))?'<span class="error" style="color: red">'.$error['repeat_password']['compare'].'</span>':false;
                         ?>
                         <div>
-                            <button type="submit" class="btn btn-primary" name="save-account"><b>CẬP NHẬT MẬT KHẨU</b></button>
+                            <button type="submit" class="btn btn-secondary" name="save-account" id="update-pass"><b>CẬP NHẬT MẬT KHẨU</b></button>
                         </div>
                     </form>
                 </div>
