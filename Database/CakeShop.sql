@@ -27,7 +27,7 @@ CREATE TABLE `Product` (
   `price` int,
   `discount_price` int,
   `thumbnail` varchar(255),
-  `description` longtext(255),
+  `description` longtext,
   `created_at` datetime,
   `update_at` datetime
 );

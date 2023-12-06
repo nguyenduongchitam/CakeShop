@@ -57,6 +57,10 @@
         include("../modules/QuanLyAnh/quanlyanh.php");
         include("../modules/QuanLyAnh/list.php");
     }
+    else  if( $action=='quanlybaocao' && $query=='none')
+    {
+        include("../modules/QuanLyBaoCao/quanlybaocao.php");
+    }
     else include("dashboard.php");
 ?>
 </div>
