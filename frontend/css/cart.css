@@ -1,0 +1,99 @@
+.cartbody{
+    background-color: #fff7e6;
+    height: 1000px;
+    overflow: auto;
+    
+   }
+
+    .cartbody .container-mt-5{
+        color:#4d2600;
+        margin-top: auto;
+        margin-bottom: auto;
+        display:flow-root;
+        width: 90%;
+        align-items: center;
+        padding-left: 40px;
+        padding-top: 50px;
+
+    }
+    .cartbody .text-center{
+        padding-bottom: 20px;
+    }
+    .cartbody .product-row {
+        border-bottom: 1px solid #dee2e6;
+        padding: 10px 0;
+    }
+
+    .cartbody .product-row:last-child {
+        border-bottom: none;
+    }
+
+    .cartbody .product-name {
+        font-weight: bold;
+        
+    }
+    .cartbody .table{
+        text-align: center;
+        color:#4d2600;
+    }
+
+    .cartbody .table th{
+        background-color: #f9f4e9 ;
+        color:#4d2600;
+        
+    }
+    .cartbody .table tr,td{
+        vertical-align: middle;
+    }
+    
+    .cartbody .trash{
+        color: #4d2600;
+        font-size: large;
+    }
+    .cartbody .trash:hover{
+        color: rgb(76, 214, 232);
+    }
+    
+    .cartbody .cart-summary{
+        display: flex;
+        align-items: left;
+        justify-content:space-between;
+    }
+    .cartbody .total {
+        font-size:23px;
+        text-align: right;
+    }
+   
+    .cartbody .button{
+        background-color: rgb(214, 0, 0);
+        color:white;
+        border: none;
+        font-size: 20px;
+        border-radius: 18px;
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .cartbody .quantity {
+        color: #4d2600;
+        font-size: large;
+    }
+    .cartbody .quantity:hover{
+        color: rgb(76, 214, 232);
+    }
+    
+    .cartbody .intext {
+        background-color: #fcefd3 ;
+        margin-top: 30px;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90px; 
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+
+    .cartbody .indiscount{
+        padding-top: 0.1px;
+    }

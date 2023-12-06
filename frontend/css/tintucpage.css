@@ -1,0 +1,35 @@
+.newbody {
+    margin: 0;
+    padding: 0;
+    background: #fff7e6;
+    font-family: 'Segoe UI';
+}
+
+.newbody .wrapper{
+    height: 500px;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Segoe UI';
+}
+
+.newbody h1 {
+    text-align: center;
+    font-weight: 700;
+}
+
+.newbody .main ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.newbody .main ul li{
+    padding: 50px;
+}
+
+.newbody .main ul li a p{
+    width: 300px;
+}
+
+.newbody a {
+    text-decoration: none;
+}

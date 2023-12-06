@@ -8,15 +8,6 @@
 <li><a href="index.php?action=quanlykhachhang&query=none">Quản lý khách hàng</a></li>
 <li><a href="index.php?action=quanlyphanhoi&query=none">Quản lý Phản hồi</a></li>
 <li><a href="index.php?action=quanlybaocao&query=none" >Quản lý báo cáo và thống kê</a></li>
-<form method="POST" style="padding-left:45px">
-    <button name="logout" style="width: 150px; height:50px; margin-top:40px" class="btn btn-danger">Đăng Xuất</button>
-</form>
+<li><a href="admin_logout.php" class="btn btn-danger" style="margin:20px; padding:15px">Đăng xuất</a></li>
 </ul>   
 </div>
-<?php 
-if(isset($_POST['logout']))
-{
-    session_destroy();
-    header("Location:admin_login.php");
-}
-?>

@@ -30,6 +30,22 @@
     {   
         if( $query=='none') include("product.php");
     }
+    else if( $action=='cart')
+    {
+        if($query=='none') include("cart.php");
+    }
+    else if( $action=='tintucpage')
+    {
+        if($query=='none') include("tintucpage.php");
+    }
+    else if( $action=='content')
+    {
+        if($query=='none') include("content.php");
+    }
+    else if( $action=='cartnone')
+    {
+        if($query=='none') include("cartnone.php");
+    }
     else include("homepage.php");   
 
 ?>

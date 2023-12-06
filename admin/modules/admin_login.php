@@ -13,7 +13,7 @@
             header("Location:index.php");
         }
         else{
-            echo '<script>alert("Tài khoản hoặc mật khẩu không đúng, vui lòng nhập lại.")<script>';
+            echo '<script> alert("Tài khoản hoặc mật khẩu không đúng, vui lòng nhập lại.")<script>';
             header("Location:admin_login.php");
         }
     }
