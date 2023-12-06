@@ -27,7 +27,7 @@ CREATE TABLE `Product` (
   `price` int,
   `discount_price` int,
   `thumbnail` varchar(255),
-  `description` longtext(255),
+  `description` longtext,
   `created_at` datetime,
   `update_at` datetime
 );
@@ -86,13 +86,13 @@ INSERT INTO `role`(`role_id`, `name`) VALUES (1,'Admin');
 INSERT INTO `role`(`role_id`, `name`) VALUES (2,'Khách hàng');
 
 INSERT INTO `user`(`full_name`, `email`,`password`, `role_id`, `create_at`,`update_at`) VALUES ('admin','admin','admin',1,now(),now());
-INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Văn A','A@gmail.com','1234567','HCM','123456',2,now(),now());
-INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Anh B','B@gmail.com','1234567','HCM','123456',2,now(),now());
-INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Thị C','C@gmail.com','1234567','HCM','123456',2,now(),now());
-INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Văn D','D@gmail.com','1234567','HCM','123456',2,now(),now());
-INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Văn E','E@gmail.com','1234567','HCM','123456',2,now(),now());
-INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Dương Anh F','F@gmail.com','1234567','HCM','123456',2,now(),now());
-INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Văn G','G@gmail.com','1234567','HCM','123456',2,now(),now());
+INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Văn A','A@gmail.com','1234567','HCM','$2y$10$vTmwbsfP6LfOcuJZsitdE.4NbMwNmajBafL31FgGgsR.ENJKiAq3a',2,now(),now());
+INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Anh B','B@gmail.com','1234567','HCM','$2y$10$vTmwbsfP6LfOcuJZsitdE.4NbMwNmajBafL31FgGgsR.ENJKiAq3a',2,now(),now());
+INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Thị C','C@gmail.com','1234567','HCM','$2y$10$vTmwbsfP6LfOcuJZsitdE.4NbMwNmajBafL31FgGgsR.ENJKiAq3a',2,now(),now());
+INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Văn D','D@gmail.com','1234567','HCM','$2y$10$vTmwbsfP6LfOcuJZsitdE.4NbMwNmajBafL31FgGgsR.ENJKiAq3a',2,now(),now());
+INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Văn E','E@gmail.com','1234567','HCM','$2y$10$vTmwbsfP6LfOcuJZsitdE.4NbMwNmajBafL31FgGgsR.ENJKiAq3a',2,now(),now());
+INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Dương Anh F','F@gmail.com','1234567','HCM','$2y$10$vTmwbsfP6LfOcuJZsitdE.4NbMwNmajBafL31FgGgsR.ENJKiAq3a',2,now(),now());
+INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Văn G','G@gmail.com','1234567','HCM','1$2y$10$vTmwbsfP6LfOcuJZsitdE.4NbMwNmajBafL31FgGgsR.ENJKiAq3a',2,now(),now());
 
 INSERT INTO `category`(`category_id`,`name`) VALUES (1,'Bánh ngọt');
 INSERT INTO `category`(`category_id`,`name`) VALUES (2,'Bánh kem');
