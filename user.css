@@ -138,17 +138,18 @@ button#update-profile:hover, button#update-account:hover{
     margin-bottom: 20px;
     border-radius: 30px;
 }
-.btn.btn-primary{
+.btn.btn-secondary{
     background: wheat;
     color: black;
     border: 3px solid black;  
-    width: 150px;
+    width: 250px;
     height: 40px;
     border-radius: 20px;
     padding:5px 15px;
     cursor: pointer;
     box-shadow: 0px 2px 4px rgba( 0, 0, 0, 0.5);
+    margin-left: 150px;
 }
-.btn.btn-primary:hover{
+.btn.btn-secondary:hover{
     background: rgba(245, 222, 179, 0.436);
 }
