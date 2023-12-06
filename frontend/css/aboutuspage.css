@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 body{
+=======
+.aboutbody{
+>>>>>>> bd3171b8d7cca6e6d2e84e06efa60d414b9a206a
     padding: 0;
     margin: 0;
     background-color: #fff7e6;
@@ -6,18 +10,30 @@ body{
     font-family: 'Segoe UI';
 }
 
+<<<<<<< HEAD
 .head{
     background-color: #fff7e6;
     overflow: hidden;
 }
 .heading h1{
+=======
+.aboutbody .head{
+    background-color: #fff7e6;
+    overflow: hidden;
+}
+.aboutbody .heading h1{
+>>>>>>> bd3171b8d7cca6e6d2e84e06efa60d414b9a206a
     color: #ff6347;
     font-size: 55px;
     text-align: center;
     margin-top: 35px;
 }
 
+<<<<<<< HEAD
 .container{
+=======
+.aboutbody .container{
+>>>>>>> bd3171b8d7cca6e6d2e84e06efa60d414b9a206a
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,37 +41,61 @@ body{
     margin: 65px auto;
 }
 
+<<<<<<< HEAD
 .content{
+=======
+.aboutbody.content{
+>>>>>>> bd3171b8d7cca6e6d2e84e06efa60d414b9a206a
     flex: 1;
     width: 600px;
     margin: 0px 25px;
 }
+<<<<<<< HEAD
  .content h2{
+=======
+.aboutbody .content h2{
+>>>>>>> bd3171b8d7cca6e6d2e84e06efa60d414b9a206a
     font-size: 38px;
     margin-bottom: 20px;
     color: #333;
 }
+<<<<<<< HEAD
  .content p{
+=======
+.aboutbody .content p{
+>>>>>>> bd3171b8d7cca6e6d2e84e06efa60d414b9a206a
     font-size: 24px;
     line-height: 1.5;
     margin-bottom: 40px;
     color: #666;
     animation: fadeInUp 2s ease;
 }
+<<<<<<< HEAD
  .image{
+=======
+.aboutbody .image{
+>>>>>>> bd3171b8d7cca6e6d2e84e06efa60d414b9a206a
     flex: 1;
     width: 600px;
     margin: auto;
     animation: fadeInRight 2s ease;
 }
 
+<<<<<<< HEAD
  img{
+=======
+.aboutbody img{
+>>>>>>> bd3171b8d7cca6e6d2e84e06efa60d414b9a206a
     width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
+<<<<<<< HEAD
  hr {
+=======
+.aboutbody hr {
+>>>>>>> bd3171b8d7cca6e6d2e84e06efa60d414b9a206a
     width: 100%;
     border: 4px solid transparent;
     border-image: repeating-linear-gradient(-45deg, rgb(248, 110, 124), rgb(247, 73, 99) 10px, transparent 10px, transparent 20px) 10;
@@ -63,18 +103,30 @@ body{
     margin-top: 50px;
   }
 
+<<<<<<< HEAD
     .map{
+=======
+  .aboutbody .map{
+>>>>>>> bd3171b8d7cca6e6d2e84e06efa60d414b9a206a
     float: left;
     margin-top: 30px;
     margin-left: 150px;
     font-family: 'Segoe UI';
   }
+<<<<<<< HEAD
    .mp{
+=======
+  .aboutbody .mp{
+>>>>>>> bd3171b8d7cca6e6d2e84e06efa60d414b9a206a
     color: #333;
     font-size: 38px;
     margin-left: 60px;
 }
+<<<<<<< HEAD
  .maps{
+=======
+.aboutbody.maps{
+>>>>>>> bd3171b8d7cca6e6d2e84e06efa60d414b9a206a
     float: right;
     margin-left: 350px;
     height: 400px;

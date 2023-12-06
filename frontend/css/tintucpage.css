@@ -1,35 +1,35 @@
-.menubody {
+.newbody {
     margin: 0;
     padding: 0;
     background: #fff7e6;
     font-family: 'Segoe UI';
 }
 
-.menubody .wrapper{
-    height: 1000px;
+.newbody .wrapper{
+    height: 500px;
     width: 100%;
     margin: 0 auto;
     font-family: 'Segoe UI';
 }
 
-.menubody h1 {
+.newbody h1 {
     text-align: center;
     font-weight: 700;
 }
 
-.menubody .main ul{
+.newbody .main ul{
     display: flex;
     flex-wrap: wrap;
 }
 
-.menubody .main ul li{
+.newbody .main ul li{
     padding: 50px;
 }
 
-.menubody .main ul li a p{
+.newbody .main ul li a p{
     width: 300px;
 }
 
-.menubody a {
+.newbody a {
     text-decoration: none;
 }

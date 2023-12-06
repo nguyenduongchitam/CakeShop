@@ -12,11 +12,15 @@
 
 <body>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bd3171b8d7cca6e6d2e84e06efa60d414b9a206a
   <section class="myheader" style="background-color: #ffbdc4">
     <div class=" container fs-4 py-3 text-center headerig">
       <div class="row">
         <div class="col-md-3"><img src="../modules/homepage/2e.png" class="img-fluid logo" alt="Logo" style="max-width: 140px; height:120px"></div>
         <div class="col-md-4">
+<<<<<<< HEAD
 =======
 
 <section class="myheader" style="background-color: #C7DCA7;">
@@ -68,8 +72,10 @@
         </div>
         <div class="col-md-2" style="padding-top: 20px;">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" style="color: #4d2600; font-family: Segoe UI;" placeholder="Tìm kiếm..." aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" style="color: #4d2600;" type="button" id="button-addon2"><i class="bi bi-search-heart"></i></button>
+            <form action="index.php?quanly=search" method="POST">
+            <input type="text" class="form-control" style="color: #4d2600; font-family: Segoe UI;" placeholder="Tìm kiếm..." name="tukhoa" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <input class="btn btn-outline-secondary" style="color: #4d2600;" type="button" id="button-addon2"><i class="bi bi-search-heart"></i>>
+            </form>
           </div>
         </div>
         <div class="col-md-2">
@@ -133,12 +139,17 @@
         <div class="col-md-2"><img src="../modules/images/Header-logo.png" class="img-fluid logo" alt="Logo" style="max-width: 140px; height:90px"></div>
         <div class="col-md-6">
 >>>>>>> 65bbb58e0fc54296b89dbfff9bab4b74570a5805
+=======
+>>>>>>> bd3171b8d7cca6e6d2e84e06efa60d414b9a206a
           <div class="input-group mb-3">
             <input type="text" class="form-control" style="color: #4d2600" placeholder="Tìm kiếm..." aria-label="Recipient's username" aria-describedby="button-addon2">
             <button class="btn btn-outline-secondary" style="color: #4d2600;" type="button" id="button-addon2"><i class="bi bi-search-heart"></i></button>
           </div>
         </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bd3171b8d7cca6e6d2e84e06efa60d414b9a206a
        
         <a href="#" class="col-md-1 account bigger-icon"><i class="bi bi-person-circle"></i></a>
         <a href="#" class="col-md-1 account bigger-icon"><i class="bi bi-bag-heart bigger-icon"></i></a>
@@ -151,6 +162,7 @@
             </span>
           </button>
         </div> -->
+<<<<<<< HEAD
 =======
         <div class="col-md-3">
           <i class="bi bi-telephone" style="color: #4d2600;"></i>
@@ -166,6 +178,8 @@
         <a href="cart.php" class="col-md-1 account small-icon"><i class="bi bi-basket2"></i><?php if(isset($_SESSION['quantity_in_cart'])) echo $_SESSION['quantity_in_cart'];else echo 0; ?></a>
         <a href="logout.php" style="text-decoration: none">Thoát</a>
 >>>>>>> 65bbb58e0fc54296b89dbfff9bab4b74570a5805
+=======
+>>>>>>> bd3171b8d7cca6e6d2e84e06efa60d414b9a206a
       </div>
       <section class="menu">
         <div class="container pt-3">
@@ -211,6 +225,9 @@
       </section>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bd3171b8d7cca6e6d2e84e06efa60d414b9a206a
   </section>
 </body>
 
@@ -225,6 +242,9 @@
 <?php
   }
 ?>
+<<<<<<< HEAD
 =======
   </section>   -->  
 >>>>>>> 65bbb58e0fc54296b89dbfff9bab4b74570a5805
+=======
+>>>>>>> bd3171b8d7cca6e6d2e84e06efa60d414b9a206a

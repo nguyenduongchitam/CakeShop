@@ -42,6 +42,14 @@
     {
         if($query=='none') include("content.php");
     }
+    else if( $action=='search')
+    {
+        if($query=='none') include("search.php");
+    }
+    else if( $action=='cartnone')
+    {
+        if($query=='none') include("cartnone.php");
+    }
     else include("homepage.php");   
 
 ?>

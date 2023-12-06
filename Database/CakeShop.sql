@@ -13,7 +13,8 @@ CREATE TABLE `User` (
   `role_id` int,
   `create_at` datetime,
   `update_at` datetime
-);  
+);
+
 CREATE TABLE `Category` (
   `category_id` int PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(30)
@@ -26,7 +27,7 @@ CREATE TABLE `Product` (
   `price` int,
   `discount_price` int,
   `thumbnail` varchar(255),
-  `description` longtext, 
+  `description` longtext(255),
   `created_at` datetime,
   `update_at` datetime
 );
@@ -43,14 +44,18 @@ CREATE TABLE `FeedBack` (
   `lastname` varchar(255),
   `email` varchar(50),
   `phone_number` varchar(30),
-  `subject_name` varchar(255),
   `note` varchar(255)
 );
 
 CREATE TABLE `Order` (
   `order_id` int PRIMARY KEY AUTO_INCREMENT,
   `user_id` int,
+  `city` varchar(60),
+  `district` varchar(60),
+  `ward` varchar(60),
   `note` varchar(255),
+  `delivery_money` int,
+  `discount` real,
   `order_date` datetime,
   `status` boolean,
   `total_money` int
