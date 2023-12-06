@@ -17,7 +17,6 @@ function showcart(&$tong)
      $tt=$_SESSION['cart'][$i][3]*$_SESSION['cart'][$i][4];
      $tong+=$tt;
  echo '<tr>
-            <td>'.($i+1).'</td>
              <td>'.$_SESSION['cart'][$i][2].'</td>
              <td>'.$_SESSION['cart'][$i][3].'</td>
              <td>'.$_SESSION['cart'][$i][4].'</td>
@@ -78,15 +77,52 @@ function showcart(&$tong)
     <style>
         /* CSS cho trang checkout */
         body {
-            font-family: Arial, sans-serif;
+            font-family:'Segoe UI';
             margin: 0;
             padding: 20px;
-            background-color:#fff7e6;
             color: #4d2600;
+            background-color: #FFFBF5;
         }
 
-        h1 {
-            text-align: center;
+        .img-fluid-logo {
+            width: 120px; 
+            height:120px; 
+            border-radius: 100%;  
+            display: block;
+            margin-right: auto;
+            margin-left: 220px;
+            margin-bottom: 24px;
+            filter: brightness(100%);
+            transition: filter 0.3s ease;
+
+        }
+        .img-fluid-logo:hover {
+          filter:contrast(110%)
+        }
+        .background {
+          background-image: url(../modules/images/background.png);
+        }
+        .link {
+          margin-left: 220px;
+         
+        }
+
+        .linkcart{
+          text-decoration:none; 
+          color: #8B7E74;
+
+        }
+
+        .linkcart:hover {
+          color: #4d2600;
+        }
+      
+        .title {
+          font-size: 22px;
+          font-weight: bold;
+          letter-spacing: 2px;
+          background-color: antiquewhite;
+          padding: 5px 10px;
         }
 
         .container {
@@ -100,13 +136,45 @@ function showcart(&$tong)
             margin-right: 20px;
         }
 
+        .square-checkbox {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 1px solid #000;
+        width: 15px;
+        height: 15px;
+        border-radius: 3px;
+        position: relative;
+       }
+
+    .square-checkbox:checked::before {
+        content: "\2713";
+        font-size: 12px;
+        color: #000;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+       }
+
+       .checkbox-label {
+        display: flex;
+        align-items: center;
+        
+    }
+
+    .checkbox-label input[type="checkbox"] {
+        margin-right: 5px;
+    }
+
         .cart {
             border: 1px solid #ccc;
             border-radius: 4px;
             padding: 5px;
             width: 60%;
             text-align:center;
-            
+            padding: 10px;
+            border-width: 2px;
             
         }
 
@@ -131,7 +199,13 @@ function showcart(&$tong)
             margin-top: 10px;
             font-weight: bold;
         }
-
+        .bill {
+          display: flex; 
+          justify-content: center; 
+          align-items: center;
+          border-spacing: 8px;
+          
+        }
         label {
             display: block;
             margin-bottom: 5px;
@@ -149,29 +223,39 @@ function showcart(&$tong)
         }
 
         button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            float: right;
+          background-color: #ED7D31;
+          color: white;
+          border: none;
+          font-size: 20px;
+          border-radius: 10px;
+          width: 80%;
+          margin-top: 10px;
+          height: 40px;
+          
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: rgb(214, 0, 0);
+        }
+
+        .amounttotal{
+          font-size: 23px;
+          text-align: right;
+          justify-content: space-between;
+          color:#ED7D31;
+          
         }
     </style>
 </head>
 <body>
-<img src="../modules/images/Header-logo.png" class="img-fluid logo" alt="Logo" style="max-width: 140px; height:90px; border-radius:20px">
 
- 
-<a href="index.php?action=cart&query=none" >Giỏ hàng</a>
+<a href="index.php?action=homepage&query=none"><img src="../modules/images/Header-logo.png" class="img-fluid-logo" alt="Logo">
+    
+<p class="link"><a href="index.php?action=cart&query=none" class="linkcart">Giỏ hàng của bạn</a> > Thông tin mua hàng </p>
 
-    <div class="container">
+<div class="container">
         <div class="checkout-form">
-            <h1>Thanh toán</h1>
+            <p class="title">THÔNG TIN GIAO HÀNG</p>
             <form id="checkoutForm" method="post" action="">
                 
           <?php 
@@ -190,44 +274,66 @@ function showcart(&$tong)
             <input type="email" name="email" value="'.$email.'" disabled>
             <label>Số điện thoại</label>
             <input type="text" name="phone_number" value="'.$phone_number.'" disabled >
-            <label>Chọn tỉnh</label>
+            <label>Chọn Tỉnh/ Thành phố</label>
             <select name="city" class="form-select form-select-sm mb-3" id="city" aria-label=".form-select-sm">
-              <option  value="" selected> Chọn tỉnh thành</option>           
+              <option  value="" selected> Tỉnh/ Thành phố</option>           
             </select>
-            <label>Chọn huyện</label>
+            <label>Chọn Quận/ Huyện</label>
              <select name="district" class="form-select form-select-sm mb-3" id="district" aria-label=".form-select-sm">
-             <option  value="" selected>Chọn quận huyện</option>
+             <option  value="" selected>Quận/ Huyện</option>
             </select>
-            <label>Chọn phường xã</label>
+            <label>Chọn Phường/ Xã</label>
            <select name="ward" class="form-select form-select-sm" id="ward" aria-label=".form-select-sm">
-          <option  value="" selected>Chọn phường xã</option>
+          <option  value="" selected>Phường/ Xã</option>
           </select>  
+          <label>Địa chỉ nhận hàng</label>
+            <input type="text"></input>
           <label>Ghi chú cho cửa hàng</label>
-          <textarea placeholder="Nội dung" type="areatext" name="note" class="form-control"> </textarea> 
-          <label>Phương thức giao hàng</label>
-           <input type="radio" name="delivery" value="0">Nhận tại cửa hàng</input>
+          <textarea placeholder="Nội dung" type="areatext" name="note" class="form-control" style="width: 99%; height: 50px;"> </textarea> 
+          <p class="title">PHƯƠNG THỨC GIAO HÀNG</p>
+          <label class="checkbox-label"><input type="checkbox" class="square-checkbox" name="delivery" value="0" onclick="uncheckOther(this)"> Nhận sản phẩm tại cửa hàng</label>
            <br>
-         <input type="radio" name="delivery" value="40000"> Giao hàng (phí ship 40k)</input>
-          <button type="submit" name="dathang">Đặt hàng</button>
+           <label class="checkbox-label"><input type="checkbox" class="square-checkbox" name="delivery" value="40000" onclick="uncheckOther(this)"> Giao hàng theo tốc độ tiêu chuẩn (từ 2 - 5 ngày làm việc)</label>
+          <p class="title">PHƯƠNG THỨC THANH TOÁN</p>
+          <label class="checkbox-label"><input type="checkbox" class="square-checkbox" onclick="uncheckOther(this)" > Thanh toán khi nhận hàng (COD)</label>
+          <br>
+          <label class="checkbox-label"><input type="checkbox" class="square-checkbox" onclick="uncheckOther(this)"> Thanh toán bằng ví MoMo</label>
+        
         ';
         }
           ?>
+        <script>
+          function uncheckOther(checkbox) {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(function(item) {
+               if (item !== checkbox) {
+                 item.checked = false;
+           }
+        });
+        }
+        </script>
+
     </form>
         </div>
         <div class="cart">
-            <h2>Giỏ hàng</h2>
-            <table>
-            <tr>
-                <th>STT</th>
-                <th>Tên sản phẩm</th>
-                <th>Giá </th>
+            <h2 style="letter-spacing: 2px; font-size: 25px;">ĐƠN HÀNG</h2>
+            <hr style="height: 2px; border: none; background-color: #A9A9A9; margin: 20px 10px; ">
+            <table class="bill">
+            <tr>    
+                <th>Tên sản phẩm </th> 
+                <th>Đơn giá </th>
                 <th>Số lượng</th>
-                <th>Tổng tiền</th>
+                <th>Tổng</th>
             </tr>
            <?php showcart($tong)?>
            </table>
+          
+           <hr style="height: 2px; border: none; background-color: #A9A9A9; margin: 20px 10px; ">
            
-           <p>Tổng tiền : <?php echo $tong ?></p>
+           <p style="font-size: 16px;"><b>TỔNG CỘNG : <span class="amounttotal"><?php echo $tong ?> VND</b></span></p>
+
+           <button type="submit" name="dathang"><b>HOÀN TẤT ĐẶT HÀNG</b></button>
+           
         </div>
     </div>
 
