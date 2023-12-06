@@ -2,6 +2,7 @@
     background-color: #fff7e6;
     height: 1000px;
     overflow: auto;
+    color:#4d2600;
     
    }
 
@@ -65,13 +66,17 @@
     }
    
     .cartbody .button{
-        background-color: rgb(214, 0, 0);
+        background-color: #ED7D31;
         color:white;
         border: none;
         font-size: 20px;
         border-radius: 18px;
         width: 100%;
         margin-top: 10px;
+    }
+
+    .cartbody .button:hover{
+        background-color: rgb(214, 0, 0);
     }
     
     .cartbody .quantity {
@@ -97,3 +102,4 @@
     .cartbody .indiscount{
         padding-top: 0.1px;
     }
+    

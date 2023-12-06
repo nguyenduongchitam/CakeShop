@@ -2,6 +2,8 @@
     background-color: #fff7e6;
     font-family: 'Segoe UI';
     color: #4d2600;
+    overflow:inherit;
+   
 }
 .homebody .main {
     display: flex;
