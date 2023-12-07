@@ -1,4 +1,5 @@
 <?php
+    session_start();
     if($_SERVER['REQUEST_METHOD']=='POST')
     {
         $error=[];
@@ -20,7 +21,6 @@
         if(empty($error)){
             include("config.php");
         if(isset($_POST['dangnhap'])){
-            $_SESSION['login'] = $_POST['email'];
             $taikhoan = $_POST['email'];
             $matkhau = $_POST['password'];
             $sql = "SELECT * FROM user where email='".$taikhoan."' LIMIT 1 ";
@@ -39,6 +39,7 @@
                 else{
                     $error['password']['un-verify'] = 'sai mât khẩu';
                     $error['email']['save'] = $taikhoan;
+                    $_SESSION['login'] = $_POST['email'];
                 }
             }
         }
