@@ -32,8 +32,8 @@ CREATE TABLE `Product` (
   `update_at` datetime
 );
 
-CREATE TABLE `Galery` (
-  `galery_id` int PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE `Gallery` (
+  `gallery_id` int PRIMARY KEY AUTO_INCREMENT,
   `product_id` int,
   `thumbnail` varchar(255)
 );

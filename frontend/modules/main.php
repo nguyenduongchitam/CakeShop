@@ -50,6 +50,10 @@
     {
         if($query=='none') include("search.php");
     }
+    else if( $action=='profile')
+    {
+        if($query=='none') include("profilepage.php");
+    }
     else include("homepage.php");   
 
 ?>

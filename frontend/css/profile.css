@@ -1,0 +1,154 @@
+
+#wrapper{
+    margin-top: 20px;
+    height: 80%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 2px;
+    border-radius: 20px;
+    background-color: wheat;
+}
+.taskbar{
+    padding-left: 50px;
+}
+.tab-pane.fade{
+    padding-left: 50px;
+}
+.form-group{
+    font-size: large;
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.profile .form-label, .profile .user-info{
+    padding: 15px 180px 10px 0px;
+    font-size: large;
+}
+.account .form-label,.account .user-info{
+    padding: 15px 220px 10px 0px;
+    font-size: large;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    background-color: #E8CCC9;
+}
+#wrapper{
+    min-height: 100vh;
+}
+button#update-profile, button#update-account{
+    background: rgb( 8, 133, 299);
+    color: #fff;
+    border:none;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    padding:5px 15px;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba( 0, 0, 0, 0.5);
+}
+button#update-profile:hover, button#update-account:hover{
+    background: rgb( 8, 110, 280);
+} 
+#modal-container-profile, #modal-container-account{
+    min-height: 200vh;
+    background: rgba( 0, 0, 0, 0.5);
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease-in-out;
+}
+#modal-container-profile.show, #modal-container-account.show{
+    opacity: 1;
+    pointer-events: all;
+}
+.modal{
+    background: #F2CED8;
+    max-width: 600px;
+    position: relative;
+    left:50%;
+    top:0px;
+    transform: translateX(-50%);
+    transition: all 0.25s ease-in-out;
+    border-radius: 25px;
+}
+#modal-container-profile.show .modal , #modal-container-account.show .modal{
+    top: 200px;
+}
+.modal .modal-header-profile, .modal .modal-header-account{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:5px 20px;
+    border-bottom: 1px solid #dedede;
+}
+.modal .modal-header-profile h3, .modal .modal-header-account h3{
+    margin: 0;
+}
+ #btn-close-profile, #btn-close-account{
+    border: solid 1px;
+    border-radius: 30px;
+    background: white;
+    font-size: 19px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    bottom: 25px;
+    left: 40px;
+}
+.fa-sharp.fa-solid.fa-circle-xmark.fa-2xl{
+    position: relative;
+    top:1px;
+    right: 5.75px;
+}
+.modal .modal-body-profile, .modal .modal-body-account{
+    padding: 10px 20px 15px;
+}
+.un-update{
+    color:gray;
+}
+.form-input{
+    width: 300px;
+    height: 50px;
+    border:none;
+    border-width: 0;
+    background: #F2CED8;
+}
+.form-input:focus{
+    outline: none!important;
+}
+.form-group-modal i{
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+.form-group-modal{
+    font-size: large;
+    display: flex;
+    border: 3px solid black;  
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+}
+.btn.btn-primary{
+    background: wheat;
+    color: black;
+    border: 3px solid black;  
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    padding:5px 15px;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba( 0, 0, 0, 0.5);
+}
+.btn.btn-primary:hover{
+    background: rgba(245, 222, 179, 0.436);
+}

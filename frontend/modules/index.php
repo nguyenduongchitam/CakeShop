@@ -109,7 +109,7 @@ session_start();
                        if(isset($_SESSION['dangnhap'])&&($_SESSION['dangnhap']!=""))
                                {
                          echo '<ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="profilepage.php">'.$_SESSION['dangnhap'].'</a></li>
+                        <li><a class="dropdown-item" href="index.php?action=profile&query=none&email='.$_SESSION['dangnhap'].'">'.$_SESSION['dangnhap'].'</a></li>
                            <li><a class="dropdown-item" href="logout.php">Đăng xuất</a></li>
                      </ul>';
                             } else echo '<ul class="dropdown-menu">
