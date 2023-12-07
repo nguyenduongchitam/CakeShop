@@ -69,6 +69,15 @@ CREATE TABLE `Order_Detail` (
   PRIMARY KEY (`order_id`, `product_id`)
 );
 
+CREATE TABLE `tintuc` (
+  `tintuc_id` int,
+  `title` mediumtext,
+  `content` longtext,
+  `anh` varchar(100),
+  `publish_date` date,
+  PRIMARY KEY(`tintuc_id`)
+);
+
 ALTER TABLE `User` ADD FOREIGN KEY (`role_id`) REFERENCES `Role` (`role_id`);
 
 ALTER TABLE `Product` ADD FOREIGN KEY (`category_id`) REFERENCES `Category` (`category_id`);

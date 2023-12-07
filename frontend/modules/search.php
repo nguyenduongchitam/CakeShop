@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>trang khách hàng</title>
     <link rel="stylesheet" href="../css/search.css">
+    <title>trang khách hàng</title>
   </head>
   <?php
 
@@ -12,7 +12,7 @@ include("../../Database/Config/config.php");
 $sql1="select * from category";
 $result1= mysqli_query($mysqli,$sql1);
 
-if(isset($_GET['search'])){ 
+if(isset($_POST['search'])){ 
     $tukhoa = $_POST['tukhoa'];
 }
 $sql2="SELECT * FROM product ,category where product.category_id=category.category_id and product.title";
@@ -20,7 +20,7 @@ $result2 = mysqli_query($mysqli,$sql2);
 ?>
 
 <body>
-<h2><?php echo $_POST['tukhoa'] ?></h2>
+<h2><?php echo $_POST['tukhoa']; ?></h2>
 <div class="menubody">
    <div class="wrapper">
     <div id="main">
