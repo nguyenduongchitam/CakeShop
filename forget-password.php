@@ -1,11 +1,6 @@
 
 <?php require("script.php"); ?>
 <?php
-	if(isset($_SESSION['mail'])){
-		$email = $_POST['email'];
-		$_SESSION['mail'] = $email;
-		
-	}
 	if(isset($_POST['submit'])){
 		$response = sendMail($_POST['email']);
 	}
@@ -28,7 +23,7 @@
 		</div>
 
 		<label>Nhập email</label>
-		<input type="email" name="email" value="">
+		<input type="email" name="email" value="<?php echo (!empty($_SESSION['login']))?$_SESSION['login']:false;?>">
 		<?php
 			echo (!empty($error['email']['exist']))?'<span class="error" style="color: red">'.$error['email']['exist'].'</span>':false;
 		?>
