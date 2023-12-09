@@ -1,8 +1,8 @@
 <?php
 session_start();
-
 $tong=0;
 include("../../Database/Config/config.php");
+require("../../mail/sentmail.php");
 if(!isset($_SESSION['dangnhap'])&&($_SESSION['dangnhap']==""))
           {
            header("location:sign-in.php");
@@ -32,6 +32,7 @@ function showcart(&$tong)
 
  if(isset($_POST['dathang']))
 {  
+   
     /* $address=$_POST['address']; */
     $city=$_POST['city'];
     $district=$_POST['district'];
@@ -39,7 +40,7 @@ function showcart(&$tong)
     $ward=$_POST['ward'];
     $note=$_POST['note'];
     // tạo dữ liệu oder
-
+      
     if(isset($_SESSION['dangnhap'])&&($_SESSION['dangnhap']!=""))
     {
         $sql1 = "SELECT * FROM user where email='".$_SESSION['dangnhap']."'";
@@ -63,8 +64,35 @@ function showcart(&$tong)
             mysqli_query($mysqli,$sql2);
             }
         }
-        unset($_SESSION['cart']);
-        unset($_SESSION['quantity_in_cart']);
+           $mail = new Mailer();
+           $tieude="Đặt hàng website cakeshop thành công !";
+           $noidung=" 
+           <p>cảm ơn quý khách đã đặt hàng với mã đơn hàng là : ".$last_order_id ." <p>
+           <p> Đơn đặt hàng bao gồm : <p>
+           <table>
+           ";
+          for ($i=0; $i <sizeof($_SESSION['cart']); $i++)
+            {   
+           $tt=$_SESSION['cart'][$i][3]*$_SESSION['cart'][$i][4];
+          $noidung.="<tr>
+            <td>".($i+1)."</td>
+             <td>".$_SESSION['cart'][$i][2]."</td>
+             <td>".$_SESSION['cart'][$i][3]."</td>
+             <td>".$_SESSION['cart'][$i][4]."</td>
+             </td>
+             <td>".$tt."</td>
+            </tr>";
+           }
+
+           $noidung.="
+           <table>
+           <p> tổng tiền : ".$tong." <p>
+           ";
+           $maildathang=$_SESSION['dangnhap'];
+           $mail->dathangmail($tieude,$noidung,$maildathang); 
+           unset($_SESSION['cart']);
+           unset($_SESSION['quantity_in_cart']);
+     
        header("Location: index.php?action=thanhyou&query=none");
     }
 }

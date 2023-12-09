@@ -1,79 +1,117 @@
 <?php
-    session_start();
-    include("config.php");
-    if(isset($_POST['dangnhap'])){
-        $taikhoan = $_POST['username'];
-        $matkhau = md5($_POST['password']);
-        $sql = "SELECT * FROM user where email='".$taikhoan."'AND password='".$matkhau."' LIMIT 1 ";
-        $row = mysqli_query($mysqli,$sql);
-        $count = mysqli_num_rows($row);
-        if($count>0)
+    if($_SERVER['REQUEST_METHOD']=='POST')
+    {
+        $error=[];
+        if(empty(trim($_POST['password'])))
         {
-            $_SESSION['dangnhap'] = $taikhoan;
-            header("Location:homepage.php");
-            exit();
+            $error['password']['required'] = 'mật khẩu không được để trống';
         }
-        else{
-            echo '<script>alert("Tài khoản hoặc mật khẩu không đúng, vui lòng nhập lại.")</script>';
-            header("Location:sign-in.php");
-            exit();
+
+        if(empty(trim($_POST['email'])))
+        {
+            $error['email']['required'] = 'email không được để trống';
+        }
+        else
+        {
+            if(!filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL)){
+                $error['email']['invalid'] = 'email không hợp lệ';
+            }
+        }
+
+        if(empty($error)){
+        session_start();
+        include("config.php");
+        if(isset($_POST['dangnhap'])){
+            $taikhoan = $_POST['email'];
+            $matkhau = $_POST['password'];
+            $sql = "SELECT * FROM user where email='".$taikhoan."' LIMIT 1 ";
+            $row = mysqli_query($mysqli,$sql);
+            $result = mysqli_fetch_array($row);
+            if(empty($result)){
+                $error['email']['exist'] = 'email không tồn tại';
+            }
+            else{
+                $passwordHashData = $result['password'];
+                if(password_verify($matkhau,$passwordHashData)== false)
+                {
+                    $error['password']['un-verify'] = 'sai mât khẩu';
+                    //header("Location:sign-in.php");
+                }
+                else{
+                    $_SESSION['dangnhap'] = $taikhoan;
+                    $error['log-in']['verify'] = 'đăng nhập thành công';
+                    //header("Location:homepage.php");
+                }
+            }
         }
     }
+    }   
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<script type="text/javascript">
+            function Redirect() {
+               window.location="homepage.php";
+            }
+</script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="C:\xampp\htdocs\front-end\style.css">
+    <link rel="stylesheet" type="text/css" href="app.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="search_box.css">
     <title>sign in</title>
 </head>
 <body>
-    <div>
-        <div class="header">
-            <div class="taskbar">
-                <div id="square"><img src="image\bakery.avif" id="logo"></div>
-                <div id="items">
-                    <div class="box">
-                        <input id ="search" type="text" placeholder="Search here">
-                        <a><i class="fa-solid fa-magnifying-glass"></i></a>
-                    </div>
-                    <div id="user"><i class="fa-solid fa-user"></i></div>
-                    <div id="shopping-cart"><i class="fa-solid fa-cart-shopping"></i></div>
-                </div>
-                <div class="clear"></div>
+    <div id="wrapper">
+        <form action="" id="form-login" method="POST">
+            <h1 class="form-heading">Đăng nhập</h1>
+            <div class="form-group">
+                <i class="fa-regular fa-user"></i>
+                <input type="text" class="form-input" placeholder="Email" name="email">
             </div>
-            <div class="category">
-                <div>Trang chủ</div>
-                <div>Menu</div>
-                <div>Sự kiện</div>
-                <div>About us</div>
-                <div>Liên hệ</div>
-            </div>
-        </div>
-        <div class="main">
-            <div class="ban"><img src="image\banner.png" id="banner"></div>
-            <form class="sign-in" action="" autocomplete="off" method="POST">
-                <table id="sign-table">
-                    <th style="height: 45px;border-bottom: solid thin;" class="support"><h4>ĐĂNG NHẬP</h4></th>
-                    <tr style="height: 45px;"><td><input type="text" class="acount" placeholder="Email" name="username"></td></tr>
-                    <tr><td><input type="text" class="acount" placeholder="Mật khẩu" name="password"></td></tr>
-                    <tr style="height: 45px;"><td><button type="submit" class="acount" id="submit" name="dangnhap">Đăng nhập</button></td></tr>
-                    <tr class="support"><td>Trở về</td></tr>
-                    <tr class="support"><td>Đăng ký</td></tr>
-                    <tr class="support"><td>Quên mật khẩu</td></tr>
-                </table>
-            </form>
-        </div>
-        <div class="footer">
-            <div id="detail"><img src="image\footer.png" id="footer-pic"></div>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-</body>
+            <?php
+                    echo (!empty($error['email']['required']))?'<span class="error" style="color: red">'.$error['email']['required'].'</span>':false;
 
+                    echo (!empty($error['email']['invalid']))?'<span class="error" style="color: red">'.$error['email']['invalid'].'</span>':false;
+
+                    echo (!empty($error['email']['exist']))?'<span class="error" style="color: red">'.$error['email']['exist'].'</span>':false;
+                ?>
+            <div class="form-group">
+                <i class="fa-solid fa-key"></i>
+                <input type="password" class="form-input" placeholder="Mật khẩu" name="password">
+                <div id="eye">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+            </div>
+            <?php
+                echo (!empty($error['password']['required']))?'<span class="error" style="color: red">'.$error['password']['required'].'</span>':false;
+
+                echo (!empty($error['password']['un-verify']))?'<span class="error" style="color: red">'.$error['password']['un-verify'].'</span>':false;
+            ?>
+            <input type="submit" class="form-submit" value="Đăng nhập" name="dangnhap">
+            <input type="submit" class="form-submit" value="Đăng ký">
+            <div class="support" onclick="Redirect()">Trở về</div>
+            <div class="support">Quên mật khẩu</div>
+            <?php
+                echo (!empty($error['log-in']['verify']))?'<span class="error" style="color: red">'.$error['log-in']['verify'].'</span>':false;
+            ?>
+        </form>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script>
+    $(document).ready(function(){
+    $('#eye').click(function(){
+        $(this).toggleClass('open');
+        $(this).children('i').toggleClass('fa-eye-slash fa-eye');
+        if($(this).hasClass('open'))
+        {
+            $(this).prev().attr('type', 'text');
+        }
+        else{
+            $(this).prev().attr('type', 'password');
+        }
+    });
+});
+</script>
 </html>
