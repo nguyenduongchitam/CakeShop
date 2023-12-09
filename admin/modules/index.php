@@ -34,8 +34,9 @@
 <body>
     <?php
     session_start();
-    if (isset($_SESSION['dangnhap'])&&$_SESSION['dangnhap']==false) {
+    if (isset($_SESSION['dangnhap'])&&$_SESSION['dangnhap']!=true) {
         header("Location:admin_login.php");
+        exit();
     }
     include("header.php");
     include("menu.php");
