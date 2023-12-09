@@ -20,10 +20,6 @@ while($row= mysqli_fetch_array($sql))
         <td><input type="email" name="email" value="<?php echo $row['email']?>" class="form-control"></td>
     </tr>
     <tr>
-        <td>Nhập mật khẩu</td>
-        <td><input type="text" name="password" value="<?php echo $row['password'] ?>" class="form-control"></input></td>
-    </tr>
-    <tr>
         <td>Họ tên</td>
         <td><input type="text" name="full_name" value="<?php echo $row['full_name'] ?>" class="form-control"></input> </td>
     </tr>
@@ -55,6 +51,7 @@ while($row= mysqli_fetch_array($sql))
         </table>
     </div>
 <?php
+
 if (isset($_POST['update']))
 {
     if(isset($_POST['selectOption'])){
@@ -68,8 +65,8 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 $update_at = date("Y-m-d H:i:s");
 $sql_update = " UPDATE `user` SET `email`='$email',`full_name`='$full_name',`phone_number`='$phone_number',`address`='$address',update_at='$update_at', `role_id`='$selectedOption' WHERE user_id=$user_id ";
 mysqli_query($mysqli,$sql_update);
-header('Location:../modules/index.php?action=quanlytaikhoan&query=none');
+echo '<script>location.replace("../modules/index.php?action=quanlytaikhoan&query=none");</script>';
 }
-else if (isset($_POST['return'])) header('Location:../modules/index.php?action=quanlytaikhoan&query=none');
+else if (isset($_POST['return'])) echo '<script>location.replace("../modules/index.php?action=quanlytaikhoan&query=none");</script>';
 ?>
 
