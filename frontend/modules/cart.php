@@ -111,14 +111,31 @@ if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
                     <div class="card-body">
                     <p style="font-size:x-large"><b>ĐƠN HÀNG</b></p>
                         <!-- <h5 class="card-title">Tổng cộng</h5> -->
-                        <p style="font-size:large"><b>Nhập mã khuyến mãi </p></b>
-                        <div class="indiscount"><input type><input type="submit" value="Áp dụng"></div>
+                        <div class="coupon">
+                            <input type="text" id="coupon_str">
+                            <input type="button" name="submit" value="Áp dụng mã khuyến mãi" onclick="set_coupon()">
+                        </div>
                         <div class="cart-summary">
                          <p style="font-size:large"><b>Tổng tiền: </p> <span id="totalAmount" class="total" style="color:rgb(214, 0, 0)"><?php echo $tong ?>đ </span></b>
                         </div>
                         <a href="cartcheckout.php?tong=<?php echo $tong ?>"  ><button class="button"><b>Thanh toán</b></button></a>
                     </div>
                 </div>
+                <script>
+                    function set_coupon(){
+                        var couponCode = document.getElementById('coupon_str').value;
+                        if(coupon_str!=""){
+                            jQuery.ajax({
+                                url:'set_coupon.php',
+                                type:'post',
+                                data:'coupon_str'+=coupon_str,
+                                success:function(result){
+                                    console.log(result);
+                                }
+                            })
+                        }
+                    }
+                </script>
                 <div class="intext">
                 <p><i> <b>Chính sách mua hàng:</b><br> Hiện chúng tôi chỉ áp dụng giao hàng ở khu vực miền Nam</i></p>
                 </div>

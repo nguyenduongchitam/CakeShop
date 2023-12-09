@@ -73,7 +73,7 @@ CREATE TABLE `Coupon`   (
   `coupon_id` int PRIMARY KEY AUTO_INCREMENT,
   `coupon_code` varchar(10),
   `cart_min` int,
-  `discount_percentage` int,
+  `total_discount` int,
   `start_date` date,
   `end_date` date
 );
@@ -129,6 +129,6 @@ INSERT INTO `product`(`product_id`,`category_id`,`title`, `price`, `discount_pri
 INSERT INTO `product`(`product_id`,`category_id`,`title`, `price`, `discount_price`, `thumbnail`, `description`, `created_at`,`update_at`)VALUES (19,3,'Bánh Kếp',50000,40000,'Bánh kếp-2.jpg','Bánh kếp ngon',now(),now());
 INSERT INTO `product`(`product_id`,`category_id`,`title`, `price`, `discount_price`, `thumbnail`, `description`, `created_at`,`update_at`)VALUES (20,3,'Bánh Kếp',50000,40000,'Bánh kếp-3.jpg','Bánh kếp ngon',now(),now());
 
-INSERT INTO `coupon`(`coupon_code`, `cart_min`, `discount_percentage`, `start_date`,`end_date`)VALUES('CS10OFF', 200000, 10, '2023-12-01', '2024-01-01');
-INSERT INTO `coupon`(`coupon_code`, `cart_min`, `discount_percentage`, `start_date`,`end_date`)VALUES('CS20OFF', 500000, 20, '2024-01-01', '2024-02-01');
-INSERT INTO `coupon`(`coupon_code`, `cart_min`, `discount_percentage`, `start_date`,`end_date`)VALUES('CS30OFF', 1000000, 30, '2023-11-01', '2023-11-05');
+INSERT INTO `coupon`(`coupon_code`, `cart_min`, `total_discount`, `start_date`,`end_date`)VALUES('CS10OFF', 200000, 10, '2023-12-01', '2024-01-01');
+INSERT INTO `coupon`(`coupon_code`, `cart_min`, `total_discount`, `start_date`,`end_date`)VALUES('CS20OFF', 500000, 20, '2024-01-01', '2024-02-01');
+INSERT INTO `coupon`(`coupon_code`, `cart_min`, `total_discount`, `start_date`,`end_date`)VALUES('CS30OFF', 1000000, 30, '2023-11-01', '2023-11-05');

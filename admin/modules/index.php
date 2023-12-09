@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,6 +33,10 @@
 
 <body>
     <?php
+    session_start();
+    if (isset($_SESSION['dangnhap'])&&$_SESSION['dangnhap']==false) {
+        header("Location:admin_login.php");
+    }
     include("header.php");
     include("menu.php");
     include("main.php");

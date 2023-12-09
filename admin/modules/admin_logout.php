@@ -1,8 +1,8 @@
 <?php
 session_start();
-if(isset($_POST['dangnhap'])&&$_SESSION['dangnhap']!="")
+if(isset($_SESSION['dangnhap'])&&$_SESSION['dangnhap']==true)
 {
-    unset($_SESSION['dangnhap']);
+    $_SESSION['dangnhap']=false;
 }
 header("Location:admin_login.php");
 ?>

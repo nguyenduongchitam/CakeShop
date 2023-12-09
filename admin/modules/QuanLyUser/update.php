@@ -54,16 +54,21 @@ while($row= mysqli_fetch_array($sql))
 
 if (isset($_POST['update']))
 {
-    if(isset($_POST['selectOption'])){
-        $selectedOption=$_POST['selectOption'];
-    }
 $full_name= $_POST['full_name'];
 $email=$_POST['email'];
 $phone_number=$_POST['phone_number'];
 $address=$_POST['address'];
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 $update_at = date("Y-m-d H:i:s");
-$sql_update = " UPDATE `user` SET `email`='$email',`full_name`='$full_name',`phone_number`='$phone_number',`address`='$address',update_at='$update_at', `role_id`='$selectedOption' WHERE user_id=$user_id ";
+$selectedOption = isset($_POST['selectOption']) && $_POST['selectOption'] !== "" ? $_POST['selectOption'] : null;
+
+    // Build the update query dynamically based on whether 'selectOption' is set
+    if ($selectedOption !== null) {
+        $sql_update = "UPDATE `user` SET `email`='$email', `full_name`='$full_name', `phone_number`='$phone_number', `address`='$address', update_at='$update_at', `role_id`='$selectedOption' WHERE user_id=$user_id";
+    } else {
+        $sql_update = "UPDATE `user` SET `email`='$email', `full_name`='$full_name', `phone_number`='$phone_number', `address`='$address', update_at='$update_at' WHERE user_id=$user_id";
+    }
+// $sql_update = " UPDATE `user` SET `email`='$email',`full_name`='$full_name',`phone_number`='$phone_number',`address`='$address',update_at='$update_at', `role_id`='$selectedOption' WHERE user_id=$user_id ";
 mysqli_query($mysqli,$sql_update);
 echo '<script>location.replace("../modules/index.php?action=quanlytaikhoan&query=none");</script>';
 }

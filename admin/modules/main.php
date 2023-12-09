@@ -30,10 +30,10 @@
         include("../modules/QuanLyUser/quanlyuser.php");
         include("../modules/QuanLyUser/list.php");
     }
-    else if ($action == 'quanlytaikhoan' && $query == 'search') {
-        include("../modules/QuanLyUser/quanlyuser.php");
-        include("../modules/QuanLyUser/search_result.php");
-        }
+        else if ($action == 'quanlytaikhoan' && $query == 'search') {
+            include("../modules/QuanLyUser/quanlyuser.php");
+            include("../modules/QuanLyUser/search_result.php");
+            }
     else if( $action=='quanlytaikhoan' && $query=='update') 
     include("../modules/QuanLyUser/update.php");
     else 

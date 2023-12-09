@@ -5,12 +5,9 @@
 ?>
 <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
 <div class="container">
-<form style="float: right;">
+<form style="float: right;" method="POST" action="search_result.php?quanlytaikhoan&query=search">
     <input type="email" placeholder="Nhập email tài khoản cần tìm" style="width: 300px;" name="typed_email" id="typed_email" required>
-    <?php
-        
-    ?>
-    <input type="submit" name="search" value="Tìm tài khoản">
+    <button class="btn btn-primary" type="submit" name="search">Tìm tài khoản<i class="fas fa-search" style="margin-left: 10px;"></i></button>
 </form>
 </div>
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Thêm tài khoản</button> 
@@ -44,11 +41,11 @@
                 <tr>
                     <td>Quyền</td>
                     <td>
-                        <select name="role_id" class="form-control">
-                  <?php while($row= mysqli_fetch_array($result)) { ?>
-                  <option value="<?php echo $row['role_id'] ?>" name="role_id" ><?php echo $row['name'] ?></option>
-                   <?php } ?>
-                  </select>
+                        <select name="selectOption" id="selectOption">
+                            <?php while($row=mysqli_fetch_array($result)):; ?>
+                            <option value="<?php echo $row[0]; ?>"><?php echo $row[1];?></option>
+                            <?php endwhile;?>
+                        </select>
                     </td>
                 </tr>
                 <tr>
