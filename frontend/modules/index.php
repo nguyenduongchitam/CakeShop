@@ -22,13 +22,16 @@ session_start();
     <link rel="stylesheet" href="../css/cartnone.css">
     <link rel="stylesheet" href="../css/sign-in.css"> 
     <link rel="stylesheet" href="../css/tintucpage.css">
-     <link rel="stylesheet" href="../css/content.css">
-     <link rel="stylesheet" href="../css/product.css">
-     <link rel="stylesheet" href="../css/search.css">
+    <link rel="stylesheet" href="../css/content.css">
+    <link rel="stylesheet" href="../css/product.css">
+    <link rel="stylesheet" href="../css/search.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushina">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
@@ -59,6 +62,7 @@ session_start();
                           </a>
                           <ul class="dropdown-menu">
                            <li><a class="dropdown-item" href="index.php?action=menupage&query=none">Tất cả sản phẩm</a> </li>
+                          
                            <?php
                              while ($row = mysqli_fetch_array($result)) {
                              ?> 
@@ -89,7 +93,6 @@ session_start();
           <div class="input-group mb-3">
             <input type="text" class="form-control" style="color: #4d2600; font-family: Segoe UI;" placeholder="Tìm kiếm..." aria-label="Recipient's username" aria-describedby="button-addon2">
             <button class="btn btn-outline-secondary" style="color: #4d2600;" type="button" id="button-addon2"><i class="bi bi-search-heart"></i></button>
-          
           </div>
         </div>
         <div class="col-md-2">
@@ -111,7 +114,7 @@ session_start();
                        if(isset($_SESSION['dangnhap'])&&($_SESSION['dangnhap']!=""))
                                {
                          echo '<ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="profilepage.php">'.$_SESSION['dangnhap'].'</a></li>
+                        <li><a class="dropdown-item" href="index.php?action=profile&query=none&email='.$_SESSION['dangnhap'].'">'.$_SESSION['dangnhap'].'</a></li>
                            <li><a class="dropdown-item" href="logout.php">Đăng xuất</a></li>
                      </ul>';
                             } else echo '<ul class="dropdown-menu">

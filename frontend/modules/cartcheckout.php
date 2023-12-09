@@ -64,7 +64,7 @@ function showcart(&$tong)
             mysqli_query($mysqli,$sql2);
             }
         }
-           /* $mail =new Mailer();
+           $mail = new Mailer();
            $tieude="Đặt hàng website cakeshop thành công !";
            $noidung=" 
            <p>cảm ơn quý khách đã đặt hàng với mã đơn hàng là : ".$last_order_id ." <p>
@@ -89,10 +89,11 @@ function showcart(&$tong)
            <p> tổng tiền : ".$tong." <p>
            ";
            $maildathang=$_SESSION['dangnhap'];
-           $mail->dathangmail($tieude,$noidung,$maildathang); */
+           $mail->dathangmail($tieude,$noidung,$maildathang); 
            unset($_SESSION['cart']);
-           unset($_SESSION['quantity_in_cart']);   
-           echo '<script>location.replace("index.php?action=thanhyou&query=none");</script>';
+           unset($_SESSION['quantity_in_cart']);
+     
+       header("Location: index.php?action=thanhyou&query=none");
     }
 }
 ?>

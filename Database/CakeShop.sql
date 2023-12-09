@@ -32,8 +32,8 @@ CREATE TABLE `Product` (
   `update_at` datetime
 );
 
-CREATE TABLE `Galery` (
-  `galery_id` int PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE `Gallery` (
+  `gallery_id` int PRIMARY KEY AUTO_INCREMENT,
   `product_id` int,
   `thumbnail` varchar(255)
 );
@@ -74,8 +74,13 @@ CREATE TABLE `tintuc` (
   `title` mediumtext,
   `content` longtext,
   `anh` varchar(100),
+<<<<<<< HEAD
   `publish_date` date,
   PRIMARY KEY(`tintuc_id`)
+=======
+  `publish_date`date,
+  PRIMARY KEY (`tintuc_id`)
+>>>>>>> f86292a051b4d01be46647893baf79f8963d80e4
 );
 
 ALTER TABLE `User` ADD FOREIGN KEY (`role_id`) REFERENCES `Role` (`role_id`);

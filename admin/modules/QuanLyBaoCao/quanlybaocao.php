@@ -2,7 +2,7 @@
 require('../carbon/autoload.php');
 use Carbon\Carbon;
 use Carbon\CarbonInterval;
-printf("Now: %s", Carbon::now('Asia/Ho_Chi_Minh'));
+  
 
 
 ?>
@@ -13,7 +13,7 @@ printf("Now: %s", Carbon::now('Asia/Ho_Chi_Minh'));
 <script type="text/javascript">    
  $(document).ready(function(){
     thongke();
-   var char = new Morris.Area({
+   var char = new Morris.Bar({
 
   element: 'chart',
 

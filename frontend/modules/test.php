@@ -1,10 +1,4 @@
-<?php
-    include("../../Database/Config/config.php");
-    $sql1="select * from product where category_id=1";
-    $result1= mysqli_query($mysqli,$sql1);
-    $sql2="select * from product where category_id=2";
-    $result2= mysqli_query($mysqli,$sql2);
-    ?>
+
 <div class="homebody">
   <div class = "homepagepic">
 <img src="../modules/images/headerhomepage1.png" alt="Homepic" width="100%" height="250">
@@ -36,13 +30,6 @@
         <a class="namecake" href="index.php?action=product&query=none&id=<?php echo $row['product_id']?>&category_id=<?php echo $row['category_id']?>">
         <div class="image-container">
         <img src="../../Database/Images/<?php echo $row['thumbnail'] ?> " alt="pic" width="250" height="250" style="margin-bottom:10px">
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <i><?php echo $row['title'] ?> <br> <?php echo $row['price'] ?> đ </i>
-=======
-          <i><?php echo $row['title'] ?> <br> <?php echo $row['discount_price'] ?> đ </i>
->>>>>>> 65bbb58e0fc54296b89dbfff9bab4b74570a5805
-=======
         <div>
         <form method="POST" action="index.php?action=cart&query=none" >
     <input type="hidden" name="product_id" value="<?php echo $row['product_id']?>">
@@ -57,7 +44,6 @@
        </div>
         </div>
         <br><i><?php echo $row['title'] ?> <br> <?php echo $row['price'] ?> đ </i>
->>>>>>> bd3171b8d7cca6e6d2e84e06efa60d414b9a206a
          </a>
         </div>
 
@@ -67,7 +53,19 @@
         ?> 
 </div>
 
-
+<script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script src="../modules/js/roll.js"></script>
   
   <script>
     function showOnScroll() {
@@ -101,13 +99,6 @@
         <a class="namecake" href="index.php?action=product&query=none&id=<?php echo $row['product_id']?>&category_id=<?php echo $row['category_id']?>">
         <div class="image-container">
         <img src="../../Database/Images/<?php echo $row['thumbnail'] ?> " alt="pic" width="250" height="250" style="margin-bottom:10px">
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <i><?php echo $row['title'] ?> <br> <?php echo $row['price'] ?> đ </i>
-=======
-          <i><?php echo $row['title'] ?> <br> <?php echo $row['discount_price'] ?> đ </i>
->>>>>>> 65bbb58e0fc54296b89dbfff9bab4b74570a5805
-=======
         <div>
         <form method="POST" action="index.php?action=cart&query=none" >
     <input type="hidden" name="product_id" value="<?php echo $row['product_id']?>">
@@ -121,7 +112,6 @@
        </div>
         </div>
         <br> <i><?php echo $row['title'] ?> <br> <?php echo $row['price'] ?> đ </i>
->>>>>>> bd3171b8d7cca6e6d2e84e06efa60d414b9a206a
          </a>
         </div>
 
@@ -173,13 +163,4 @@
   }
 }
   window.addEventListener('scroll', showOnScroll);
-<<<<<<< HEAD
-<<<<<<< HEAD
   </script>
-
-=======
-  </script>
->>>>>>> 65bbb58e0fc54296b89dbfff9bab4b74570a5805
-=======
-  </script>
->>>>>>> bd3171b8d7cca6e6d2e84e06efa60d414b9a206a

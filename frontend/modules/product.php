@@ -50,6 +50,8 @@ if(isset($_GET['id'])){
 $id=$_GET['id'];
 $sql="select * from product where product_id=$id";
 $result= mysqli_query($mysqli,$sql);
+$sql2="select * from gallery where product_id=$id";
+$result2= mysqli_query($mysqli,$sql2);
 }
 ?>
 <div class="productbody">
@@ -62,32 +64,29 @@ $result= mysqli_query($mysqli,$sql);
                     <div class="img-display">
                         <div class="img-showcase">
                             <img src="../../../Database/images/<?php echo $row['thumbnail'] ?>">
-                             <img src="../../../frontend/modules/images/2b.png">
-                            <img src="../../../frontend/modules/images/2c.png">
-                            <img src="../../../frontend/modules/images/2d.png"> 
+
+                            <?php while ($row2 = mysqli_fetch_array($result2)) {
+                            ?>
+                             <img src="../../../Database/images/<?php echo $row2['thumbnail'] ?>">
+                            <?php } ?>
                         </div>
                     </div>
                     <div class="img-select">
                         <div class="img-item">
                             <a href="#" data-id="1">
-                              <!--   <img src="../../../Database/images/<?php echo $row['thumbnail'] ?>"> -->
+                              <img src="../../../Database/images/<?php echo $row['thumbnail'] ?>"> 
                             </a>
                         </div>
-                        <!-- <div class="img-item">
-                            <a href="#" data-id="2">
-                                <img src="../frontend/modules/images/2b.png">
-                            </a>
-                        </div>
+                        <?php $i=1;
+                        while ($row2 = mysqli_fetch_array($result2)) {
+                            $i=$i+1;
+                            ?>
                         <div class="img-item">
-                            <a href="#" data-id="3">
-                                <img src="../frontend/modules/images/2c.png">
+                            <a href="#" data-id="<?php echo $i?>">
+                                <img src="../../../Database/images/<?php echo $row2['thumbnail'] ?>">
                             </a>
                         </div>
-                        <div class="img-item">
-                            <a href="#" data-id="4">
-                                <img src="../frontend/modules/images/2d.png">
-                            </a>
-                        </div> -->
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="product-content">
@@ -115,5 +114,5 @@ $result= mysqli_query($mysqli,$sql);
     </section>
     <?php }
     ?>
-    <script src="../modules/js/"></script>
+    <script src="../modules/js/product.js"></script>
 </div>
