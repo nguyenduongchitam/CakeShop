@@ -8,7 +8,7 @@
 
 .newbody .wrapper{
     height: auto;
-    width: 100%;
+    
     margin: 0 auto;
     font-family: 'Segoe UI';
 }
@@ -24,6 +24,7 @@
     justify-content: space-evenly;
     max-width: 100%;
     margin-left: 50px;
+    font-family:'Segoe UI';
 }
 
 .newbody a {
@@ -34,15 +35,21 @@
     justify-content: center;
     flex-wrap: wrap;
     max-width: 70%;
+    font-family: 'Segoe UI';
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .main li {
-    margin: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
     margin-top: 20px;
+    width: 35%;
+    font-family: 'Segoe UI';
 }
 .main li a img {
     border-radius: 20px;
-    max-width: 100%;
+    width: 100%;
     height: auto;
     transition: transform 0.3s ease;
 }
@@ -51,4 +58,5 @@
 }
 .main li a p {
     margin-top: 20px;
+    font-family: 'Segoe UI';
 }
