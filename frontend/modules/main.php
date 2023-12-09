@@ -46,13 +46,13 @@
     {
         if($query=='none') include("cartnone.php");
     }
-    else if( $action=='search')
-    {
-        if($query=='none') include("search.php");
-    }
     else if( $action=='profile')
     {
         if($query=='none') include("profilepage.php");
+    }
+    else if( $action=='search')
+    {
+        if($query=='none') include("searchpage.php");
     }
     else include("homepage.php");   
 

@@ -58,6 +58,7 @@ session_start();
                           </a>
                           <ul class="dropdown-menu">
                            <li><a class="dropdown-item" href="index.php?action=menupage&query=none">Tất cả sản phẩm</a> </li>
+                          
                            <?php
                              while ($row = mysqli_fetch_array($result)) {
                              ?> 
@@ -86,8 +87,13 @@ session_start();
         </div>
         <div class="col-md-2" style="padding-top: 20px;">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" style="color: #4d2600; font-family: Segoe UI;" placeholder="Tìm kiếm..." aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" style="color: #4d2600;" type="button" id="button-addon2"><i class="bi bi-search-heart"></i></button>
+
+            <!-- Gửi kết quả tìm kiếm -->
+            <form method="POST" action="index.php?action=search&query=none" class="search-form">
+        <input name='searchkey' type="text" class="form-control" style="color: #4d2600; font-family: Segoe UI;" placeholder="Tìm kiếm..." aria-label="Recipient's username" aria-describedby="button-addon2">
+       <button class="btn btn-outline-secondary" style="color: #4d2600;" type="submit" id="button-addon2" ><i class="bi bi-search-heart"></i></button>
+         </form>
+
           </div>
         </div>
         <div class="col-md-2">

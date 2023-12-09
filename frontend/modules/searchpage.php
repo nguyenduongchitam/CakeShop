@@ -1,21 +1,18 @@
 <?php
     include("../../Database/Config/config.php");
-    $sql1="select * from category ";
+    $sql1="select * from category";
 $result1= mysqli_query($mysqli,$sql1);
-if(isset($_GET['id'])){ 
-  $id=$_GET['id'];
-  $sql2="SELECT * FROM product ,category where product.category_id=category.category_id and category.category_id=$id " ;
+
+  if(isset($_POST['searchkey'])) $searchkey=$_POST['searchkey'];
+
+  $sql2="SELECT * FROM product where title like '%$searchkey%'" ;
   $result2 = mysqli_query($mysqli,$sql2);
- }
-else 
-{
-  $sql2="SELECT * FROM product ,category where product.category_id=category.category_id " ;
-  $result2 = mysqli_query($mysqli,$sql2);
-}
-    ?>
+?>
+
+<h1>Kết quả tìm kiếm cho từ : <?php echo $searchkey ?></h1>
+
 <div class="menubody">
    <div class="wrapper">
-   <h1>MENU</h1>
     <div id="main">
       <div class="maincontent">
         <ul class="product">
@@ -34,8 +31,13 @@ else
   ?>
               
           </ul>
+          
         </div>
         <div class="clear"></div>
     </div>
    </div>
+
+   
+
+
 </div>
