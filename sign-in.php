@@ -59,10 +59,15 @@
                 window.location = "PHPMailer-gmail-source-code/forget-password.php";
             }
 </script>
+<script>
+    function Register(){
+                window.location = "front-end/register.php";
+            }
+</script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="app.css">
+    <link rel="stylesheet" type="text/css" href="sign.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>sign in</title>
 </head>
@@ -94,7 +99,7 @@
                 echo (!empty($error['password']['un-verify']))?'<span class="error" style="color: red">'.$error['password']['un-verify'].'</span>':false;
             ?>
             <input type="submit" class="form-submit" value="Đăng nhập" name="dangnhap">
-            <input type="submit" class="form-submit" value="Đăng ký">
+            <input type="submit" class="form-submit" value="Đăng ký" onclick="Register()">
             <div class="support" onclick="Redirect()" style="cursor: pointer;">Trở về</div>
             <div class="support" onclick="ForgetPassword()" style="cursor: pointer;"><u>Quên mật khẩu?</u></div>
         </form>
