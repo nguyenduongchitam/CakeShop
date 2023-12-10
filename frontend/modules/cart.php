@@ -1,17 +1,40 @@
 <?php 
 
-if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
+  if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
 
    if(!isset($_SESSION['cart'])) $_SESSION['cart']=  [];
    // làm rỗng giỏ hàng
    if(isset($_GET['decart'])&& $_GET['decart']==1) unset($_SESSION['cart']);
 
-   if(isset($_GET['delid'])&& $_GET['delid']>=0&&isset($_GET['quantity'])) 
+   if(isset($_GET['delid'])&& $_GET['delid']>=0 && isset($_GET['quantity'])) 
    { 
     array_splice($_SESSION['cart'],$_GET['delid'],1);
     $_SESSION['quantity_in_cart']= $_SESSION['quantity_in_cart']-$_GET['quantity'];
    }
-
+   if(isset($_SESSION['cart'])&&isset($_GET['add']))
+   {$product_id=$_GET['add'];
+    for ($i=0; $i <sizeof($_SESSION['cart']); $i++)
+    {  
+        if($_SESSION['cart'][$i][0]==$product_id)
+        $_SESSION['cart'][$i][4]+=1;
+    }
+   }
+   if(isset($_SESSION['cart'])&&isset($_GET['remove']))
+   {$product_id=$_GET['remove'];
+    for ($i=0; $i <sizeof($_SESSION['cart']); $i++)
+    {  
+        if($_SESSION['cart'][$i][0]==$product_id)
+         if ($_SESSION['cart'][$i][4]-1>0)
+         { break;
+            $_SESSION['cart'][$i][4]-=1;
+         }
+         else if ($_SESSION['cart'][$i][4]-1==0)
+         {  break;
+             echo'<script>location.replace("index.php?action=cart&query=none&delid='.$i.'&quantity='.$_SESSION['cart'][$i][4].'");</script>';
+             
+         }
+    }
+   }
    if(isset($_POST['add_to_cart'])&&($_POST['add_to_cart']))
    {
     $product_id= $_POST['product_id'];
@@ -37,6 +60,7 @@ if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
         $product=[$product_id,$thumbnail,$title,$discount_price,$quantity];
         $_SESSION['cart'][]=$product;
     }
+    echo'<script>location.replace("index.php?action=cart&query=none");</script>';
    } 
 
    $tong=0;
@@ -57,9 +81,9 @@ if(!isset($_SESSION['quantity_in_cart'])) $_SESSION['quantity_in_cart']=0;
                 <td>'.$_SESSION['cart'][$i][3].'</td>
                 
                 <td>
-                <a href="#" class="quantity"><ion-icon name="remove-circle-outline"></ion-icon></a>
+                <a href="index.php?action=cart&query=none&remove='.$_SESSION['cart'][$i][0].'" class="quantity"><ion-icon name="remove-circle-outline"></ion-icon></a>
                 <input type="text" value="'.$_SESSION['cart'][$i][4].'" style=" width:40px; text-align:center ;" ></input>
-                <a href="#" class="quantity"><ion-icon name="add-circle-outline"></ion-icon></a>
+                <a href="index.php?action=cart&query=none&add='.$_SESSION['cart'][$i][0].'" class="quantity"><ion-icon name="add-circle-outline"></ion-icon></a>
                 </td>  
                 <td>'.$tt.'</td>
                 <td>

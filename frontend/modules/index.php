@@ -24,6 +24,7 @@ session_start();
     <link rel="stylesheet" href="../css/tintucpage.css">
      <link rel="stylesheet" href="../css/content.css">
      <link rel="stylesheet" href="../css/product.css">
+     <link rel="stylesheet" href="../css/thankyou.css">
     <link rel="stylesheet" href="https://cdnj s.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushina">
@@ -32,10 +33,12 @@ session_start();
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
      <head>
-  <body>
+  <body >
   <section class="myheader sticky-top" style="background-color: #F1DBBF;">
-    <div class=" container-fluid fs-4 text-center headerig" style="padding: 0;">
+    <div class=" container-fluid fs-4 text-center headerig" style="padding: 3;">
       <div class="row align-items-center">
         <div class="col-md-2"><a href="index.php?action=homepage&query=none"><img src="../modules/images/Header-logo.png" class="img-fluid logo" alt="Logo" style="max-width: 140px; height:90px"></a></div>
         <div class="col-md-6">
@@ -116,11 +119,11 @@ session_start();
                                {
                          echo '<ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="index.php?action=profile&query=none&email='.$_SESSION['dangnhap'].'">'.$_SESSION['dangnhap'].'</a></li>
-                           <li><a class="dropdown-item" href="logout.php">Đăng xuất</a></li>
+                           <li><a class="dropdown-item" href="signpage/logout.php">Đăng xuất</a></li>
                      </ul>';
                             } else echo '<ul class="dropdown-menu">
-                     <li><a class="dropdown-item" href="sign-up.php">Đăng Ký</a></li>
-                     <li><a class="dropdown-item" href="sign-in.php">Đăng Nhập</a></li>
+                     <li><a class="dropdown-item" href="signpage/sign-up.php">Đăng Ký</a></li>
+                     <li><a class="dropdown-item" href="signpage/sign-in.php">Đăng Nhập</a></li>
                    </ul>';
                         ?> 
                         </li>
