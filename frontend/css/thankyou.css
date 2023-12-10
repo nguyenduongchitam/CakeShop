@@ -1,0 +1,42 @@
+.thankyoubody {
+    font-family:'Segoe UI';
+    background-color: #f5f5f5;
+    color: #4d2600;
+}
+
+.thankyoubody .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: #FFF5E4;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.thankyoubody h1 {
+    font-size: 24px;
+    margin-top: 0;
+}
+
+.thankyoubody p {
+    color: #776B5D;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.thankyoubody .button {
+    border: none;
+    height: 39px;
+    border-radius: 10px;
+    font-size: 19px;
+    width: 30%;
+    position:relative;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 3px;
+    background-color: #F2EAD3; 
+}
+.thankyoubody .button:hover{
+    background-color: #F4DFB6; 
+}

@@ -1,4 +1,6 @@
 <?php
+include("../../../Database/Config/config.php");
+session_start();
     if($_SERVER['REQUEST_METHOD']=='POST')
     {
         $error=[];
@@ -19,8 +21,7 @@
         }
 
         if(empty($error)){
-        session_start();
-        include("config.php");
+ 
         if(isset($_POST['dangnhap'])){
             $taikhoan = $_POST['email'];
             $matkhau = $_POST['password'];
@@ -40,7 +41,7 @@
                 else{
                     $_SESSION['dangnhap'] = $taikhoan;
                     $error['log-in']['verify'] = 'đăng nhập thành công';
-                    //header("Location:homepage.php");
+                    header("Location:../index.php");
                 }
             }
         }
@@ -51,15 +52,19 @@
 <html lang="en">
 <script type="text/javascript">
             function Redirect() {
-               window.location="homepage.php";
+               window.location="../index.php";
+            }
+
+            function ForgetPassword(){
+                window.location = "forget-password.php";
             }
 </script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="app.css">
+    <link rel="stylesheet" href="../../css/sign.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <title>sign in</title>
+    <title>sign in </title>
 </head>
 <body>
     <div id="wrapper">
@@ -89,9 +94,9 @@
                 echo (!empty($error['password']['un-verify']))?'<span class="error" style="color: red">'.$error['password']['un-verify'].'</span>':false;
             ?>
             <input type="submit" class="form-submit" value="Đăng nhập" name="dangnhap">
-            <input type="submit" class="form-submit" value="Đăng ký">
+            <input type="button" class="form-submit" value="Đăng ký" id="ChuyenTrang">
             <div class="support" onclick="Redirect()">Trở về</div>
-            <div class="support">Quên mật khẩu</div>
+            <div class="support" onclick="ForgetPassword()" style="cursor: pointer;"><u>Quên mật khẩu?</u></div>
             <?php
                 echo (!empty($error['log-in']['verify']))?'<span class="error" style="color: red">'.$error['log-in']['verify'].'</span>':false;
             ?>
@@ -112,6 +117,9 @@
             $(this).prev().attr('type', 'password');
         }
     });
+});
+document.getElementById("ChuyenTrang").addEventListener("click", function() {
+  window.location.href = "sign-up.php";
 });
 </script>
 </html>
