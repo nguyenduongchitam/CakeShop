@@ -1,0 +1,141 @@
+
+
+.product-title {
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    position: relative;
+    color: #4d2600;
+    margin: 1rem 0;
+    text-align: left;
+}
+
+.product-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 80px;
+    background: #4d2600;
+}
+
+.product-price {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.product-price span {
+    font-weight: 400;
+}
+
+.last-price span {
+    color: #f64749;
+    text-decoration: line-through;
+}
+
+.new-price span {
+    color: #4d2600;
+}
+
+.product-detail h2 {
+    text-transform: capitalize;
+    color: #4d2600;
+    padding-bottom: 0.6rem;
+    text-align: left;
+}
+
+.product-detail p {
+    font-size: 1rem;
+    padding: 0.3rem;
+    opacity: 0.8;
+    color: #4d2600;
+    text-align: left;
+}
+
+.purchase-info {
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+.purchase-info input,
+
+.purchase-info .btn {
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    max-height: 45px;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.purchase-info input {
+    width: 90px;
+}
+
+.purchase-info .btn {
+    cursor: pointer;
+    color: #fff;
+}
+
+.purchase-info .btn:last-of-type {
+    background: palevioletred; 
+}
+
+.purchase-info .btn:hover {
+    opacity: 0.9;
+}
+
+.featureproductimg {
+    max-width: 250px;
+}
+
+.product-title2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #4d2600;
+    margin: 1rem 0;
+}
+
+.purchase-info .btn {
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    max-height: 45px;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.purchase-info2 input {
+    width: 90px;
+}
+
+.purchase-info2 .btn {
+    cursor: pointer;
+    color: #fff;
+}
+
+.purchase-info2 .btn:last-of-type {
+    background: palevioletred;
+}
+
+.purchase-info2 .btn:hover {
+    opacity: 0.9;
+}
+
+.product-title3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4d2600;
+    margin: 1rem 0;
+    text-align: center;
+}
+

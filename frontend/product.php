@@ -7,7 +7,9 @@
     <title>Product Card/Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../frontend/css/product.css">
+    <link rel="stylesheet" href="../frontend/css/featuredproducts.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 </head>
 
@@ -15,16 +17,6 @@
     <section style="background: bisque;">
         <div class="card-wrapper">
             <div class="card">
-                <!-- <div class="product-imgs">
-                    <div class="img-select">
-                        <div class="img-item">
-                            <img src="../frontend/modules/homepage/2e.png">
-                            <img src="../frontend/modules/homepage/2e.png">
-                            <img src="../frontend/modules/homepage/2e.png">
-                            <img src="../frontend/modules/homepage/2e.png">
-                        </div>
-                    </div>
-                </div> -->
                 <div class="product-imgs">
                     <div class="img-display">
                         <div class="img-showcase">
@@ -81,6 +73,28 @@
         </div>
     </section>
     <script src="product.js"></script>
+    <section class="p-slider">
+        <h3 class="product-slider-heading">Sản Phẩm Liên Quan</h3>
+        <div class="p-img-container">
+            <div class="p-image">
+                <a href="#">
+                    <img src="../frontend/modules/images/2a.png" style="max-width:250px" alt="">
+                </a>
+            </div>
+            <div class="p-box-text">
+                <div class="product-category">
+                    <span>Loại Bánh</span>
+                </div>
+                <a href="#" class="product-name">
+                    Tên Bánh
+                </a>
+                <div class="price-buy">
+                    <span class="p-price"> 69,000 </span>
+                    <a href="#" class="p-buy-btn"> Mua </a>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>

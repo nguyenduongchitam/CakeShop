@@ -13,7 +13,7 @@
 <body>
 
   <section class="myheader sticky-top" style="background-color: #C7DCA7;">
-    <div class=" container-fluid fs-4 text-center headerig" style="padding: 0;">
+    <div class=" container-fluid fs-4 text-center headerig" style="padding: 5px;">
       <div class="row align-items-center">
         <div class="col-md-2"><img src="../modules/images/Header-logo.png" class="img-fluid logo" alt="Logo" style="max-width: 140px; height:90px"></div>
         <div class="col-md-6">

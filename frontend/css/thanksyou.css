@@ -1,0 +1,42 @@
+.purchase-info2 input {
+    width: 90px;
+}
+
+.purchase-info2 .btn {
+    cursor: pointer;
+    color: #fff;
+}
+
+.purchase-info2 .btn:last-of-type {
+    background: palevioletred;
+}
+
+.purchase-info2 .btn:hover {
+    opacity: 0.9;
+}
+
+.product-title3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4d2600;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.featureproductimg {
+    max-width: 250px;
+}
+
+.camon {
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.camon2 {
+    font-size: 2.7rem;
+    font-weight: 600;
+}
+
+.featureproduct {
+    margin-top: 60px;
+}
