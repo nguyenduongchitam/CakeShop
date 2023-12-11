@@ -57,10 +57,7 @@
           <?php
          }
         ?> 
-</div>
-
-
-  
+</div>  
   <script>
     function showOnScroll() {
     var popUps = document.querySelectorAll('.mainname');

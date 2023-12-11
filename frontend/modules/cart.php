@@ -10,29 +10,37 @@
    { 
     array_splice($_SESSION['cart'],$_GET['delid'],1);
     $_SESSION['quantity_in_cart']= $_SESSION['quantity_in_cart']-$_GET['quantity'];
+    echo'<script>location.replace("index.php?action=cart&query=none");</script>';
    }
    if(isset($_SESSION['cart'])&&isset($_GET['add']))
    {$product_id=$_GET['add'];
     for ($i=0; $i <sizeof($_SESSION['cart']); $i++)
     {  
         if($_SESSION['cart'][$i][0]==$product_id)
-        $_SESSION['cart'][$i][4]+=1;
-    }
+          {
+            $_SESSION['cart'][$i][4]+=1;
+            $_SESSION['quantity_in_cart']= $_SESSION['quantity_in_cart']+1;
+            echo'<script>location.replace("index.php?action=cart&query=none");</script>';
+          }
+          } 
+    
    }
    if(isset($_SESSION['cart'])&&isset($_GET['remove']))
    {$product_id=$_GET['remove'];
     for ($i=0; $i <sizeof($_SESSION['cart']); $i++)
     {  
         if($_SESSION['cart'][$i][0]==$product_id)
-         if ($_SESSION['cart'][$i][4]-1>0)
-         { break;
-            $_SESSION['cart'][$i][4]-=1;
+         {if ($_SESSION['cart'][$i][4] > 1)
+         { 
+            $_SESSION['cart'][$i][4]-=1; 
+            $_SESSION['quantity_in_cart']= $_SESSION['quantity_in_cart']-1;
+            echo'<script>location.replace("index.php?action=cart&query=none");</script>';
          }
          else if ($_SESSION['cart'][$i][4]-1==0)
-         {  break;
-             echo'<script>location.replace("index.php?action=cart&query=none&delid='.$i.'&quantity='.$_SESSION['cart'][$i][4].'");</script>';
-             
-         }
+         {      
+        echo'<script>location.replace("index.php?action=cart&query=none&delid='.$i.'&quantity='.$_SESSION['cart'][$i][4].'");</script>';
+        break;
+         }}
     }
    }
    if(isset($_POST['add_to_cart'])&&($_POST['add_to_cart']))
@@ -151,10 +159,9 @@
             </div>
         </div>
     </div>
-    <!-- <a href="index.php" class="back"> Quay về trang chủ</a> -->
+  
 </div>
-    <!-- <a href="index.php" class="back"> Quay về trang chủ</a> -->
-</div>
+
 
 
 
