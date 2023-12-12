@@ -137,7 +137,6 @@
                     <hr style="height: 3px; background-color: black;">
                         <!-- <h5 class="card-title">Tổng cộng</h5> -->
                         <form action="" method="POST">
-                            <?php $discount_status=false;?>
                         <p style="font-size:large"><b>Nhập mã khuyến mãi </p></b>
                         <div class="indiscount"><input type="text" name="coupon" placeholder="Mã khuyến mãi"><button name="set_coupon" style="background-color: #ED7D31; border: none; color: white; font-weight:bold; height:29.2px">Áp dụng</button></div>
                         </form>
@@ -159,9 +158,9 @@
                                             return($currentDate>=$validity && $currentDate<=$expiration);
                                         }
                                         if(CouponPeriod($validity, $expiration)){
-                                                echo '<p class=text-success>Áp dụng mã khuyến mãi thành công</p>';
+                                                echo '<p class=text-success>Áp dụng mã khuyến mãi '.$row_coupon['coupon_code'].' thành công</p>';
                                                 $discount=$row_coupon['discount_percentage'];
-                                                $final=($tong-($tong/100*$discount))/1000;
+                                                $final=($tong-($tong/100*$discount));
                                                 $discount_status=true;
                                         }   else {echo '<p class=text-danger>Mã khuyến mãi không hợp lệ !</p>';}
                                     }   else {echo '<p class=text-danger>Không tìm thấy mã khuyến mãi !</p>';}
@@ -175,10 +174,9 @@
                          <p style="font-size:large"><b>Tạm tính: </p> <span id="totalAmount" class="total" style="color:#ED7D31"><?php echo $tong ?>đ </span></b>
                         </div>
                         <a href="cartcheckout.php?tong=<?php echo $tong ?>">
-                        <p style="font-size:large"><b>Số tiền cần thanh toán: </p> 
-                        <div style="margin: auto;">
-                        <p id="" class="total" style="color:#ED7D31;"><?php echo $final ?>.000 đ </p>
-                        </div>
+                        <?php $discount_value=$tong-$final?>
+                        <a style="font-size: large;">Số tiền được giảm: <m style="color: red;"><?php echo $discount_value/1000?>.000 đ</m>
+                        <p style="font-size:large"><b>Số tiền cần thanh toán: <p id="" class="total" style="color:forestgreen; margin-right:65px; font-size:35px"><?php echo $final/1000 ?>.000 đ </p> </p> 
                     </b>
                         <button class="button"><b>Thanh toán</b></button></a>
                     </div>
