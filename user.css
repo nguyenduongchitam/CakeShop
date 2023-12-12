@@ -1,22 +1,21 @@
-
+#body{
+    display: flex;
+}
 #wrapper{
     margin-top: 20px;
     height: 80%;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 60%;
+    margin-left: 480px;
     border: solid 2px;
-    border-radius: 20px;
-    background-color: wheat;
+    background-color: #fff7e6;
+    border-radius: 10px;
+    border: none;
 }
-.taskbar{
-    padding-left: 50px;
-}
-.tab-pane.fade{
-    padding-left: 50px;
+#wrapper{
+    min-width: 100vh;
 }
 .form-group{
-    font-size: large;
+    font-size: large;   
     display: flex;
     margin-top: 15px;
     margin-bottom: 20px;
@@ -35,13 +34,10 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
-    background-color: #E8CCC9;
-}
-#wrapper{
-    min-height: 100vh;
+    background-color: #7FD1AE;
 }
 button#update-profile, button#update-account{
-    background: rgb( 8, 133, 299);
+    background: #7FD1AE;
     color: #fff;
     border:none;
     width: 150px;
@@ -50,6 +46,7 @@ button#update-profile, button#update-account{
     padding:5px 15px;
     cursor: pointer;
     box-shadow: 0px 2px 4px rgba( 0, 0, 0, 0.5);
+    margin-left: 300px;
 }
 button#update-profile:hover, button#update-account:hover{
     background: rgb( 8, 110, 280);
@@ -70,7 +67,7 @@ button#update-profile:hover, button#update-account:hover{
     pointer-events: all;
 }
 .modal{
-    background: #F2CED8;
+    background: #DAFFF8;
     max-width: 600px;
     position: relative;
     left:50%;
@@ -80,7 +77,7 @@ button#update-profile:hover, button#update-account:hover{
     border-radius: 25px;
 }
 #modal-container-profile.show .modal , #modal-container-account.show .modal{
-    top: 200px;
+    top: 180px;
 }
 .modal .modal-header-profile, .modal .modal-header-account{
     display: flex;
@@ -120,7 +117,7 @@ button#update-profile:hover, button#update-account:hover{
     height: 50px;
     border:none;
     border-width: 0;
-    background: #F2CED8;
+    background: #DAFFF8;
 }
 .form-input:focus{
     outline: none!important;
@@ -139,7 +136,7 @@ button#update-profile:hover, button#update-account:hover{
     border-radius: 30px;
 }
 .btn.btn-secondary{
-    background: wheat;
+    background: #FC8E57;
     color: black;
     border: 3px solid black;  
     width: 250px;
