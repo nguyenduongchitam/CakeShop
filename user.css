@@ -7,7 +7,7 @@
     width: 60%;
     margin-left: 480px;
     border: solid 2px;
-    background-color: #fff7e6;
+    background-color: #FFE8D1;
     border-radius: 10px;
     border: none;
 }
@@ -34,7 +34,7 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
-    background-color: #7FD1AE;
+    background-color: #974D1C;
 }
 button#update-profile, button#update-account{
     background: #7FD1AE;
@@ -67,13 +67,13 @@ button#update-profile:hover, button#update-account:hover{
     pointer-events: all;
 }
 .modal{
-    background: #DAFFF8;
+    background: #D27F4C;
     max-width: 600px;
     position: relative;
     left:50%;
     top:0px;
     transform: translateX(-50%);
-    transition: all 0.25s ease-in-out;
+    transition: all 0.5s ease-in-out;
     border-radius: 25px;
 }
 #modal-container-profile.show .modal , #modal-container-account.show .modal{
@@ -117,7 +117,7 @@ button#update-profile:hover, button#update-account:hover{
     height: 50px;
     border:none;
     border-width: 0;
-    background: #DAFFF8;
+    background: #D27F4C;
 }
 .form-input:focus{
     outline: none!important;
@@ -150,3 +150,10 @@ button#update-profile:hover, button#update-account:hover{
 .btn.btn-secondary:hover{
     background: rgba(245, 222, 179, 0.436);
 }
+#order-table{
+    border: 0;
+    width:100%;
+    border-collapse:collapse;
+    border-bottom: 1px solid #994D1C;
+}
+
