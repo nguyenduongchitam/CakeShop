@@ -32,7 +32,7 @@
    <?php
       while ($row = mysqli_fetch_array($result1)) {
       ?>
-      <div class="col">
+    <div class="col">
         <a class="namecake" href="index.php?action=product&query=none&id=<?php echo $row['product_id']?>&category_id=<?php echo $row['category_id']?>">
         <div class="image-container">
         <img src="../../Database/Images/<?php echo $row['thumbnail'] ?> " alt="pic" width="250" height="250" style="margin-bottom:10px">
@@ -46,10 +46,9 @@
     <input type="hidden" name="description" value="<?php echo $row['description'] ?>"> 
     <input type="hidden" name="quantity" value="1" min="1" >
     <input type="submit" name="add_to_cart" value="ADD TO CART" class="add-to-cart"> </input>  
-    
        </div>
         </div>
-        <br><i><?php echo $row['title'] ?> <br> <?php echo $row['price'] ?> đ </i>
+        <br> <i><?php echo $row['title'] ?> <br> <?php echo $row['price'] ?> đ </i>
          </a>
         </div>
 
@@ -57,22 +56,7 @@
           <?php
          }
         ?> 
-</div>
-
-<script
-      type="text/javascript"
-      src="https://code.jquery.com/jquery-1.11.0.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-    ></script>
-    <script src="../modules/js/roll.js"></script>
-  
+</div> 
   <script>
     function showOnScroll() {
     var popUps = document.querySelectorAll('.mainname');

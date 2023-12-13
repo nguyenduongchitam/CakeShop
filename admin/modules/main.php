@@ -52,10 +52,20 @@
     include("../modules/QuanLyTinTuc/update.php");
     else if( $action=='quanlytintuc' && $query=='content') 
     include("../modules/QuanLyTinTuc/noidung.php");
-    else  if( $action=='quanlyanh' && $query=='none')
+    else  if( $action=='quanlyhoadon' && $query=='none')
     {
-        include("../modules/QuanLyAnh/quanlyanh.php");
-        include("../modules/QuanLyAnh/list.php");
+        include("../modules/QuanLyHoaDon/quanlyhoadon.php");
+        include("../modules/QuanLyHoaDon/list.php");
+    }
+    else if( $action=='quanlyhoadon' && $query=='update') 
+    include("../modules/QuanLyHoaDon/update.php");
+    else  if( $action=='quanlyCTHD' && $query=='none')
+    {
+        include("../modules/QuanLyCTHD/list.php");
+    }
+    else  if( $action=='quanlybaocao' && $query=='none')
+    {
+        include("../modules/QuanLyBaoCao/quanlybaocao.php");
     }
     else include("dashboard.php");
 ?>

@@ -1,1 +1,1 @@
-<p>trang dashboard<p>
+<p>dasboard</p>

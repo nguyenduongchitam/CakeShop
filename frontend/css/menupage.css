@@ -1,21 +1,22 @@
-.menubody {
+.menubody{
     margin: 0;
     padding: 0;
     background: #fff7e6;
     font-family: 'Segoe UI';
     display:flow-root;
     height: auto;
+    color:#4d2600;
 }
 
 .menubody .wrapper{
-    height: 1000px;
-    width: 100%;
-    margin: 0 auto;
-    font-family: 'Segoe UI';
-    padding-top: 50px;
+  height: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  font-family: 'Segoe UI';
+  padding-top: 50px;
 }
 
-.menubody  .chose {
+.menubody .chose {
     border: 1px solid #ffffff;
     height: auto;
     width: 20%;
@@ -25,7 +26,8 @@
     background: white;
     border-radius: 20px;
 }
-.menubody  p.menu {
+
+.menubody p.menu {
     text-align: center;
     color: white;
     background: #4d2600;
@@ -33,16 +35,16 @@
     height: 50px;
     border-radius: 20px 15px 0 0;
 }
-.menubody  ul.danhmuc {
+.menubody ul.danhmuc {
     padding: 0;
     margin: 0;
     list-style: none;
 }
-.menubody  ul.danhmuc li {
+.menubody ul.danhmuc li {
     margin: 5px;
     padding: 5px;
 }
-.menubody  ul.danhmuc li a {
+.menubody ul.danhmuc li a {
     text-decoration: none;
     color: #663300;
     font-weight: 700;
@@ -53,7 +55,7 @@
     padding-bottom: 10px;
   }
   
-  .menubody  .underline-list li::after {
+  .menubody   .underline-list li::after {
     content: "";
     position: absolute;
     left: 0;
@@ -80,7 +82,7 @@
     font-size: large;
     
 }
-.menubody  ul.product {
+.menubody ul.product {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -94,7 +96,7 @@
 
 .menubody ul.product li {
     width: 20%;
-    margin: 15px;
+    margin: 17px;
     float: left;
     background: #ffffcc;
     height: 350px;
@@ -102,6 +104,7 @@
     text-align: center;
     transition: transform 0.3s ease-in-out;  
 }
+
 .menubody ul.product li:hover{
     transform: scale(1.1);
 }
@@ -115,13 +118,8 @@
 .menubody p.product_list {
     text-align: center;
     color: #663300;
-    font-weight: 1000;
+    font-style: italic;
     
-}
-.menubody p.price {
-    text-align: center;
-    color: #663300;
-    font-weight: 1000;
 }
 
 .menubody ul.list{
@@ -132,12 +130,28 @@
     margin-bottom: 200px;
 }
 
+.menubody .clickk {
+  width: 50px;
+  height: 50px;
+  background: tomato;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  cursor: pointer;
+}
+
 .menubody ul.list li {
     float: left;
     background: white;
     padding: 10px 15px;
     margin: 10px;
     border-radius: 10px;
+    font-family: 'Segoe UI';
 }
 
 .menubody ul.list li a {
@@ -146,3 +160,21 @@
     text-decoration: none;
     font-weight: 600;
 }
+
+.menubody .add-to-cart{
+    color:#4d2600;
+    background-color:#fff7e6;
+    border: 1px solid #F4DFB6;
+    border-radius: 14px;
+    height: 35px;
+    width: auto;
+    font-size:16px;
+}
+
+.menubody .add-to-cart:hover{
+    font-style: oblique;
+    background-color:#F4DFB6;
+    letter-spacing: 1px;
+}
+
+
