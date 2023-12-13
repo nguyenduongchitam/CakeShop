@@ -30,10 +30,10 @@
         include("../modules/QuanLyUser/quanlyuser.php");
         include("../modules/QuanLyUser/list.php");
     }
-        else if ($action == 'quanlytaikhoan' && $query == 'search') {
-            include("../modules/QuanLyUser/quanlyuser.php");
-            include("../modules/QuanLyUser/search_result.php");
-            }
+        // else if ($action == 'quanlytaikhoan' && $query == 'search') {
+        //     include("../modules/QuanLyUser/quanlyuser.php");
+        //     include("../modules/QuanLyUser/search_result.php");
+        //     }
     else if( $action=='quanlytaikhoan' && $query=='update') 
     include("../modules/QuanLyUser/update.php");
     else 
@@ -71,6 +71,13 @@
     {
         include("../modules/QuanLyBaoCao/quanlybaocao.php");
     }
+    else if( $action=='quanlykhuyenmai' && $query=='none')
+    {
+        include("../modules/QuanLyKM/quanlycoupon.php");
+        include("../modules/QuanLyKM/list.php");
+    }
+    else if( $action=='quanlykhuyenmai' && $query=='update') 
+    include("../modules/QuanLyKM/update.php");
     else include("dashboard.php");
 ?>
 </div>

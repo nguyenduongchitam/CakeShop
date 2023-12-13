@@ -41,10 +41,14 @@
         header("Location:admin_login.php");
         exit();
     }
+    else if(isset($_SESSION['dangnhap'])&&$_SESSION['dangnhap']==true)
+    {
     include("header.php");
     include("menu.php");
     include("main.php");
     include("footer.php");
+    }
+    else  header("Location:admin_login.php");   
     ?>
 </body>
 

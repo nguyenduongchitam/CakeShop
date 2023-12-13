@@ -158,11 +158,13 @@
                                             return($currentDate>=$validity && $currentDate<=$expiration);
                                         }
                                         if(CouponPeriod($validity, $expiration)){
-                                                echo '<p class=text-success>Áp dụng mã khuyến mãi '.$row_coupon['coupon_code'].' thành công</p>';
+                                                if($tong>=$row_coupon['cart_min']){
+                                                    echo '<p class=text-success>Áp dụng mã khuyến mãi '.$row_coupon['coupon_code'].' thành công</p>';
                                                 $discount=$row_coupon['discount_percentage'];
                                                 $final=($tong-($tong/100*$discount));
                                                 $discount_status=true;
-                                        }   else {echo '<p class=text-danger>Mã khuyến mãi không hợp lệ !</p>';}
+                                                } else {echo '<p class=text-danger>Đơn hàng chưa đủ điều kiện !</p>';}
+                                        }   else {echo '<p class=text-danger>Mã khuyến mãi không khả dụng hoặc đã hết hạn !</p>';}
                                     }   else {echo '<p class=text-danger>Không tìm thấy mã khuyến mãi !</p>';}
                                 }
                                 else {echo '<p class=text-danger>Vui lòng nhập mã khuyến mãi</p>';}

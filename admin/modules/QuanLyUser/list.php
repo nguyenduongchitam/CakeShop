@@ -18,6 +18,8 @@ $result = mysqli_query($mysqli,$sql);
           <th>Quyền</th>
           <th>Ngày tạo </th>
           <th>Ngày cập nhật gần nhất </th>
+          <th>Xóa</th>
+          <th>Sửa</th>
         </tr>
       </thead>
       <tbody>
