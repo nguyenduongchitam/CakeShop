@@ -8,7 +8,7 @@
 
 .newbody .wrapper{
     height: auto;
-    
+    width: 100%;
     margin: 0 auto;
     font-family: 'Segoe UI';
 }
@@ -40,23 +40,40 @@
     text-overflow: ellipsis;
 }
 
-.main li {
-    margin-left: 50px;
+.main .back {
+    margin-left: 300px;
     margin-right: 50px;
-    margin-top: 20px;
-    width: 35%;
-    font-family: 'Segoe UI';
-}
-.main li a img {
-    border-radius: 20px;
+    margin-top: 50px;
     width: 100%;
     height: auto;
-    transition: transform 0.3s ease;
+    font-family: 'Segoe UI';
+
 }
-.main li a img:hover {
+.main .back a img {
+    border-radius: 20px;
+    width: 100%;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+.main .back a img:hover {
     transform: scale(1.1);
 }
-.main li a p {
+.main .back a p {
     margin-top: 20px;
     font-family: 'Segoe UI';
 }
+
+.clickk {
+    width: 50px;
+    height: 50px;
+    background: tomato;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    cursor: pointer;
+  }
