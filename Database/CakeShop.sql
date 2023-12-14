@@ -53,6 +53,7 @@ CREATE TABLE `Order` (
   `city` varchar(60),
   `district` varchar(60),
   `ward` varchar(60),
+  `address` varchar(255),
   `note` varchar(255),
   `delivery_money` int,
   `discount` real,

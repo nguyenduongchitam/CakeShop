@@ -4,7 +4,7 @@ include("../../Database/Config/config.php");
 require("../../mail/sentmail.php");
 if(!isset($_SESSION['dangnhap'])&&($_SESSION['dangnhap']==""))
           {
-           header("location:sign-in.php");
+           header("location:signpage/sign-in.php");
           }
       $tong=$_GET['tong'];
 function showcart()
@@ -71,36 +71,7 @@ function showcart()
             }
         }
 
-
-        /* 
-           $mail = new Mailer();
-           $tieude="Đặt hàng website cakeshop thành công !";
-           $noidung=" 
-           <p>cảm ơn quý khách đã đặt hàng với mã đơn hàng là : ".$last_order_id ." <p>
-           <p> Đơn đặt hàng bao gồm : <p>
-           <table>
-           ";
-          for ($i=0; $i <sizeof($_SESSION['cart']); $i++)
-            {   
-           $tt=$_SESSION['cart'][$i][3]*$_SESSION['cart'][$i][4];
-          $noidung.="<tr>
-            <td>".($i+1)."</td>
-             <td>".$_SESSION['cart'][$i][2]."</td>
-             <td>".$_SESSION['cart'][$i][3]."</td>
-             <td>".$_SESSION['cart'][$i][4]."</td>
-             </td>
-             <td>".$tt."</td>
-            </tr>";
-           }
-
-           $noidung.="
-           <table>
-           <p> tổng tiền : ".$tong." <p>
-           ";
-           $maildathang=$_SESSION['dangnhap'];
-           $mail->dathangmail($tieude,$noidung,$maildathang);  */
-
-           /* $mailer = new Mailer();
+            /* $mailer = new Mailer();
     $tieude = "Đặt hàng website cakeshop thành công !";
     $noidung = '<!DOCTYPE html>
    <html lang="en">
@@ -242,7 +213,7 @@ function showcart()
 </body>
 </html>';
 $maildathang = $_SESSION['dangnhap'];
-$mailer->dathangmail($tieude, $noidung, $maildathang); */
+$mailer->dathangmail($tieude, $noidung, $maildathang);  */
 
            unset($_SESSION['cart']);
            unset($_SESSION['quantity_in_cart']);
@@ -441,11 +412,11 @@ $mailer->dathangmail($tieude, $noidung, $maildathang); */
             <form id="checkoutForm" method="post" action="">
                 
             <label  >Họ và tên </label>
-            <input type="text" name="full_name"  value=<?php echo $full_name ?> disabled >
+            <input type="text" name="full_name"  value="<?php echo $full_name ?>" disabled >
             <label >Email</label>
             <input type="email" name="email" value=<?php echo$email ?> disabled>
             <label>Số điện thoại</label>
-            <input type="text" name="phone_number" value=<?php echo$phone_number ?> disabled >
+            <input type="text" name="phone_number" value="<?php echo$phone_number ?>" disabled >
             <label>Chọn Tỉnh/ Thành phố</label>
             <select name="city" class="form-select form-select-sm mb-3" id="city" aria-label=".form-select-sm">
               <option  value="" selected> Tỉnh/ Thành phố</option>           

@@ -33,7 +33,7 @@ else
     ?>
 <div class="menubody">
    <div class="wrapper">
-   <h1>MENU</h1>
+   <h1 >MENU</h1>
     <div id="main">
       <div class="chose">
         <p class="menu">DANH MỤC MENU</p>
@@ -57,11 +57,23 @@ else
           ?>
             <li>
                 <a href="index.php?action=product&query=none&id=<?php echo $row['product_id']?>&category_id=<?php echo $row['category_id']?>">
-                <img src="../../Database/Images/<?php echo $row['thumbnail'] ?> " alt="image">
-                <p class="product_list"><?php echo $row['title'] ?> </p>
-                <P class="price"><?php echo $row['discount_price'] ?> đ<i class="fas fa-shopping-cart"></i></P>
+                <img src="../../Database/Images/<?php echo $row['thumbnail'] ?> " alt="image" style="padding-bottom: 10px;">
+                <p class="product_list"><b><?php echo $row['title'] ?></b> <br><?php echo $row['discount_price'] ?> đ<i class="fas fa-shopping-cart"></i></p>
                 </a>
+                <div class="cart">
+        <form method="POST" action="index.php?action=cart&query=none" >
+    <input type="hidden" name="product_id" value="<?php echo $row['product_id']?>">
+    <input type="hidden" name="title" value="<?php echo $row['title'] ?>"> 
+    <input type="hidden" name="price" value="<?php echo $row['price'] ?>"> 
+    <input type="hidden" name="discount_price" value="<?php echo $row['discount_price'] ?>"> 
+    <input type="hidden" name="thumbnail" value="<?php echo $row['thumbnail'] ?>"> 
+    <input type="hidden" name="description" value="<?php echo $row['description'] ?>"> 
+    <input type="hidden" name="quantity" value="1" min="1" >
+    <input type="submit" name="add_to_cart" value="ADD TO CART" class="add-to-cart"> </input>  
+       </div>
               </li> 
+              
+      
     <?php
     } 
   ?>
@@ -88,25 +100,31 @@ else
    ?> 
    <style>
     .pagination {
-  display: flex;
+  display:flex;
   justify-content: center;
+  margin-left: 250px;
+  margin-right: auto;
+  margin-bottom: 15px;
 }
 
 .page {
   padding: 8px 12px;
   margin: 0 4px;
-  background-color: #ccc;
-  color: #fff;
+  background-color: #FFE3BB;
+  color: #663300;
   text-decoration: none;
   border-radius: 4px;
+  
 }
 
 .page:hover {
-  background-color: #aaa;
+  background-color: #FFE3BB;
+  font-style: oblique;
 }
 
 .page.active {
-  background-color: #555;
+  background-color:#FAEED1;
+  
 }
     </style>
     <!-- Thuc hien viec chia trang -->
