@@ -1,5 +1,13 @@
 <?php
     session_start();
+    include("config.php");
+    if(isset($_COOKIE['emailid']) && isset($_COOKIE['password'])){
+        $emailid = $_COOKIE['emailid'];
+        $password = $_COOKIE['password'];
+    }
+    else{
+        $emailid = $password = "";
+    }
     if($_SERVER['REQUEST_METHOD']=='POST')
     {
         $error=[];
@@ -19,7 +27,6 @@
             }
         }
         if(empty($error)){
-            include("config.php");
         if(isset($_POST['dangnhap'])){
             $taikhoan = $_POST['email'];
             $matkhau = $_POST['password'];
@@ -34,6 +41,15 @@
                 if(password_verify($matkhau,$passwordHashData))
                 {
                     $_SESSION['dangnhap'] = $taikhoan;
+                    if(isset($_REQUEST['rememberMe']))
+                    {
+                        setcookie('emailid',$_REQUEST['email'],time()+60*60);
+                        setcookie('password',$_REQUEST['password'],time()+60*60);
+                    }
+                    else{
+                        setcookie('emailid',$_REQUEST['email'],time()-10);
+                        setcookie('password',$_REQUEST['password'],time()-10);
+                    }
                     header("Location:index.php?action=homepage&query=none");
                 }
                 else{
@@ -77,7 +93,8 @@
             <h1 class="form-heading">Đăng nhập</h1>
             <div class="form-group">
                 <i class="fa-regular fa-user"></i>
-                <input type="text" class="form-input" placeholder="Email" name="email" value="<?php echo (!empty($error['email']['save']))?$error['email']['save']:false; ?>">
+                <input type="text" class="form-input" placeholder="Email" name="email" value="<?php echo $emailid;
+                echo (!empty($error['email']['save']))?$error['email']['save']:false; ?>">
             </div>
             <?php
                     echo (!empty($error['email']['required']))?'<span class="error" style="color: red">'.$error['email']['required'].'</span>':false;
@@ -88,7 +105,7 @@
                 ?>
             <div class="form-group">
                 <i class="fa-solid fa-key"></i>
-                <input type="password" class="form-input" placeholder="Mật khẩu" name="password">
+                <input type="password" class="form-input" placeholder="Mật khẩu" name="password" value="<?php echo $password; ?>">
                 <div id="eye">
                     <i class="fa-solid fa-eye"></i>
                 </div>
