@@ -5,6 +5,7 @@
     font-family: 'Segoe UI';
     display:flow-root;
     height: auto;
+    color:#4d2600;
 }
 
 .menubody .wrapper{
@@ -25,6 +26,7 @@
     background: white;
     border-radius: 20px;
 }
+
 .menubody p.menu {
     text-align: center;
     color: white;
@@ -94,7 +96,7 @@
 
 .menubody ul.product li {
     width: 20%;
-    margin: 15px;
+    margin: 17px;
     float: left;
     background: #ffffcc;
     height: 350px;
@@ -102,6 +104,7 @@
     text-align: center;
     transition: transform 0.3s ease-in-out;  
 }
+
 .menubody ul.product li:hover{
     transform: scale(1.1);
 }
@@ -115,13 +118,8 @@
 .menubody p.product_list {
     text-align: center;
     color: #663300;
-    font-weight: 1000;
+    font-style: italic;
     
-}
-.menubody p.price {
-    text-align: center;
-    color: #663300;
-    font-weight: 1000;
 }
 
 .menubody ul.list{
@@ -161,4 +159,20 @@
     text-align: center;
     text-decoration: none;
     font-weight: 600;
+}
+
+.menubody .add-to-cart{
+    color:#4d2600;
+    background-color:#fff7e6;
+    border: 1px solid #F4DFB6;
+    border-radius: 14px;
+    height: 35px;
+    width: auto;
+    font-size:16px;
+}
+
+.menubody .add-to-cart:hover{
+    font-style: oblique;
+    background-color:#F4DFB6;
+    letter-spacing: 1px;
 }
