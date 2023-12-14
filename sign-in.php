@@ -93,8 +93,20 @@
             <h1 class="form-heading">Đăng nhập</h1>
             <div class="form-group">
                 <i class="fa-regular fa-user"></i>
-                <input type="text" class="form-input" placeholder="Email" name="email" value="<?php echo $emailid;
-                echo (!empty($error['email']['save']))?$error['email']['save']:false; ?>">
+                <input type="text" class="form-input" placeholder="Email" name="email" 
+                    value="<?php if($emailid == ""){
+                                echo (!empty($error['email']['save']))?$error['email']['save']:false;
+                            }
+                            else{
+                                if(empty($error['email']['save']))
+                                {
+                                    echo $emailid;
+                                }
+                                else{
+                                    echo (!empty($error['email']['save']))?$error['email']['save']:false;
+                                }
+                            }
+                            ?>">
             </div>
             <?php
                     echo (!empty($error['email']['required']))?'<span class="error" style="color: red">'.$error['email']['required'].'</span>':false;
@@ -105,7 +117,13 @@
                 ?>
             <div class="form-group">
                 <i class="fa-solid fa-key"></i>
-                <input type="password" class="form-input" placeholder="Mật khẩu" name="password" value="<?php echo $password; ?>">
+                <input type="password" class="form-input" placeholder="Mật khẩu" name="password" 
+                    value="<?php 
+                            if(empty($error['password']['un-verify']))
+                            {
+                                echo $password;
+                            } 
+                        ?>">
                 <div id="eye">
                     <i class="fa-solid fa-eye"></i>
                 </div>
