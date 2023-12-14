@@ -1,0 +1,225 @@
+
+.profilebody #wrapper{
+    margin-top: 20px;
+    height: 80%;
+    width: 60%;
+    margin-left: 480px;
+    border: solid 2px;
+    background-color: #fff7e6;
+    border-radius: 10px;
+    border: none;
+}
+.profilebody #wrapper{
+    min-width: 100vh;
+}
+.profilebody .profilebody .form-group{
+    font-size: large;   
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.profilebody .profile .form-label, .profile .user-info{
+    padding: 15px 180px 10px 0px;
+    font-size: large;
+}
+.profilebody .account .form-label,.account .user-info{
+    padding: 15px 220px 10px 0px;
+    font-size: large;
+}
+.profilebody *{
+    box-sizing: border-box;
+}
+.profilebody{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    background-color: #FFEDCB;
+    height: 600px;;
+}
+.profilebody button#update-profile, button#update-account{
+    background: #B0926A;
+    color: #fff;
+    border:none;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    padding:5px 15px;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba( 0, 0, 0, 0.5);
+    margin-left: 300px;
+}
+.profilebody button#update-profile:hover, button#update-account:hover{
+    background: rgb( 8, 110, 280);
+} 
+.profilebody #modal-container-profile, #modal-container-account{
+    min-height: 200vh;
+    background: rgba( 0, 0, 0, 0.5);
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease-in-out;
+}
+.profilebody #modal-container-profile.show, #modal-container-account.show{
+    opacity: 1;
+    pointer-events: all;
+}
+.profilebody .modal{
+    background: #DAFFF8;
+    max-width: 600px;
+    position: relative;
+    left:50%;
+    top:0px;
+    transform: translateX(-50%);
+    transition: all 0.25s ease-in-out;
+    border-radius: 25px;
+}
+.profilebody #modal-container-profile.show .modal , #modal-container-account.show .modal{
+    top: 180px;
+}
+.profilebody .modal .modal-header-profile, .modal .modal-header-account{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:5px 20px;
+    border-bottom: 1px solid #dedede;
+}
+.profilebody .modal .modal-header-profile h3, .modal .modal-header-account h3{
+    margin: 0;
+}
+.profilebody  #btn-close-profile, #btn-close-account{
+    border: solid 1px white;
+    border-radius: 30px;
+    background: white;
+    font-size: 19px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    bottom: 25px;
+    left: 40px;
+}
+.profilebody .fa-sharp.fa-solid.fa-circle-xmark.fa-2xl{
+    position: relative;
+    top:1px;
+    right: 5.75px;
+}
+.profilebody .modal .modal-body-profile, .modal .modal-body-account{
+    padding: 10px 20px 15px;
+}
+.profilebody .un-update{
+    color:gray;
+}
+.profilebody .form-input{
+    width: 300px;
+    height: 50px;
+    border:none;
+    border-width: 0;
+    background: #DAFFF8;
+}
+.profilebody .form-input:focus{
+    outline: none!important;
+}
+.profilebody .form-group-modal i{
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+.profilebody .form-group-modal{
+    font-size: large;
+    display: flex;
+    border: 3px solid black;  
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+}
+.profilebody .btn.btn-secondary{
+    background: #FC8E57;
+    color: black;
+    border: 3px solid black;  
+    width: 250px;
+    height: 40px;
+    border-radius: 20px;
+    padding:5px 15px;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba( 0, 0, 0, 0.5);
+    margin-left: 150px;
+}
+.profilebody .btn.btn-secondary:hover{
+    background: rgba(245, 222, 179, 0.436);
+}
+
+.profilebody body {font-family: Arial;}
+
+/* Style the tab */
+.profilebody .tab {
+  /*overflow: hidden;*/
+  display: flex;
+  flex-direction: column;
+  float: left;
+  height: 100%;
+  background-color: #974D1C;
+  border: none;
+  margin-left: 100px;
+}
+/* Style the buttons inside the tab */
+.profilebody .tab button {
+  background-color: #C4FCF0;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  width: 330px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* Change background color of buttons on hover */
+.profilebody .tab button:hover {
+  background-color: #00C9AB;
+}
+
+/* Create an active/current tablink class */
+.profilebody .tab button.active {
+  background-color: #00A88D;
+}
+/* Style the tab content */
+.profilebody .tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: none;
+  margin-left: 40px;
+  margin-right: 40px;
+  color:#112A46;
+}
+.profilebody #forward-icon2, #forward-icon3, #forward-icon1,#forward-icon4{
+    margin-right: 10px;
+}
+.profilebody .button-content{
+    margin-right: 80px;
+}
+.profilebody #button-content{
+    margin-right: 150px;
+}
+.profilebody #button-content1{
+    margin-right: 100px;
+}
+.profilebody #pagination{
+    text-align: right;
+    margin-top: 15px;
+}
+.profilebody .page-item{
+    border: 1px solid #ccc;
+    padding: 5px 9px;
+    color: #112A46;
+}
+.profilebody .current-page{
+    background: #974D1C;
+    color: #FFF;
+}
+.profilebody #page-bar{
+    margin-right: 260px;
+}

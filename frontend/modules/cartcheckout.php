@@ -412,11 +412,11 @@ $mailer->dathangmail($tieude, $noidung, $maildathang);  */
             <form id="checkoutForm" method="post" action="">
                 
             <label  >Họ và tên </label>
-            <input type="text" name="full_name"  value=<?php echo $full_name ?> disabled >
+            <input type="text" name="full_name"  value="<?php echo $full_name ?>" disabled >
             <label >Email</label>
             <input type="email" name="email" value=<?php echo$email ?> disabled>
             <label>Số điện thoại</label>
-            <input type="text" name="phone_number" value=<?php echo$phone_number ?> disabled >
+            <input type="text" name="phone_number" value="<?php echo$phone_number ?>" disabled >
             <label>Chọn Tỉnh/ Thành phố</label>
             <select name="city" class="form-select form-select-sm mb-3" id="city" aria-label=".form-select-sm">
               <option  value="" selected> Tỉnh/ Thành phố</option>           

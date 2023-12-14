@@ -23,8 +23,9 @@ session_start();
     <link rel="stylesheet" href="../css/sign-in.css"> 
     <link rel="stylesheet" href="../css/tintucpage.css">
      <link rel="stylesheet" href="../css/content.css">
-    <!--  <link rel="stylesheet" href="../css/product.css"> -->
+     <link rel="stylesheet" href="../css/product.css"> 
      <link rel="stylesheet" href="../css/thankyou.css">
+     <link rel="stylesheet" href="../css/user.css">
     <link rel="stylesheet" href="https://cdnj s.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushina">
@@ -38,7 +39,7 @@ session_start();
      <head>
   <body >
   <section class="myheader sticky-top" style="background-color: #F1DBBF;">
-    <div class=" container-fluid fs-4 text-center headerig" style="padding: 0;">
+    <div class=" container-fluid fs-4 text-center headerig" style="padding: 0; height: 100px;">
       <div class="row align-items-center">
         <div class="col-md-2"><a href="index.php?action=homepage&query=none"><img src="../modules/images/Header-logo.png" class="img-fluid logo" alt="Logo" style="max-width: 140px; height:90px"></a></div>
         <div class="col-md-6">

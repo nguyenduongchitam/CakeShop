@@ -1,62 +1,35 @@
-<!-- <?php
-include("../../Database/Config/config.php");
-if(isset($_GET['id'])){ 
-$id=$_GET['id'];
-$sql="select * from product where product_id=$id";
-$result= mysqli_query($mysqli,$sql);
-}
-while ($row = mysqli_fetch_array($result)) {
-?>
-<div class="product">
-    <form method="POST" action="index.php?action=cart&query=none">
-    
-<table>
-<tr>
-    <input type="hidden" name="product_id" value="<?php echo $row['product_id']?>">
-    <td> Tên sp : <?php echo $row['title'] ?></td>
-    <input type="hidden" name="title" value="<?php echo $row['title'] ?>"> 
-</tr>
-<tr>
-    <td>Giá sp: <?php echo $row['price'] ?></td>
-    <input type="hidden" name="price" value="<?php echo $row['price'] ?>"> 
-</tr>
-<tr>
-    <td>Giá khuyến mãi sp: <?php echo $row['discount_price'] ?></td>
-    <input type="hidden" name="discount_price" value="<?php echo $row['discount_price'] ?>"> 
-</tr>
-<tr>
-    <td>Ảnh sản phẩm : <img src="../../../Database/images/<?php echo $row['thumbnail'] ?>" height="200" width="200" name="<?php echo $row['thumbnail'] ?>"></td>
-    <input type="hidden" name="thumbnail" value="<?php echo $row['thumbnail'] ?>"> 
-</tr>
-<tr>
-    <td>Mô tả : <?php echo $row['description'] ?></td>
-    <input type="hidden" name="description" value="<?php echo $row['description'] ?>"> 
-</tr>
-<tr>
-    <td><input type="number" name="quantity" value="1" min="1" ></td>
-</tr>
-<tr>
-    <td><input type="submit" name="add_to_cart" value="Mua hàng"> </input></td>
-</tr>
-</table>
-</form>
-<?php
-}?>
-</div>
- -->
+<!DOCTYPE html>
+<html>
 
- <div class="productbody">
- <p style="color: #4d2600; padding-top: 60px;" ><a href="index.php?action=menupage&query=none" class="linkmenu">Menu</a> > [Ten banh] </p>  
-         
-         <div class="card-wrapper">  
-              <div class="card">  
-                 <!--  <div class="product-imgs">   -->
-                      <!-- <div class="img-display" style="margin-top: 15px;">   -->
-                         <div class="img-magnifier-container"> 
-                         <img src="images/2a.png" id="myimage" width=300px; height=300px;>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Product Card/Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+      />
+    <link rel="stylesheet" href="../css/product.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <section style="background-color: #fff7e6;">
+        <div class="card-wrapper">
+            <div class="card">
+                <div class="product-imgs">
+                <p style="color: #4d2600;"><a href="index.php?action=menupage&query=none" class="linkmenu">Menu</a> > [Ten banh] </p>
+                    <div class="img-display" style="margin-top: 15px;">
+                        <div class="img-magnifier-container">
+                         <img src="images/2a.png" id="myimage">
                         </div>
-</div>
-             <!-- </div> -->
+                    </div>
+             </div>
             
              <script>
 function magnify(imgID, zoom) {
@@ -156,11 +129,10 @@ function magnify(imgID, zoom) {
                         </button>
                     </div>
                 </div>
-           <!--  </div> -->
+            </div>
         </div>
 
         <hr style="border: 1px dashed #B0A695; width: 50%; align-items:center; margin-left:auto; margin-right:auto;">
-        
         <h1 class="title"> Sản Phẩm Liên Quan </h1>
         <div class="img-select">
                     <div class="col">
@@ -200,8 +172,8 @@ function magnify(imgID, zoom) {
                         </div>
           
                     </div>
-         </div>   
-         <script
+         </div>
+    <script
       type="text/javascript"
       src="https://code.jquery.com/jquery-1.11.0.min.js"
     ></script>
@@ -213,6 +185,10 @@ function magnify(imgID, zoom) {
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>   
-    <script src="../modules/js/product.js"></script>     
-  
-    </div> 
+    <script src="../modules/js/product.js"></script>      
+    </section>
+
+</body>
+
+
+</html>

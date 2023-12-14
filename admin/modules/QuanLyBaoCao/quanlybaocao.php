@@ -1,15 +1,5 @@
-<?php 
-require('../carbon/autoload.php');
-use Carbon\Carbon;
-use Carbon\CarbonInterval;
-  
-
-
-?>
 <p>Thống kê doanh thu theo : <span id="text-date"></span></p>
-
 <div id="chart" style="height: 250px;"></div>
-
 <script type="text/javascript">    
  $(document).ready(function(){
     thongke();
@@ -23,7 +13,6 @@ use Carbon\CarbonInterval;
 
   labels: ['Đơn hàng','Doanh thu','Số lượng bán ra']
 });
-
 function thongke(){
 var text='365 ngày qua';
   $.ajax(
@@ -39,5 +28,4 @@ var text='365 ngày qua';
     }); 
 }
  })
-
 </script>
