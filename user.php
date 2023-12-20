@@ -101,7 +101,7 @@ body {font-family: Arial;}
   display: flex;
   flex-direction: column;
   float: left;
-  height: 100%;
+  height: 300px;
   background-color: #7FD1AE;
   border-radius: 8px 0px 0px 0px;
   border: none;
