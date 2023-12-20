@@ -9,7 +9,7 @@
     $id=$result['user_id'];
    }
 ?>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <?php
     //$customerId = $_GET['user_id'];
     $order_per_page = !empty($_GET['per_page'])?$_GET['per_page']:5;
@@ -101,10 +101,8 @@
     }
     
 ?>
-
 <div class="profilebody">
-
-<h2 style="margin-left: 100px">User profile</h2>
+<h2 style="margin-left: 100px;">Thông tin người dùng</h2><br>
 <div class="tab">
   <button class="tablinks" onclick="openTabs(event, 'profile')"><i class="fa-solid fa-user" id="forward-icon1"></i><span class="button-content">Thông tin tài khoản</span><i class="fa-solid fa-arrow-right-long fa-xl" id="back-icon1"></i></button>
   <button class="tablinks" onclick="openTabs(event, 'account')"><i class="fa-solid fa-key" id="forward-icon2"></i><span class="button-content">Thông tin đăng nhập</span><i class="fa-solid fa-arrow-right-long fa-xl" id="back-icon2"></i></button>
@@ -188,13 +186,13 @@
 </table>
 </div>
 <div id="page-bar">
-    <?php
+   <!--  <?php
     include('pagetransport.php');
-    ?>
+    ?> -->
 </div>
 </div>
 <div id="modal-container-profile">
-    <div class="modal" id="modal-demo-profile">
+    <div id="modal-demo-profile">
         <div class="modal-header-profile">
             <h3>Cập nhật thông tin tài khoản</h3>
             <button id="btn-close-profile"><i class="fa-sharp fa-solid fa-circle-xmark fa-2xl"></i></button>
@@ -219,7 +217,7 @@
     </div>
 </div>
 <div id="modal-container-account">
-    <div class="modal" id="modal-demo-account">
+    <div id="modal-demo-account">
         <div class="modal-header-account">
             <h3>Cập nhật thông tin đăng nhập</h3>
             <button id="btn-close-account"><i class="fa-sharp fa-solid fa-circle-xmark fa-2xl"></i></button>
@@ -256,6 +254,7 @@
             </div>
         </form>
     </div>
+</div>
 </div>
 </div>
 <script>
@@ -309,5 +308,4 @@ function openTabs(evt, tabName) {
             }
         })
     </script>
-   
-    </div>
+</div>
