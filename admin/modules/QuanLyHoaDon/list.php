@@ -1,12 +1,25 @@
 <?php
 include("config.php");
-$sql = "SELECT * FROM `order`";
+if (isset($_POST['search_key']))
+{
+  $searchkey=$_POST['search_key'];
+$sql = "SELECT * FROM `order` where city like '%$searchkey%' or district like '%$searchkey%' or ward like '%$searchkey%' or `address` like '%$searchkey%'";
+}
+else $sql = "SELECT * FROM `order`";
 $sql1 = "SELECT full_name FROM user u, `order` o WHERE u.user_id=o.user_id";
 $result = mysqli_query($mysqli, $sql);
 $result1 = mysqli_query($mysqli, $sql1);
 ?>
 
 <div class="container">
+<form style="float: right;" method="POST" action="">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Nhập địa chỉ cần tìm" style="width: 300px;" name="search_key" id="typed_email" >
+        <button class="btn btn-primary" type="submit" name="search">
+            <i class="fas fa-search"></i> Tìm 
+        </button>
+    </div>
+</form>
   <h1 class="text-center">Danh sách hoá đơn</h1>
   <table class="table table-bordered table-striped mt-3">
     <thead>

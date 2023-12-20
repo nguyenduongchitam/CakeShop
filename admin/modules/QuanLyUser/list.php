@@ -1,8 +1,18 @@
 <?php
 include("config.php");
+if(isset($_POST['search_key']))
+{
+  $searchkey=$_POST['search_key'];
+$sql="SELECT user.*, role.name
+FROM user
+INNER JOIN role ON user.role_id = role.role_id where user.email like '%$searchkey%' or user.full_name like'%$searchkey%'  ";
+
+}
+else { 
 $sql="SELECT user.*, role.name
 FROM user
 INNER JOIN role ON user.role_id = role.role_id";
+}
 $result = mysqli_query($mysqli,$sql);
 ?>
   <div class="container" >
@@ -18,6 +28,8 @@ $result = mysqli_query($mysqli,$sql);
           <th>Quyền</th>
           <th>Ngày tạo </th>
           <th>Ngày cập nhật gần nhất </th>
+          <th>Xóa</th>
+          <th>Sửa</th>
         </tr>
       </thead>
       <tbody>
@@ -39,7 +51,7 @@ $result = mysqli_query($mysqli,$sql);
             <td><?php echo $row['create_at'] ?></td>
             <td><?php echo $row['update_at'] ?></td>
             <td><a onclick="return del('<?php echo $row['full_name'] ?>')" href="QuanLyUser/delete.php?query=delete&user_id=<?php echo $row['user_id'] ?>"class="btn btn-danger">Xóa</a></td>
-            <td><a href="?action=quanlytaikhoan&query=update&user_id=<?php echo $row['user_id'] ?>&user_id=<?php echo $row['user_id'] ?>"class="btn btn-primary">Sửa</a></td>
+            <td><a href="?action=quanlytaikhoan&query=update&user_id=<?php echo $row['user_id'] ?>&role_id=<?php echo $row['role_id']?>"class="btn btn-primary">Sửa</a></td>
           </tr>
         <?php
         }

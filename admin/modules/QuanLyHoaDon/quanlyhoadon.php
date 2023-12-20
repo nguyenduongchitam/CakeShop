@@ -1,5 +1,6 @@
 <?php
 include("config.php");
+
 $sql = "select * from user";
 $result = mysqli_query($mysqli, $sql);
 
@@ -8,6 +9,7 @@ $result = mysqli_query($mysqli, $sql);
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
+      
       <table class="table table-bordered">
         <form method="POST" action="../modules/QuanLyHoaDon/insert.php" enctype="multipart/form-data">
           <tr>
