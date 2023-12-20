@@ -199,9 +199,8 @@
 
                     echo (!empty($error['password']['un-verify']))?'<span class="error" style="color: red">'.$error['password']['un-verify'].'</span>':false;
                 ?><br>
-                <input type="checkbox"  name="rememberMe" id="rememberMe"><label for="rememberMe" style="color:white">Ghi nhớ tài khoản ?</label>
+                <!-- <input type="checkbox"  name="rememberMe" id="rememberMe">Ghi nhớ tài khoản ?<label for="rememberMe" style="color:white">Ghi nhớ tài khoản ?</label> -->
                 <input type="submit" class="form-submit" value="Đăng nhập" name="dangnhap" >
-                <input type="button" class="form-submit" value="Đăng ký">
                 <div class="support" style="cursor: pointer;">Trở về</div>
             </form>
         </div>

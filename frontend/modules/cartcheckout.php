@@ -7,6 +7,7 @@ if(!isset($_SESSION['dangnhap'])&&($_SESSION['dangnhap']==""))
            header("location:signpage/sign-in.php");
           }
       $tong=$_GET['tong'];
+      
 function showcart()
 {
     if(isset($_SESSION['cart'])&&(is_array($_SESSION['cart'])))
@@ -404,7 +405,7 @@ $mailer->dathangmail($tieude, $noidung, $maildathang);  */
 
 <a href="index.php?action=homepage&query=none"><img src="../modules/images/Header-logo.png" class="img-fluid-logo" alt="Logo">
     
-<p class="link"><a href="index.php?action=cart&query=none" class="linkcart">Giỏ hàng của bạn</a> > Thông tin mua hàng </p>
+<p class="link"><a href="index.php?action=cart&query=none" class="linkcart">Giỏ hàng của bạn</a>> Thông tin mua hàng </p>
 
 <div class="container">
         <div class="checkout-form">
@@ -453,26 +454,15 @@ $mailer->dathangmail($tieude, $noidung, $maildathang);  */
            <?php showcart($tong)?>
            </table>
            <hr style="height: 2px; border: none; background-color: #A9A9A9; margin: 20px 10px; ">
-           <script>
-          function handleRadioChange() {
-            
-            /* var radios = document.getElementsByName('delivery');
-            if (radios[1].checked) {
-              document.getElementById('Select').textContent = "Tiền ship: " + radios[1].value;
-              var selectedDelivery =radios[1].value;
-            } else    document.getElementById('Select').textContent = "";  */
-
-            $.ajax({
-           url: 'process.php',
-          type: 'POST',
-          data: { delivery: selectedDelivery },
-            success: function(response) {
-        $('.totalAmount').text(response);
-          }
-          });
-        }
-           </script>   
+           
                 <p id="Select"></p>
+               <!--  kiểm tra có mã giảm giá ko  -->
+              <?php  if(isset($_GET['giamgia'])&&$_GET['giamgia']!=0)  
+              { 
+               $giamgia=$_GET['giamgia'];
+               echo 'đã thực hiện áp mã giảm giá : '.$giamgia.' ';
+              }
+              ?>
            <p style="font-size: 16px;" id='tong'><b>TỔNG CỘNG : <span class="amounttotal" > <?php echo $tong ?> VND</b></span></p>
            <button type="submit" name="dathang"><b>HOÀN TẤT ĐẶT HÀNG</b></button>
            
