@@ -55,7 +55,7 @@ function showcart()
         while ($row = mysqli_fetch_array($result1)) {
         $user_id=$row['user_id'];
         }
-        $tong=$_GET['tong'];
+        $tong=$_GET['tong'  ];
         $sql_add_order= "INSERT INTO `order`(`user_id`, `city`, `district`, `ward`,`address`, `note`, `delivery_money`, `order_date`, `status`, `total_money`) VALUES ($user_id,'$city','$district','$ward','$address','$note',$delivery,now(),1,$tong)";
         //lay id order vua moi them vao 
         if ( mysqli_query($mysqli,$sql_add_order)) {
