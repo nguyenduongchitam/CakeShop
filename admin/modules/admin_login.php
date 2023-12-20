@@ -29,6 +29,7 @@
             echo '<p style="color:red">Tên đăng nhập hoặc mật khẩu không đúng</p>';
         }
     }
+    
 ?>
     <div class="form-gr" style="border:0;border-bottom:1px solid #fff;margin-top:10px; margin-bottom:10px;" >
     <i class="fas fa-user" style="color: white; margin-right: 5px;"></i><input style="color:white; width: 280px; height:35px; background:transparent;border:0; outline:0" type="text" placeholder="Nhập tài khoản" name="email"></tr>   
@@ -41,4 +42,20 @@
     </form>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script>
+    $(document).ready(function(){
+    $('#eye').click(function(){
+        $(this).toggleClass('open');
+        $(this).children('i').toggleClass('fa-eye-slash fa-eye');
+        if($(this).hasClass('open'))
+        {
+            $(this).prev().attr('type', 'text');
+        }
+        else{
+            $(this).prev().attr('type', 'password');
+        }
+    });
+});
+</script>
 </html>
