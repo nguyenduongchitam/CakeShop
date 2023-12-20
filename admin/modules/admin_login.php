@@ -1,4 +1,4 @@
-    <?php
+<?php
         session_start();
         include("config.php");
         if(isset($_COOKIE['email-admin']) && isset($_COOKIE['password-admin'])){
