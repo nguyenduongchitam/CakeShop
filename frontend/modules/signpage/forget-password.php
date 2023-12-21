@@ -21,14 +21,21 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
     <style>
+        body {
+            background-color: #F3F8FF;
+             font-family: 'Segoe UI';
+       }
         .container {
             max-width: 400px;
             margin: 100px auto;
+          
         }
 
         .card {
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: rgba(89, 63, 33, 1);
+            color:#f5f5f5;
         }
 
         .card-title {
@@ -46,23 +53,38 @@
         }
 
         .btn-primary {
-            width: 100%;
+            width: 70%;
+            border-radius: 13px;
+            margin-left: 50px;  
+            background-color: #E2C799;  
+            border:none;
+            color: rgba(89, 63, 33, 1);
+            font-size:large;
+            
+        }
+        .btn-primary:hover{
+            background-color: #C38154;
+            font-weight: 500;
         }
 		.back {
 
 		text-align: center;
 		}
+        .back:hover{
+            color: #E2C799;
+            font-style: italic;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="card">
-            <h1 class="card-title">Quên mật khẩu</h1>
+            <h1 class="card-title">QUÊN MẬT KHẨU</h1>
             <form action="" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="email">Nhập email</label>
-                    <input type="email" class="form-control"  name="email" id="email" placeholder="nhập email" value="<?php echo (!empty($_SESSION['login']))?$_SESSION['login']:false;?>">
+                    <input type="email" class="form-control"  name="email" id="email" placeholder="Nhập email" value="<?php echo (!empty($_SESSION['login']))?$_SESSION['login']:false;?>">
 					<?php
 			echo (!empty($error['email']['exist']))?'<span class="error" style="color: red">'.$error['email']['exist'].'</span>':false;
 		          ?>

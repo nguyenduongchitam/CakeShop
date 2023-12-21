@@ -13,12 +13,12 @@ include("../../../Database/Config/config.php");
         else
         {
             if(!filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL)){
-                $error['email']['invalid'] = 'email không hợp lệ';
+                $error['email']['invalid'] = 'Email không hợp lệ';
             }
         }
         if(empty(trim($eventPasswordNew)))
         {
-            $error['password']['required'] = 'mật khẩu không được để trống';
+            $error['password']['required'] = 'Mật khẩu không được để trống';
             $announce['email']['save'] = $_POST['email'];
         }
         else{
@@ -48,7 +48,7 @@ include("../../../Database/Config/config.php");
             $row = mysqli_query($mysqli,$sql);
             $result = mysqli_fetch_array($row);
             if(empty($result)){
-                $error['email']['exist'] = 'email không tồn tại';
+                $error['email']['exist'] = 'Email không tồn tại';
             }
             else{
                 $passwordHashData = password_hash($nhaplaimatkhau,PASSWORD_DEFAULT);
