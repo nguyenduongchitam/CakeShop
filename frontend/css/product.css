@@ -225,20 +225,4 @@
      padding: 10px 10px;
      opacity: 0.7;
  }
-
- .productbody .add-to-cart{
-    color:#4d2600;
-    background-color:#fff7e6;
-    border: 1px solid #F4DFB6;
-    border-radius: 14px;
-    height: 35px;
-    width: auto;
-    font-size:16px;
-    margin-top: 15px;
-}
-
-.productbody .add-to-cart:hover{
-    font-style: oblique;
-    background-color:#F4DFB6;
-    letter-spacing: 1px;
-}
+ 

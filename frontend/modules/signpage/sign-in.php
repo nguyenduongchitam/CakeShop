@@ -69,7 +69,7 @@ session_start();
 <body>
     <div id="wrapper">
         <form action="" id="form-login" method="POST">
-            <h1 class="form-heading">Đăng nhập</h1>
+            <h1 class="form-heading">ĐĂNG NHẬP</h1>
             <div class="form-group">
                 <i class="fa-regular fa-user"></i>
                 <input type="text" class="form-input" placeholder="Email" name="email">

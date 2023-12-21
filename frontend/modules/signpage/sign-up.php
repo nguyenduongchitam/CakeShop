@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/sign.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <title>sign in</title>
+    <title>sign up</title>
 </head>
 <?php
 	include("../../../Database/Config/config.php");
@@ -71,7 +71,7 @@
 <body>
     <div id="wrapper">
         <form action="" id="form-login" method="POST">
-            <h1 class="form-heading">Đăng ký</h1>
+            <h1 class="form-heading">ĐĂNG KÝ</h1>
             <div class="form-group">
                 <i class="fa-regular fa-user"></i>
                 <input type="text" class="form-input" placeholder="Email" name="email" id="email">
