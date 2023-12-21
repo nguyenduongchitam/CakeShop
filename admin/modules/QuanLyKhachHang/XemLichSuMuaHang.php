@@ -29,7 +29,7 @@ $result = $mysqli->query($sql);
             <td><?php echo $row['order_date'] ?></td>
             <td><?php echo $row['title'] ?></td>
             <td><?php echo $row['price'] ?></td>
-            <td><?php echo $row['num'] ?></td>
+            <td><?php echo $row['quantity'] ?></td>
           </tr>
         <?php
         }

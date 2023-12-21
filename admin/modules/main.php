@@ -67,6 +67,18 @@
     {
         include("../modules/QuanLyBaoCao/quanlybaocao.php");
     }
+    else if( $action=='quanlykhuyenmai' && $query=='none')
+    {
+        include("../modules/QuanLyKM/quanlycoupon.php");
+        include("../modules/QuanLyKM/list.php");
+    }
+    else if( $action=='quanlykhuyenmai' && $query=='update') 
+    include("../modules/QuanLyKM/update.php");
+    else if( $action=='quanlyanh' && $query=='none')
+    {
+        include("../modules/QuanLyAnh/quanlyanh.php");
+        include("../modules/QuanLyAnh/list.php");
+    }
     else include("dashboard.php");
 ?>
 </div>

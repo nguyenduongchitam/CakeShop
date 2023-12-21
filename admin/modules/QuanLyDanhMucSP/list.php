@@ -1,10 +1,22 @@
 <?php
 include("config.php");
+if (isset($_POST['search_key']))
+{
+    $searchkey=$_POST['search_key'];
+}
 $sql="select * from category";
 $result= mysqli_query($mysqli,$sql);
 ?>
 
 <div class="container">
+<form style="float: right;" method="POST" action="">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Nhập danh mục cần tìm" style="width: 300px;" name="search_key" id="typed_email" >
+        <button class="btn btn-primary" type="submit" name="search">
+            <i class="fas fa-search"></i> Tìm danh mục 
+        </button>
+    </div>
+</form>
         <h2 class="text-center">Danh sách các danh mục</h2>
         <div class="table-responsive">
         <table class="table table-bordered table-striped table-hover">

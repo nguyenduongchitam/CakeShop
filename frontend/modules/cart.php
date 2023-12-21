@@ -76,7 +76,8 @@
    function showcart(&$tong,&$sl)
    {
        if(isset($_SESSION['cart'])&&(is_array($_SESSION['cart'])))
-   {  if(sizeof($_SESSION['cart'])>0)
+   {  
+    if(sizeof($_SESSION['cart'])>0)
     { 
       for ($i=0; $i <sizeof($_SESSION['cart']); $i++)
      {   
@@ -145,12 +146,47 @@
                     <hr style="height: 3px; background-color: black;">
                         <!-- <h5 class="card-title">Tổng cộng</h5> -->
                         <p style="font-size:large"><b>Nhập mã khuyến mãi </p></b>
-                        <div class="indiscount"><input type><input type="submit" value="Áp dụng" style="background-color: #ED7D31; border: none; color: white;"></div>
+                        <div class="indiscount"><input type="text" name="coupon" placeholder="Mã khuyến mãi"><button name="set_coupon" style="background-color: #ED7D31; border: none; color: white; font-weight:bold; height:29.2px">Áp dụng</button></div>
+                        </form>
+                        <?php
+                            include("../../Database/Config/config.php");
+                            date_default_timezone_set('Asia/Ho_Chi_Minh');
+                            $final=$tong;
+                            if(isset($_POST['set_coupon'])){
+                                $coupon=$_POST['coupon'];
+                                $sql_coupon="SELECT * FROM `coupon` WHERE coupon_code='$coupon' ";
+                                $result_coupon=mysqli_query($mysqli, $sql_coupon);
+                                if($result_coupon){
+                                    if(mysqli_num_rows($result_coupon)>0){
+                                        $row_coupon=mysqli_fetch_assoc($result_coupon);
+                                        $validity=$row_coupon['start_date'];
+                                        $expiration=$row_coupon['end_date'];
+                                        function CouponPeriod($validity, $expiration){
+                                            $currentDate = date("Y-m-d");
+                                            return($currentDate>=$validity && $currentDate<=$expiration);
+                                        }
+                                        if(CouponPeriod($validity, $expiration)){
+                                                echo '<p class=text-success> Áp dụng mã khuyến mãi '.$row_coupon['coupon_code'].' thành công</p>';
+                                                $discount=$row_coupon['discount_percentage'];
+                                                $final=($tong-($tong/100*$discount));
+                                                $discount_status=true;
+                                        }   else {echo '<p class=text-danger>Mã khuyến mãi không hợp lệ !</p>';}
+                                    }   else {echo '<p class=text-danger>Không tìm thấy mã khuyến mãi !</p>';}
+                                }
+                                else {echo '<p class=text-danger>Vui lòng nhập mã khuyến mãi</p>';}
+                                
+                            }
+                        ?>
                         <hr style="height: 2px; margin: 30px 0; background-color: black; margin-bottom:10px;">
                         <div class="cart-summary">
                          <p style="font-size:large"><b>Tạm tính: </p> <span id="totalAmount" class="total" style="color:#ED7D31"><?php echo $tong ?>đ </span></b>
                         </div>
-                        <a href="cartcheckout.php?tong=<?php echo $tong ?>"  ><button class="button"><b>Thanh toán</b></button></a>
+                        <a href="cartcheckout.php?tong=<?php echo $tong ?>">
+                        <?php $discount_value=$tong-$final?>
+                        <a style="font-size: large;">Số tiền được giảm: <m style="color: red;"><?php echo $discount_value/1000?>.000 đ</m>
+                        <p style="font-size:large"><b>Số tiền cần thanh toán: <p id="" class="total" style="color:forestgreen; margin-right:65px; font-size:35px"><?php echo $final/1000 ?>.000 đ </p> </p> 
+                    </b>
+                    <a href="cartcheckout.php?tong=<?php echo $final ?>"  ><button class="button"><b>Thanh toán</b></button></a>
                     </div>
                 </div>
                 <div class="intext">

@@ -45,7 +45,7 @@ $result = mysqli_query($mysqli, $sql_category);
                 </tr>
                 <tr>
                     <td>Nhập giảm giá</td>
-                    <td><input type="text" name="discount" value="<?php echo $row['discount'] ?>" class="form-control"></td>
+                    <td><input type="text" name="discount" value="<?php echo $row['coupon_id'] ?>" class="form-control"></td>
                 </tr>
                 <tr>
                     <td>Nhập trạng thái</td>
@@ -71,7 +71,7 @@ if (isset($_POST['update'])) {
     date_default_timezone_set('Asia/Ho_Chi_Minh');
     $order_date = date("Y-m-d H:i:s");
     $status = $_POST['status'];
-    $sql_update = " UPDATE `order` SET `user_id`='$user_id',`city`='$city',`district`='$district',`ward`='$ward',`note`='$note',`delivery_money`='$delivery_money' ,`discount`='$discount', `order_date` ='$order_date', `status`='$status' WHERE order_id=$order_id ";
+    $sql_update = " UPDATE `order` SET `user_id`='$user_id',`city`='$city',`district`='$district',`ward`='$ward',`note`='$note',`delivery_money`='$delivery_money' ,`coupon_id`='$discount', `order_date` ='$order_date', `status`='$status' WHERE order_id=$order_id ";
     mysqli_query($mysqli, $sql_update);
     echo '<script>location.replace("../modules/index.php?action=quanlyhoadon&query=none");</script>';
 } else if (isset($_POST['return'])) echo '<script>location.replace("../modules/index.php?action=quanlyhoadon&query=none");</script>';

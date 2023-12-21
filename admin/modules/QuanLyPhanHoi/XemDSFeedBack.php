@@ -4,6 +4,7 @@ $sql = "SELECT * FROM feedback";
 $result = mysqli_query($mysqli,$sql);
 ?>
   <div class="container" >
+    
     <h1 class="text-center">Danh sách phản hồi</h1>
     <table class="table table-bordered table-striped mt-3">
       <thead>
