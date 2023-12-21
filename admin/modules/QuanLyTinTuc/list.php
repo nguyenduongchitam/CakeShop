@@ -1,6 +1,6 @@
 <?php
 include("config.php");
-$sql="SELECT * FROM tintuc";
+$sql="SELECT * FROM news";
 $result = mysqli_query($mysqli,$sql);
 ?>
 
@@ -27,11 +27,11 @@ $result = mysqli_query($mysqli,$sql);
           <tr>
             <td><?php echo $i ?></td>
             <td><?php echo $row['title'] ?></td>
-            <td><img style="width: 100px" src="../../Database/Images/<?php echo $row['anh']?>" height="100px" width="100px" alt=""></td>
+            <td><img style="width: 100px" src="../../Database/Images/<?php echo $row['thumbnail']?>" height="100px" width="100px" alt=""></td>
             <td><?php echo $row['publish_date'] ?></td>
-            <td><a onclick="return del('<?php echo $row['title'] ?>')" href="QuanLyTinTuc/delete.php?query=delete&tintuc_id=<?php echo $row['tintuc_id'] ?>"class="btn btn-danger">Xóa</a></td>
-            <td><a href="?action=quanlytintuc&query=update&tintuc_id=<?php echo $row['tintuc_id'] ?>"class="btn btn-primary">Sửa</a></td>
-            <td><a href="?action=quanlytintuc&query=content&tintuc_id=<?php echo $row['tintuc_id'] ?>"class="btn btn-primary">View</a></td>
+            <td><a onclick="return del('<?php echo $row['title'] ?>')" href="QuanLyTinTuc/delete.php?query=delete&tintuc_id=<?php echo $row['news_id'] ?>"class="btn btn-danger">Xóa</a></td>
+            <td><a href="?action=quanlytintuc&query=update&tintuc_id=<?php echo $row['news_id'] ?>"class="btn btn-primary">Sửa</a></td>
+            <td><a href="?action=quanlytintuc&query=content&tintuc_id=<?php echo $row['news_id'] ?>"class="btn btn-primary">View</a></td>
           </tr>
         <?php
         }

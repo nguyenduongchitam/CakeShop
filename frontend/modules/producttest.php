@@ -6,7 +6,16 @@
     <title>Shopping Cart</title>
 </head>
 <body>
-
+<p class="title">PHƯƠNG THỨC GIAO HÀNG</p>
+          <form action="" method="POST">
+                        <div class="indiscount"><button name="non_ship" style="background-color: #808080; border: none; color: white; font-weight:bold; height:25px">Nhận tại cửa hàng</button></div>
+                        <div class="indiscount"><button name="ship" style="background-color: #808080; border: none; color: white; font-weight:bold; height:25px">Giao hàng</button></div>
+                        </form>
+          <?php
+          if(isset($_POST['ship'])){
+            $tong+=40000;
+          }
+          ?>
 <!-- Giỏ hàng -->
 <div id="cart">
     <!-- Danh sách sản phẩm -->

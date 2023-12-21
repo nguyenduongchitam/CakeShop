@@ -57,8 +57,8 @@ CREATE TABLE `Order` (
   `note` varchar(255),
   `delivery_money` int,
   `coupon_id` int,
-  `order_date` datetimes,
-  `status` bool,
+  `order_date` datetime,
+  `status` boolean,
   `total_money` int
 );
 
@@ -106,7 +106,7 @@ ALTER TABLE `Order` ADD FOREIGN KEY (`coupon_id`) REFERENCES `coupon` (`coupon_i
 INSERT INTO `role`(`role_id`, `name`) VALUES (1,'Admin');
 INSERT INTO `role`(`role_id`, `name`) VALUES (2,'Khách hàng');
 /* password 12345 */
-INSERT INTO `user`(`full_name`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('admin','admin',1,now(),now());
+INSERT INTO `user`(`email`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('admin','$2y$10$M0nUR5kAvhRKSUvJ3v36UOVdZm4szAkkhiAUYFtKkr877GOpgS3I2',1,now(),now());
 INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Văn A','A@gmail.com','1234567','HCM','$2y$10$M0nUR5kAvhRKSUvJ3v36UOVdZm4szAkkhiAUYFtKkr877GOpgS3I2',2,now(),now());
 INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Anh B','B@gmail.com','1234567','HCM','$2y$10$M0nUR5kAvhRKSUvJ3v36UOVdZm4szAkkhiAUYFtKkr877GOpgS3I2',2,now(),now());
 INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Thị C','C@gmail.com','1234567','HCM','$2y$10$M0nUR5kAvhRKSUvJ3v36UOVdZm4szAkkhiAUYFtKkr877GOpgS3I2',2,now(),now());
@@ -142,3 +142,4 @@ INSERT INTO `product`(`product_id`,`category_id`,`title`, `price`, `discount_pri
 INSERT INTO `product`(`product_id`,`category_id`,`title`, `price`, `discount_price`, `thumbnail`, `description`, `created_at`,`update_at`)VALUES (19,3,'Bánh Kếp',50000,40000,'Bánh kếp-2.jpg','Bánh kếp ngon',now(),now());
 INSERT INTO `product`(`product_id`,`category_id`,`title`, `price`, `discount_price`, `thumbnail`, `description`, `created_at`,`update_at`)VALUES (20,3,'Bánh Kếp',50000,40000,'Bánh kếp-3.jpg','Bánh kếp ngon',now(),now());
 
+INSERT INTO `coupon`(`coupon_id`, `coupon_code`, `cart_min`, `quantity`, `total_discount`, `start_date`, `end_date`) VALUES (1,'0','0','0','0','1/1/2023','1/12/2024')

@@ -56,13 +56,13 @@ $result1 = mysqli_query($mysqli, $sql1);
           <td><?php echo $row['ward'] ?></td>
           <td><?php echo $row['note'] ?></td>
           <td><?php echo $row['delivery_money'] ?></td>
-          <td><?php echo $row['discount'] ?></td>
+          <td><?php echo $row['coupon_id'] ?></td>
           <td><?php echo $row['order_date'] ?></td>
           <td><?php echo $row['status'] ?></td>
           <td>
             <?php
             $temp = $row['order_id'];
-            $sql2 = "SELECT SUM(price*num) as total FROM `order` o, `order_detail` od WHERE o.order_id=od.order_id AND o.order_id=$temp";
+            $sql2 = "SELECT SUM(price*quantity)  as total FROM `order` o, `order_detail` od WHERE o.order_id=od.order_id AND o.order_id=$temp";
             $result2 = mysqli_query($mysqli, $sql2);
             $row2 = mysqli_fetch_array($result2);
             $temp1 = $row2['total'];

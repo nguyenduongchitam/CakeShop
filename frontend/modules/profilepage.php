@@ -272,8 +272,6 @@ function openTabs(evt, tabName) {
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
-</script>
-<script>
         const btn_open_profile = document.getElementById('update-profile');
         const btn_close_profile = document.getElementById('btn-close-profile');
         const modal_container_profile = document.getElementById('modal-container-profile');
@@ -290,8 +288,7 @@ function openTabs(evt, tabName) {
                 btn_close_profile.click();
             }
         })
-    </script>
-    <script>
+
         const btn_open_account = document.getElementById('update-account');
         const btn_close_account = document.getElementById('btn-close-account');
         const modal_container_account = document.getElementById('modal-container-account');
@@ -310,4 +307,4 @@ function openTabs(evt, tabName) {
         })
     </script>
    
-    </div>
+</div>

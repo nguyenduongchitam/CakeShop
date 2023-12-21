@@ -37,13 +37,13 @@ while ($row = mysqli_fetch_array($result)) {
     $pdf->Cell($width_cell[1], 10, $row['product_id'], 1, 0, 'C', $fill);
     $pdf->Cell($width_cell[2], 10, $row1['title'], 1, 0, 'C', $fill);
     $pdf->Cell($width_cell[3], 10, $row['price'], 1, 0, 'C', $fill);
-    $pdf->Cell($width_cell[4], 10, number_format($row['num']), 1, 0, 'C', $fill);
-    $pdf->Cell($width_cell[5], 10, number_format($row['price'] * $row['num']), 1, 0, 'C', $fill);
+    $pdf->Cell($width_cell[4], 10, number_format($row['quantity']), 1, 0, 'C', $fill);
+    $pdf->Cell($width_cell[5], 10, number_format($row['price'] * $row['quantity']), 1, 0, 'C', $fill);
     $fill = !$fill;
     $pdf->Ln(10);
 }
 
-$pdf->Write(10, 'Cảm ơn bạn đã đặt hàng');
+$pdf->Write(10, 'Cảm ơn bạn đã đặt hàng tại cake shop');
 ob_clean();
 $pdf->Output();
 ?>

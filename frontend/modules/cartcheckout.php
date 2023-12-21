@@ -43,12 +43,16 @@ function showcart()
    
     $city=$_POST['city'];
     $district=$_POST['district'];
-    $delivery=$_POST['delivery'];
+    //$delivery=$_POST['delivery'];
     $ward =$_POST['ward'];
     $address=$_POST['address']; 
     $note=$_POST['note'];
     // tạo dữ liệu oder
-      
+    $coupon_id=1;
+    if(isset($_GET['giamgia'])&&$_GET['giamgia']!=0)  
+    { 
+     $coupon_id=$_GET['giamgia'];
+    }
     if(isset($_SESSION['dangnhap'])&&($_SESSION['dangnhap']!=""))
     {
         $sql1 = "SELECT * FROM user where email='".$_SESSION['dangnhap']."'";
@@ -57,7 +61,7 @@ function showcart()
         $user_id=$row['user_id'];
         }
         $tong=$_GET['tong'];
-        $sql_add_order= "INSERT INTO `order`(`user_id`, `city`, `district`, `ward`,`address`, `note`, `delivery_money`, `order_date`, `status`, `total_money`) VALUES ($user_id,'$city','$district','$ward','$address','$note',$delivery,now(),1,$tong)";
+        $sql_add_order= "INSERT INTO `order`(`user_id`, `city`, `district`, `ward`,`address`, `note`, `delivery_money`,`coupon_id`, `order_date`, `status`, `total_money`) VALUES ($user_id,'$city','$district','$ward','$address','$note',0,$coupon_id,now(),1,$tong)";
         //lay id order vua moi them vao 
         if ( mysqli_query($mysqli,$sql_add_order)) {
             $last_order_id = mysqli_insert_id($mysqli);
@@ -67,7 +71,7 @@ function showcart()
             $product_id= $_SESSION['cart'][$i][0];
             $discount_price=$_SESSION['cart'][$i][3];
             $num= $_SESSION['cart'][$i][4];
-            $sql2= "INSERT INTO order_detail(order_id,product_id,price,num) values ( $last_order_id,$product_id,$discount_price,$num)";
+            $sql2= "INSERT INTO order_detail(order_id,product_id,price,quantity) values ( $last_order_id,$product_id,$discount_price,$num)";
             mysqli_query($mysqli,$sql2);
             }
         }
@@ -191,10 +195,10 @@ function showcart()
             }
     $noidung.='      
     </ul>
-      
+      <p>đã áp mã giảm giá : <p>
     <p><strong>Tổng cộng:</strong>'.$tong.'</p>
 
-    <p><strong>Phương thức thanh toán:</strong> [Phương thức thanh toán đã chọn]</p>
+    <p><strong>Phương thức thanh toán:</strong> Tại cửa hàng</p>
 </div>
 
     <p>Xin chân thành cảm ơn bạn đã tin tưởng và lựa chọn <b style="color: #DA0C81; font-size: large;">IU LÀ ĐÂY</b>. Rất mong được phục vụ bạn trong tương lai.</p>
@@ -434,12 +438,12 @@ $mailer->dathangmail($tieude, $noidung, $maildathang);  */
             <input type="text" name="address" ></input>
           <label>Ghi chú cho cửa hàng</label>
           <textarea placeholder="Nội dung" type="areatext" name="note" class="form-control" style="width: 99%; height: 50px;"> </textarea> 
-          <p class="title">PHƯƠNG THỨC GIAO HÀNG</p>
+          <!-- <p class="title">PHƯƠNG THỨC GIAO HÀNG</p>
           <label class="checkbox-label"><input type="radio" class="square-checkbox" name="delivery" value="0" onchange="handleRadioChange()" checked> Nhận sản phẩm tại cửa hàng</label>
            <br>
-           <label class="checkbox-label"><input type="radio" class="square-checkbox" name="delivery" value="40000" onchange="handleRadioChange()"> Giao hàng theo tốc độ tiêu chuẩn (từ 2 - 5 ngày làm việc)(40k)</label>
+           <label class="checkbox-label"><input type="radio" class="square-checkbox" name="delivery" value="40000" onchange="handleRadioChange()"> Giao hàng theo tốc độ tiêu chuẩn (từ 2 - 5 ngày làm việc)(40k)</label> -->
           <p class="title">PHƯƠNG THỨC THANH TOÁN</p>
-          <label class="checkbox-label"><input type="checkbox" class="square-checkbox" > Thanh toán khi nhận hàng (COD)</label>
+          <label class="checkbox-label"><input type="checkbox" class="square-checkbox" checked> Thanh toán khi nhận hàng (COD)</label>
         </div>
         <div class="cart">
             <h2 style="letter-spacing: 2px; font-size: 25px;">ĐƠN HÀNG</h2>
@@ -457,11 +461,16 @@ $mailer->dathangmail($tieude, $noidung, $maildathang);  */
            
                 <p id="Select"></p>
                <!--  kiểm tra có mã giảm giá ko  -->
-              <?php  if(isset($_GET['giamgia'])&&$_GET['giamgia']!=0)  
+              <?php  if(isset($_GET['giamgia'])&&$_GET['giamgia']!=1)
               { 
                $giamgia=$_GET['giamgia'];
-               echo 'đã thực hiện áp mã giảm giá : '.$giamgia.' ';
+               $sql3="SELECT * From coupon where coupon_id=$giamgia";
+               $result3=mysqli_query($mysqli, $sql3);
+               if(mysqli_num_rows($result3)>0)
+               {$row_coupon=mysqli_fetch_assoc($result3);
+              echo'Đã áp mã giảm giá : '.$row_coupon['coupon_code'].' giảm : '.$row_coupon['discount_percentage'].'% ';
               }
+            }
               ?>
            <p style="font-size: 16px;" id='tong'><b>TỔNG CỘNG : <span class="amounttotal" > <?php echo $tong ?> VND</b></span></p>
            <button type="submit" name="dathang"><b>HOÀN TẤT ĐẶT HÀNG</b></button>

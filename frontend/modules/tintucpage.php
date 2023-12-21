@@ -1,6 +1,6 @@
 <?php
 include("../../Database/Config/config.php");
-$sql1 = "select * from tintuc";
+$sql1 = "select * from news";
 $result1 = mysqli_query($mysqli, $sql1);
 ?>
 <body>
@@ -13,8 +13,8 @@ $result1 = mysqli_query($mysqli, $sql1);
                     while ($row = mysqli_fetch_array($result1)) {
                     ?>
                     <div class="back">
-                            <a href="index.php?action=content&query=none&id=<?php echo $row['tintuc_id'] ?>">
-                                <img src="../../Database/images/<?php echo $row['anh'] ?>" height="350px" width="350px" alt="image">
+                            <a href="index.php?action=content&query=none&id=<?php echo $row['news_id'] ?>">
+                                <img src="../../Database/images/<?php echo $row['thumbnail'] ?>" height="350px" width="350px" alt="image">
                                 <p class="product_list"><?php echo $row['title'] ?> </p>
                             </a>
                         </div>

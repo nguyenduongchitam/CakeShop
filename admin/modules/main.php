@@ -30,10 +30,6 @@
         include("../modules/QuanLyUser/quanlyuser.php");
         include("../modules/QuanLyUser/list.php");
     }
-        // else if ($action == 'quanlytaikhoan' && $query == 'search') {
-        //     include("../modules/QuanLyUser/quanlyuser.php");
-        //     include("../modules/QuanLyUser/search_result.php");
-        //     }
     else if( $action=='quanlytaikhoan' && $query=='update') 
     include("../modules/QuanLyUser/update.php");
     else 
@@ -78,6 +74,11 @@
     }
     else if( $action=='quanlykhuyenmai' && $query=='update') 
     include("../modules/QuanLyKM/update.php");
+    else if( $action=='quanlyanh' && $query=='none')
+    {
+        include("../modules/QuanLyAnh/quanlyanh.php");
+        include("../modules/QuanLyAnh/list.php");
+    }
     else include("dashboard.php");
 ?>
 </div>

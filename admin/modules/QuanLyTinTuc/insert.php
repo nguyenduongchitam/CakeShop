@@ -9,7 +9,7 @@ $publish_date= date("Y-m-d H:i:s");
 
 if(isset($_POST['insert']))
 {   
-  $sql_add = "INSERT INTO `tintuc`(`title`, `content`, `anh`, `publish_date`) VALUES ('$title','$content','$anh','$publish_date')";
+  $sql_add = "INSERT INTO `news`(`title`, `content`, `thumbnail`, `publish_date`) VALUES ('$title','$content','$anh','$publish_date')";
   mysqli_query($mysqli,$sql_add);
   move_uploaded_file($anh_temp,'../../../Database/Images/'.$anh);
   header('Location:../index.php?action=quanlytintuc&query=none');
