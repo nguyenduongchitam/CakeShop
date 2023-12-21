@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 include("../../Database/Config/config.php");
 if(isset($_GET['id'])){ 
 $id=$_GET['id'];
@@ -7,56 +7,19 @@ $result= mysqli_query($mysqli,$sql);
 }
 while ($row = mysqli_fetch_array($result)) {
 ?>
-<div class="product">
-    <form method="POST" action="index.php?action=cart&query=none">
-    
-<table>
-<tr>
-    <input type="hidden" name="product_id" value="<?php echo $row['product_id']?>">
-    <td> Tên sp : <?php echo $row['title'] ?></td>
-    <input type="hidden" name="title" value="<?php echo $row['title'] ?>"> 
-</tr>
-<tr>
-    <td>Giá sp: <?php echo $row['price'] ?></td>
-    <input type="hidden" name="price" value="<?php echo $row['price'] ?>"> 
-</tr>
-<tr>
-    <td>Giá khuyến mãi sp: <?php echo $row['discount_price'] ?></td>
-    <input type="hidden" name="discount_price" value="<?php echo $row['discount_price'] ?>"> 
-</tr>
-<tr>
-    <td>Ảnh sản phẩm : <img src="../../../Database/images/<?php echo $row['thumbnail'] ?>" height="200" width="200" name="<?php echo $row['thumbnail'] ?>"></td>
-    <input type="hidden" name="thumbnail" value="<?php echo $row['thumbnail'] ?>"> 
-</tr>
-<tr>
-    <td>Mô tả : <?php echo $row['description'] ?></td>
-    <input type="hidden" name="description" value="<?php echo $row['description'] ?>"> 
-</tr>
-<tr>
-    <td><input type="number" name="quantity" value="1" min="1" ></td>
-</tr>
-<tr>
-    <td><input type="submit" name="add_to_cart" value="Mua hàng"> </input></td>
-</tr>
-</table>
-</form>
-<?php
-}?>
-</div>
- -->
 
-<div class="productbody">
-    <section style="background-color: #fff7e6;">
-        <div class="card-wrapper">
-            <div class="card">
-                <div class="product-imgs">
-                <p style="color: #4d2600;"><a href="index.php?action=menupage&query=none" class="linkmenu">Menu</a> > [Ten banh] </p>
-                    <div class="img-display" style="margin-top: 15px;">
-                        <div class="img-magnifier-container">
-                         <img src="images/2a.png" id="myimage">
-                        </div>
-                    </div>
-             </div>
+</div>
+ <div class="productbody">
+ <p style="color: #4d2600; padding-top: 60px;" ><a href="index.php?action=menupage&query=none" class="linkmenu">Menu</a> > <?php echo $row['title']?> </p>  
+         
+         <div class="card-wrapper">  
+              <div class="card">  
+                 <!--  <div class="product-imgs">   -->
+                      <!-- <div class="img-display" style="margin-top: 15px;">   -->
+                        <img src="../../Database/Images/<?php echo $row['thumbnail'] ?> "  width=300px; height=300px;> 
+                        
+               </div>
+             <!-- </div> -->
             
              <script>
 function magnify(imgID, zoom) {
@@ -137,29 +100,37 @@ function magnify(imgID, zoom) {
         });
     </script>
                 <div class="product-content">
-                    <h2 class="product-title">Cake Sth</h2>
-
+                    <h2 class="product-title"><?php echo $row['title']?></h2>
                     <div class="product-price">
-                        <p class="last-price" style="color: #4d2600;">Giá Gốc: <span>100,000</span></p>
-                        <p class="new-price" style="color: #4d2600;">Giá Khuyến Mãi: <span>69,000</span></p>
+                        <p class="last-price" style="color: #4d2600;">Giá Gốc: <span><?php echo $row['price']?></span></p>
+                        <p class="new-price" style="color: #4d2600;">Giá Khuyến Mãi: <span><?php echo $row['discount_price']?></span></p>
                     </div>
 
                     <div class="product-detail">
                         <h2> Thông tin sản phẩm: </h2>
-                        <p> Thông tin bánh ở đây Thông tin bánh ở đây Thông tin bánh ở đây Thông tin bánh ở đây Thông tin bánh ở đây Thông tin bánh ở đây Thông tin bánh ở đây Thông tin bánh ở đây Thông tin bánh ở đây Thông tin bánh ở đây </p>
+                        <p> <?php echo $row['description']?> </p>
                     </div>
 
                     <div class="purchase-info">
+                    <form method="POST" action="index.php?action=cart&query=none">
+                    <input type="hidden" name="product_id" value="<?php echo $row['product_id']?>">
+                    <input type="hidden" name="price" value="<?php echo $row['price'] ?>"> 
+                    <input type="hidden" name="discount_price" value="<?php echo $row['discount_price'] ?>"> 
+                    <input type="hidden" name="thumbnail" value="<?php echo $row['thumbnail'] ?>"> 
+                    <input type="hidden" name="description" value="<?php echo $row['description'] ?>"> 
                         <input type="number" min="0" value="1"><br>
-                        <button type="button" class="btn"><b><ion-icon name="cart-outline"></ion-icon>
+                        <button type="submit" class="btn"><b><ion-icon name="cart-outline"></ion-icon>
                             THÊM VÀO GIỎ </b>
                         </button>
+                   </form>
                     </div>
                 </div>
-            </div>
+    <?php } ?>
+           <!--  </div> -->
         </div>
 
         <hr style="border: 1px dashed #B0A695; width: 50%; align-items:center; margin-left:auto; margin-right:auto;">
+        
         <h1 class="title"> Sản Phẩm Liên Quan </h1>
         <div class="img-select">
                     <div class="col">
@@ -199,18 +170,19 @@ function magnify(imgID, zoom) {
                         </div>
           
                     </div>
-         </div>
-    <script >
-    $(document).ready(function(){
-    $('.img-select').slick({
-        infinite: true,
-        slidesToShow: 4,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        prevArrow:`<button type='button' class='slick-prev pull-left'><ion-icon name="chevron-back-outline"></ion-icon></button>`,
-        nextArrow:`<button type='button' class='slick-next pull-right'><ion-icon name="chevron-forward-outline"></ion-icon></button>`,
-    });
-  });
-  </script>      
-    </section>
-    </div>
+         </div>   
+         <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>   
+    <script src="../modules/js/product.js"></script>     
+  
+    </div> 

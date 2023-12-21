@@ -56,9 +56,9 @@ CREATE TABLE `Order` (
   `address` varchar(255),
   `note` varchar(255),
   `delivery_money` int,
-  `discount` real,
-  `order_date` datetime,
-  `status` booleanean,
+  `coupon_id` int,
+  `order_date` datetimes,
+  `status` bool,
   `total_money` int
 );
 
@@ -66,23 +66,23 @@ CREATE TABLE `Order_Detail` (
   `order_id` int,
   `product_id` int,
   `price` int,
-  `num` int,
+  `quantity` int,
   PRIMARY KEY (`order_id`, `product_id`)
 );
 
-CREATE TABLE `tintuc` (
-  `tintuc_id` int,
+CREATE TABLE `news` (
+  `news_id` int PRIMARY KEY AUTO_INCREMENT,
   `title` mediumtext,
   `content` longtext,
-  `anh` varchar(100),
-  `publish_date`date,
-  PRIMARY KEY (`tintuc_id`)
+  `thumbnail` varchar(100),
+  `publish_date` date
 );
 
-CREATE TABLE `Coupon`   (
+CREATE TABLE `coupon` (
   `coupon_id` int PRIMARY KEY AUTO_INCREMENT,
   `coupon_code` varchar(10),
   `cart_min` int,
+  `quantity` int,
   `total_discount` int,
   `start_date` date,
   `end_date` date
@@ -96,21 +96,24 @@ ALTER TABLE `Order_Detail` ADD FOREIGN KEY (`order_id`) REFERENCES `Order` (`ord
 
 ALTER TABLE `Order_Detail` ADD FOREIGN KEY (`product_id`) REFERENCES `Product` (`product_id`);
 
-ALTER TABLE `Galery` ADD FOREIGN KEY (`product_id`) REFERENCES `Product` (`product_id`);
+ALTER TABLE `Gallery` ADD FOREIGN KEY (`product_id`) REFERENCES `Product` (`product_id`);
 
 ALTER TABLE `Order` ADD FOREIGN KEY (`user_id`) REFERENCES `User` (`user_id`);
 
+ALTER TABLE `Order` ADD FOREIGN KEY (`coupon_id`) REFERENCES `coupon` (`coupon_id`);
+
+
 INSERT INTO `role`(`role_id`, `name`) VALUES (1,'Admin');
 INSERT INTO `role`(`role_id`, `name`) VALUES (2,'Khách hàng');
-
+/* password 12345 */
 INSERT INTO `user`(`full_name`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('admin','admin',1,now(),now());
-INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Văn A','A@gmail.com','1234567','HCM','123456',2,now(),now());
-INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Anh B','B@gmail.com','1234567','HCM','123456',2,now(),now());
-INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Thị C','C@gmail.com','1234567','HCM','123456',2,now(),now());
-INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Văn D','D@gmail.com','1234567','HCM','123456',2,now(),now());
-INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Văn E','E@gmail.com','1234567','HCM','123456',2,now(),now());
-INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Dương Anh F','F@gmail.com','1234567','HCM','123456',2,now(),now());
-INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Văn G','G@gmail.com','1234567','HCM','123456',2,now(),now());
+INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Văn A','A@gmail.com','1234567','HCM','$2y$10$M0nUR5kAvhRKSUvJ3v36UOVdZm4szAkkhiAUYFtKkr877GOpgS3I2',2,now(),now());
+INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Anh B','B@gmail.com','1234567','HCM','$2y$10$M0nUR5kAvhRKSUvJ3v36UOVdZm4szAkkhiAUYFtKkr877GOpgS3I2',2,now(),now());
+INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Thị C','C@gmail.com','1234567','HCM','$2y$10$M0nUR5kAvhRKSUvJ3v36UOVdZm4szAkkhiAUYFtKkr877GOpgS3I2',2,now(),now());
+INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Văn D','D@gmail.com','1234567','HCM','$2y$10$M0nUR5kAvhRKSUvJ3v36UOVdZm4szAkkhiAUYFtKkr877GOpgS3I2',2,now(),now());
+INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Văn E','E@gmail.com','1234567','HCM','$2y$10$M0nUR5kAvhRKSUvJ3v36UOVdZm4szAkkhiAUYFtKkr877GOpgS3I2',2,now(),now());
+INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Dương Anh F','F@gmail.com','1234567','HCM','$2y$10$M0nUR5kAvhRKSUvJ3v36UOVdZm4szAkkhiAUYFtKkr877GOpgS3I2',2,now(),now());
+INSERT INTO `user`(`full_name`, `email`, `phone_number`, `address`, `password`, `role_id`, `create_at`,`update_at`) VALUES ('Nguyễn Văn G','G@gmail.com','1234567','HCM','$2y$10$M0nUR5kAvhRKSUvJ3v36UOVdZm4szAkkhiAUYFtKkr877GOpgS3I2',2,now(),now());
 
 INSERT INTO `category`(`category_id`,`name`) VALUES (1,'Bánh ngọt');
 INSERT INTO `category`(`category_id`,`name`) VALUES (2,'Bánh kem');

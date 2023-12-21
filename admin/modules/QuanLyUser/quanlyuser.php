@@ -5,9 +5,13 @@
 ?>
 <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
 <div class="container">
-<form style="float: right;" method="POST" action="search_result.php?quanlytaikhoan&query=search">
-    <input type="email" placeholder="Nhập email tài khoản cần tìm" style="width: 300px;" name="typed_email" id="typed_email" required>
-    <button class="btn btn-primary" type="submit" name="search">Tìm tài khoản<i class="fas fa-search" style="margin-left: 10px;"></i></button>
+<form style="float: right;" method="POST" action="">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Nhập email hoặc tên cần tìm" style="width: 300px;" name="search_key" id="typed_email" >
+        <button class="btn btn-primary" type="submit" name="search">
+            <i class="fas fa-search"></i> Tìm tài khoản
+        </button>
+    </div>
 </form>
 </div>
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Thêm tài khoản</button> 
@@ -20,7 +24,7 @@
             <form method="POST" action="../modules/QuanLyUser/insert.php">
                 <tr>
                     <td>Nhập email</td>
-                    <td><input type="email" name="email" class="form-control" required></td>
+                    <td><input type="text" name="email" class="form-control" required></td>
                 </tr>
                 <tr>
                     <td>Nhập mật khẩu</td>
@@ -28,15 +32,15 @@
                 </tr>
                 <tr>
                     <td>Họ tên</td>
-                    <td><input type="text" name="fullname" class="form-control" required> </td>
+                    <td><input type="text" name="fullname" class="form-control" > </td>
                 </tr>
                 <tr>
                     <td><label for="phone">Số điện thoại</label></td>
-                    <td><input type="tel" name="phone" class="form-control" required></td>
+                    <td><input type="tel" name="phone" class="form-control" ></td>
                 </tr>
                 <tr>
                     <td>Địa chỉ</td>
-                    <td><input type="text" name="address" class="form-control" required></td>
+                    <td><input type="text" name="address" class="form-control" ></td>
                 </tr>
                 <tr>
                     <td>Quyền</td>

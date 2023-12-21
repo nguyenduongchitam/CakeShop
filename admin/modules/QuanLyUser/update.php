@@ -17,7 +17,7 @@ while($row= mysqli_fetch_array($sql))
 ?>
 <tr>
         <td>Nhập email</td>
-        <td><input type="email" name="email" value="<?php echo $row['email']?>" class="form-control"></td>
+        <td><input type="text" name="email" value="<?php echo $row['email']?>" class="form-control"></td>
     </tr>
     <tr>
         <td>Họ tên</td>

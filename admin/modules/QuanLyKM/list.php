@@ -1,9 +1,22 @@
 <?php
 include("config.php");
-$sql="SELECT * FROM coupon";
+if(isset($_POST['search_key']))
+{$searchkey=$_POST['search_key'];
+  $sql="SELECT * FROM coupon where coupon_code like '%$searchkey%'" ;
+}
+else $sql="SELECT * FROM coupon";
+
 $result = mysqli_query($mysqli,$sql);
 ?>
   <div class="container" >
+  <form style="float: right;" method="POST" action="">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Nhập địa chỉ cần tìm" style="width: 300px;" name="search_key" id="typed_email" >
+        <button class="btn btn-primary" type="submit" name="search">
+            <i class="fas fa-search"></i> Tìm mã giảm giá
+        </button>
+    </div>
+</form>
     <h1 class="text-center">Danh sách coupon</h1>
     <table class="table table-bordered table-striped mt-3">
       <thead>

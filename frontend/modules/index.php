@@ -109,7 +109,7 @@ session_start();
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collaps e" id="navbarNavDropdown">
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
                       <ul class="navbar-nav ps-3 navbarr">
                         <li class="nav-item dropdown">
                           <a class="nav-link" href="#" data-bs-toggle="dropdown" aria-expanded="false" style="color: #4d2600; padding-top: 0;">

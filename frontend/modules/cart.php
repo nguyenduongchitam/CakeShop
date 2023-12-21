@@ -145,8 +145,6 @@
                     <hr style="height: 3px; background-color: black;">
                       <!-- Tính khuyến mãi -->
                         <form action="" method="POST">
-                        <!-- <h5 class="card-title">Tổng cộng</h5> -->
-                        <form action="" method="POST">
                         <p style="font-size:large"><b>Nhập mã khuyến mãi </p></b>
                         <div class="indiscount"><input type="text" name="coupon" placeholder="Mã khuyến mãi"><button name="set_coupon" style="background-color: #ED7D31; border: none; color: white; font-weight:bold; height:29.2px">Áp dụng</button></div>
                         </form>
@@ -187,7 +185,7 @@
                         <a style="font-size: large;">Số tiền được giảm: <m style="color: red;"><?php echo $discount_value/1000?>.000 đ</m>
                         <p style="font-size:large"><b>Số tiền cần thanh toán: <p id="" class="total" style="color:forestgreen; margin-right:65px; font-size:35px"><?php echo $final/1000 ?>.000 đ </p> </p> 
                     </b>
-                    <a href="cartcheckout.php?tong=<?php echo $final ?>"  ><button class="button"><b>Thanh toán</b></button></a>
+                    <a href="cartcheckout.php?tong=<?php echo $final; ?>&discount=<?php echo $discount_value; ?>"><button class="button"><b>Thanh toán</b></button></a>
                     </div>
                 </div>
                 <div class="intext">
