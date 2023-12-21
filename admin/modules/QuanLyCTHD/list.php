@@ -30,7 +30,7 @@ $result = mysqli_query($mysqli, $sql);
           <td><?php echo $i ?></td>
           <td><?php echo $row1['title'] ?></td>
           <td><?php echo $row1['price'] ?></td>
-          <td><?php echo $row['num'] ?></td>
+          <td><?php echo $row['quantity'] ?></td>
         </tr>
       <?php
       }

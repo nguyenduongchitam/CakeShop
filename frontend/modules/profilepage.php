@@ -9,7 +9,7 @@
     $id=$result['user_id'];
    }
 ?>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <?php
     //$customerId = $_GET['user_id'];
     $order_per_page = !empty($_GET['per_page'])?$_GET['per_page']:5;
@@ -48,11 +48,11 @@
         }
         $sql = "UPDATE user SET full_name ='$fullname',phone_number = '$phonenumber',address ='$address' WHERE email = '$email' ";
         mysqli_query($mysqli,$sql);
-        header('location:profilepage.php');
+        echo '<script> location.replace("index.php?action=profile&query=none&email='.$email.'");</script>';
     }
 ?>
 <?php
-    if($_SERVER['REQUEST_METHOD']=='POST')
+    if(isset($_POST['save-account']))
     {
         $error=[];
         $announce=[];
@@ -77,8 +77,7 @@
             }
         }
     }
-    if(empty($error)){
-       
+    if(empty($error)){  
         if(isset($_POST['save-account']))
         {
             $nhaplaimatkhau = $_POST['repeat-password'];
@@ -90,7 +89,7 @@
                 $passwordHash = password_hash($eventPasswordNew,PASSWORD_DEFAULT);
                 $sqlupdate = "UPDATE user SET password = '$passwordHash' WHERE email = '$email'";
                 mysqli_query($mysqli,$sqlupdate);
-                header('location:user.php');
+                echo '<script>location.replace("index.php?action=profile&query=none&email='.$email.');</script>';
             }
             else{
                 $error['old-password']['verify']= 'mật khẩu cũ không đúng';
@@ -101,10 +100,8 @@
     }
     
 ?>
-
 <div class="profilebody">
-
-<h2 style="margin-left: 100px">User profile</h2>
+<h2 style="margin-left: 100px;">Thông tin người dùng</h2><br>
 <div class="tab">
   <button class="tablinks" onclick="openTabs(event, 'profile')"><i class="fa-solid fa-user" id="forward-icon1"></i><span class="button-content">Thông tin tài khoản</span><i class="fa-solid fa-arrow-right-long fa-xl" id="back-icon1"></i></button>
   <button class="tablinks" onclick="openTabs(event, 'account')"><i class="fa-solid fa-key" id="forward-icon2"></i><span class="button-content">Thông tin đăng nhập</span><i class="fa-solid fa-arrow-right-long fa-xl" id="back-icon2"></i></button>
@@ -188,13 +185,13 @@
 </table>
 </div>
 <div id="page-bar">
-    <?php
+   <!--  <?php
     include('pagetransport.php');
-    ?>
+    ?> -->
 </div>
 </div>
 <div id="modal-container-profile">
-    <div class="modal" id="modal-demo-profile">
+    <div id="modal-demo-profile">
         <div class="modal-header-profile">
             <h3>Cập nhật thông tin tài khoản</h3>
             <button id="btn-close-profile"><i class="fa-sharp fa-solid fa-circle-xmark fa-2xl"></i></button>
@@ -219,7 +216,7 @@
     </div>
 </div>
 <div id="modal-container-account">
-    <div class="modal" id="modal-demo-account">
+    <div id="modal-demo-account">
         <div class="modal-header-account">
             <h3>Cập nhật thông tin đăng nhập</h3>
             <button id="btn-close-account"><i class="fa-sharp fa-solid fa-circle-xmark fa-2xl"></i></button>
@@ -258,6 +255,7 @@
     </div>
 </div>
 </div>
+</div>
 <script>
 function openTabs(evt, tabName) {
   var i, tabcontent, tablinks;
@@ -272,8 +270,6 @@ function openTabs(evt, tabName) {
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
-</script>
-<script>
         const btn_open_profile = document.getElementById('update-profile');
         const btn_close_profile = document.getElementById('btn-close-profile');
         const modal_container_profile = document.getElementById('modal-container-profile');
@@ -290,8 +286,7 @@ function openTabs(evt, tabName) {
                 btn_close_profile.click();
             }
         })
-    </script>
-    <script>
+
         const btn_open_account = document.getElementById('update-account');
         const btn_close_account = document.getElementById('btn-close-account');
         const modal_container_account = document.getElementById('modal-container-account');

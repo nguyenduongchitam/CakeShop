@@ -76,7 +76,8 @@
    function showcart(&$tong,&$sl)
    {
        if(isset($_SESSION['cart'])&&(is_array($_SESSION['cart'])))
-   {  if(sizeof($_SESSION['cart'])>0)
+   {  
+    if(sizeof($_SESSION['cart'])>0)
     { 
       for ($i=0; $i <sizeof($_SESSION['cart']); $i++)
      {   
@@ -152,6 +153,8 @@
                             include("../../Database/Config/config.php");
                             date_default_timezone_set('Asia/Ho_Chi_Minh');
                             $final=$tong;
+                            $row_coupon['coupon_code']=0;
+                            $couponid=1;
                             if(isset($_POST['set_coupon'])){
                                 $coupon=$_POST['coupon'];
                                 $sql_coupon="SELECT * FROM `coupon` WHERE coupon_code='$coupon' ";
@@ -166,6 +169,7 @@
                                             return($currentDate>=$validity && $currentDate<=$expiration);
                                         }
                                         if(CouponPeriod($validity, $expiration)){
+                                              $couponid=$row_coupon['coupon_id'];
                                                 echo '<p class=text-success> Áp dụng mã khuyến mãi '.$row_coupon['coupon_code'].' thành công</p>';
                                                 $discount=$row_coupon['discount_percentage'];
                                                 $final=($tong-($tong/100*$discount));
@@ -185,7 +189,7 @@
                         <a style="font-size: large;">Số tiền được giảm: <m style="color: red;"><?php echo $discount_value/1000?>.000 đ</m>
                         <p style="font-size:large"><b>Số tiền cần thanh toán: <p id="" class="total" style="color:forestgreen; margin-right:65px; font-size:35px"><?php echo $final/1000 ?>.000 đ </p> </p> 
                     </b>
-                    <a href="cartcheckout.php?tong=<?php echo $final; ?>&discount=<?php echo $discount_value; ?>"><button class="button"><b>Thanh toán</b></button></a>
+                     <a href="cartcheckout.php?tong=<?php echo $final ?>&giamgia=<?php echo $couponid ?>"><button class="button"><b>Thanh toán</b></button></a>
                     </div>
                 </div>
                 <div class="intext">

@@ -1,7 +1,7 @@
 <?php
 include("config.php");
 $tintuc_id = $_GET['tintuc_id'];
-$sql_select = "SELECT * FROM tintuc WHERE tintuc_id=$tintuc_id";
+$sql_select = "SELECT * FROM news WHERE news_id=$tintuc_id";
 $sql = mysqli_query($mysqli, $sql_select);
 ?>
 <div>

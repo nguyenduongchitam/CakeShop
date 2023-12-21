@@ -41,7 +41,7 @@ $result = mysqli_query($mysqli,$sql);
           <tr>
             <td><?php echo $i ?></td>
             <td><?php echo $row['coupon_code'] ?></td>
-            <td><?php echo $row['discount_percentage'] ?>%</td>
+            <td><?php echo $row['total_discount'] ?>%</td>
             <td><?php echo $row['cart_min'] ?></td>
             <td><?php echo $row['quantity']?></td>
             <td><?php echo $row['start_date'] ?></td>

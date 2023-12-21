@@ -6,7 +6,7 @@ $district = $_POST['district'];
 $ward = $_POST['ward'];
 $note = $_POST['note'];
 $delivery_money = $_POST['delivery_money'];
-$discount = $_POST['discount'];
+$discount = $_POST['coupon_id'];
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 $order_date = date("Y-m-d H:i:s");
 $status = $_POST['status'];

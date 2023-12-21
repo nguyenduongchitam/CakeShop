@@ -44,7 +44,7 @@ $result = mysqli_query($mysqli, $sql);
           </tr>
           <tr>
             <td>Nhập giảm giá</td>
-            <td><input type="text" name="discount"></td>
+            <td><input type="text" name="coupon_id"></td>
           </tr>
           <tr>
             <td>Nhập trạng thái</td>

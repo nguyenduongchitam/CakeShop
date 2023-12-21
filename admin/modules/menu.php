@@ -9,5 +9,6 @@
 <li><a href="index.php?action=quanlykhachhang&query=none">Quản lý khách hàng</a></li>
 <li><a href="index.php?action=quanlyphanhoi&query=none">Quản lý Phản hồi</a></li>
 <li><a href="index.php?action=quanlybaocao&query=none" >Quản lý báo cáo và thống kê</a></li>
+<li><a href="index.php?action=quanlytintuc&query=none" >Quản lý tin tức</a></li>
 </ul>   
 </div>

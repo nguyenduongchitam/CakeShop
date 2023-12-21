@@ -1,10 +1,23 @@
 <?php
 include("config.php");
-$sql="SELECT * FROM product ,category where product.category_id=category.category_id";
+if(isset($_POST['search_key']))
+{
+  $searchkey=$_POST['search_key'];
+$sql="SELECT * FROM product ,category where product.category_id=category.category_id and product.title like '%$searchkey%'";
+}
+else $sql="SELECT * FROM product ,category where product.category_id=category.category_id"; 
 $result = mysqli_query($mysqli,$sql);
 ?>
 
   <div class="container" >
+  <form style="float: right;" method="POST" action="">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Nhập tên sản phẩm cần tìm" style="width: 300px;" name="search_key" id="typed_email" >
+        <button class="btn btn-primary" type="submit" name="search">
+            <i class="fas fa-search"></i> Tìm 
+        </button>
+    </div>
+</form>
     <h1 class="text-center">Danh sách sản phẩm</h1>
     <table class="table table-bordered table-striped mt-3">
       <thead>

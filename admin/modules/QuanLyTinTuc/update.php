@@ -1,7 +1,7 @@
 <?php
 include("config.php");
 $tintuc_id = $_GET['tintuc_id'];
-$sql_select = "SELECT * FROM tintuc WHERE tintuc_id=$tintuc_id";
+$sql_select = "SELECT * FROM news WHERE news_id=$tintuc_id";
 $sql = mysqli_query($mysqli, $sql_select);
 ?>
 <div class="container">
@@ -20,11 +20,11 @@ $sql = mysqli_query($mysqli, $sql_select);
                 <tr>
                     <td>Nhập link hình ảnh</td>
                     <td>
-                        <img src="../../Database/Images/<?php echo $row['anh'] ?>" height="100px" width="100px">
+                        <img src="../../Database/Images/<?php echo $row['thumbnail'] ?>" height="100px" width="100px">
                         <br>
                         <input type="file" name="anh" require class="form-control">
                     </td>
-                    <?php $anhold = $row['anh'] ?>
+                    <?php $anhold = $row['thumbnail'] ?>
                 </tr>
                 <tr>
                     <td><input type="submit" name="update" value="Sửa tin tức" class="btn btn-primary"></td>
@@ -45,7 +45,7 @@ if (isset($_POST['update'])) {
     } else $anh = $anhold;
     date_default_timezone_set('Asia/Ho_Chi_Minh');
     $publish_date = date("Y-m-d H:i:s");
-    $sql_update = " UPDATE `tintuc` SET `title`='$title',`content`='$content',`anh`='$anh',`publish_date`='$publish_date' WHERE tintuc_id=$tintuc_id ";
+    $sql_update = " UPDATE `news` SET `title`='$title',`content`='$content',`thumbnail`='$anh',`publish_date`='$publish_date' WHERE news_id=$tintuc_id ";
     mysqli_query($mysqli, $sql_update);
     echo '<script>location.replace("../modules/index.php?action=quanlytintuc&query=none");</script>';
 } else if (isset($_POST['return'])) echo '<script>location.replace("../modules/index.php?action=quanlytintuc&query=none");</script>';

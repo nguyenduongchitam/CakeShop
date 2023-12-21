@@ -7,7 +7,6 @@ if(!isset($_SESSION['dangnhap'])&&($_SESSION['dangnhap']==""))
            header("location:signpage/sign-in.php");
           }
       $tong=$_GET['tong'];
-      $discount=$_GET['discount'];
 function showcart()
 {
     if(isset($_SESSION['cart'])&&(is_array($_SESSION['cart'])))
@@ -43,12 +42,16 @@ function showcart()
    
     $city=$_POST['city'];
     $district=$_POST['district'];
-    $delivery=$_POST['delivery'];
+    //$delivery=$_POST['delivery'];
     $ward =$_POST['ward'];
     $address=$_POST['address']; 
     $note=$_POST['note'];
     // tạo dữ liệu oder
-      
+    $coupon_id=1;
+    if(isset($_GET['giamgia'])&&$_GET['giamgia']!=0)  
+    { 
+     $coupon_id=$_GET['giamgia'];
+    }
     if(isset($_SESSION['dangnhap'])&&($_SESSION['dangnhap']!=""))
     {
         $sql1 = "SELECT * FROM user where email='".$_SESSION['dangnhap']."'";
@@ -57,8 +60,7 @@ function showcart()
         $user_id=$row['user_id'];
         }
         $tong=$_GET['tong'];
-        $discount=$_GET['discount'];
-        $sql_add_order= "INSERT INTO `order`(`user_id`, `city`, `district`, `ward`,`address`, `note`, `delivery_money`, `order_date`, `status`,`discount`, `total_money`) VALUES ($user_id,'$city','$district','$ward','$address','$note',$delivery,now(),$discount,1,$tong)";
+        $sql_add_order= "INSERT INTO `order`(`user_id`, `city`, `district`, `ward`,`address`, `note`, `delivery_money`, `order_date`, `status`, `total_money`) VALUES ($user_id,'$city','$district','$ward','$address','$note',$delivery,now(),1,$tong)";
         //lay id order vua moi them vao 
         if ( mysqli_query($mysqli,$sql_add_order)) {
             $last_order_id = mysqli_insert_id($mysqli);
@@ -68,7 +70,7 @@ function showcart()
             $product_id= $_SESSION['cart'][$i][0];
             $discount_price=$_SESSION['cart'][$i][3];
             $num= $_SESSION['cart'][$i][4];
-            $sql2= "INSERT INTO order_detail(order_id,product_id,price,num) values ( $last_order_id,$product_id,$discount_price,$num)";
+            $sql2= "INSERT INTO order_detail(order_id,product_id,price,quantity) values ( $last_order_id,$product_id,$discount_price,$num)";
             mysqli_query($mysqli,$sql2);
             }
         }
@@ -192,10 +194,10 @@ function showcart()
             }
     $noidung.='      
     </ul>
-      
+      <p>đã áp mã giảm giá : <p>
     <p><strong>Tổng cộng:</strong>'.$tong.'</p>
 
-    <p><strong>Phương thức thanh toán:</strong> [Phương thức thanh toán đã chọn]</p>
+    <p><strong>Phương thức thanh toán:</strong> Tại cửa hàng</p>
 </div>
 
     <p>Xin chân thành cảm ơn bạn đã tin tưởng và lựa chọn <b style="color: #DA0C81; font-size: large;">IU LÀ ĐÂY</b>. Rất mong được phục vụ bạn trong tương lai.</p>
@@ -406,7 +408,7 @@ $mailer->dathangmail($tieude, $noidung, $maildathang);  */
 
 <a href="index.php?action=homepage&query=none"><img src="../modules/images/Header-logo.png" class="img-fluid-logo" alt="Logo">
     
-<p class="link"><a href="index.php?action=cart&query=none" class="linkcart">Giỏ hàng của bạn</a> > Thông tin mua hàng </p>
+<p class="link"><a href="index.php?action=cart&query=none" class="linkcart">Giỏ hàng của bạn</a>> Thông tin mua hàng </p>
 
 <div class="container">
         <div class="checkout-form">
@@ -436,17 +438,11 @@ $mailer->dathangmail($tieude, $noidung, $maildathang);  */
           <label>Ghi chú cho cửa hàng</label>
           <textarea placeholder="Nội dung" type="areatext" name="note" class="form-control" style="width: 99%; height: 50px;"> </textarea> 
           <p class="title">PHƯƠNG THỨC GIAO HÀNG</p>
-          <form action="" method="POST">
-                        <div class="indiscount"><button name="non_ship" style="background-color: #808080; border: none; color: white; font-weight:bold; height:25px">Nhận tại cửa hàng</button></div>
-                        <div class="indiscount"><button name="ship" style="background-color: #808080; border: none; color: white; font-weight:bold; height:25px">Giao hàng</button></div>
-                        </form>
-          <?php
-          if(isset($_POST['ship'])){
-            $tong+=40000;
-          }
-          ?>                        
+          <label class="checkbox-label"><input type="radio" class="square-checkbox" name="delivery" value="0" onchange="handleRadioChange()" checked> Nhận sản phẩm tại cửa hàng</label>
+           <br>
+           <label class="checkbox-label"><input type="radio" class="square-checkbox" name="delivery" value="40000" onchange="handleRadioChange()"> Giao hàng theo tốc độ tiêu chuẩn (từ 2 - 5 ngày làm việc)(40k)</label>
           <p class="title">PHƯƠNG THỨC THANH TOÁN</p>
-          <label class="checkbox-label"><input type="checkbox" class="square-checkbox" > Thanh toán khi nhận hàng (COD)</label>
+          <label class="checkbox-label"><input type="checkbox" class="square-checkbox" checked> Thanh toán khi nhận hàng (COD)</label>
         </div>
         <div class="cart">
             <h2 style="letter-spacing: 2px; font-size: 25px;">ĐƠN HÀNG</h2>
@@ -462,30 +458,25 @@ $mailer->dathangmail($tieude, $noidung, $maildathang);  */
            </table>
            <hr style="height: 2px; border: none; background-color: #A9A9A9; margin: 20px 10px; ">
            <script>
-             function handleRadioChange() {
-              var radios = document.getElementsByName('delivery');
-              var selectedDelivery = 0; // Default value for no additional delivery cost
+          function handleRadioChange() {
+            
+            /* var radios = document.getElementsByName('delivery');
+            if (radios[1].checked) {
+              document.getElementById('Select').textContent = "Tiền ship: " + radios[1].value;
+              var selectedDelivery =radios[1].value;
+            } else    document.getElementById('Select').textContent = "";  */
 
-    // Check if the second radio button is checked
-    if (radios[1].checked) {
-      selectedDelivery = 40000; // Get the delivery cost as an integer
-    } else {
-      selectedDelivery = 0; // If no delivery is selected, set the delivery cost to zero
-    }
-    var originalTotal = <?php echo $tong; ?>;
-    var updatedTotal = originalTotal + selectedDelivery;
-    $.ajax({
-      url: 'process.php',
-      type: 'POST',
-      data: { delivery: selectedDelivery , tong: originalTotal },
-      success: function(response) {
-        $('.amounttotal').text(updatedTotal + " VND"); // Update the displayed total amount
-      }
-    });
-  }
+            $.ajax({
+           url: 'process.php',
+          type: 'POST',
+          data: { delivery: selectedDelivery },
+            success: function(response) {
+        $('.totalAmount').text(response);
+          }
+          });
+        }
            </script>   
                 <p id="Select"></p>
-           <p style="font-size: 16px;" id='tong'><b>GIẢM GIÁ : <span class="amounttotal" > <?php echo $discount ?> VND</b></span></p>
            <p style="font-size: 16px;" id='tong'><b>TỔNG CỘNG : <span class="amounttotal" > <?php echo $tong ?> VND</b></span></p>
            <button type="submit" name="dathang"><b>HOÀN TẤT ĐẶT HÀNG</b></button>
            

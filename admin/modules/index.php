@@ -35,10 +35,10 @@
 
 <body>
     <?php
-    session_start();
+    session_start();    
     if (isset($_SESSION['dangnhap'])&&$_SESSION['dangnhap']!=true) {
         header("Location:admin_login.php");
-        exit();
+        exit(); 
     }
     else if(isset($_SESSION['dangnhap'])&&$_SESSION['dangnhap']==true)
     {

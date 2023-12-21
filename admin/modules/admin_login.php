@@ -17,17 +17,22 @@
     if(isset($_POST['dangnhap'])){
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $sql = "SELECT * FROM user where email='".$email."'AND password='".$password."' AND role_id=1" ;
+        $sql = "SELECT * FROM user where email='".$email."' AND role_id=1" ;
         $row = mysqli_query($mysqli,$sql);
-        $count = mysqli_num_rows($row);
-        if($count>0)
-        {   
+        $result = mysqli_fetch_assoc($row);
+        $passwordHashData = $result['password'];
+        if(empty($result)){
+            echo '<p style="color:red">Tài khoản không tồn tại</p>';
+        }
+        else {
+            if(password_verify($password,$passwordHashData)==true){
             $_SESSION['dangnhap'] = true;
             header("Location:index.php");
         }
         else{
             echo '<p style="color:red">Tên đăng nhập hoặc mật khẩu không đúng</p>';
         }
+    }
     }
     
 ?>

@@ -18,7 +18,7 @@ while($row= mysqli_fetch_array($result))
     </tr>
     <tr>
         <td>Nhập % khuyến mãi</td>
-        <td><input type="text" name="discount_percentage" value="<?php echo $row['discount_percentage'] ?>" class="form-control"></input> </td>
+        <td><input type="text" name="discount_percentage" value="<?php echo $row['total_discount'] ?>" class="form-control"></input> </td>
     </tr>
     <tr>
         <td>cart_min</td>
@@ -54,7 +54,7 @@ if (isset($_POST['update']))
     $start_date=$_POST['start_date'];
     $end_date=$_POST['end_date'];
     $quantity=$_POST['quantity'];    
-    $sql_update = "UPDATE `coupon` SET `coupon_code`='$coupon_code', `discount_percentage`='$discount_percentage', `cart_min`='$cart_min', `start_date`='$start_date', end_date='$end_date', `quantity`='$quantity' WHERE coupon_id=$coupon_id";
+    $sql_update = "UPDATE `coupon` SET `coupon_code`='$coupon_code', `total_discount`='$discount_percentage', `cart_min`='$cart_min', `start_date`='$start_date', end_date='$end_date', `quantity`='$quantity' WHERE coupon_id=$coupon_id";
 mysqli_query($mysqli,$sql_update);
 echo '<script>location.replace("../modules/index.php?action=quanlykhuyenmai&query=none");</script>';
 }

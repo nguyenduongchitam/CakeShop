@@ -83,7 +83,7 @@
             ?>
             <div class="form-group">
                 <i class="fa-solid fa-key"></i>
-                <input type="text" class="form-input" placeholder="Mật khẩu" name="password" id="password">
+                <input type="password" class="form-input" placeholder="Mật khẩu" name="password" id="password">
             </div>
             <?php
                     echo (!empty($error['password']['required']))?'<span class="error" style="color: red">'.$error['password']['required'].'</span>':false;
