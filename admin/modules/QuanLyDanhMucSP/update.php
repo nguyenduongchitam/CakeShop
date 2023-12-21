@@ -33,6 +33,6 @@ $sql_update = " UPDATE category SET name = '$name' WHERE category_id = $category
 mysqli_query($mysqli,$sql_update);
 header('Location:../modules/index.php?action=quanlydanhmucsanpham&query=none');
 }
-else if (isset($_POST['return'])) header('Location:../modules/index.php?action=quanlydanhmucsanpham&query=none');
+else if (isset($_POST['return'])) echo '<script>location.replace("../modules/index.php?action=quanlydanhmucsanpham&query=none");</script>';
 ?>
 

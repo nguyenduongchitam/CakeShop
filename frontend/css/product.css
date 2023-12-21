@@ -1,4 +1,3 @@
-
 .productbody  {
     
     /*  padding: 0;
@@ -22,41 +21,38 @@
      margin-left: auto;
      margin-right: auto;
      height: 70vh; 
-      display:flex;
+    display:flex;
      justify-content: center;
      align-items: center; 
  
  } 
  
-  /*   .productbody img {
-     width: 90%;
-     display:flexbox;
- }    */
+  
  
-   .productbody .img-display {
+    .productbody .img-display {
      overflow: hidden;
      
- }   
+ }    
  
-  .productbody .img-showcase {
+   .productbody .img-showcase {
      display: flex;
      width: 100%;
      transition: all 0.5s ease;
- }
+ } 
   
- .productbody .img-magnifier-container {
+  .productbody .img-magnifier-container {
      position:relative;
-   }
+   } 
    
-   .productbody .img-magnifier-glass {
-     position: absolute;
+    .productbody .img-magnifier-glass {
+  position: absolute;
      border: 1px dashed #4d2600;
      border-radius: 50%;
      cursor: none;
      width: 60px;
      height: 60px;
    }
- 
+  
    .productbody .img-showcase img {
      min-width: 100%;
  }
@@ -73,6 +69,7 @@
      position: relative;
      color: #4d2600;
      margin: 1rem 0;
+
  }
  
  .productbody .product-title::after {
@@ -132,6 +129,7 @@
      margin-left: auto;
      margin-bottom: 7px;
      background-color: #FFFBF5;
+     width: 70%;
  }
  
  .productbody .purchase-info input {
@@ -165,6 +163,7 @@
  
       .productbody  .product-content {
          padding-top: 0;
+         text-decoration: none;
      } 
  
  .productbody .title {
@@ -194,6 +193,11 @@
      padding: 20px;
      font-size:large;
  }
+ .productbody .namecake {
+    color: #4d2600;
+    text-decoration: none;
+    text-align: center;
+ }
  
  .productbody .img-item{
      position: relative;
@@ -221,4 +225,20 @@
      padding: 10px 10px;
      opacity: 0.7;
  }
- 
+
+ .productbody .add-to-cart{
+    color:#4d2600;
+    background-color:#fff7e6;
+    border: 1px solid #F4DFB6;
+    border-radius: 14px;
+    height: 35px;
+    width: auto;
+    font-size:16px;
+    margin-top: 15px;
+}
+
+.productbody .add-to-cart:hover{
+    font-style: oblique;
+    background-color:#F4DFB6;
+    letter-spacing: 1px;
+}

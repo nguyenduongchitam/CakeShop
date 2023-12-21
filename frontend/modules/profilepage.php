@@ -48,11 +48,11 @@
         }
         $sql = "UPDATE user SET full_name ='$fullname',phone_number = '$phonenumber',address ='$address' WHERE email = '$email' ";
         mysqli_query($mysqli,$sql);
-        header('location:profilepage.php');
+        echo '<script> location.replace("index.php?action=profile&query=none&email='.$email.'");</script>';
     }
 ?>
 <?php
-    if($_SERVER['REQUEST_METHOD']=='POST')
+    if(isset($_POST['save-account']))
     {
         $error=[];
         $announce=[];
@@ -77,8 +77,7 @@
             }
         }
     }
-    if(empty($error)){
-       
+    if(empty($error)){  
         if(isset($_POST['save-account']))
         {
             $nhaplaimatkhau = $_POST['repeat-password'];
@@ -90,7 +89,7 @@
                 $passwordHash = password_hash($eventPasswordNew,PASSWORD_DEFAULT);
                 $sqlupdate = "UPDATE user SET password = '$passwordHash' WHERE email = '$email'";
                 mysqli_query($mysqli,$sqlupdate);
-                header('location:user.php');
+                echo '<script>location.replace("index.php?action=profile&query=none&email='.$email.');</script>';
             }
             else{
                 $error['old-password']['verify']= 'mật khẩu cũ không đúng';

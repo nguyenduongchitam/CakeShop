@@ -9,20 +9,7 @@ while ($row = mysqli_fetch_array($result)) {
   $categoryid=$row['category_id'];
 ?>
 
-</div>
- <div class="productbody">
- <p style="color: #4d2600; padding-top: 60px;" ><a href="index.php?action=menupage&query=none" class="linkmenu">Menu</a> > <?php echo $row['title']?> </p>  
-         
-         <div class="card-wrapper">  
-              <div class="card">  
-                 <!--  <div class="product-imgs">   -->
-                      <!-- <div class="img-display" style="margin-top: 15px;">   -->
-                        <img src="../../Database/Images/<?php echo $row['thumbnail'] ?> "  width=300px; height=300px;> 
-                        
-               </div>
-             <!-- </div> -->
-            
-             <script>
+<script>
 function magnify(imgID, zoom) {
   var img, glass, w, h, bw;
   img = document.getElementById(imgID);
@@ -79,28 +66,14 @@ function magnify(imgID, zoom) {
 }
 </script>
 
-             <script>
-                magnify("myimage", 3);
-             </script>
-
-             <script>
-            $(document).ready(function(){
-            $('.img-select img').on('click', function(){
-                var imagePath = $(this).attr('src');
-                $('.img-display img').attr('src', imagePath);
-            });
-
-            $('.img-select').slick({
-                slidesToShow: 4,
-                slidesToScroll: 1,
-                arrows: false,
-                dots: false,
-                centerMode: true,
-                focusOnSelect: true
-            });
-        });
-    </script>
-                <div class="product-content">
+</div>
+ <div class="productbody">
+ <p style="color: #4d2600; padding-top: 60px;" ><a href="index.php?action=menupage&query=none" class="linkmenu">Menu</a> > <?php echo $row['title']?> </p>  
+               <div class="card-wrapper"> 
+               <div class="img-magnifier-container">
+                <img id="myimage" src="../../Database/Images/<?php echo $row['thumbnail'] ?> "  width=380px; height=380px;> 
+                </div>
+                <div class="product-content" >
                     <h2 class="product-title"><?php echo $row['title']?></h2>
                     <div class="product-price">
                         <p class="last-price" style="color: #4d2600;">Giá Gốc: <span><?php echo $row['price']?></span></p>
@@ -119,10 +92,11 @@ function magnify(imgID, zoom) {
                     <input type="hidden" name="discount_price" value="<?php echo $row['discount_price'] ?>"> 
                     <input type="hidden" name="thumbnail" value="<?php echo $row['thumbnail'] ?>"> 
                      <input type="number"name="quantity" value="1" min="1"><br>
-                    <input type="submit" name="add_to_cart" class="btn" value="THÊM VÀO GIỎ"><b><ion-icon name="cart-outline"></ion-icon>THÊM VÀO GIỎ </b></input>
+                    <input type="submit" name="add_to_cart" class="btn" value="THÊM VÀO GIỎ"><b> </b></input>
                   </form>
                     </div>
                 </div>
+  
 
     <?php } ?>
            <!--  </div> -->
@@ -137,12 +111,12 @@ function magnify(imgID, zoom) {
         $sql2= 'SELECT  * from product,category where product.category_id=category.category_id and category.category_id= '.$categoryid.' ';
         $result= mysqli_query($mysqli,$sql2);
         while ($row = mysqli_fetch_array($result)) {
-                ?>
-                
+                ?>  
               <div class="col">
-        <a class="namecake" href="index.php?action=product&query=none&id=<?php echo $row['product_id']?>&category_id=<?php echo $row['category_id']?>">
+        <a class="namecake"  href="index.php?action=product&query=none&id=<?php echo $row['product_id']?>&category_id=<?php echo $row['category_id']?>">
         <div class="image-container">
-        <img src="../../Database/Images/<?php echo $row['thumbnail'] ?> " alt="pic" width="250" height="250" style="margin-bottom:10px">
+        <img src="../../Database/Images/<?php echo $row['thumbnail'] ?> " alt="pic" width="250" height="250" style="margin-bottom:10px;">
+        <i><?php echo $row['title'] ?> <br> <?php echo $row['discount_price'] ?> đ </i>
         <div>
         <form method="POST" action="index.php?action=cart&query=none" >
     <input type="hidden" name="product_id" value="<?php echo $row['product_id']?>">
@@ -152,18 +126,23 @@ function magnify(imgID, zoom) {
     <input type="hidden" name="thumbnail" value="<?php echo $row['thumbnail'] ?>"> 
     <input type="hidden" name="description" value="<?php echo $row['description'] ?>"> 
     <input type="hidden" name="quantity" value="1" min="1" >
-    <input type="submit" name="add_to_cart" value="ADD TO CART" class="add-to-cart">  
+    <input type="submit" name="add_to_cart" value="ADD TO CART" class="add-to-cart"> </input>  
        </div>
         </div>
-        <br><i><?php echo $row['title'] ?> <br> <?php echo $row['discount_price'] ?> đ </i>
          </a>
         </div>
+        
         </form>
               <?php } ?>
-         </div>   
+         </div> 
+         </div>  
 
          <script  type="text/javascript"  src="https://code.jquery.com/jquery-1.11.0.min.js" ></script>
     <script   type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" ></script>   
-    <script src="../modules/js/product.js"></script>     
+    <script src="../modules/js/product.js"></script>  
+
+<script>
+   magnify("myimage", 3);
+</script>   
   </div> 

@@ -83,7 +83,7 @@ include("../../../Database/Config/config.php");
                             echo (!empty($error['email']['exist']))?'<span class="error" style="color: red">'.$error['email']['exist'].'</span>':false;
                         ?>
                         <div class="form-group">
-                            <input type="text" class="form-input" placeholder="Nhập mật khẩu mới" name="new-password" value="<?php echo (!empty($error['password']['save']))? $error['password']['save'] :false;
+                            <input type="password" class="form-input" placeholder="Nhập mật khẩu mới" name="new-password" value="<?php echo (!empty($error['password']['save']))? $error['password']['save'] :false;
                             echo (!empty($announce['password']['save']))? $announce['password']['save'] :false; ?>"> 
                         </div>
                             <?php
