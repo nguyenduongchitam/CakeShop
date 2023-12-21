@@ -69,12 +69,12 @@
 	    					) VALUES (
 	    					'$email',
 	    					'$hashPassword',
-                            1,
+                            2,
                             now(),
                             now()
 	    					)";
                         mysqli_query($mysqli,$sql);
-				   		header('location:sign-in.php');
+				   		header('location:demo-sign-in.php');
 					}						    
             }
         }
@@ -118,7 +118,7 @@
                     echo (!empty($error['repeat_password']['compare']))?'<span class="error" style="color: red">'.$error['repeat_password']['compare'].'</span>':false;
             ?>
             <input type="submit" class="form-submit" value="Đăng ký" name="dangky">
-            <input type="submit" class="form-submit" value="Đăng nhập" name="dangnhap" onclick="Sign()">
+            <input type="button" class="form-submit" value="Đăng nhập" name="dangnhap" onclick="Sign()">
             <div class="support" onclick="Redirect()">Trở về</div>
             <?php
                 echo (!empty($error['dangky']['invalid']))?'<span style="color: red;margin-left:120px">'.$error['dangky']['invalid'].'</span>':false;
@@ -149,7 +149,7 @@
 </script>
 <script>
     function Sign(){
-                window.location = "front-end/sign-in.php";
+                window.location = "demo-sign-in.php";
             }
 </script>
 </html>
