@@ -171,8 +171,8 @@
                                         if(CouponPeriod($validity, $expiration)){
                                               $couponid=$row_coupon['coupon_id'];
                                                 echo '<p class=text-success> Áp dụng mã khuyến mãi '.$row_coupon['coupon_code'].' thành công</p>';
-                                                $discount=$row_coupon['discount_percentage'];
-                                                $final=($tong-($tong/100*$discount));
+                                                $discount=$row_coupon['total_discount'];
+                                                $final=($tong-($tong/100*$discount));   
                                                 $discount_status=true;
                                         }   else {echo '<p class=text-danger>Mã khuyến mãi không hợp lệ !</p>';}
                                     }   else {echo '<p class=text-danger>Không tìm thấy mã khuyến mãi !</p>';}

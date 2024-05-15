@@ -3,15 +3,14 @@ include("config.php");
 if(isset($_POST['search_key']))
 {
   $searchkey=$_POST['search_key'];
-$sql="SELECT user.*, role.name
-FROM user
-INNER JOIN role ON user.role_id = role.role_id where user.email like '%$searchkey%' or user.full_name like'%$searchkey%'  ";
+$sql="SELECT * FROM user,`role`
+where user.role_id = role.role_id where user.email like '%$searchkey%' or user.full_name like'%$searchkey%'  ";
 
 }
 else { 
-$sql="SELECT user.*, role.name
-FROM user
-INNER JOIN role ON user.role_id = role.role_id";
+$sql="SELECT *
+FROM user,`role`
+where user.role_id = role.role_id";
 }
 $result = mysqli_query($mysqli,$sql);
 ?>

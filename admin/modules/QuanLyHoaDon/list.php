@@ -6,7 +6,7 @@ if (isset($_POST['search_key']))
 $sql = "SELECT * FROM `order` where city like '%$searchkey%' or district like '%$searchkey%' or ward like '%$searchkey%' or `address` like '%$searchkey%'";
 }
 else $sql = "SELECT * FROM `order`";
-$sql1 = "SELECT full_name FROM user u, `order` o WHERE u.user_id=o.user_id";
+$sql1 = "SELECT full_name FROM user u, `order` o  WHERE u.user_id=o.user_id ";
 $result = mysqli_query($mysqli, $sql);
 $result1 = mysqli_query($mysqli, $sql1);
 ?>

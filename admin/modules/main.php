@@ -79,7 +79,11 @@
         include("../modules/QuanLyAnh/quanlyanh.php");
         include("../modules/QuanLyAnh/list.php");
     }
-    else include("dashboard.php");
+    else 
+    {
+        include("../modules/QuanLyUser/quanlyuser.php");
+        include("../modules/QuanLyUser/list.php");
+    }
 ?>
 </div>
 </section>

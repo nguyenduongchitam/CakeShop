@@ -67,11 +67,14 @@ include("../../../Database/Config/config.php");
     <link rel="stylesheet" href="../../css/sign.css"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Làm mới mật khẩu</title>
+    <style>
+
+    </style>
 </head>
 <body>
-    <div id="wrapper">
+    <div class="container" id="wrapper">
                     <form id="form-login" method="POST" action="">
-                        <h3>Làm mới mật khẩu</h3>
+                        <h3 style="color:#f5f5f5; font-size:23px; text-align:center;">LÀM MỚI MẬT KHẨU</h3>
                         <div class="form-group">
                         <input type="text" class="form-input" placeholder="Email" name="email" value="<?php echo (!empty($announce['email']['save']))?$announce['email']['save']:false; ?>">
                         </div>

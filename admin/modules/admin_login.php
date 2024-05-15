@@ -34,7 +34,7 @@
                     $passwordHashData = $result['password'];
                     if(password_verify($matkhau,$passwordHashData))
                     {
-                        $_SESSION['dangnhap'] = $taikhoan;
+                        $_SESSION['dangnhap-admin'] = $taikhoan;
                         if(isset($_REQUEST['rememberMe']))
                         {
                             setcookie('email-admin',$_REQUEST['email'],time()+60*60);

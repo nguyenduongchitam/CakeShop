@@ -1,12 +1,12 @@
 
-		<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/sign.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <title>sign in</title>
+    <title>sign up</title>
 </head>
 <?php
 	include("../../../Database/Config/config.php");
@@ -51,13 +51,7 @@
 
 					if(mysqli_num_rows($kt)  > 0){
                         $error['email']['user']='tài khoản đã tồn tại.';
-					}else{  $sql = "INSERT INTO user(
-	    					email,
-                            password
-	    					) VALUES (
-	    					'$email',
-	    					'$hashPassword'
-	    					)";
+					}else{  $sql = "INSERT INTO user(email,password,role_id,create_at,update_at) VALUES ('$email','$hashPassword',2,now(),now())";
                         mysqli_query($mysqli,$sql);
 				   		header('location:sign-in.php');
 					}						    
@@ -71,7 +65,7 @@
 <body>
     <div id="wrapper">
         <form action="" id="form-login" method="POST">
-            <h1 class="form-heading">Đăng ký</h1>
+            <h1 class="form-heading">ĐĂNG KÝ</h1>
             <div class="form-group">
                 <i class="fa-regular fa-user"></i>
                 <input type="text" class="form-input" placeholder="Email" name="email" id="email">
@@ -125,7 +119,7 @@
 });
 
             function Redirect() {
-               window.location="../index.php";
+               window.location="sign-in.php";
             }
 
             document.getElementById("ChuyenTrang").addEventListener("click", function() {

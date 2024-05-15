@@ -76,7 +76,7 @@ function showcart()
             }
         }
 
-            /* $mailer = new Mailer();
+             $mailer = new Mailer();
     $tieude = "Đặt hàng website cakeshop thành công !";
     $noidung = '<!DOCTYPE html>
    <html lang="en">
@@ -218,7 +218,7 @@ function showcart()
 </body>
 </html>';
 $maildathang = $_SESSION['dangnhap'];
-$mailer->dathangmail($tieude, $noidung, $maildathang);  */
+$mailer->dathangmail($tieude, $noidung, $maildathang);  
 
            unset($_SESSION['cart']);
            unset($_SESSION['quantity_in_cart']);
@@ -468,7 +468,7 @@ $mailer->dathangmail($tieude, $noidung, $maildathang);  */
                $result3=mysqli_query($mysqli, $sql3);
                if(mysqli_num_rows($result3)>0)
                {$row_coupon=mysqli_fetch_assoc($result3);
-              echo'Đã áp mã giảm giá : '.$row_coupon['coupon_code'].' giảm : '.$row_coupon['discount_percentage'].'% ';
+              echo'Đã áp mã giảm giá : '.$row_coupon['coupon_code'].' giảm : '.$row_coupon['total_discount'].'% ';
               }
             }
               ?>

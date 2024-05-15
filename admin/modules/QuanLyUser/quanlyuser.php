@@ -1,5 +1,6 @@
 <?php
     include("config.php");
+    require("QuanLyUser/Classes/PHPExcel.php");
     $query="SELECT * FROM `role`";
     $result=mysqli_query($mysqli, $query);
 ?>
@@ -15,6 +16,15 @@
 </form>
 </div>
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Thêm tài khoản</button> 
+<? 
+if (isset($_POST['insertdata']))
+{
+    $file = $_FILES['file']['tmp_name'];
+    echo $file ;
+}
+?>
+<form method="POST" action="../modules/QuanLyUser/quanlyuser.php" enctype="multipart/form-data"><input type="file" name="file" > <button type="submit" class="btn btn-primary" name="insertdata" > Nhập file </button> </form>
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-lg">
     <div class="modal-content">

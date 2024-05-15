@@ -28,14 +28,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
     <style>
+        body {
+            background-color: #F3F8FF;
+        }
         .container {
-            max-width: 400px;
-            margin: 100px auto;
+            max-width: 700px;
+            margin: 100px auto;    
         }
 
         .card {
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: rgba(89, 63, 33, 1);
+            color: #fff7e6;
         }
 
         .card-title {
@@ -57,18 +62,33 @@
         }
 
         .btn-primary {
-            width: 100%;
+            width: 70%;
+            border-radius: 13px;
+            margin-left: 92px;  
+            background-color: #E2C799;  
+            border:none;
+            color: rgba(89, 63, 33, 1);
+            font-size:large;
+        }
+        .btn-primary:hover{
+            background-color: #C38154;
+            font-weight: 500;
+            
         }
 		#ChuyenTrang {
 			text-align: center;
 		}
+        #ChuyenTrang:hover{
+            color: #E2C799;
+            font-style: italic;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="card">
-            <h1 class="card-title">Mã xác nhận sẽ được gửi về Gmail của bạn,vui lòng kiểm tra gmail</h1>
+            <h1 class="card-title">Mã xác nhận sẽ được gửi về Gmail của bạn</h1>
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="verification-code" >Nhập mã xác nhận</label>
@@ -80,7 +100,7 @@
                 <button type="submit" class="btn btn-primary" name="submit" >Xác nhận</button>
             </form>
 			<br>
-			<div id='ChuyenTrang'>Trở về</div>
+			<div id='ChuyenTrang' >Trở về</div>
         </div>
     </div>
 	<script>

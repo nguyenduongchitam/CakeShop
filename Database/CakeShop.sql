@@ -142,4 +142,5 @@ INSERT INTO `product`(`product_id`,`category_id`,`title`, `price`, `discount_pri
 INSERT INTO `product`(`product_id`,`category_id`,`title`, `price`, `discount_price`, `thumbnail`, `description`, `created_at`,`update_at`)VALUES (19,3,'Bánh Kếp',50000,40000,'Bánh kếp-2.jpg','Bánh kếp ngon',now(),now());
 INSERT INTO `product`(`product_id`,`category_id`,`title`, `price`, `discount_price`, `thumbnail`, `description`, `created_at`,`update_at`)VALUES (20,3,'Bánh Kếp',50000,40000,'Bánh kếp-3.jpg','Bánh kếp ngon',now(),now());
 
-INSERT INTO `coupon`(`coupon_id`, `coupon_code`, `cart_min`, `quantity`, `total_discount`, `start_date`, `end_date`) VALUES (1,'0','0','0','0','1/1/2023','1/12/2024')
+INSERT INTO `coupon`(`coupon_id`, `coupon_code`, `cart_min`, `quantity`, `total_discount`, `start_date`, `end_date`) VALUES (1,'0','0','0','0','1/1/2023','1/1/2024')
+INSERT INTO `coupon`(`coupon_id`, `coupon_code`, `cart_min`, `quantity`, `total_discount`, `start_date`, `end_date`) VALUES (1,'GIAM10',100000,100,10,'1/1/2023','1/1/2024')

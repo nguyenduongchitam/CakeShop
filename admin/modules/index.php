@@ -36,12 +36,13 @@
 <body>
     <?php
     session_start();
-    if (isset($_SESSION['dangnhap'])&&$_SESSION['dangnhap']!=true) {
+    if (isset($_SESSION['dangnhap-admin'])&&$_SESSION['dangnhap-admin']!=true) {
         header("Location:admin_login.php");
         exit();
     }
-    else if(isset($_SESSION['dangnhap'])&&$_SESSION['dangnhap']==true)
+    else if(isset($_SESSION['dangnhap-admin'])&&$_SESSION['dangnhap-admin']==true)
     {
+    
     include("header.php");
     include("menu.php");
     include("main.php");

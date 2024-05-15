@@ -1,7 +1,7 @@
 <?php
 include("config.php");
 $customerId = $_GET['user_id'];
-$sql = "SELECT p.title, p.price, od.num, o.order_date
+$sql = "SELECT p.title, p.price, od.quantity, o.order_date
             FROM `order` o
             INNER JOIN order_detail od ON o.order_id = od.order_id
             INNER JOIN product p ON od.product_id = p.product_id

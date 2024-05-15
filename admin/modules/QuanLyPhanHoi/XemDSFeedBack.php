@@ -13,7 +13,6 @@ $result = mysqli_query($mysqli,$sql);
           <th>Tên khách hàng</th>
           <th>Email</th>
           <th>Điện thoại</th>
-          <th>Bánh</th>
           <th>Ghi chú</th>
         </tr>
       </thead>
@@ -28,7 +27,6 @@ $result = mysqli_query($mysqli,$sql);
             <td><?php echo $row['firstname'] . ' ' . $row['lastname']; ?></td>
             <td><?php echo $row['email'] ?></td>
             <td><?php echo $row['phone_number'] ?></td>
-            <td><?php echo $row['subject_name'] ?></td>
             <td><?php echo $row['note'] ?></td>
           </tr>
         <?php

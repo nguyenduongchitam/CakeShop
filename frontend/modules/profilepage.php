@@ -19,7 +19,7 @@
             FROM `order` o
             INNER JOIN order_detail od ON o.order_id = od.order_id
             INNER JOIN product p ON od.product_id = p.product_id
-            WHERE o.user_id = 8 ORDER BY o.order_id ASC LIMIT ".$order_per_page." OFFSET ".$offset." ";
+            WHERE o.user_id = $id  ORDER BY o.order_id ASC LIMIT ".$order_per_page." OFFSET ".$offset." ";
     $result_history_dh = mysqli_query($mysqli,$sql_history_dh);
     $totalRecord = mysqli_query($mysqli,"SELECT *
     FROM `order` o
@@ -160,7 +160,6 @@
     <th>Mã đơn hàng</th>
     <th>Địa chỉ</th>
     <th>Ngày đặt hàng</th>
-    <th>Phí giao hàng</th>
     <th>Tổng giá tiền</th>
     <th>Chi tiết đơn hàng</th>
 </tr>
@@ -173,7 +172,6 @@
     <td><?php echo $row['order_id']?></td>
     <td><?php echo $row['ward'].' - '.$row['district'].' - '.$row['city'];?></td>
     <td><?php echo $row['order_date']?></td>
-    <td><?php echo number_format($row['delivery_money'], 0, ",", ".")?></td>
     <td><?php echo number_format($row['total_money'], 0, ",", ".")?></td>
     <td>
         <a href="#">Xem đơn hàng</a>
